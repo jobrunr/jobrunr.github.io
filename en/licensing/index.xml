@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Licensings on JobRunr</title>
-    <link>https://jobrunr.github.io/en/licensing/</link>
+    <link>https://www.jobrunr.io/en/licensing/</link>
     <description>Recent content in Licensings on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Aug 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/en/licensing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Aug 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/licensing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Royalty-free End-user License Agreement</title>
-      <link>https://jobrunr.github.io/en/licensing/royalty-free-eula/</link>
+      <link>https://www.jobrunr.io/en/licensing/royalty-free-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/licensing/royalty-free-eula/</guid>
+      <guid>https://www.jobrunr.io/en/licensing/royalty-free-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     
     <item>
       <title>Standard End-user License Agreement</title>
-      <link>https://jobrunr.github.io/en/licensing/standard-eula/</link>
+      <link>https://www.jobrunr.io/en/licensing/standard-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/licensing/standard-eula/</guid>
+      <guid>https://www.jobrunr.io/en/licensing/standard-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jobrunr.github.io/en/licensing/third-party/</link>
+      <link>https://www.jobrunr.io/en/licensing/third-party/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jobrunr.github.io/en/licensing/third-party/</guid>
+      <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
       <description></description>
     </item>
     

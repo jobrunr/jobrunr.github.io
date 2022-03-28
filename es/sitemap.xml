@@ -3,21 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jobrunr.github.io/es/</loc>
+    <loc>https://www.jobrunr.io/es/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ch"
-                href="https://jobrunr.github.io/ch/"
+                href="https://www.jobrunr.io/ch/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://jobrunr.github.io/zh-cn/"
+                href="https://www.jobrunr.io/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://jobrunr.github.io/es/"
+                href="https://www.jobrunr.io/es/"
                 />
   </url>
   

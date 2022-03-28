@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Background methods on JobRunr</title>
-    <link>https://jobrunr.github.io/en/documentation/background-methods/</link>
+    <link>https://www.jobrunr.io/en/documentation/background-methods/</link>
     <description>Recent content in Background methods on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/en/documentation/background-methods/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/documentation/background-methods/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deleting jobs</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/deleting-jobs/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/deleting-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/deleting-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/deleting-jobs/</guid>
       <description>Sometimes you may want to delete a job that is scheduled, enqueued or already processing. This can be done easily via the Dashboard or even programmatically.
  JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork());  BackgroundJob.delete(jobId); Thanks to the BackgroundJob.delete method, the job that was enqueued earlier on can be deleted.  When the job is still enqueued or scheduled, things are easy - JobRunr changes the state of your Job to Deleted and all is well.</description>
     </item>
     
     <item>
       <title>Enqueueing jobs</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</guid>
       <description>As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:
  JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork()); This enqueues a background job using an instance of MyService which is available during enqueueing.   JobId jobId = BackgroundJob.&amp;lt;MyService&amp;gt;enqueue(x -&amp;gt; x.doWork()); This enqueues a background job without a reference to an instance of MyService.</description>
     </item>
     
     <item>
       <title>Recurring jobs</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
       <description>Creating a recurring job is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
 Using a Cron expression  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Easy!&amp;#34;));  This line creates a new recurring job entry in the StorageProvider. A special component in BackgroundJobServer checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs.</description>
     </item>
     
     <item>
       <title>Scheduling jobs</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</guid>
       <description>Sometimes you may want to postpone a method invocation; for example, to send an email to newly registered users a day after their registration. To do this, just call the BackgroundJob.schedule method and pass the desired delay:
  BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  JobRunr&amp;rsquo;s BackgroundJobServer periodically checks all scheduled jobs and enqueues them when it is time to run them, allowing workers to execute them. By default, the check interval is equal to 15 seconds, but you can change it by passing the relevant argument to the BackgroundJobServer constructor.</description>
     </item>
     
     <item>
       <title>Background job dependencies</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</guid>
       <description>TLDR; If you are using either the JobRunr Spring Boot Starter, Micronaut Integration or Quarkus Extension, you can just have beans or services injected into your background job (e.g. the service class that you are calling) and JobRequestHandler.
 A long, long time ago&amp;hellip; There was a background job that needed a certain dependency to fulfill it&amp;rsquo;s work&amp;hellip;
 In almost every job you’ll want to use other classes of your application to perform different work and keep your code clean and simple.</description>
@@ -60,10 +60,10 @@ In almost every job you’ll want to use other classes of your application to pe
     
     <item>
       <title>Best practices</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/best-practices/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/best-practices/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/best-practices/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/best-practices/</guid>
       <description>Make job arguments small and simple Method invocations (i.e. a job) are serialized during the creation process of the background job. Arguments are converted into Json strings using the JobMapper class. If you have complex entities and/or large objects; including arrays, it is better to place them into a database, and then pass only their identities to the background job.
 So, instead of doing this:
 public void backgroundMethod(Entity entity) { } Consider doing this:</description>
@@ -71,10 +71,10 @@ public void backgroundMethod(Entity entity) { } Consider doing this:</descriptio
     
     <item>
       <title>Dashboard</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/dashboard/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/dashboard/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</guid>
       <description>JobRunr includes a built-in dashboard which gives helpful insights into your background job methods. The dashboard allows you to see and control any aspect of background job processing - you have a detailed view on any exception that occurred and you can see the complete background job history.
 By default, it is available on the following url: http://localhost:8000. Off-course, this is configurable:
 Using fluent configuration
@@ -83,20 +83,20 @@ Using fluent configuration
     
     <item>
       <title>Dealing with exceptions</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</guid>
       <description>Bad things happen. Any method can throw different types of exceptions. These exceptions can be caused either by programming errors that require you to re-deploy the application, or transient errors, that can be fixed without additional deployment.
 JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with increasing delay modifier.</description>
     </item>
     
     <item>
       <title>Logging &amp; job progress</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/logging-progress/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/logging-progress/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/logging-progress/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/logging-progress/</guid>
       <description>Some jobs take a very long time to complete - generating 1000&amp;rsquo;s of emails, do a batch import of some large xml or CSV files, &amp;hellip; . How to know whether your code is actually running and doing it&amp;rsquo;s actual job (pun intended)?
 Say hello to job logging and the job progress bar.
  Watch logging appear live from your actual job  Logging JobRunr supports logging to the dashboard - new messages will appear as they&amp;rsquo;re logged, it is as if you&amp;rsquo;re looking at a real console.</description>
@@ -104,10 +104,10 @@ Say hello to job logging and the job progress bar.
     
     <item>
       <title>Passing arguments</title>
-      <link>https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/</link>
+      <link>https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/</guid>
+      <guid>https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/</guid>
       <description>JobRunr supports the passing of arguments to background jobs, both for jobs being created with Java 8 lambda&amp;rsquo;s and for jobs being created with the JobRequest interface.
 Since these arguments are serialized, consider their values carefully as they can blow up your StorageProvider. Most of the time it is more efficient to store concrete values in an application database and pass only their identifiers to your background jobs.
 Remember that background jobs may be processed days or weeks after they were enqueued.</description>
