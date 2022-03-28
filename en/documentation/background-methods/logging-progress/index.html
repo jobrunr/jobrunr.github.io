@@ -46,7 +46,7 @@ Say hello to job logging and the job progress bar.
 
     
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image" content="https://jobrunr.github.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
     <meta name="twitter:title" content="Logging &amp; job progress" />
     <meta name="twitter:description" content="Some jobs take a very long time to complete - generating 1000&rsquo;s of emails, do a batch import of some large xml or CSV files, &hellip; . How to know whether your code is actually running and doing it&rsquo;s actual job (pun intended)?
@@ -60,7 +60,7 @@ Say hello to job logging and the job progress bar.
 Say hello to job logging and the job progress bar.
  Watch logging appear live from your actual job  Logging JobRunr supports logging to the dashboard - new messages will appear as they&rsquo;re logged, it is as if you&rsquo;re looking at a real console." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.jobrunr.io/en/documentation/background-methods/logging-progress/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="documentation" />
+<meta property="og:url" content="https://jobrunr.github.io/en/documentation/background-methods/logging-progress/" /><meta property="og:image" content="https://jobrunr.github.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="documentation" />
 <meta property="article:published_time" content="2020-04-30T11:12:23+02:00" />
 <meta property="article:modified_time" content="2020-04-30T11:12:23+02:00" />
 
@@ -69,8 +69,8 @@ Say hello to job logging and the job progress bar.
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.d3c8817355823d3ef8be81a95dc4872afe248c0196ea58f5645915fa773325ff.css" integrity="sha256-08iBc1WCPT74voGpXcSHKv4kjAGW6lj1ZFkV&#43;nczJf8=" media="screen">
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.bd3f9a99bf0e0f8300f9e46c85748d00e8675f1d2f18fe79254d76d1cb3cce5d.css" integrity="sha256-vT&#43;amb8OD4MA&#43;eRshXSNAOhnXx0vGP55JU120cs8zl0=" media="screen">
+    <link rel="stylesheet" href="https://jobrunr.github.io/scss/custom.min.d3c8817355823d3ef8be81a95dc4872afe248c0196ea58f5645915fa773325ff.css" integrity="sha256-08iBc1WCPT74voGpXcSHKv4kjAGW6lj1ZFkV&#43;nczJf8=" media="screen">
+    <link rel="stylesheet" href="https://jobrunr.github.io/scss/screen.min.bd3f9a99bf0e0f8300f9e46c85748d00e8675f1d2f18fe79254d76d1cb3cce5d.css" integrity="sha256-vT&#43;amb8OD4MA&#43;eRshXSNAOhnXx0vGP55JU120cs8zl0=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
@@ -83,7 +83,7 @@ Say hello to job logging and the job progress bar.
     <div class="inner"><nav id="site-nav" class="site-nav">
     <div class="site-nav-left">
         
-        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" /></a>
+        <a class="site-nav-logo" href="https://jobrunr.github.io/en/"><img src="https://jobrunr.github.io/images/jobrunr-logo-white.webp" alt="JobRunr" /></a>
         
         <div class="site-nav-content">
             <ul class="nav" role="menu">
@@ -126,7 +126,7 @@ Say hello to job logging and the job progress bar.
             <ul id="lang-selector">
                 
                 <li>
-                    <a href="https://www.jobrunr.io/de/documentation/background-methods/logging-progress/">de</a>
+                    <a href="https://jobrunr.github.io/de/documentation/background-methods/logging-progress/">de</a>
                 </li>
                 
             </ul>
@@ -376,7 +376,7 @@ where <code>log</code> is now an SL4J logger which will still continue to log to
 <p>The last logger will make sure that all info, warn and error statement will be shown in the dashboard for each job. Debug logging is not supported as I want to prevent to spam the various browsers.</p>
 <h3 id="mapped-diagnostic-context-mdc">Mapped Diagnostic Context (MDC)</h3>
 <p>JobRunr also supports the mapped diagnostic context or MDC of SLF4J. This means that any variables you have put in the MDC will also be available when the actual job is being processed and if you log from your job, this will thus also include the variables from your MDC. This is ideal in a distributed system where you have a correlation id generated when the request comes in and you can thus track everything (including your jobs) using this correlation id.</p>
-<p>You can even have MDC variables in the display name of a job - this comes in handy with the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro dashboard</a> where you can then search for a job using that correlation id. To do so, you need to annote your job as follows:</p>
+<p>You can even have MDC variables in the display name of a job - this comes in handy with the <a href="https://jobrunr.github.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro dashboard</a> where you can then search for a job using that correlation id. To do so, you need to annote your job as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Job related to %X{request.correlationId}&#34;</span><span style="color:#f92672">,</span> retries<span style="color:#f92672">=</span>2<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">runJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
 </span></span></code></pre></div><br/>
@@ -428,7 +428,7 @@ where <code>log</code> is now an SL4J logger which will still continue to log to
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright">
-                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                  &copy; <a href="https://jobrunr.github.io">JobRunr</a>
                 </section>
                 <section class="love" style="opacity: 0.7;">
                   Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
@@ -442,7 +442,7 @@ where <code>log</code> is now an SL4J logger which will still continue to log to
     </div>
 
     
-    <script src="https://www.jobrunr.io/js/jobrunr-version.js"></script>
+    <script src="https://jobrunr.github.io/js/jobrunr-version.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>

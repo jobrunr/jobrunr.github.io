@@ -2,366 +2,366 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Distributed Java Background Job Scheduler on JobRunr</title>
-    <link>https://www.jobrunr.io/en/</link>
+    <link>https://jobrunr.github.io/en/</link>
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Mar 2022 08:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 08:00:00 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
+      <link>https://jobrunr.github.io/en/homepage/quote-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/quote-01/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/quote-01/</guid>
       <description>Thanks for building JobRunr, I like it a lot! Before that I used similar libraries in Ruby and Golang and JobRunr so far is the most pleasant one to use. I especially like the dashboard, it’s awesome!</description>
     </item>
     
     <item>
       <title>Fire-and-forget jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-01/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-01/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-01/</guid>
       <description>Fire-and-forget jobs are executed only once and almost immediately after creation.
 BackgroundJob.enqueue(  () -&amp;gt; System.out.println(&amp;#34;Simple!&amp;#34;)); </description>
     </item>
     
     <item>
       <title>Simple</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-01/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-01/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-01/</guid>
       <description>Easy to set up, easy to use. Add the jar from Maven Central and start scheduling jobs. An easy alternative for Spring Batch and Quartz Scheduler.
 Background jobs are regular java methods with regular arguments – no super class or interface implementation required.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-02/</link>
+      <link>https://jobrunr.github.io/en/homepage/quote-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/quote-02/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/quote-02/</guid>
       <description>Just came across JobRunr on Github. Exactly what I have been looking for! Went through the source and completely inline with how software should be written. Simple, nicely architectured! Great job!</description>
     </item>
     
     <item>
       <title>Persistent</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-02/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-02/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-02/</guid>
       <description>Background jobs are created in a persistent storage and supports RDBMS like MySql/MariaDB, PostgreSQL, Oracle, SQL Server, DB2 and also NoSQL databases like ElasticSearch, Redis and MongoDB.
 You can safely restart your application and use JobRunr without worrying about loosing jobs.</description>
     </item>
     
     <item>
       <title>Scheduled &amp; delayed jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-02/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-02/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-02/</guid>
       <description>Scheduled and delayed jobs are also executed only once but will run at the specified time.
 BackgroundJob.schedule(now().plusHours(5),  () -&amp;gt; System.out.println(&amp;#34;Reliable!&amp;#34;)); </description>
     </item>
     
     <item>
       <title>Recurring jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-03/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-03/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-03/</guid>
       <description>Recurring jobs fire each time on the specified CRON schedule.
 BackgroundJob.scheduleRecurrently(Cron.daily(),  () -&amp;gt; service.doWork()); </description>
     </item>
     
     <item>
       <title>Transparent</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-03/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-03/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-03/</guid>
       <description>Thanks to the built-in web interface, you have an overview of all your background jobs and observe the state of each job in detail.
 Out of the box support for popular logging frameworks allows you to catch errors early with zero configuration.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-04/</link>
+      <link>https://jobrunr.github.io/en/homepage/quote-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/quote-04/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/quote-04/</guid>
       <description>Works perfectly, this framework is a lifesaver for me.</description>
     </item>
     
     <item>
       <title>Distributed</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-05/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-05/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-05/</guid>
       <description>Background method calls and their arguments are serialized to JSON and can travel over JVM instances.
 You can use JobRunr on different machines to get more processing power with no extra configuration – synchronization is performed automatically.</description>
     </item>
     
     <item>
       <title>Queues</title>
-      <link>https://www.jobrunr.io/en/homepage/example-04/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-04/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-04/</guid>
       <description>Specify a queue to bypass all jobs already enqueued so your critical business processes finish on-time.
 @Job(queue = HighPrioQueue) public void doWork() {  ... } </description>
     </item>
     
     <item>
       <title>Reliable</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-04/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-04/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-04/</guid>
       <description>Once a background job was created without any exception, JobRunr takes the responsibility to process it at least once.
 You are free to throw unhandled exceptions or terminate your application – background jobs will be re-tried automatically.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-05/</link>
+      <link>https://jobrunr.github.io/en/homepage/quote-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/quote-05/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/quote-05/</guid>
       <description>Omg&amp;hellip;. This being released like a year ago, would be great (for us). Instead, we are hitting a lot of walls trying to use Quartz to replace an old in-house job scheduler</description>
     </item>
     
     <item>
       <title>Batches &amp; job chaining</title>
-      <link>https://www.jobrunr.io/en/homepage/example-05/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-05/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-05/</guid>
       <description>Create a bunch of background jobs atomically using a batch and then chain a new job which will run when the complete batch finishes.
  BackgroundJob  .startBatch(this::sendEmailToEachSubscriber)  .continueWith(() -&amp;gt; reportService.createReport(...))  .continueWith(() -&amp;gt; notifyService.notify(&amp;#34;sales-team&amp;#34;, ...)); </description>
     </item>
     
     <item>
       <title>Extensible</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-06/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-06/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-06/</guid>
       <description>Job filters allow you to add custom features to the background processing in a way similar to servlet filters.
 Job storage access is fully abstracted and you can implement support for your favorite storage.</description>
     </item>
     
     <item>
       <title>Job chaining</title>
-      <link>https://www.jobrunr.io/en/homepage/example-06/</link>
+      <link>https://jobrunr.github.io/en/homepage/example-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/example-06/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/example-06/</guid>
       <description>Specify a queue to bypass all jobs already enqueued so your critical business processes finish on-time.
 BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;Folder archived: &amp;#34; + folder)) </description>
     </item>
     
     <item>
       <title>Efficient</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-07/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-07/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-07/</guid>
       <description>JobRunr takes just enough jobs into memory to process them efficiently and does not keep any locks on other jobs. This allows to distribute the jobs in the best possible manner.</description>
     </item>
     
     <item>
       <title>Self maintaining</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-08/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-08/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-08/</guid>
       <description>You don&amp;rsquo;t need to perform manual storage clean-up – JobRunr keeps it as clean as possible and removes succeeded jobs automatically.</description>
     </item>
     
     <item>
       <title>Open source</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-09/</link>
+      <link>https://jobrunr.github.io/en/homepage/feature-09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/homepage/feature-09/</guid>
+      <guid>https://jobrunr.github.io/en/homepage/feature-09/</guid>
       <description>JobRunr is open source software and is completely free for commercial use. It is licensed under LGPLv3 license.
 Fork the project and make contributions on GitHub!</description>
     </item>
     
     <item>
       <title>JobRunr Pro Trial</title>
-      <link>https://www.jobrunr.io/en/try-jobrunr-pro/</link>
+      <link>https://jobrunr.github.io/en/try-jobrunr-pro/</link>
       <pubDate>Tue, 15 Mar 2022 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/try-jobrunr-pro/</guid>
+      <guid>https://jobrunr.github.io/en/try-jobrunr-pro/</guid>
       <description>Are you interested in a trial of JobRunr Pro? Fill in the form below and we will send you all the necessary information to get started!</description>
     </item>
     
     <item>
       <title>JobRunr &amp; JobRunr Pro v5.0.0</title>
-      <link>https://www.jobrunr.io/en/blog/2022-03-15-jobrunr-v5.0.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2022-03-15-jobrunr-v5.0.0/</link>
       <pubDate>Tue, 15 Mar 2022 08:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2022-03-15-jobrunr-v5.0.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2022-03-15-jobrunr-v5.0.0/</guid>
       <description>New features and improvements to make your job scheduling life even easier!</description>
     </item>
     
     <item>
       <title>JobRunr &amp; JobRunr Pro v4.0.0</title>
-      <link>https://www.jobrunr.io/en/blog/2021-09-08-jobrunr-v4.0.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-09-08-jobrunr-v4.0.0/</link>
       <pubDate>Tue, 14 Sep 2021 08:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-09-08-jobrunr-v4.0.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-09-08-jobrunr-v4.0.0/</guid>
       <description>The biggest release since JobRunr v1.0.0</description>
     </item>
     
     <item>
       <title>Trees planted!</title>
-      <link>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-08-03-license-sold/</link>
       <pubDate>Tue, 03 Aug 2021 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-08-03-license-sold/</guid>
       <description>I&amp;rsquo;ve sold my second license and that resulted in trees being planted!</description>
     </item>
     
     <item>
       <title>JobRunr Pro v3.4.0</title>
-      <link>https://www.jobrunr.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</link>
       <pubDate>Mon, 12 Jul 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</guid>
       <description>JobRunr Pro Dashboard with Job Filtering - the backoffice to your code</description>
     </item>
     
     <item>
       <title>JobRunr v3.2.0 &amp; JobRunr Pro Release v3.3.0</title>
-      <link>https://www.jobrunr.io/en/blog/2021-07-04-jobrunr-v3.2.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-07-04-jobrunr-v3.2.0/</link>
       <pubDate>Sun, 04 Jul 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-07-04-jobrunr-v3.2.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-07-04-jobrunr-v3.2.0/</guid>
       <description>SQL Schema support and now also ready for Kotlin 1.5</description>
     </item>
     
     <item>
       <title>JobRunr Pro Release v3.2.0</title>
-      <link>https://www.jobrunr.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</link>
       <pubDate>Thu, 24 Jun 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</guid>
       <description>Clean code - clean dashboard!</description>
     </item>
     
     <item>
       <title>Custom delete policy</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/custom-delete-policy/</link>
       <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/custom-delete-policy/</guid>
       <description>Try JobRunr Pro for free!   Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.</description>
     </item>
     
     <item>
       <title>Release v3.1.2</title>
-      <link>https://www.jobrunr.io/en/blog/2021-06-12-v3.1.2/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-06-12-v3.1.2/</link>
       <pubDate>Sat, 12 Jun 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-06-12-v3.1.2/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-06-12-v3.1.2/</guid>
       <description>Release v3.0.1 until v3.1.2 - small bugfixes!</description>
     </item>
     
     <item>
       <title>Release v3.0.0</title>
-      <link>https://www.jobrunr.io/en/blog/2021-05-26-v3.0.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-05-26-v3.0.0/</link>
       <pubDate>Wed, 26 May 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-05-26-v3.0.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-05-26-v3.0.0/</guid>
       <description>Release v3.0.0 - now supporting JHipster!</description>
     </item>
     
     <item>
       <title>v2.0.0 - Kotlin support!</title>
-      <link>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-04-26-v2.0.0/</link>
       <pubDate>Mon, 26 Apr 2021 21:00:00 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-04-26-v2.0.0/</guid>
       <description>Release v2.0.0 - now ready for Kotlin</description>
     </item>
     
     <item>
       <title>v1.3.0 - Small improvements</title>
-      <link>https://www.jobrunr.io/en/blog/2021-02-07-v1.3/</link>
+      <link>https://jobrunr.github.io/en/blog/2021-02-07-v1.3/</link>
       <pubDate>Sun, 07 Feb 2021 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2021-02-07-v1.3/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2021-02-07-v1.3/</guid>
       <description>Release v1.3.0 - aka Made in Germany</description>
     </item>
     
     <item>
       <title>Trees planted!</title>
-      <link>https://www.jobrunr.io/en/blog/2020-11-18-license-sold/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-11-18-license-sold/</link>
       <pubDate>Wed, 18 Nov 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-11-18-license-sold/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-11-18-license-sold/</guid>
       <description>I&amp;rsquo;ve sold my first license and that resulted in trees being planted!</description>
     </item>
     
     <item>
       <title>v1.2.0 - Amazon DocumentDB</title>
-      <link>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-11-01-v1.2/</link>
       <pubDate>Sun, 01 Nov 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-11-01-v1.2/</guid>
       <description>Again support for a new datastore - this time for Amazon DocumentDB!</description>
     </item>
     
     <item>
       <title>v1.1.0 - Notifications</title>
-      <link>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-10-21-v1.1/</link>
       <pubDate>Wed, 21 Oct 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-10-21-v1.1/</guid>
       <description>New improvements for Spring and notifications for jobs that don&amp;rsquo;t exist anymore</description>
     </item>
     
     <item>
       <title>Deleting jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/deleting-jobs/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/deleting-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/deleting-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/deleting-jobs/</guid>
       <description>Sometimes you may want to delete a job that is scheduled, enqueued or already processing. This can be done easily via the Dashboard or even programmatically.
  JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork());  BackgroundJob.delete(jobId); Thanks to the BackgroundJob.delete method, the job that was enqueued earlier on can be deleted.  When the job is still enqueued or scheduled, things are easy - JobRunr changes the state of your Job to Deleted and all is well.</description>
     </item>
     
     <item>
       <title>Enqueueing jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/</guid>
       <description>As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:
  JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork()); This enqueues a background job using an instance of MyService which is available during enqueueing.   JobId jobId = BackgroundJob.&amp;lt;MyService&amp;gt;enqueue(x -&amp;gt; x.doWork()); This enqueues a background job without a reference to an instance of MyService.</description>
     </item>
     
     <item>
       <title>Frequently Asked Questions</title>
-      <link>https://www.jobrunr.io/en/documentation/faq/</link>
+      <link>https://jobrunr.github.io/en/documentation/faq/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/faq/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/faq/</guid>
       <description>BackgroundJobServer FAQ Does JobRunr need open ports for distributing jobs? No, JobRunr does not require an open port for distributing the workload - this is orchestrated via the StorageProvider.
 How is the coordination between different nodes done? Each BackgroundJobServer registers itself on startup in the StorageProvider. For an RDBMS, this is a plain old table called jobrunr_backgroundjobservers. The master is the server which is the longest running (so, the one that was registered as first node).</description>
     </item>
     
     <item>
       <title>Job Result</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/results/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/results/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/results/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/results/</guid>
       <description>Try JobRunr Pro for free!   If your job returns a result, JobRunr serializes it and stores it via the StorageProvider in the database of your choice.
 You can then fetch the result of that job using the id of the job.
   void startWeatherPrediction(UUID cityId) {  Observation observation = observationService.getLatestObservation(cityId); // the original observation  BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); }  WeatherPrediction getWeatherPrediction(UUID cityId) {  JobResultWithBackOffInfo jobResult = BackgroundJob.</description>
@@ -369,10 +369,10 @@ You can then fetch the result of that job using the id of the job.
     
     <item>
       <title>JobRunr compared</title>
-      <link>https://www.jobrunr.io/en/documentation/alternatives/</link>
+      <link>https://jobrunr.github.io/en/documentation/alternatives/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/alternatives/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/alternatives/</guid>
       <description>Below you can find an external audit where JobRunr is compared to some alternatives.
  This report was created on June 19, 2020 and updated on July 09, 2021.
  Feature matrix The following tables provides an overview of each approach’s features.
@@ -381,133 +381,133 @@ You can then fetch the result of that job using the id of the job.
     
     <item>
       <title>Recurring jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/</guid>
       <description>Creating a recurring job is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
 Using a Cron expression  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Easy!&amp;#34;));  This line creates a new recurring job entry in the StorageProvider. A special component in BackgroundJobServer checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs.</description>
     </item>
     
     <item>
       <title>Replacing jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/replace-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/replace-jobs/</guid>
       <description>Try JobRunr Pro for free!   Do you need to replace an already enqueued job? Or a job that is already being processed? Thanks to the JobRunr Pro enqueueOrReplace and scheduleOrReplace you can update the existing job easily.
  UUID cityId = city.getId(); Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation));  Observation observation = observationService.getLatestObservation(cityId); // the updated observation after a storm BackgroundJob.enqueueOrReplace(myId, () -&amp;gt; weatherService.</description>
     </item>
     
     <item>
       <title>Scheduling jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/</guid>
       <description>Sometimes you may want to postpone a method invocation; for example, to send an email to newly registered users a day after their registration. To do this, just call the BackgroundJob.schedule method and pass the desired delay:
  BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  JobRunr&amp;rsquo;s BackgroundJobServer periodically checks all scheduled jobs and enqueues them when it is time to run them, allowing workers to execute them. By default, the check interval is equal to 15 seconds, but you can change it by passing the relevant argument to the BackgroundJobServer constructor.</description>
     </item>
     
     <item>
       <title>Finally, v1.0.0</title>
-      <link>https://www.jobrunr.io/en/blog/2020-09-24-jobrunr-v1.0/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-09-24-jobrunr-v1.0/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-09-24-jobrunr-v1.0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-09-24-jobrunr-v1.0/</guid>
       <description>We&amp;rsquo;re there, JobRunr v1.0.0 is released!</description>
     </item>
     
     <item>
       <title>v0.9.16 &amp; 0.9.17 - ElasticSearch support</title>
-      <link>https://www.jobrunr.io/en/blog/2020-09-09-v09-17/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-09-09-v09-17/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-09-09-v09-17/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-09-09-v09-17/</guid>
       <description>ElasticSearch support, Redis and MongoDB improvements and almost at 1.0</description>
     </item>
     
     <item>
       <title>Contact us</title>
-      <link>https://www.jobrunr.io/en/contact/</link>
+      <link>https://jobrunr.github.io/en/contact/</link>
       <pubDate>Fri, 04 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/contact/</guid>
+      <guid>https://jobrunr.github.io/en/contact/</guid>
       <description>Considering a JobRunr Pro license? Contact me and we&amp;rsquo;ll see together whether JobRunr can bring any value to your business</description>
     </item>
     
     <item>
       <title>Download whitepaper</title>
-      <link>https://www.jobrunr.io/en/download-whitepaper/</link>
+      <link>https://jobrunr.github.io/en/download-whitepaper/</link>
       <pubDate>Fri, 04 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/download-whitepaper/</guid>
+      <guid>https://jobrunr.github.io/en/download-whitepaper/</guid>
       <description>Considering a JobRunr Pro license? Contact us and we&amp;rsquo;ll see together whether JobRunr can bring any value to your business</description>
     </item>
     
     <item>
       <title>Launching a developer product - how hard is it?</title>
-      <link>https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-09-04-my-own-product/</link>
       <pubDate>Fri, 04 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-09-04-my-own-product/</guid>
       <description>Is it worthwhile to start a freemium product for developers in the Java eco-system?</description>
     </item>
     
     <item>
       <title>v0.9.16 &amp; 0.9.17 - ElasticSearch support</title>
-      <link>https://www.jobrunr.io/en/blog/2020-08-13-v09-15/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-08-13-v09-15/</link>
       <pubDate>Thu, 03 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-08-13-v09-15/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-08-13-v09-15/</guid>
       <description>Redis and MongoDB improvements, ElasticSearch support and almost at 1.0</description>
     </item>
     
     <item>
       <title>About JobRunr</title>
-      <link>https://www.jobrunr.io/en/about/</link>
+      <link>https://jobrunr.github.io/en/about/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/about/</guid>
+      <guid>https://jobrunr.github.io/en/about/</guid>
       <description>The idea behind JobRunr and how I try to make the world a little bit better and greener.</description>
     </item>
     
     <item>
       <title>Batches</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/batches/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/batches/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/batches/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/batches/</guid>
       <description>Try JobRunr Pro for free!   Batches allow you to create a bunch of background jobs atomically. This means that if there was an exception during the creation of background jobs, none of them will be processed. Consider you want to send 1000 emails to your clients, and they really want to receive these emails. Here is the old way:
 public class NewsletterService {   @Inject  private UserRepository userRepository;   public void sendEmailsToAllSubscribers() {  List&amp;lt;User&amp;gt; users = userRepository.</description>
     </item>
     
     <item>
       <title>Job Chaining</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/job-chaining/</guid>
       <description>Try JobRunr Pro for free!   JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
     </item>
     
     <item>
       <title>Job Filters</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-filters/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/job-filters/</guid>
       <description>Try JobRunr Pro for free!   A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
 Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.</description>
     </item>
     
     <item>
       <title>Job Migrations</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/migrations/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/migrations/</guid>
       <description>Try JobRunr Pro for free!   Do you have a lot of scheduled jobs planned in the future? And you need to do some refactoring? Just migrate your existing jobs to your new API and continue delivering working jobs with each deploy.
 A job migration could not have been easier with the new migrations API.
  JobRunrPro  .configure()  .useJobNotFoundConfiguration(usingStandardJobNotFoundConfiguration()  .andMigrateScheduledJobsThatAreNotFound(  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.</description>
@@ -515,160 +515,160 @@ A job migration could not have been easier with the new migrations API.
     
     <item>
       <title>JobRunr Pro</title>
-      <link>https://www.jobrunr.io/en/pricing/</link>
+      <link>https://jobrunr.github.io/en/pricing/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/pricing/</guid>
-      <description>JobRunr is completely free, even for commercial use. The &lt;a href=&#34;https://www.jobrunr.io/en/documentation/pro/&#34; title=&#34;If you would develop the features of the Pro edition yourself, it would have an estimated cost of around 60.000 $
-(120 days of development at a rate of 500$). &#34;&gt;Pro edition&lt;/a&gt; allows you to use additional options while ensuring the project will stay here for years to come. Not sure? Try out JobRunr Pro for free &lt;a href=&#34;https://www.jobrunr.io/en/try-jobrunr-pro&#34;&gt;during a month&lt;/a&gt;.</description>
+      <guid>https://jobrunr.github.io/en/pricing/</guid>
+      <description>JobRunr is completely free, even for commercial use. The &lt;a href=&#34;https://jobrunr.github.io/en/documentation/pro/&#34; title=&#34;If you would develop the features of the Pro edition yourself, it would have an estimated cost of around 60.000 $
+(120 days of development at a rate of 500$). &#34;&gt;Pro edition&lt;/a&gt; allows you to use additional options while ensuring the project will stay here for years to come. Not sure? Try out JobRunr Pro for free &lt;a href=&#34;https://jobrunr.github.io/en/try-jobrunr-pro&#34;&gt;during a month&lt;/a&gt;.</description>
     </item>
     
     <item>
       <title>JobRunr Pro Dashboard</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
       <description>Try JobRunr Pro for free!   Job search Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded? JobRunr Pro has you covered - thanks to a new feature called Job Search.
  Thanks to job filters, you can quickly find the job you are interested in.   Note that users using Redis as StorageProvider can only filter on State, Job Signature, Queue and ServerTag.</description>
     </item>
     
     <item>
       <title>Mutexes</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/mutexes/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/mutexes/</guid>
       <description>Try JobRunr Pro for free!   A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
 Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
     </item>
     
     <item>
       <title>Queues</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/queues/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/queues/</guid>
       <description>Try JobRunr Pro for free!   Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
 Usage Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.</description>
     </item>
     
     <item>
       <title>Royalty-free End-user License Agreement</title>
-      <link>https://www.jobrunr.io/en/licensing/royalty-free-eula/</link>
+      <link>https://jobrunr.github.io/en/licensing/royalty-free-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/licensing/royalty-free-eula/</guid>
+      <guid>https://jobrunr.github.io/en/licensing/royalty-free-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     
     <item>
       <title>Server Tags</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/server-tags/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/server-tags/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/server-tags/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/server-tags/</guid>
       <description>Try JobRunr Pro for free!   Do you have some jobs that can only be run on certain servers (e.g. jobs tied to a specific OS like Linux, Max and Windows)? Or do you want to run a job only on the server that created the job? JobRunr has you covered with Server Tags!
 A BackgroundJobServer can have multiple server tags and a job can specify only one server tag via the Job annotation.</description>
     </item>
     
     <item>
       <title>Standard End-user License Agreement</title>
-      <link>https://www.jobrunr.io/en/licensing/standard-eula/</link>
+      <link>https://jobrunr.github.io/en/licensing/standard-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/licensing/standard-eula/</guid>
+      <guid>https://jobrunr.github.io/en/licensing/standard-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     
     <item>
       <title>Transaction plugin</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/transactions/</link>
+      <link>https://jobrunr.github.io/en/documentation/pro/transactions/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/transactions/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/pro/transactions/</guid>
       <description>Try JobRunr Pro for free!   The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.
  @Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler;  @Transactional public void createUserAndSendWelcomeEmail(User user) {  userRepositoy.save(user);  jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); }  Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.</description>
     </item>
     
     <item>
       <title>JobRunr, Project Loom and Virtual Threads</title>
-      <link>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</link>
       <pubDate>Mon, 17 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</guid>
       <description>After integrating the Virtual Threads of Project Loom, it&amp;rsquo;s time for a showdown between Java 11, Java 16 without Virtual Threads and Java 16 with Virtual Threads.</description>
     </item>
     
     <item>
       <title>v0.9.12 &amp; 0.9.13 - DB2 and GraalVM native</title>
-      <link>https://www.jobrunr.io/en/blog/2020-07-23-v09-13/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-07-23-v09-13/</link>
       <pubDate>Thu, 23 Jul 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-07-23-v09-13/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-07-23-v09-13/</guid>
       <description>Run your background jobs at warp speed thanks to GraalVM native mode.</description>
     </item>
     
     <item>
       <title>JobRunr is joining the OpenJDK Quality Outreach program</title>
-      <link>https://www.jobrunr.io/en/blog/2020-06-25-openjdk-quality-outreach/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-06-25-openjdk-quality-outreach/</link>
       <pubDate>Thu, 25 Jun 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-06-25-openjdk-quality-outreach/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-06-25-openjdk-quality-outreach/</guid>
       <description>We make sure JobRunr will run on all future JVM&amp;rsquo;s to come</description>
     </item>
     
     <item>
       <title>v0.9.10 &amp; v0.9.11 - Quarkus &amp; MicroProfile support</title>
-      <link>https://www.jobrunr.io/en/blog/2020-06-18-v09-11/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-06-18-v09-11/</link>
       <pubDate>Thu, 18 Jun 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-06-18-v09-11/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-06-18-v09-11/</guid>
       <description>JobRunr now supports MicroProfile and Quarkus using Json-B</description>
     </item>
     
     <item>
       <title>v0.9.9 - Usability and performance improvements</title>
-      <link>https://www.jobrunr.io/en/blog/2020-06-13-v09-9/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-06-13-v09-9/</link>
       <pubDate>Sat, 13 Jun 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-06-13-v09-9/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-06-13-v09-9/</guid>
       <description>A 10 to 15% performance increase and live updates in the dashboard</description>
     </item>
     
     <item>
       <title>Testing JobRunr against 12 different JVM&#39;s</title>
-      <link>https://www.jobrunr.io/en/blog/2020-06-01-testing-against-12-jvms/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-06-01-testing-against-12-jvms/</link>
       <pubDate>Mon, 01 Jun 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-06-01-testing-against-12-jvms/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-06-01-testing-against-12-jvms/</guid>
       <description>A hands-on tutorial on how JobRunr is tested against 12 different JVM&amp;rsquo;s using TestContainers.</description>
     </item>
     
     <item>
       <title>v0.9.7 &amp; v0.9.8 - Bugfixes, extra databases and JMX integration</title>
-      <link>https://www.jobrunr.io/en/blog/2020-05-28-v09-8/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-05-28-v09-8/</link>
       <pubDate>Thu, 28 May 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-05-28-v09-8/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-05-28-v09-8/</guid>
       <description>An overview of the new features in these incremental releases</description>
     </item>
     
     <item>
       <title>JobRunr ♥ Kubernetes ♥ Terraform</title>
-      <link>https://www.jobrunr.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</link>
       <pubDate>Wed, 06 May 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</guid>
       <description>Learn how to scale JobRunr to have a whopping 869% speed increase</description>
     </item>
     
     <item>
       <title>Background job dependencies</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/</guid>
       <description>TLDR; If you are using either the JobRunr Spring Boot Starter, Micronaut Integration or Quarkus Extension, you can just have beans or services injected into your background job (e.g. the service class that you are calling) and JobRequestHandler.
 A long, long time ago&amp;hellip; There was a background job that needed a certain dependency to fulfill it&amp;rsquo;s work&amp;hellip;
 In almost every job you’ll want to use other classes of your application to perform different work and keep your code clean and simple.</description>
@@ -676,10 +676,10 @@ In almost every job you’ll want to use other classes of your application to pe
     
     <item>
       <title>Best practices</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/best-practices/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/best-practices/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/best-practices/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/best-practices/</guid>
       <description>Make job arguments small and simple Method invocations (i.e. a job) are serialized during the creation process of the background job. Arguments are converted into Json strings using the JobMapper class. If you have complex entities and/or large objects; including arrays, it is better to place them into a database, and then pass only their identities to the background job.
 So, instead of doing this:
 public void backgroundMethod(Entity entity) { } Consider doing this:</description>
@@ -687,10 +687,10 @@ public void backgroundMethod(Entity entity) { } Consider doing this:</descriptio
     
     <item>
       <title>Credits</title>
-      <link>https://www.jobrunr.io/en/documentation/5-minute-intro/credits/</link>
+      <link>https://jobrunr.github.io/en/documentation/5-minute-intro/credits/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/5-minute-intro/credits/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/5-minute-intro/credits/</guid>
       <description>Hangfire by Sergey Odinokov JobRunr is a port of Hangfire in .NET to Java and could not have exist without Hangfire being a great example.
 License: LGPL v3
 ASM ASM is used to read the byte code of the provided lambda and find the correct class method and arguments of the job to process in the background. These are then serialized to Json and stored in a StorageProvider.
@@ -699,10 +699,10 @@ License: BSD</description>
     
     <item>
       <title>Dashboard</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/dashboard/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/dashboard/</guid>
       <description>JobRunr includes a built-in dashboard which gives helpful insights into your background job methods. The dashboard allows you to see and control any aspect of background job processing - you have a detailed view on any exception that occurred and you can see the complete background job history.
 By default, it is available on the following url: http://localhost:8000. Off-course, this is configurable:
 Using fluent configuration
@@ -711,20 +711,20 @@ Using fluent configuration
     
     <item>
       <title>Dealing with exceptions</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/</guid>
       <description>Bad things happen. Any method can throw different types of exceptions. These exceptions can be caused either by programming errors that require you to re-deploy the application, or transient errors, that can be fixed without additional deployment.
 JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with increasing delay modifier.</description>
     </item>
     
     <item>
       <title>Logging &amp; job progress</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/logging-progress/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/logging-progress/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/logging-progress/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/logging-progress/</guid>
       <description>Some jobs take a very long time to complete - generating 1000&amp;rsquo;s of emails, do a batch import of some large xml or CSV files, &amp;hellip; . How to know whether your code is actually running and doing it&amp;rsquo;s actual job (pun intended)?
 Say hello to job logging and the job progress bar.
  Watch logging appear live from your actual job  Logging JobRunr supports logging to the dashboard - new messages will appear as they&amp;rsquo;re logged, it is as if you&amp;rsquo;re looking at a real console.</description>
@@ -732,10 +732,10 @@ Say hello to job logging and the job progress bar.
     
     <item>
       <title>Passing arguments</title>
-      <link>https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/</link>
+      <link>https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/</guid>
+      <guid>https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/</guid>
       <description>JobRunr supports the passing of arguments to background jobs, both for jobs being created with Java 8 lambda&amp;rsquo;s and for jobs being created with the JobRequest interface.
 Since these arguments are serialized, consider their values carefully as they can blow up your StorageProvider. Most of the time it is more efficient to store concrete values in an application database and pass only their identifiers to your background jobs.
 Remember that background jobs may be processed days or weeks after they were enqueued.</description>
@@ -743,37 +743,37 @@ Remember that background jobs may be processed days or weeks after they were enq
     
     <item>
       <title>Easily process long-running jobs with JobRunr</title>
-      <link>https://www.jobrunr.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</link>
       <pubDate>Thu, 23 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</guid>
       <description>A tutorial on how to use JobRunr, Spring Data JPA and Docx-Stamper to generate the salary slips for all employees of Acme Corp</description>
     </item>
     
     <item>
       <title>v0.9.0 - Dashboard improvements and Redis support!</title>
-      <link>https://www.jobrunr.io/en/blog/2020-04-20-v09-0/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-04-20-v09-0/</link>
       <pubDate>Mon, 20 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-04-20-v09-0/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-04-20-v09-0/</guid>
       <description>Time for a new release and we have some great new treats for you! A lot of time was spend improving the dashboard and we also have Redis support.</description>
     </item>
     
     <item>
       <title>Java batch processing made easy...</title>
-      <link>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</link>
+      <link>https://jobrunr.github.io/en/blog/2020-04-08-jobrunr-release/</link>
       <pubDate>Wed, 08 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</guid>
+      <guid>https://jobrunr.github.io/en/blog/2020-04-08-jobrunr-release/</guid>
       <description>The birth of JobRunr - easy process long-running jobs!</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/licensing/third-party/</link>
+      <link>https://jobrunr.github.io/en/licensing/third-party/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
+      <guid>https://jobrunr.github.io/en/licensing/third-party/</guid>
       <description></description>
     </item>
     

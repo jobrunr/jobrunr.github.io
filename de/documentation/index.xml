@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation on JobRunr</title>
-    <link>https://www.jobrunr.io/de/documentation/</link>
+    <link>https://jobrunr.github.io/de/documentation/</link>
     <description>Recent content in Documentation on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/de/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/de/documentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Häufig gestellte Fragen</title>
-      <link>https://www.jobrunr.io/de/documentation/faq/</link>
+      <link>https://jobrunr.github.io/de/documentation/faq/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/faq/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/faq/</guid>
       <description>BackgroundJobServer FAQ Benötigt JobRunr offene Ports zum Verteilen von Jobs? Nein, JobRunr benötigt keinen offenen Port zum Verteilen der Workload - dies wird über den StorageProvider koordiniert.
 Wie erfolgt die Koordination zwischen verschiedenen Knoten? Jeder BackgroundJobServer registriert sich beim Start im StorageProvider. Für ein RDBMS ist dies eine einfache alte Tabelle mit dem Namen jobrunr_backgroundjobservers. Der Master ist der Server, der am längsten läuft (also derjenige, der als erster Node registriert wurde).</description>
     </item>

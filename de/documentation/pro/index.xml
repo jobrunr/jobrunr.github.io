@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JobRunr Pro on JobRunr</title>
-    <link>https://www.jobrunr.io/de/documentation/pro/</link>
+    <link>https://jobrunr.github.io/de/documentation/pro/</link>
     <description>Recent content in JobRunr Pro on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/de/documentation/pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/de/documentation/pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Batch-Jobs</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/batches/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/batches/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/batches/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/batches/</guid>
       <description>Mit Batch-Jobs können Sie eine Reihe von Hintergrundjobs atomar erstellen. Dies bedeutet, dass keine Ausnahme verarbeitet wird, wenn beim Erstellen von Hintergrundjobs eine Ausnahme aufgetreten ist. Stellen Sie sich vor, Sie möchten 1000 E-Mails an Ihre Kunden senden, und diese möchten diese E-Mails wirklich erhalten. Hier ist der alte Weg:
 public class NewsletterService {   @Inject  private UserRepository userRepository;   public void sendEmailsToAllSubscribers() {  List&amp;lt;User&amp;gt; users = userRepository.</description>
     </item>
     
     <item>
       <title>Job Chaining</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/job-chaining/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/job-chaining/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/job-chaining/</guid>
       <description>Mit JobRunr Pro können Sie Jobs mithilfe eines fließenden API-Stils verketten. Dies gibt Ihnen einen sofortigen Überblick über Ihren Geschäftsprozess.
  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  Die Benachrichtigung wird erst gesendet, wenn das Archiv erfolgreich erstellt wurde (und somit der Auftrag &amp;ldquo;archiveService.</description>
     </item>
     
     <item>
       <title>Mutexe</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/mutexes/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/mutexes/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/mutexes/</guid>
       <description>Ein Mutex schließt sich gegenseitig aus. Es fungiert als Gate Keeper für eine Ressource, die es nur einem Job ermöglicht, sie zu verwenden, und verschiebt alle anderen Jobs, die denselben &amp;ldquo;Mutex&amp;rdquo; verwenden, kostenlos.
 Verwendung Die Verwendung eines Mutex ist dank der Annotation @Job genauso einfach wie die Verwendung von Warteschlangen und Server-Tags. Fügen Sie es einfach Ihrer Servicemethode hinzu und geben Sie den zu verwendenden Mutex an
  @Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() {  System.</description>
@@ -40,10 +40,10 @@ Verwendung Die Verwendung eines Mutex ist dank der Annotation @Job genauso einfa
     
     <item>
       <title>Server Tags</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/server-tags/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/server-tags/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/server-tags/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/server-tags/</guid>
       <description>Haben Sie einige Jobs, die nur auf bestimmten Servern ausgeführt werden können (z. B. Jobs, die an ein bestimmtes Betriebssystem wie Linux, Max und Windows gebunden sind)? JobRunr hat Sie mit Server-Tags abgedeckt!
 Ein BackgroundJobServer kann mehrere Server-Tags haben und ein Job kann nur ein Server-Tag über die Job-Annotation angeben. Wenn das Server-Tag des Jobs mit einem der Server-Tags des Servers übereinstimmt, kann der Server den Job ausführen.
  Jeder BackgroundJobServer und jeder Job ist standardmäßig mit dem DEFAULT -Tag gekennzeichnet.</description>
@@ -51,10 +51,10 @@ Ein BackgroundJobServer kann mehrere Server-Tags haben und ein Job kann nur ein 
     
     <item>
       <title>Warteschlangen</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/queues/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/queues/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/queues/</guid>
       <description>Verarbeiten Sie Millionen von Jobs? Haben Sie einige High-Prio-Jobs, die schnell erledigt werden müssen? Verwenden Sie JobRunr-Warteschlangen, um sicherzustellen, dass kritische Jobs vor bereits in die Warteschlange gestellten Jobs geschnitten werden.
 Verwendung Die Verwendung von Warteschlangen hätte dank der Annotation &amp;ldquo;Job&amp;rdquo; nicht einfacher sein können. Fügen Sie es einfach Ihrer Servicemethode hinzu und geben Sie an, in welcher Warteschlange Sie es ausführen möchten.
 public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>

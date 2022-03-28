@@ -22,682 +22,682 @@
   
   
   <url>
-    <loc>https://www.jobrunr.io/en/try-jobrunr-pro/</loc>
+    <loc>https://jobrunr.github.io/en/try-jobrunr-pro/</loc>
     <lastmod>2022-03-15T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/</loc>
+    <loc>https://jobrunr.github.io/en/</loc>
     <lastmod>2022-03-15T08:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/"
+                href="https://jobrunr.github.io/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/"
+                href="https://jobrunr.github.io/en/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2022-03-15-jobrunr-v5.0.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2022-03-15-jobrunr-v5.0.0/</loc>
     <lastmod>2022-03-15T08:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-09-08-jobrunr-v4.0.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-09-08-jobrunr-v4.0.0/</loc>
     <lastmod>2021-09-14T08:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/configuration/micronaut/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/configuration/micronaut/</loc>
     <lastmod>2021-08-24T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/configuration/quarkus/</loc>
-    <lastmod>2021-08-24T11:12:23+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/configuration/quarkus/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/configuration/quarkus/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/documentation/configuration/spring/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/configuration/quarkus/</loc>
     <lastmod>2021-08-24T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/configuration/spring/"
+                href="https://jobrunr.github.io/de/documentation/configuration/quarkus/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/configuration/spring/"
+                href="https://jobrunr.github.io/en/documentation/configuration/quarkus/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/configuration/spring/</loc>
+    <lastmod>2021-08-24T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://jobrunr.github.io/de/documentation/configuration/spring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jobrunr.github.io/en/documentation/configuration/spring/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://jobrunr.github.io/en/blog/2021-08-03-license-sold/</loc>
     <lastmod>2021-08-03T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-07-12-jobrunr-pro-v3.4.0/</loc>
     <lastmod>2021-07-12T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-07-04-jobrunr-v3.2.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-07-04-jobrunr-v3.2.0/</loc>
     <lastmod>2021-07-04T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-06-24-jobrunr-pro-v3.2.0/</loc>
     <lastmod>2021-06-24T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/custom-delete-policy/</loc>
     <lastmod>2021-06-24T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-06-12-v3.1.2/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-06-12-v3.1.2/</loc>
     <lastmod>2021-06-12T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-05-26-v3.0.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-05-26-v3.0.0/</loc>
     <lastmod>2021-05-26T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-04-26-v2.0.0/</loc>
     <lastmod>2021-04-26T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2021-02-07-v1.3/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2021-02-07-v1.3/</loc>
     <lastmod>2021-02-07T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-11-18-license-sold/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-11-18-license-sold/</loc>
     <lastmod>2020-11-18T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-11-01-v1.2/</loc>
     <lastmod>2020-11-01T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-10-21-v1.1/</loc>
     <lastmod>2020-10-21T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/deleting-jobs/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/deleting-jobs/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</loc>
-    <lastmod>2020-09-16T11:12:23+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/enqueueing-jobs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/documentation/configuration/fluent/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/configuration/fluent/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/enqueueing-jobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/configuration/fluent/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/enqueueing-jobs/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/faq/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/configuration/fluent/</loc>
+    <lastmod>2020-09-16T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://jobrunr.github.io/de/documentation/configuration/fluent/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jobrunr.github.io/en/documentation/configuration/fluent/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://jobrunr.github.io/en/documentation/faq/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/faq/"
+                href="https://jobrunr.github.io/de/documentation/faq/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/faq/"
+                href="https://jobrunr.github.io/en/documentation/faq/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/results/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/results/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/alternatives/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/alternatives/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.1</priority>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/recurring-jobs/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/recurring-jobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/recurring-jobs/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/replace-jobs/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/</loc>
     <lastmod>2020-09-16T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/scheduling-jobs/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/scheduling-jobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/scheduling-jobs/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-09-24-jobrunr-v1.0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-09-24-jobrunr-v1.0/</loc>
     <lastmod>2020-09-09T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-09-09-v09-17/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-09-09-v09-17/</loc>
     <lastmod>2020-09-09T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/contact/</loc>
+    <loc>https://jobrunr.github.io/en/contact/</loc>
     <lastmod>2020-09-04T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/download-whitepaper/</loc>
+    <loc>https://jobrunr.github.io/en/download-whitepaper/</loc>
     <lastmod>2020-09-04T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-09-04-my-own-product/</loc>
     <lastmod>2020-09-04T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-08-13-v09-15/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-08-13-v09-15/</loc>
     <lastmod>2020-09-03T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/about/</loc>
+    <loc>https://jobrunr.github.io/en/about/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/about/"
+                href="https://jobrunr.github.io/de/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/about/"
+                href="https://jobrunr.github.io/en/about/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/batches/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/batches/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/batches/"
+                href="https://jobrunr.github.io/de/documentation/pro/batches/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/batches/"
+                href="https://jobrunr.github.io/en/documentation/pro/batches/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/job-chaining/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/job-chaining/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/job-chaining/"
+                href="https://jobrunr.github.io/de/documentation/pro/job-chaining/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/job-chaining/"
+                href="https://jobrunr.github.io/en/documentation/pro/job-chaining/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/job-filters/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/job-filters/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/migrations/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/migrations/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/pricing/</loc>
+    <loc>https://jobrunr.github.io/en/pricing/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/pricing/"
+                href="https://jobrunr.github.io/de/pricing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/pricing/"
+                href="https://jobrunr.github.io/en/pricing/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/jobrunr-pro-dashboard/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/licensing/</loc>
+    <loc>https://jobrunr.github.io/en/licensing/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/mutexes/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/mutexes/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/mutexes/"
+                href="https://jobrunr.github.io/de/documentation/pro/mutexes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/mutexes/"
+                href="https://jobrunr.github.io/en/documentation/pro/mutexes/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/queues/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/queues/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/queues/"
+                href="https://jobrunr.github.io/de/documentation/pro/queues/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/queues/"
+                href="https://jobrunr.github.io/en/documentation/pro/queues/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/licensing/royalty-free-eula/</loc>
+    <loc>https://jobrunr.github.io/en/licensing/royalty-free-eula/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/server-tags/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/server-tags/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/server-tags/"
+                href="https://jobrunr.github.io/de/documentation/pro/server-tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/server-tags/"
+                href="https://jobrunr.github.io/en/documentation/pro/server-tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/licensing/standard-eula/</loc>
+    <loc>https://jobrunr.github.io/en/licensing/standard-eula/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/transactions/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/transactions/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</loc>
     <lastmod>2020-08-17T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-07-23-v09-13/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-07-23-v09-13/</loc>
     <lastmod>2020-07-23T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-06-25-openjdk-quality-outreach/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-06-25-openjdk-quality-outreach/</loc>
     <lastmod>2020-06-25T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-06-18-v09-11/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-06-18-v09-11/</loc>
     <lastmod>2020-06-18T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-06-13-v09-9/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-06-13-v09-9/</loc>
     <lastmod>2020-06-13T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-06-01-testing-against-12-jvms/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-06-01-testing-against-12-jvms/</loc>
     <lastmod>2020-06-01T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-05-28-v09-8/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-05-28-v09-8/</loc>
     <lastmod>2020-05-28T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</loc>
     <lastmod>2020-05-06T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/5-minute-intro/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/5-minute-intro/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/5-minute-intro/"
+                href="https://jobrunr.github.io/de/documentation/5-minute-intro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/5-minute-intro/"
+                href="https://jobrunr.github.io/en/documentation/5-minute-intro/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/background-jobs-dependencies/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/background-jobs-dependencies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/background-jobs-dependencies/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/best-practices/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/best-practices/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/best-practices/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/best-practices/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/best-practices/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/best-practices/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/</loc>
+    <loc>https://jobrunr.github.io/en/blog/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/configuration/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/configuration/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/configuration/"
+                href="https://jobrunr.github.io/de/documentation/configuration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/configuration/"
+                href="https://jobrunr.github.io/en/documentation/configuration/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/5-minute-intro/credits/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/5-minute-intro/credits/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/5-minute-intro/credits/"
+                href="https://jobrunr.github.io/de/documentation/5-minute-intro/credits/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/5-minute-intro/credits/"
+                href="https://jobrunr.github.io/en/documentation/5-minute-intro/credits/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/dashboard/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/dealing-with-exceptions/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/dealing-with-exceptions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/dealing-with-exceptions/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/"
+                href="https://jobrunr.github.io/de/documentation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/"
+                href="https://jobrunr.github.io/en/documentation/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/installation/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/installation/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/installation/"
+                href="https://jobrunr.github.io/de/documentation/installation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/installation/"
+                href="https://jobrunr.github.io/en/documentation/installation/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/pro/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/pro/"
+                href="https://jobrunr.github.io/de/documentation/pro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/pro/"
+                href="https://jobrunr.github.io/en/documentation/pro/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/logging-progress/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/logging-progress/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/logging-progress/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/logging-progress/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/logging-progress/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/logging-progress/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/background-methods/passing-arguments/"
+                href="https://jobrunr.github.io/de/documentation/background-methods/passing-arguments/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/background-methods/passing-arguments/"
+                href="https://jobrunr.github.io/en/documentation/background-methods/passing-arguments/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/installation/storage/</loc>
+    <loc>https://jobrunr.github.io/en/documentation/installation/storage/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/documentation/installation/storage/"
+                href="https://jobrunr.github.io/de/documentation/installation/storage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/documentation/installation/storage/"
+                href="https://jobrunr.github.io/en/documentation/installation/storage/"
                 />
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</loc>
     <lastmod>2020-04-23T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-04-20-v09-0/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-04-20-v09-0/</loc>
     <lastmod>2020-04-20T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</loc>
+    <loc>https://jobrunr.github.io/en/blog/2020-04-08-jobrunr-release/</loc>
     <lastmod>2020-04-08T11:12:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/licensing/third-party/</loc>
+    <loc>https://jobrunr.github.io/en/licensing/third-party/</loc>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/homepage/</loc>
+    <loc>https://jobrunr.github.io/en/homepage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://www.jobrunr.io/de/homepage/"
+                href="https://jobrunr.github.io/de/homepage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/homepage/"
+                href="https://jobrunr.github.io/en/homepage/"
                 />
   </url>
   

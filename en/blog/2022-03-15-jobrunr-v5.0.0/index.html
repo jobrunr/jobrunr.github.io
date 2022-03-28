@@ -44,7 +44,7 @@ if (!doNotTrack) {
 
     
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image" content="https://jobrunr.github.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
     <meta name="twitter:title" content="JobRunr &amp; JobRunr Pro v5.0.0" />
     <meta name="twitter:description" content="New features and improvements to make your job scheduling life even easier!" />
@@ -54,7 +54,7 @@ if (!doNotTrack) {
     <meta property="og:title" content="JobRunr &amp; JobRunr Pro v5.0.0" />
 <meta property="og:description" content="New features and improvements to make your job scheduling life even easier!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.jobrunr.io/en/blog/2022-03-15-jobrunr-v5.0.0/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://jobrunr.github.io/en/blog/2022-03-15-jobrunr-v5.0.0/" /><meta property="og:image" content="https://jobrunr.github.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-03-15T08:00:00+02:00" />
 <meta property="article:modified_time" content="2022-03-15T08:00:00+02:00" />
 
@@ -63,8 +63,8 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.d3c8817355823d3ef8be81a95dc4872afe248c0196ea58f5645915fa773325ff.css" integrity="sha256-08iBc1WCPT74voGpXcSHKv4kjAGW6lj1ZFkV&#43;nczJf8=" media="screen">
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.bd3f9a99bf0e0f8300f9e46c85748d00e8675f1d2f18fe79254d76d1cb3cce5d.css" integrity="sha256-vT&#43;amb8OD4MA&#43;eRshXSNAOhnXx0vGP55JU120cs8zl0=" media="screen">
+    <link rel="stylesheet" href="https://jobrunr.github.io/scss/custom.min.d3c8817355823d3ef8be81a95dc4872afe248c0196ea58f5645915fa773325ff.css" integrity="sha256-08iBc1WCPT74voGpXcSHKv4kjAGW6lj1ZFkV&#43;nczJf8=" media="screen">
+    <link rel="stylesheet" href="https://jobrunr.github.io/scss/screen.min.bd3f9a99bf0e0f8300f9e46c85748d00e8675f1d2f18fe79254d76d1cb3cce5d.css" integrity="sha256-vT&#43;amb8OD4MA&#43;eRshXSNAOhnXx0vGP55JU120cs8zl0=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
@@ -77,7 +77,7 @@ if (!doNotTrack) {
     <div class="inner"><nav id="site-nav" class="site-nav">
     <div class="site-nav-left">
         
-        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" /></a>
+        <a class="site-nav-logo" href="https://jobrunr.github.io/en/"><img src="https://jobrunr.github.io/images/jobrunr-logo-white.webp" alt="JobRunr" /></a>
         
         <div class="site-nav-content">
             <ul class="nav" role="menu">
@@ -220,24 +220,24 @@ if (!doNotTrack) {
 <li><strong>Spring Native support</strong>: Thanks to <a href="https://github.com/joshlong">@JoshLong</a>, JobRunr now out-of-the-box supports Spring Native! Use the dependency <code>jobrunr-spring-boot-native</code> and your app will launch in milliseconds. Stay tuned for a dedicated blog post on how to use JobRunr together with Spring Native.</li>
 <li><strong>Scheduled jobs with repeating interval</strong>: since JobRunr 5.0.0, you can now schedule recurring jobs using an interval. This means you can now also schedule recurring jobs as follows: <code>BackgroundJob.scheduleRecurringly(&quot;my-recurring-job&quot;, Duration.parse(&quot;PT5D&quot;), () -&gt; service.doWork());</code>
 Thank you <a href="https://github.com/daniela-tumbraegel">@Daniela</a>!</li>
-<li><strong>MDC support</strong>: this release introduces support for the <a href="https://www.baeldung.com/mdc-in-log4j-2-logback">Mapped Diagnostics Context</a> of SLF4J. If you have a correlation id available and you log something in your job, this correlation id will still be available. You can even use any value of the MDC context in the <a href="https://www.jobrunr.io/en/documentation/background-methods/logging-progress/">display name</a>.</li>
+<li><strong>MDC support</strong>: this release introduces support for the <a href="https://www.baeldung.com/mdc-in-log4j-2-logback">Mapped Diagnostics Context</a> of SLF4J. If you have a correlation id available and you log something in your job, this correlation id will still be available. You can even use any value of the MDC context in the <a href="https://jobrunr.github.io/en/documentation/background-methods/logging-progress/">display name</a>.</li>
 <li><strong>Cron extended with last day of month</strong>: Need to run some jobs on the last day of the month? This is now possible thanks to <a href="https://github.com/asahaf/">@asahaf</a> as the JobRunr Cron expression parser now supports last-day-of-week and last-day-of-month syntax.</li>
-<li><strong>Default Number of Retries</strong>: You can now easily change the default number of retries via the JobRunr <a href="https://www.jobrunr.io/en/documentation/configuration/spring/#advanced-configuration">Spring Boot Starter</a>, the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/#advanced-configuration">Micronaut integration</a> and the <a href="https://www.jobrunr.io/en/documentation/configuration/quarkus/#advanced-configuration">Quarkus Extension</a> configuration.</li>
-<li><strong>Easier integration with multiple databases</strong>: Are you running the JobRunr <a href="https://www.jobrunr.io/en/documentation/configuration/spring/#advanced-configuration">Spring Boot Starter</a>, the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/#advanced-configuration">Micronaut integration</a> or the <a href="https://www.jobrunr.io/en/documentation/configuration/quarkus/#advanced-configuration">Quarkus Extension</a> and do you have multiple databases available in your application (e.g. an SQL database and a Mongo DB or ElasticSearch instance)? As of JobRunr 5.0.0, you can specify which database to use in this case thanks to the extended configuration. Just specify the database <code>type</code> and JobRunr will select that database.</li>
-<li><strong>MicroMeter integration</strong>: This release also adds support for MicroMeter in the JobRunr <a href="https://www.jobrunr.io/en/documentation/configuration/fluent/#advanced-configuration">Fluent Api configuration</a>.</li>
+<li><strong>Default Number of Retries</strong>: You can now easily change the default number of retries via the JobRunr <a href="https://jobrunr.github.io/en/documentation/configuration/spring/#advanced-configuration">Spring Boot Starter</a>, the <a href="https://jobrunr.github.io/en/documentation/configuration/micronaut/#advanced-configuration">Micronaut integration</a> and the <a href="https://jobrunr.github.io/en/documentation/configuration/quarkus/#advanced-configuration">Quarkus Extension</a> configuration.</li>
+<li><strong>Easier integration with multiple databases</strong>: Are you running the JobRunr <a href="https://jobrunr.github.io/en/documentation/configuration/spring/#advanced-configuration">Spring Boot Starter</a>, the <a href="https://jobrunr.github.io/en/documentation/configuration/micronaut/#advanced-configuration">Micronaut integration</a> or the <a href="https://jobrunr.github.io/en/documentation/configuration/quarkus/#advanced-configuration">Quarkus Extension</a> and do you have multiple databases available in your application (e.g. an SQL database and a Mongo DB or ElasticSearch instance)? As of JobRunr 5.0.0, you can specify which database to use in this case thanks to the extended configuration. Just specify the database <code>type</code> and JobRunr will select that database.</li>
+<li><strong>MicroMeter integration</strong>: This release also adds support for MicroMeter in the JobRunr <a href="https://jobrunr.github.io/en/documentation/configuration/fluent/#advanced-configuration">Fluent Api configuration</a>.</li>
 <li><strong>Performance improvement</strong>: Before JobRunr 5.0.0, all the recurring jobs were constantly reloaded from the StorageProvider when JobRunr checked for new work. This is now cached and only reloaded when the number of jobs changes (e.g. a delete happens).</li>
 <li><strong>Dashboard ✋ Google</strong>: I noticed that there were some JobRunr dashboards publicly available and indexed by Google. As of now, the JobRunr dashboard has a <code>noIndex</code> and <code>noFollow</code> meta tag so that your jobs stay private.</li>
 </ul>
 <h3 id="new-features-in-jobrunr-pro">New features in JobRunr Pro</h3>
 <p>JobRunr Pro also received a lot of new features!</p>
 <ul>
-<li><strong>Transaction plugin:</strong> are you running the JobRunr <a href="https://www.jobrunr.io/en/documentation/configuration/spring/">Spring Boot Starter</a>, the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/">Micronaut integration</a>? Then as of v5.0.0, JobRunr out-of-the-box participates in the <a href="https://www.jobrunr.io/en/documentation/pro/transactions/">transactions</a> created by these frameworks.</li>
+<li><strong>Transaction plugin:</strong> are you running the JobRunr <a href="https://jobrunr.github.io/en/documentation/configuration/spring/">Spring Boot Starter</a>, the <a href="https://jobrunr.github.io/en/documentation/configuration/micronaut/">Micronaut integration</a>? Then as of v5.0.0, JobRunr out-of-the-box participates in the <a href="https://jobrunr.github.io/en/documentation/pro/transactions/">transactions</a> created by these frameworks.</li>
 <li><strong>Instant processing:</strong> JobRunr Pro adds some magic and now comes with instant processing of jobs. Just enqueue a job and processing will instantly begin - no need to wait for the <code>pollInterval</code>.</li>
-<li><strong>Easy JobFilters:</strong> JobRunr has the concept of <code>JobFilters</code> to easily extend the functionality of JobRunr. In JobRunr Pro, this <a href="https://www.jobrunr.io/en/documentation/pro/job-filters/">becomes even easier</a> as any Spring / Micronaut / Quarkus bean that implements the <code>JobClientFilter</code> or <code>JobServerFilter</code> will automatically be registered in JobRunr.</li>
+<li><strong>Easy JobFilters:</strong> JobRunr has the concept of <code>JobFilters</code> to easily extend the functionality of JobRunr. In JobRunr Pro, this <a href="https://jobrunr.github.io/en/documentation/pro/job-filters/">becomes even easier</a> as any Spring / Micronaut / Quarkus bean that implements the <code>JobClientFilter</code> or <code>JobServerFilter</code> will automatically be registered in JobRunr.</li>
 <li><strong>Improved serverTags:</strong> JobRunr Pro uses <code>ServerTags</code> to specify on which server a <code>Job</code> can run. From now on, you can even limit to run a job on the same server that scheduled it using the annotation <code>@Job(runOnServerWithTag =  &quot;%CURRENT_SERVER&quot;)</code></li>
-<li><strong>enqueueOrReplace and scheduleOrReplace:</strong> are you creating jobs with your own UUID? By default, JobRunr ignores any new job that is enqueued or scheduled if it was already created before as it allows to process jobs in a <a href="https://www.jobrunr.io/en/documentation/faq/#im-listening-for-jobs-using-service-bus-messages-in-a-load-balanced-environment-and-i-want-to-schedule-jobs-only-once">cluster only once</a>. But do you need to replace that job for some reason? Using the new <code>enqueueOrReplace</code> and <code>scheduleOrReplace</code> methods it is now possible to <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">update existing jobs</a> at any point in the lifecycle of that job.</li>
-<li><strong>Job Results:</strong> do you want to return the result from your job to a client? JobRunr Pro now captures the result of a job, serializes it to JSON and saves it to the database. Using the JobScheduler, you can then <a href="https://www.jobrunr.io/en/documentation/pro/results/">query for the result of a job</a>. It comes with a smart query algorithm that takes into account average processing time of that type of job and it makes sure that you don&rsquo;t overload the database if you for example have clients querying for the result in a while loop.</li>
-<li><strong>Dashboard improvements:</strong> the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro dashboard</a> has improved a lot! You can now requeue or delete all failed jobs at once. A real time-saver.</li>
+<li><strong>enqueueOrReplace and scheduleOrReplace:</strong> are you creating jobs with your own UUID? By default, JobRunr ignores any new job that is enqueued or scheduled if it was already created before as it allows to process jobs in a <a href="https://jobrunr.github.io/en/documentation/faq/#im-listening-for-jobs-using-service-bus-messages-in-a-load-balanced-environment-and-i-want-to-schedule-jobs-only-once">cluster only once</a>. But do you need to replace that job for some reason? Using the new <code>enqueueOrReplace</code> and <code>scheduleOrReplace</code> methods it is now possible to <a href="https://jobrunr.github.io/en/documentation/pro/replace-jobs/">update existing jobs</a> at any point in the lifecycle of that job.</li>
+<li><strong>Job Results:</strong> do you want to return the result from your job to a client? JobRunr Pro now captures the result of a job, serializes it to JSON and saves it to the database. Using the JobScheduler, you can then <a href="https://jobrunr.github.io/en/documentation/pro/results/">query for the result of a job</a>. It comes with a smart query algorithm that takes into account average processing time of that type of job and it makes sure that you don&rsquo;t overload the database if you for example have clients querying for the result in a while loop.</li>
+<li><strong>Dashboard improvements:</strong> the <a href="https://jobrunr.github.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro dashboard</a> has improved a lot! You can now requeue or delete all failed jobs at once. A real time-saver.</li>
 </ul>
 <h3 id="breaking-changes">Breaking changes:</h3>
 <ul>
@@ -281,7 +281,7 @@ Thank you <a href="https://github.com/daniela-tumbraegel">@Daniela</a>!</li>
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright">
-                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                  &copy; <a href="https://jobrunr.github.io">JobRunr</a>
                 </section>
                 <section class="love" style="opacity: 0.7;">
                   Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
@@ -295,7 +295,7 @@ Thank you <a href="https://github.com/daniela-tumbraegel">@Daniela</a>!</li>
     </div>
 
     
-    <script src="https://www.jobrunr.io/js/jobrunr-version.js"></script>
+    <script src="https://jobrunr.github.io/js/jobrunr-version.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>

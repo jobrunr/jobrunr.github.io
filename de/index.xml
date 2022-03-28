@@ -2,231 +2,231 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on JobRunr</title>
-    <link>https://www.jobrunr.io/de/</link>
+    <link>https://jobrunr.github.io/de/</link>
     <description>Recent content in Home on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Sep 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://jobrunr.github.io/de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/de/homepage/quote-01/</link>
+      <link>https://jobrunr.github.io/de/homepage/quote-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/quote-01/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/quote-01/</guid>
       <description>Thanks for building JobRunr, I like it a lot! Before that I used similar libraries in Ruby and Golang and JobRunr so far is the most pleasant one to use. I especially like the dashboard, it’s awesome!</description>
     </item>
     
     <item>
       <title>Einfach</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-01/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-01/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-01/</guid>
       <description>Einfach einzurichten, einfach zu bedienen. Fügen Sie das Glas von Maven Central hinzu und erstellen Sie Jobs. Eine einfache Alternative für Spring Batch und Quartz Scheduler.
 Hintergrundjobs sind reguläre Java-Methoden mit regulären Argumenten - keine Implementierung von Superklassen oder Schnittstellen erforderlich.</description>
     </item>
     
     <item>
       <title>Fire-and-forget jobs</title>
-      <link>https://www.jobrunr.io/de/homepage/example-01/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-01/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-01/</guid>
       <description>Fire-and-Forget-Jobs werden nur einmal und fast unmittelbar nach der Erstellung ausgeführt.
 BackgroundJob.enqueue(  () -&amp;gt; System.out.println(&amp;#34;Simple!&amp;#34;)); </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/de/homepage/quote-02/</link>
+      <link>https://jobrunr.github.io/de/homepage/quote-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/quote-02/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/quote-02/</guid>
       <description>Just came across JobRunr on Github. Exactly what I have been looking for! Went through the source and completely inline with how software should be written. Simple, nicely architectured! Great job!</description>
     </item>
     
     <item>
       <title>Dauerhaft</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-02/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-02/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-02/</guid>
       <description>Hintergrundjobs werden in einem dauerhaften Speicher erstellt und unterstützen RDBMS wie MySQL / MariaDB, PostgreSQL, Oracle, DB2 und auch NoSQL-Datenbanken wie ElasticSearch, Redis und MongoDB.
 Sie können Ihre Anwendung sicher neu starten und JobRunr verwenden, ohne sich Gedanken über den Verlust von Jobs machen zu müssen.</description>
     </item>
     
     <item>
       <title>Geplante und verzögerte Jobs</title>
-      <link>https://www.jobrunr.io/de/homepage/example-02/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-02/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-02/</guid>
       <description>Geplante Jobs werden ebenfalls nur einmal ausgeführt, jedoch zum angegebenen Zeitpunkt ausgeführt.
 BackgroundJob.schedule(now().plusHours(5),  () -&amp;gt; System.out.println(&amp;#34;Reliable!&amp;#34;)); </description>
     </item>
     
     <item>
       <title>Transparant</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-03/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-03/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-03/</guid>
       <description>Dank der integrierten Weboberfläche haben Sie einen Überblick über alle Ihre Hintergrundjobs und können den Status jedes Jobs im Detail beobachten.
 Durch die sofort einsatzbereite Unterstützung gängiger Protokollierungsframeworks können Sie Fehler frühzeitig und ohne Konfiguration erkennen.</description>
     </item>
     
     <item>
       <title>Wiederkehrende Jobs</title>
-      <link>https://www.jobrunr.io/de/homepage/example-03/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-03/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-03/</guid>
       <description>Wiederkehrende Jobs werden jedes Mal nach dem angegebenen CRON-Zeitplan ausgelöst.
 BackgroundJob.scheduleRecurrently(Cron.daily(),  () -&amp;gt; service.doWork()); </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/de/homepage/quote-04/</link>
+      <link>https://jobrunr.github.io/de/homepage/quote-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/quote-04/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/quote-04/</guid>
       <description>Thanks for sharing. Very helping in a Kubernetes environment.</description>
     </item>
     
     <item>
       <title>Warteschlangen</title>
-      <link>https://www.jobrunr.io/de/homepage/example-04/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-04/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-04/</guid>
       <description>Geben Sie eine Warteschlange an, um alle bereits in die Warteschlange gestellten Jobs zu umgehen, damit Ihre kritischen Geschäftsprozesse pünktlich abgeschlossen werden.
 @Job(queue = HighPrioQueue) public void doWork() {  ... } </description>
     </item>
     
     <item>
       <title>Zuverlässig</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-04/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-04/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-04/</guid>
       <description>Sobald ein Hintergrundjob ausnahmslos erstellt wurde, übernimmt JobRunr die Verantwortung, ihn mindestens einmal zu verarbeiten.
 Es steht Ihnen frei, nicht behandelte Ausnahmen auszulösen oder Ihre Anwendung zu beenden - Hintergrundjobs werden automatisch erneut versucht.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/de/homepage/quote-05/</link>
+      <link>https://jobrunr.github.io/de/homepage/quote-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/quote-05/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/quote-05/</guid>
       <description>Omg&amp;hellip;. This being released like a year ago, would be great (for us). Instead, we are hitting a lot of walls trying to use Quartz to replace an old in-house job scheduler</description>
     </item>
     
     <item>
       <title>Batches &amp; Job Chaining</title>
-      <link>https://www.jobrunr.io/de/homepage/example-05/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-05/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-05/</guid>
       <description>Erstellen Sie mithilfe eines Stapels atomar eine Reihe von Hintergrundjobs und verketten Sie dann einen neuen Job, der ausgeführt wird, wenn der gesamte Stapel abgeschlossen ist.
  BackgroundJob  .startBatch(this::sendEmailToEachSubscriber)  .continueWith(() -&amp;gt; reportService.createReport(...))  .continueWith(() -&amp;gt; notifyService.notify(&amp;#34;sales-team&amp;#34;, ...)); </description>
     </item>
     
     <item>
       <title>Distributiert</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-05/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-05/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-05/</guid>
       <description>Hintergrundmethodenaufrufe und ihre Argumente werden in JSON serialisiert und können über JVM-Instanzen übertragen werden.
 Sie können JobRunr auf verschiedenen Computern verwenden, um ohne zusätzliche Konfiguration mehr Rechenleistung zu erhalten. Die Synchronisierung wird automatisch durchgeführt.</description>
     </item>
     
     <item>
       <title>Extensible</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-06/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-06/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-06/</guid>
       <description>Mit Jobfiltern können Sie der Hintergrundverarbeitung benutzerdefinierte Funktionen hinzufügen, ähnlich wie bei Servlet-Filtern.
 Der Zugriff auf den Jobspeicher ist vollständig abstrahiert und Sie können die Unterstützung für Ihren bevorzugten Speicher implementieren. Das Dashboard unterstützt auch Änderungen.</description>
     </item>
     
     <item>
       <title>Job chaining</title>
-      <link>https://www.jobrunr.io/de/homepage/example-06/</link>
+      <link>https://jobrunr.github.io/de/homepage/example-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/example-06/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/example-06/</guid>
       <description>Specify a queue to bypass all jobs already enqueued so your critical business processes finish on-time.
 BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;Folder archived: &amp;#34; + folder)) </description>
     </item>
     
     <item>
       <title>Effizient</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-07/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-07/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-07/</guid>
       <description>JobRunr nimmt gerade genug Jobs in den Speicher auf, um sie effizient zu verarbeiten, und sperrt keine anderen Jobs. Dies ermöglicht eine bestmögliche Verteilung der Aufträge.</description>
     </item>
     
     <item>
       <title>Selbsterhaltend</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-08/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-08/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-08/</guid>
       <description>Sie müssen keine manuelle Speicherbereinigung durchführen - JobRunr hält sie so sauber wie möglich und entfernt erfolgreiche Jobs automatisch.</description>
     </item>
     
     <item>
       <title>Open source</title>
-      <link>https://www.jobrunr.io/de/homepage/feature-09/</link>
+      <link>https://jobrunr.github.io/de/homepage/feature-09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jobrunr.io/de/homepage/feature-09/</guid>
+      <guid>https://jobrunr.github.io/de/homepage/feature-09/</guid>
       <description>JobRunr ist Open Source Software und für die kommerzielle Nutzung völlig kostenlos. Es ist unter LGPLv3-Lizenz lizenziert.
 Fork das Projekt und leiste Beiträge auf GitHub!</description>
     </item>
     
     <item>
       <title>Häufig gestellte Fragen</title>
-      <link>https://www.jobrunr.io/de/documentation/faq/</link>
+      <link>https://jobrunr.github.io/de/documentation/faq/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/faq/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/faq/</guid>
       <description>BackgroundJobServer FAQ Benötigt JobRunr offene Ports zum Verteilen von Jobs? Nein, JobRunr benötigt keinen offenen Port zum Verteilen der Workload - dies wird über den StorageProvider koordiniert.
 Wie erfolgt die Koordination zwischen verschiedenen Knoten? Jeder BackgroundJobServer registriert sich beim Start im StorageProvider. Für ein RDBMS ist dies eine einfache alte Tabelle mit dem Namen jobrunr_backgroundjobservers. Der Master ist der Server, der am längsten läuft (also derjenige, der als erster Node registriert wurde).</description>
     </item>
     
     <item>
       <title>Jobs in die Warteschlange stellen</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/enqueueing-jobs/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/enqueueing-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/enqueueing-jobs/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/enqueueing-jobs/</guid>
       <description>Wie Sie bereits aus dem 5-minütigen Intro wissen, müssen Sie nur ein Lambda mit der entsprechenden Methode und ihren Argumenten übergeben, um einen Hintergrundjob in die Warteschlange zu stellen:
  JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork());  Hiermit wird ein Hintergrundjob mithilfe einer Instanz von MyService in die Warteschlange gestellt, die während der Warteschlange verfügbar ist.    JobId jobId = BackgroundJob.&amp;lt;MyService&amp;gt;enqueue(x -&amp;gt; x.doWork());  Hiermit wird ein Hintergrundjob ohne Verweis auf eine Instanz von MyService in die Warteschlange gestellt.</description>
     </item>
     
     <item>
       <title>Jobs planen</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/scheduling-jobs/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/scheduling-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/scheduling-jobs/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/scheduling-jobs/</guid>
       <description>Manchmal möchten Sie möglicherweise einen Methodenaufruf verschieben. Zum Beispiel, um einen Tag nach ihrer Registrierung eine E-Mail an neu registrierte Benutzer zu senden. Rufen Sie dazu einfach die Methode &amp;ldquo;BackgroundJob.schedule&amp;rdquo; auf und übergeben Sie die gewünschte Verzögerung:
  BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  Der BackgroundJobServer von JobRunr überprüft regelmäßig alle geplanten Jobs und stellt sie in die Warteschlange, wenn sie ausgeführt werden müssen, damit die Mitarbeiter sie ausführen können. Standardmäßig beträgt das Prüfintervall 15 Sekunden.</description>
     </item>
     
     <item>
       <title>Wiederkehrende Jobs</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/recurring-jobs/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/recurring-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/recurring-jobs/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/recurring-jobs/</guid>
       <description>Das Registrieren eines wiederkehrenden Jobs ist genauso einfach wie das Registrieren eines Hintergrundjobs - Sie müssen nur eine einzige Codezeile schreiben:
  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Einfach!&amp;#34;));  Diese Zeile erstellt einen neuen wiederkehrenden Jobeintrag im StorageProvider. Eine spezielle Komponente in BackgroundJobServer überprüft die wiederkehrenden Jobs in einem minutenbasierten Intervall und stellt sie dann als Fire-and-Forget-Jobs in die Warteschlange. Auf diese Weise können Sie sie wie gewohnt verfolgen.
  Anmerkung: Damit wiederkehrende Methoden funktionieren, sollte immer mindestens ein BackgroundJobServer ausgeführt werden</description>
@@ -234,39 +234,39 @@ Wie erfolgt die Koordination zwischen verschiedenen Knoten? Jeder BackgroundJobS
     
     <item>
       <title>Batch-Jobs</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/batches/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/batches/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/batches/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/batches/</guid>
       <description>Mit Batch-Jobs können Sie eine Reihe von Hintergrundjobs atomar erstellen. Dies bedeutet, dass keine Ausnahme verarbeitet wird, wenn beim Erstellen von Hintergrundjobs eine Ausnahme aufgetreten ist. Stellen Sie sich vor, Sie möchten 1000 E-Mails an Ihre Kunden senden, und diese möchten diese E-Mails wirklich erhalten. Hier ist der alte Weg:
 public class NewsletterService {   @Inject  private UserRepository userRepository;   public void sendEmailsToAllSubscribers() {  List&amp;lt;User&amp;gt; users = userRepository.</description>
     </item>
     
     <item>
       <title>Job Chaining</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/job-chaining/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/job-chaining/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/job-chaining/</guid>
       <description>Mit JobRunr Pro können Sie Jobs mithilfe eines fließenden API-Stils verketten. Dies gibt Ihnen einen sofortigen Überblick über Ihren Geschäftsprozess.
  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  Die Benachrichtigung wird erst gesendet, wenn das Archiv erfolgreich erstellt wurde (und somit der Auftrag &amp;ldquo;archiveService.</description>
     </item>
     
     <item>
       <title>JobRunr Pro</title>
-      <link>https://www.jobrunr.io/de/pricing/</link>
+      <link>https://jobrunr.github.io/de/pricing/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/pricing/</guid>
-      <description>JobRunr ist auch für die kommerzielle Nutzung völlig kostenlos. Die &lt;a href=&#34;https://www.jobrunr.io/de/documentation/pro/&#34; title=&#34;Wenn Sie die Funktionen der Pro-Edition selbst entwickeln würden, würden die Kosten auf ca. 50.000 € geschätzt (107 Entwicklungstage mit einer Rate von 500 €).&#34;&gt;Pro-Edition&lt;/a&gt; ermöglicht es Ihnen, zusätzliche Optionen zu nutzen und gleichzeitig sicherzustellen, dass das Projekt über Jahre hinweg hier bleibt. Ich biete 30 Tage bedingungslose Geld-zurück-Garantie.</description>
+      <guid>https://jobrunr.github.io/de/pricing/</guid>
+      <description>JobRunr ist auch für die kommerzielle Nutzung völlig kostenlos. Die &lt;a href=&#34;https://jobrunr.github.io/de/documentation/pro/&#34; title=&#34;Wenn Sie die Funktionen der Pro-Edition selbst entwickeln würden, würden die Kosten auf ca. 50.000 € geschätzt (107 Entwicklungstage mit einer Rate von 500 €).&#34;&gt;Pro-Edition&lt;/a&gt; ermöglicht es Ihnen, zusätzliche Optionen zu nutzen und gleichzeitig sicherzustellen, dass das Projekt über Jahre hinweg hier bleibt. Ich biete 30 Tage bedingungslose Geld-zurück-Garantie.</description>
     </item>
     
     <item>
       <title>Mutexe</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/mutexes/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/mutexes/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/mutexes/</guid>
       <description>Ein Mutex schließt sich gegenseitig aus. Es fungiert als Gate Keeper für eine Ressource, die es nur einem Job ermöglicht, sie zu verwenden, und verschiebt alle anderen Jobs, die denselben &amp;ldquo;Mutex&amp;rdquo; verwenden, kostenlos.
 Verwendung Die Verwendung eines Mutex ist dank der Annotation @Job genauso einfach wie die Verwendung von Warteschlangen und Server-Tags. Fügen Sie es einfach Ihrer Servicemethode hinzu und geben Sie den zu verwendenden Mutex an
  @Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() {  System.</description>
@@ -274,10 +274,10 @@ Verwendung Die Verwendung eines Mutex ist dank der Annotation @Job genauso einfa
     
     <item>
       <title>Server Tags</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/server-tags/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/server-tags/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/server-tags/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/server-tags/</guid>
       <description>Haben Sie einige Jobs, die nur auf bestimmten Servern ausgeführt werden können (z. B. Jobs, die an ein bestimmtes Betriebssystem wie Linux, Max und Windows gebunden sind)? JobRunr hat Sie mit Server-Tags abgedeckt!
 Ein BackgroundJobServer kann mehrere Server-Tags haben und ein Job kann nur ein Server-Tag über die Job-Annotation angeben. Wenn das Server-Tag des Jobs mit einem der Server-Tags des Servers übereinstimmt, kann der Server den Job ausführen.
  Jeder BackgroundJobServer und jeder Job ist standardmäßig mit dem DEFAULT -Tag gekennzeichnet.</description>
@@ -285,10 +285,10 @@ Ein BackgroundJobServer kann mehrere Server-Tags haben und ein Job kann nur ein 
     
     <item>
       <title>Warteschlangen</title>
-      <link>https://www.jobrunr.io/de/documentation/pro/queues/</link>
+      <link>https://jobrunr.github.io/de/documentation/pro/queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/pro/queues/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/pro/queues/</guid>
       <description>Verarbeiten Sie Millionen von Jobs? Haben Sie einige High-Prio-Jobs, die schnell erledigt werden müssen? Verwenden Sie JobRunr-Warteschlangen, um sicherzustellen, dass kritische Jobs vor bereits in die Warteschlange gestellten Jobs geschnitten werden.
 Verwendung Die Verwendung von Warteschlangen hätte dank der Annotation &amp;ldquo;Job&amp;rdquo; nicht einfacher sein können. Fügen Sie es einfach Ihrer Servicemethode hinzu und geben Sie an, in welcher Warteschlange Sie es ausführen möchten.
 public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>
@@ -296,29 +296,29 @@ public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public s
     
     <item>
       <title>Über JobRunr</title>
-      <link>https://www.jobrunr.io/de/about/</link>
+      <link>https://jobrunr.github.io/de/about/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/about/</guid>
+      <guid>https://jobrunr.github.io/de/about/</guid>
       <description>Die Idee hinter JobRunr und wie ich versuche, die Welt ein bisschen besser und grüner zu machen.</description>
     </item>
     
     <item>
       <title>Argumente übergeben</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/passing-arguments/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/passing-arguments/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/passing-arguments/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/passing-arguments/</guid>
       <description>JobRunr unterstützt die Übergabe von Argumenten an Hintergrundjobs - genau wie jeder andere normale Methodenaufruf. Diese Argumente können vom Typ &amp;ldquo;java.lang&amp;rdquo; oder sogar benutzerdefinierte Objekte sein.
  Berücksichtigen Sie Folgendes, wenn Sie benutzerdefinierte Objekte verwenden:  Es muss möglich sein, sie über Jackson oder Gson zu serialisieren und zu deserialisieren Sehen Sie sich einen Standardkonstruktor ohne Argumente an (er kann privat sein) - dies hilft Jackson und Gson, ihn zu deserialisieren    Mail mail = new Mail(&amp;#34;from&amp;#34;, &amp;#34;to&amp;#34;, &amp;#34;subject&amp;#34;, &amp;#34;message&amp;#34;); BackgroundJob.</description>
     </item>
     
     <item>
       <title>Empfohlene Vorgehensweise</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/best-practices/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/best-practices/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/best-practices/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/best-practices/</guid>
       <description>Machen Sie Jobargumente klein und einfach Methodenaufrufe (d. H. Ein Job) werden während des Erstellungsprozesses des Hintergrundjobs serialisiert. Argumente werden mithilfe der JobMapper-Klasse in Json-Zeichenfolgen konvertiert. Wenn Sie komplexe Entitäten und / oder große Objekte haben; Bei Arrays ist es besser, sie in einer Datenbank abzulegen und dann nur ihre Identität an den Hintergrundjob zu übergeben.
 Also, anstatt dies zu tun:
 public void backgroundMethod(Entity entity) {} Überlegen Sie Folgendes:
@@ -327,20 +327,20 @@ public void backgroundMethod(long entityId) {}</description>
     
     <item>
       <title>Hintergrundjob Abhängigkeiten</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/background-jobs-dependencies/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/background-jobs-dependencies/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/background-jobs-dependencies/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/background-jobs-dependencies/</guid>
       <description>In fast jedem Job möchten Sie andere Klassen Ihrer Anwendung verwenden, um andere Arbeiten auszuführen und Ihren Code sauber und einfach zu halten. Ein Beispiel:
  @Component public class MailService {   private EmailRenderer emailRenderer;  private UserRepository userRepository;  private Environment environment;   public MailService(EmailRenderer emailRenderer, UserRepository userRepository, Environment environment) {  this.emailRenderer = emailRenderer;  this.userRepository = userRepository;  this.environment = environment;  }   public void sendMail(UUID userId, String templateId) {  User user = userRepository.</description>
     </item>
     
     <item>
       <title>Kredit</title>
-      <link>https://www.jobrunr.io/de/documentation/5-minute-intro/credits/</link>
+      <link>https://jobrunr.github.io/de/documentation/5-minute-intro/credits/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/5-minute-intro/credits/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/5-minute-intro/credits/</guid>
       <description>Hangfire durch Sergey Odinokov JobRunr ist eine Portierung von Hangfire in .NET nach Java und hätte ohne Hangfire als hervorragendes Beispiel nicht existieren können.
 License: LGPL v3
 ASM ASM wird verwendet, um den Bytecode des bereitgestellten Lambda zu lesen und die richtige Klasse, Methode und Argumente des zu verarbeitenden Jobs im Hintergrund zu finden. Diese werden dann in Json serialisiert und in einem StorageProvider gespeichert.
@@ -350,10 +350,10 @@ JavaCron durch Ahmed AlSahaf JavaCron wurde als Grundlage für die Cron-Planung 
     
     <item>
       <title>Logging &amp; Auftragsfortschritt</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/logging-progress/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/logging-progress/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/logging-progress/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/logging-progress/</guid>
       <description>Einige Jobs dauern sehr lange - sie generieren Tausende von E-Mails, führen einen Stapelimport einiger großer XML- oder CSV-Dateien durch, &amp;hellip;. Woher wissen Sie, ob Ihr Code tatsächlich ausgeführt wird und seinen eigentlichen Job erledigt (Wortspiel beabsichtigt)?
 Begrüßen Sie die Jobprotokollierung und den Jobfortschrittsbalken.
   Beobachten Sie die Protokollierung live von Ihrem eigentlichen Job   Logging JobRunr unterstützt die Protokollierung im Dashboard. Neue Nachrichten werden angezeigt, sobald sie protokolliert werden.</description>
@@ -361,10 +361,10 @@ Begrüßen Sie die Jobprotokollierung und den Jobfortschrittsbalken.
     
     <item>
       <title>Umgang mit Ausnahmen</title>
-      <link>https://www.jobrunr.io/de/documentation/background-methods/dealing-with-exceptions/</link>
+      <link>https://jobrunr.github.io/de/documentation/background-methods/dealing-with-exceptions/</link>
       <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/de/documentation/background-methods/dealing-with-exceptions/</guid>
+      <guid>https://jobrunr.github.io/de/documentation/background-methods/dealing-with-exceptions/</guid>
       <description>Es passieren schlimme Dinge. Jede Methode kann verschiedene Arten von Ausnahmen auslösen. Diese Ausnahmen können entweder durch Programmierfehler verursacht werden, bei denen Sie die Anwendung erneut bereitstellen müssen, oder durch vorübergehende Fehler, die ohne zusätzliche Bereitstellung behoben werden können.
 JobRunr behandelt alle Ausnahmen, die sowohl in internen (zu JobRunr selbst gehörenden) als auch in externen Methoden (Jobs, Filter usw.) auftreten, sodass nicht die gesamte Anwendung heruntergefahren wird. Alle internen Ausnahmen werden protokolliert (vergessen Sie also nicht, die Protokollierung zu aktivieren).</description>
     </item>
