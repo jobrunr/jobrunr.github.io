@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5 Minuten Intro on JobRunr</title>
+    <link>https://www.jobrunr.io/de/documentation/5-minute-intro/</link>
+    <description>Recent content in 5 Minuten Intro on JobRunr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/de/documentation/5-minute-intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kredit</title>
+      <link>https://www.jobrunr.io/de/documentation/5-minute-intro/credits/</link>
+      <pubDate>Thu, 30 Apr 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/de/documentation/5-minute-intro/credits/</guid>
+      <description>Hangfire durch Sergey Odinokov JobRunr ist eine Portierung von Hangfire in .NET nach Java und hätte ohne Hangfire als hervorragendes Beispiel nicht existieren können.
+License: LGPL v3
+ASM ASM wird verwendet, um den Bytecode des bereitgestellten Lambda zu lesen und die richtige Klasse, Methode und Argumente des zu verarbeitenden Jobs im Hintergrund zu finden. Diese werden dann in Json serialisiert und in einem StorageProvider gespeichert.
+License: BSD
+JavaCron durch Ahmed AlSahaf JavaCron wurde als Grundlage für die Cron-Planung in JobRunr verwendet.</description>
+    </item>
+    
+  </channel>
+</rss>

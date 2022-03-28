@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on JobRunr</title>
+    <link>https://www.jobrunr.io/en/documentation/installation/</link>
+    <description>Recent content in Installation on JobRunr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/documentation/installation/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

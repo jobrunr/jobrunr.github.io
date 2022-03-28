@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Micronaut Integration on JobRunr</title>
+    <link>https://www.jobrunr.io/en/documentation/configuration/micronaut/</link>
+    <description>Recent content in Micronaut Integration on JobRunr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Aug 2021 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/documentation/configuration/micronaut/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
