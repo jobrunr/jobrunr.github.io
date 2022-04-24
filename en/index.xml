@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Mar 2022 08:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 08:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>Spring.io Barcelona!</title>
+      <link>https://www.jobrunr.io/en/blog/2022-04-24-jobrunr-spring-io/</link>
+      <pubDate>Sun, 24 Apr 2022 08:00:00 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-04-24-jobrunr-spring-io/</guid>
+      <description>I&amp;rsquo;m happy to share that I can present JobRunr at Spring.io in Barcelona!</description>
     </item>
     
     <item>
