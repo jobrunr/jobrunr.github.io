@@ -176,7 +176,12 @@ if (!doNotTrack) {
         margin: 0 0 1em;
     }
     #trial-form dl input[type="text"] {
-        width: 50%;
+        width: 60%;
+    }
+    @media only screen and (max-width: 1140px) {
+        #like-a-pro {
+            display: none;
+        }
     }
 </style>
 <script type="text/javascript">
@@ -235,13 +240,13 @@ if (!doNotTrack) {
     }
 
 </script>
-<div style="display: flex; justify-content: center;">
-    <div style="background: #f5f5f5; padding: 3rem; border: #f5f5f5; border-radius: 10px; margin-bottom: 5rem;">
+<div style="display: flex; column-gap: 100px;">
+    <div style="flex: 0.8; background: #f5f5f5; padding: 3rem; border: #f5f5f5; border-radius: 10px; margin-bottom: 5rem;">
         <div id="trial-form">
             <form novalidate="">
                 <h2 style="margin: 0 0 .5em;">Start your free trial now</h2>
                 <p style="margin-bottom: 0">
-                    Use JobRunr Pro for free during 1 month. (No risk. No credit card required.)<br/>
+                    Use JobRunr Pro for free during 14 days.<br />(No risk. No credit card required.)<br/>
                 </p>
                 <br />
                 <div>
@@ -284,6 +289,13 @@ if (!doNotTrack) {
             <div class="response" id="trial-error-response" style="display:none; color:red;">Error submitting your request for a trial. Please try again later.</div>
             <div class="response" id="trial-success-response" style="display:none">Thanks for requesting a trial. I will get back to you as soon as possible.</div>
         </div> 
+    </div>
+    <div id="like-a-pro" style="flex: 1;">
+        <h2 style="margin: 1em 0 .5em 0;">Run all your Java jobs, like a Pro</h2>
+        <figure style="margin: 0em 0 2.5em 0">
+            <img src="/try-jobrunr-pro.png" class="kg-image">
+            <figcaption>Use JobRunr Pro to make your development life easier!</figcaption>
+        </figure>
     </div>
 </div>
                 </div>

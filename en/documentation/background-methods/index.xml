@@ -33,8 +33,8 @@
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
-      <description>Creating a recurring job is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
-Using a Cron expression  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Easy!&amp;#34;));  This line creates a new recurring job entry in the StorageProvider. A special component in BackgroundJobServer checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs.</description>
+      <description>Creating a recurring job (also known as a CRON or crontab job) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
+Using a Cron expression  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Easy!&amp;#34;));  This line creates a new recurring CRON job entry in the StorageProvider. A special component in BackgroundJobServer checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs.</description>
     </item>
     
     <item>
