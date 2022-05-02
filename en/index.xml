@@ -413,7 +413,7 @@ You can then fetch the result of that job using the id of the job.
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
       <description>Creating a recurring job (also known as a CRON or crontab job) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
-Using a Cron expression  BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; System.out.println(&amp;#34;Easy!&amp;#34;));  This line creates a new recurring CRON job entry in the StorageProvider. A special component in BackgroundJobServer checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs.</description>
+ Note that recurring jobs may not be executed on the exact moment you specify using your CRON expression: Whenever JobRunr fetches all the jobs that are scheduled and need to be executed, it fetches all jobs that need to happen in the next poll interval and enqueues them immediately.</description>
     </item>
     
     <item>

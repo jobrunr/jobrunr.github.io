@@ -221,7 +221,7 @@ if (!doNotTrack) {
                 linkedIn: linkedIn,
                 company: company
             };
-            fetch('https://trial.jobrunr.io/api/request-trial', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(trialData)})
+            fetch('https://api.jobrunr.io/api/request-trial', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(trialData)})
                 .then(resp => {
                     if(resp.status === 200) {
                         document.getElementById('trial-form').style.display = 'none';
