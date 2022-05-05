@@ -287,7 +287,8 @@ Fork the project and make contributions on GitHub!</description>
       <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</guid>
-      <description>Try JobRunr Pro for free!   Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.</description>
+      <description>Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.
+JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration.</description>
     </item>
     
     <item>
@@ -389,9 +390,9 @@ How is the coordination between different nodes done? Each BackgroundJobServer r
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/results/</guid>
-      <description>Try JobRunr Pro for free!   If your job returns a result, JobRunr serializes it and stores it via the StorageProvider in the database of your choice.
+      <description>If your job returns a result, JobRunr serializes it and stores it via the StorageProvider in the database of your choice.
 You can then fetch the result of that job using the id of the job.
-  void startWeatherPrediction(UUID cityId) {  Observation observation = observationService.getLatestObservation(cityId); // the original observation  BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); }  WeatherPrediction getWeatherPrediction(UUID cityId) {  JobResultWithBackOffInfo jobResult = BackgroundJob.</description>
+  void startWeatherPrediction(UUID cityId) {  Observation observation = observationService.getLatestObservation(cityId); // the original observation  BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); }  WeatherPrediction getWeatherPrediction(UUID cityId) {  JobResultWithBackOffInfo jobResult = BackgroundJob.getJobResult(jobId);  if(jobResult.</description>
     </item>
     
     <item>
@@ -422,8 +423,8 @@ You can then fetch the result of that job using the id of the job.
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</guid>
-      <description>Try JobRunr Pro for free!   Do you need to replace an already enqueued job? Or a job that is already being processed? Thanks to the JobRunr Pro enqueueOrReplace and scheduleOrReplace you can update the existing job easily.
- UUID cityId = city.getId(); Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation));  Observation observation = observationService.getLatestObservation(cityId); // the updated observation after a storm BackgroundJob.enqueueOrReplace(myId, () -&amp;gt; weatherService.</description>
+      <description>Do you need to replace an already enqueued job? Or a job that is already being processed? Thanks to the JobRunr Pro enqueueOrReplace and scheduleOrReplace you can update the existing job easily.
+ UUID cityId = city.getId(); Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation));  Observation observation = observationService.getLatestObservation(cityId); // the updated observation after a storm BackgroundJob.enqueueOrReplace(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); This replaces the existing background job as it uses the same uuid to create the job.</description>
     </item>
     
     <item>
@@ -505,7 +506,7 @@ You can then fetch the result of that job using the id of the job.
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/batches/</guid>
-      <description>Try JobRunr Pro for free!   Batches allow you to create a bunch of background jobs atomically. This means that if there was an exception during the creation of background jobs, none of them will be processed. Consider you want to send 1000 emails to your clients, and they really want to receive these emails. Here is the old way:
+      <description>Batches allow you to create a bunch of background jobs atomically. This means that if there was an exception during the creation of background jobs, none of them will be processed. Consider you want to send 1000 emails to your clients, and they really want to receive these emails. Here is the old way:
 public class NewsletterService {   @Inject  private UserRepository userRepository;   public void sendEmailsToAllSubscribers() {  List&amp;lt;User&amp;gt; users = userRepository.</description>
     </item>
     
@@ -515,7 +516,7 @@ public class NewsletterService {   @Inject  private UserRepository userRepositor
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
-      <description>Try JobRunr Pro for free!   JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
+      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
     </item>
     
@@ -525,8 +526,9 @@ public class NewsletterService {   @Inject  private UserRepository userRepositor
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/job-filters/</guid>
-      <description>Try JobRunr Pro for free!   A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
-Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.</description>
+      <description>A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
+Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.
+ @Component public class NotifyJobCreatedFilter implements JobClientFilter, JobServerFilter {   private SlackNotificationService slackNotificationService;   public NotifyJobCreatedFilter(SlackNotificationService slackNotificationService) {  this.</description>
     </item>
     
     <item>
@@ -535,9 +537,9 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
-      <description>Try JobRunr Pro for free!   Do you have a lot of scheduled jobs planned in the future? And you need to do some refactoring? Just migrate your existing jobs to your new API and continue delivering working jobs with each deploy.
+      <description>Do you have a lot of scheduled jobs planned in the future? And you need to do some refactoring? Just migrate your existing jobs to your new API and continue delivering working jobs with each deploy.
 A job migration could not have been easier with the new migrations API.
- JobRunrPro  .configure()  .useJobNotFoundConfiguration(usingStandardJobNotFoundConfiguration()  .andMigrateScheduledJobsThatAreNotFound(  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.</description>
+ JobRunrPro  .configure()  .useJobNotFoundConfiguration(usingStandardJobNotFoundConfiguration()  .andMigrateScheduledJobsThatAreNotFound(  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.matches(TestService.class, &amp;#34;doWorkThatDoesNotExist&amp;#34;)) {  scheduledJobUpdater.setMethodName(&amp;#34;doWork&amp;#34;);  }  }),  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.</description>
     </item>
     
     <item>
@@ -556,7 +558,7 @@ A job migration could not have been easier with the new migrations API.
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
-      <description>Try JobRunr Pro for free!   Job search Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded? JobRunr Pro has you covered - thanks to a new feature called Job Search.
+      <description>Job search Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded? JobRunr Pro has you covered - thanks to a new feature called Job Search.
  Thanks to job filters, you can quickly find the job you are interested in.   Note that users using Redis as StorageProvider can only filter on State, Job Signature, Queue and ServerTag.</description>
     </item>
     
@@ -566,8 +568,9 @@ A job migration could not have been easier with the new migrations API.
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
-      <description>Try JobRunr Pro for free!   A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
-Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
+      <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
+Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use
+ @Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() {  System.</description>
     </item>
     
     <item>
@@ -576,8 +579,9 @@ Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to 
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
-      <description>Try JobRunr Pro for free!   Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
-Usage Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.</description>
+      <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
+Usage Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
+public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>
     </item>
     
     <item>
@@ -595,8 +599,8 @@ Usage Using queues could not have been easier thanks to the Job annotation. Just
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/server-tags/</guid>
-      <description>Try JobRunr Pro for free!   Do you have some jobs that can only be run on certain servers (e.g. jobs tied to a specific OS like Linux, Max and Windows)? Or do you want to run a job only on the server that created the job? JobRunr has you covered with Server Tags!
-A BackgroundJobServer can have multiple server tags and a job can specify only one server tag via the Job annotation.</description>
+      <description>Do you have some jobs that can only be run on certain servers (e.g. jobs tied to a specific OS like Linux, Max and Windows)? Or do you want to run a job only on the server that created the job? JobRunr has you covered with Server Tags!
+A BackgroundJobServer can have multiple server tags and a job can specify only one server tag via the Job annotation. If the server tag of the job matches any of the server tags of the server, the server is eligible to run the job.</description>
     </item>
     
     <item>
@@ -614,8 +618,9 @@ A BackgroundJobServer can have multiple server tags and a job can specify only o
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/transactions/</guid>
-      <description>Try JobRunr Pro for free!   The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.
- @Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler;  @Transactional public void createUserAndSendWelcomeEmail(User user) {  userRepositoy.save(user);  jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); }  Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.</description>
+      <description>The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.
+ @Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler;  @Transactional public void createUserAndSendWelcomeEmail(User user) {  userRepositoy.save(user);  jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); }  Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.
+  How does it work?</description>
     </item>
     
     <item>

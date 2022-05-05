@@ -36,7 +36,8 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Try JobRunr Pro for free!   Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.">
+    <meta name="description" content="Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.
+JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration.">
     
     
     
@@ -47,12 +48,14 @@ if (!doNotTrack) {
     <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
     <meta name="twitter:title" content="Custom delete policy" />
-    <meta name="twitter:description" content="Try JobRunr Pro for free!   Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database." />
+    <meta name="twitter:description" content="Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.
+JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration." />
     <meta name="twitter:creator" content="@rdehuyss" />
     <meta name="twitter:site" content="@jobrunr" />
 
     <meta property="og:title" content="Custom delete policy" />
-<meta property="og:description" content="Try JobRunr Pro for free!   Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database." />
+<meta property="og:description" content="Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.
+JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="documentation" />
 <meta property="article:published_time" content="2021-06-24T11:12:23+02:00" />
@@ -348,11 +351,8 @@ if (!doNotTrack) {
                 
             </header>
             <section class="post-full-content">
-                <div style="text-align: center; margin: 1rem 0 3rem;">
-    <a href="/en/try-jobrunr-pro/" class="btn btn-black btn-lg">
-        <span>Try JobRunr Pro for free!</span>
-    </a>
-</div>
+                
+
 <p>Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.</p>
 <p>JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration. By default, succeeded jobs will go to the deleted state after 36 hours and they will then be permanently deleted after 72 hours.</p>
 <p>Thanks to the <code>deleteOnSuccess</code> and <code>deleteOnFailure</code> attributes on the <code>@Job</code> annotation you know have fine-grained control per Job on when it will move from the <code>Succeeded</code> state to the <code>Deleted</code> state and when the <code>Job</code> will be deleted permanently.</p>
@@ -406,11 +406,9 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p>As you can specify both <code>deleteOnSuccess</code> and <code>deleteOnFailure</code>, this means you can keep failed jobs around longer (to see what went wrong). If you don&rsquo;t specify <code>deleteOnFailure</code>, it falls back to JobRunr&rsquo;s default which means the job will stay in the <code>Failed</code> state until manual action is taken.</p>
-<div style="text-align: center; margin: 1rem 0 3rem;">
-    <a href="/en/try-jobrunr-pro/" class="btn btn-black btn-lg">
-        <span>Try JobRunr Pro for free!</span>
-    </a>
-</div>
+
+
+
             </section>
         </article>
         
