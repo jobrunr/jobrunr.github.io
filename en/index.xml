@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 24 Apr 2022 08:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 20:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr &amp; JobRunr Pro v5.1.0</title>
+      <link>https://www.jobrunr.io/en/blog/2022-05-06-jobrunr-v5.1.0/</link>
+      <pubDate>Fri, 06 May 2022 20:00:00 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-05-06-jobrunr-v5.1.0/</guid>
+      <description>Kotlin 1.6.20 support and important bugfixes</description>
     </item>
     
     <item>
@@ -511,6 +520,17 @@ public class NewsletterService {   @Inject  private UserRepository userRepositor
     </item>
     
     <item>
+      <title>CI / CD &amp; Job Migrations</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
+      <description>Prevent JobNotFoundExceptions thanks to the JobRegressionGuard Are you applying some of Uncle Bob&amp;rsquo;s tips and tricks from his great book Clean Code? It probably also means you&amp;rsquo;re sometimes refactoring&amp;hellip; but what about your existing jobs in production? Won&amp;rsquo;t they break? Will you know if they break?
+JobRunr Pro has you covered thanks to the JobRegressionGuard:
+ @Test void validateExistingJobs() {  JobRegressionGuard jobRegressionGuard = new JobRegressionGuard();  jobRegressionGuard.validateJobs(&amp;#34;&amp;lt;url to your staging/production dashboard&amp;gt;&amp;#34;); } This simple unit test will notify you if you did some refactorings that are not compatible with the jobs in production.</description>
+    </item>
+    
+    <item>
       <title>Job Chaining</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -532,24 +552,13 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
     </item>
     
     <item>
-      <title>Job Migrations</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
-      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
-      <description>Do you have a lot of scheduled jobs planned in the future? And you need to do some refactoring? Just migrate your existing jobs to your new API and continue delivering working jobs with each deploy.
-A job migration could not have been easier with the new migrations API.
- JobRunrPro  .configure()  .useJobNotFoundConfiguration(usingStandardJobNotFoundConfiguration()  .andMigrateScheduledJobsThatAreNotFound(  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.matches(TestService.class, &amp;#34;doWorkThatDoesNotExist&amp;#34;)) {  scheduledJobUpdater.setMethodName(&amp;#34;doWork&amp;#34;);  }  }),  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.</description>
-    </item>
-    
-    <item>
       <title>JobRunr Pro</title>
       <link>https://www.jobrunr.io/en/pricing/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/pricing/</guid>
-      <description>Save months of development time with &lt;a href=&#34;https://www.jobrunr.io/en/documentation/pro/&#34; title=&#34;If you would develop the features of the Pro edition yourself, it would have an estimated cost of around 99.000 $
-(180 days of development at a rate of 500$). &#34;&gt;JobRunr Pro&lt;/a&gt; so you can handle the most difficult background job workflow challenges. Not sure yet? Try out JobRunr Pro for free &lt;a href=&#34;https://www.jobrunr.io/en/try-jobrunr-pro&#34;&gt;during 14 days&lt;/a&gt;.</description>
+      <description>Save months of development time with &lt;a href=&#34;https://www.jobrunr.io/en/documentation/pro/&#34; title=&#34;If you would develop the features of the Pro edition yourself, it would have an estimated cost of around 119.400 $
+(190 days of development at a rate of 600$). &#34;&gt;JobRunr Pro&lt;/a&gt; so you can handle the most difficult background job workflow challenges.</description>
     </item>
     
     <item>

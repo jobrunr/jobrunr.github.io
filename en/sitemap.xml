@@ -33,7 +33,7 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2022-04-24T08:00:00+02:00</lastmod>
+    <lastmod>2022-05-06T20:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
     <xhtml:link
@@ -46,6 +46,11 @@
                 hreflang="en"
                 href="https://www.jobrunr.io/en/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2022-05-06-jobrunr-v5.1.0/</loc>
+    <lastmod>2022-05-06T20:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -323,6 +328,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/migrations/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/job-chaining/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
     <xhtml:link
@@ -339,11 +349,6 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/job-filters/</loc>
-    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/migrations/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   

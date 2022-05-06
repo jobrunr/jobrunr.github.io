@@ -49,6 +49,17 @@ public class NewsletterService {   @Inject  private UserRepository userRepositor
     </item>
     
     <item>
+      <title>CI / CD &amp; Job Migrations</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
+      <description>Prevent JobNotFoundExceptions thanks to the JobRegressionGuard Are you applying some of Uncle Bob&amp;rsquo;s tips and tricks from his great book Clean Code? It probably also means you&amp;rsquo;re sometimes refactoring&amp;hellip; but what about your existing jobs in production? Won&amp;rsquo;t they break? Will you know if they break?
+JobRunr Pro has you covered thanks to the JobRegressionGuard:
+ @Test void validateExistingJobs() {  JobRegressionGuard jobRegressionGuard = new JobRegressionGuard();  jobRegressionGuard.validateJobs(&amp;#34;&amp;lt;url to your staging/production dashboard&amp;gt;&amp;#34;); } This simple unit test will notify you if you did some refactorings that are not compatible with the jobs in production.</description>
+    </item>
+    
+    <item>
       <title>Job Chaining</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -67,17 +78,6 @@ public class NewsletterService {   @Inject  private UserRepository userRepositor
       <description>A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
 Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.
  @Component public class NotifyJobCreatedFilter implements JobClientFilter, JobServerFilter {   private SlackNotificationService slackNotificationService;   public NotifyJobCreatedFilter(SlackNotificationService slackNotificationService) {  this.</description>
-    </item>
-    
-    <item>
-      <title>Job Migrations</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
-      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
-      <description>Do you have a lot of scheduled jobs planned in the future? And you need to do some refactoring? Just migrate your existing jobs to your new API and continue delivering working jobs with each deploy.
-A job migration could not have been easier with the new migrations API.
- JobRunrPro  .configure()  .useJobNotFoundConfiguration(usingStandardJobNotFoundConfiguration()  .andMigrateScheduledJobsThatAreNotFound(  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.matches(TestService.class, &amp;#34;doWorkThatDoesNotExist&amp;#34;)) {  scheduledJobUpdater.setMethodName(&amp;#34;doWork&amp;#34;);  }  }),  ((scheduledJobMatcher, scheduledJobUpdater) -&amp;gt; {  if (scheduledJobMatcher.</description>
     </item>
     
     <item>
