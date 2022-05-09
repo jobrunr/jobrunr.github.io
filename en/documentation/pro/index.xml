@@ -18,6 +18,16 @@ JobRunr already allows you to configure the deletion policy for all jobs in the 
     </item>
     
     <item>
+      <title>Database Fault Tolerance</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/</link>
+      <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/</guid>
+      <description>JobRunr by defaults stops completely if my SQL / NoSQL database goes down and there is a reason for this - JobRunr namely uses your database for a lot of things:
+ Master node election for the BackgroundJobServer Fetching the details of a Job and update the state when it&amp;rsquo;s done Monitoring whether there are no zombie jobs (jobs that were being processed on a BackgroundJobServer node that crashed) Optimistic locking so that a job will be only executed once &amp;hellip;  The moment JobRunr loses it’s connection to the database (or the database goes down), there will be a lot of threads that will try to read and write updates to the database but all of these will off-course fail.</description>
+    </item>
+    
+    <item>
       <title>Job Result</title>
       <link>https://www.jobrunr.io/en/documentation/pro/results/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
