@@ -65,12 +65,12 @@ BackgroundJob.schedule(now().plusHours(5),  () -&amp;gt; System.out.println(&amp
     </item>
     
     <item>
-      <title>Recurring jobs</title>
+      <title>Recurring CRON jobs</title>
       <link>https://www.jobrunr.io/en/homepage/example-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.jobrunr.io/en/homepage/example-03/</guid>
-      <description>Recurring jobs fire each time on the specified CRON schedule.
+      <description>Recurring jobs fire each time on the specified CRON trigger.
 BackgroundJob.scheduleRecurrently(Cron.daily(),  () -&amp;gt; service.doWork()); </description>
     </item>
     

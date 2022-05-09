@@ -160,9 +160,9 @@ if (!doNotTrack) {
                         <img class="site-logo" src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="80" width="346.320"/>
                     </div>
                     <h1 class="site-description">
-                        An easy way to perform background processing in Java.<br>
+                        The ultimate library for background processing in Java.<br/>
 Distributed and backed by persistent storage.<br>
-Open-source and free for commercial use.<span class="sub-title">Alternative for Spring Batch and Quartz Scheduler. Hangfire for Java. Java scheduler.</span>
+Open-source and free for commercial use.<span class="sub-title">Alternative for Spring Batch and Quartz Scheduler. Hangfire for Java. Java CRON scheduler.</span>
 
                     </h1>
                 </div>
@@ -274,13 +274,13 @@ Open-source and free for commercial use.<span class="sub-title">Alternative for 
                     <div class="post-card-content">
                         <a class="post-card-content-link" href="documentation/background-methods/recurring-jobs/">
                             <header class="post-card-header">
-                                <h3 class="post-card-title">Recurring jobs
+                                <h3 class="post-card-title">Recurring CRON jobs
                                     
                                 </h3>
                             </header>
 
                             <section class="post-card-excerpt">
-                                <p>Recurring jobs fire each time on the specified CRON schedule.</p>
+                                <p>Recurring jobs fire each time on the specified CRON trigger.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span>Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">daily</span><span style="color:#f92672">(),</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> service<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
 </span></span></code></pre></div>
