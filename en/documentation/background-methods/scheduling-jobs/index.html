@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Sometimes you may want to postpone a method invocation; for example, to send an email to newly registered users a day after their registration. To do this, just call the BackgroundJob.schedule method and pass the desired delay:
- BackgroundJob.schedule&lt;EmailService&gt;(Instant.now().plusHours(24),  x -&gt; x.sendNewlyRegisteredEmail());  JobRunr&rsquo;s BackgroundJobServer periodically checks all scheduled jobs and enqueues them when it is time to run them, allowing workers to execute them. By default, the check interval is equal to 15 seconds, but you can change it by passing the relevant argument to the BackgroundJobServer constructor.">
+    <meta name="description" content="Schedule jobs in the future and monitor them using the dashboard.">
     
     
       <meta name="keywords" content="schedule,java background job,java schedule method,java schedule background job">

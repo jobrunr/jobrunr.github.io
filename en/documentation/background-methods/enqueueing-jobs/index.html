@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:
- JobId jobId = BackgroundJob.enqueue(() -&gt; myService.doWork()); This enqueues a background job using an instance of MyService which is available during enqueueing.   JobId jobId = BackgroundJob.&lt;MyService&gt;enqueue(x -&gt; x.doWork()); This enqueues a background job without a reference to an instance of MyService.">
+    <meta name="description" content="Fire-and-forget method invocation has never been simpler thanks to JobRunr.">
     
     
       <meta name="keywords" content="enqueue,background job,fire and forget,enqueue jobs in bulk">

@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Einreihen und Verarbeiten in derselben JVM-Instanz JobRunr kann mithilfe der Fluent-API einfach konfiguriert werden, um Jobs in derselben Anwendung in die Warteschlange zu stellen und zu verarbeiten:
-@SpringBootApplication @Import(JobRunrStorageConfiguration.class) public class WebApplication {   public static void main(String[] args) {  SpringApplication.run(WebApplication.class, args);  }   @Bean  public JobScheduler initJobRunr(ApplicationContext applicationContext) {  return JobRunr.configure()  .useJobActivator(applicationContext::getBean)  .useStorageProvider(SqlStorageProviderFactory  .using(applicationContext.getBean(DataSource.class)))  .useBackgroundJobServer()  .useJmxExtensions()  .useDashboard()  .">
+    <meta name="description" content="Verwenden Sie die Fließende API, um JobRunr in Ihrer Anwendung innerhalb von Minuten zu konfigurieren.">
     
     
       <meta name="keywords" content="JobRunr-Konfiguration">

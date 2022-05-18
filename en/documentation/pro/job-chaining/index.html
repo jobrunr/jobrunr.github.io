@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
- @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&gt; archiveService.createArchive(folder))  .continueWith(() -&gt; notifyService.notifyViaSlack(&#34;ops-team&#34;, &#34;The following folder was archived: &#34; &#43; folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.">
+    <meta name="description" content="Reuse existing service methods and chain jobs for cleaner code and and immediate overview of your business process">
     
     
     

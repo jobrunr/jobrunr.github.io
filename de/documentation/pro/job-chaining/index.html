@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Mit JobRunr Pro können Sie Jobs mithilfe eines fließenden API-Stils verketten. Dies gibt Ihnen einen sofortigen Überblick über Ihren Geschäftsprozess.
- @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&gt; archiveService.createArchive(folder))  .continueWith(() -&gt; notifyService.notifyViaSlack(&#34;ops-team&#34;, &#34;The following folder was archived: &#34; &#43; folder)) }  Die Benachrichtigung wird erst gesendet, wenn das Archiv erfolgreich erstellt wurde (und somit der Auftrag &ldquo;archiveService.">
+    <meta name="description" content="Verwenden Sie vorhandene Servicemethoden und Kettenjobs erneut, um saubereren Code und einen sofortigen Überblick über Ihre Geschäftsprozesse zu erhalten.">
     
     
     

@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Wie Sie bereits aus dem 5-minütigen Intro wissen, müssen Sie nur ein Lambda mit der entsprechenden Methode und ihren Argumenten übergeben, um einen Hintergrundjob in die Warteschlange zu stellen:
- JobId jobId = BackgroundJob.enqueue(() -&gt; myService.doWork());  Hiermit wird ein Hintergrundjob mithilfe einer Instanz von MyService in die Warteschlange gestellt, die während der Warteschlange verfügbar ist.    JobId jobId = BackgroundJob.&lt;MyService&gt;enqueue(x -&gt; x.doWork());  Hiermit wird ein Hintergrundjob ohne Verweis auf eine Instanz von MyService in die Warteschlange gestellt.">
+    <meta name="description" content="Dank JobRunr war der Aufruf der Fire-and-Forget Jobs noch nie so einfach.">
     
     
       <meta name="keywords" content="Einreihen,Hintergrundjobs,Fire and Forget,Enqueue Jobs in großen Mengen">

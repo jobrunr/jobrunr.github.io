@@ -36,9 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
-Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use
- @Job(mutex = &#34;virus-scanner&#34;) public void onlyProcessOneJobAtTheSameTime() {  System.">
+    <meta name="description" content="Mutexes in JobRunr will postpone jobs until a shared mutex is free">
     
     
     

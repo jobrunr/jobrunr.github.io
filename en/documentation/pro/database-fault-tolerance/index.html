@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="JobRunr by defaults stops completely if my SQL / NoSQL database goes down and there is a reason for this - JobRunr namely uses your database for a lot of things:
- Master node election for the BackgroundJobServer Fetching the details of a Job and update the state when it&rsquo;s done Monitoring whether there are no zombie jobs (jobs that were being processed on a BackgroundJobServer node that crashed) Optimistic locking so that a job will be only executed once &hellip;  The moment JobRunr loses it’s connection to the database (or the database goes down), there will be a lot of threads that will try to read and write updates to the database but all of these will off-course fail.">
+    <meta name="description" content="Keep your jobs running - even in a volatile infrastructure landscape.">
     
     
     

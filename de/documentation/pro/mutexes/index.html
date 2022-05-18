@@ -36,9 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Ein Mutex schließt sich gegenseitig aus. Es fungiert als Gate Keeper für eine Ressource, die es nur einem Job ermöglicht, sie zu verwenden, und verschiebt alle anderen Jobs, die denselben &ldquo;Mutex&rdquo; verwenden, kostenlos.
-Verwendung Die Verwendung eines Mutex ist dank der Annotation @Job genauso einfach wie die Verwendung von Warteschlangen und Server-Tags. Fügen Sie es einfach Ihrer Servicemethode hinzu und geben Sie den zu verwendenden Mutex an
- @Job(mutex = &#34;virus-scanner&#34;) public void onlyProcessOneJobAtTheSameTime() {  System.">
+    <meta name="description" content="Mutexe in JobRunr verschieben Jobs, bis ein freigegebener Mutex frei ist.">
     
     
     

@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Manchmal möchten Sie möglicherweise einen Methodenaufruf verschieben. Zum Beispiel, um einen Tag nach ihrer Registrierung eine E-Mail an neu registrierte Benutzer zu senden. Rufen Sie dazu einfach die Methode &ldquo;BackgroundJob.schedule&rdquo; auf und übergeben Sie die gewünschte Verzögerung:
- BackgroundJob.schedule&lt;EmailService&gt;(Instant.now().plusHours(24),  x -&gt; x.sendNewlyRegisteredEmail());  Der BackgroundJobServer von JobRunr überprüft regelmäßig alle geplanten Jobs und stellt sie in die Warteschlange, wenn sie ausgeführt werden müssen, damit die Mitarbeiter sie ausführen können. Standardmäßig beträgt das Prüfintervall 15 Sekunden.">
+    <meta name="description" content="Planen Sie Jobs in der Zukunft und überwachen Sie sie mithilfe des Dashboards.">
     
     
       <meta name="keywords" content="Zeitplan,Java-Hintergrundjob,Java-Zeitplanmethode,Java-Zeitplan-Hintergrundjob">

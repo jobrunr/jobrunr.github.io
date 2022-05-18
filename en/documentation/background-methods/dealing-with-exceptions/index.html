@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Bad things happen. Any method can throw different types of exceptions. These exceptions can be caused either by programming errors that require you to re-deploy the application, or transient errors, that can be fixed without additional deployment.
-JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with increasing delay modifier.">
+    <meta name="description" content="Bad things happen - but JobRunr has everything covered thanks to the RetryFilter!">
     
     
     

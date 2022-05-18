@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Do you need to replace an already enqueued job? Or a job that is already being processed? Thanks to the JobRunr Pro enqueueOrReplace and scheduleOrReplace you can update the existing job easily.
- UUID cityId = city.getId(); Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&gt; weatherService.predictWeather(cityId, observation));  Observation observation = observationService.getLatestObservation(cityId); // the updated observation after a storm BackgroundJob.enqueueOrReplace(myId, () -&gt; weatherService.predictWeather(cityId, observation)); This replaces the existing background job as it uses the same uuid to create the job.">
+    <meta name="description" content="Is your job running with outdated information? Then just replace it...">
     
     
       <meta name="keywords" content="enqueue,background job,fire and forget,enqueue jobs in bulk">

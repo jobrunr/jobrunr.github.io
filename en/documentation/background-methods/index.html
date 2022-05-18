@@ -36,9 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="JobRunr supports 2 ways to easily generate background jobs:
- Using only a Java 8 lambda Using JobRequests  Java 8 lambda&rsquo;s Background jobs using Java 8 lambda&rsquo;s in JobRunr look like regular method calls. Background jobs can use both instance and static method calls as in the following example.
-BackgroundJob.enqueue&lt;EmailSender&gt;(x -&gt; x.send(&#34;jobrunr@example.com&#34;)); BackgroundJob.enqueue(() -&gt; System.out.println(&#34;Hello, world!&#34;)); Unlike usual method invocations which are run instantly, these methods are in fact Java 8 Functional Interfaces and are executed asynchronously and - depending on the configuration - even outside the current JVM.">
+    <meta name="description" content="Background jobs in JobRunr are just Java 8 lambda&#39;s - easy peasy!">
     
     
     

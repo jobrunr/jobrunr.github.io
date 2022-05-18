@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Enqueueing and processing in the same JVM instance JobRunr can easily be configured using the Fluent API to enqueue and process jobs within the same application:
-@SpringBootApplication @Import(JobRunrStorageConfiguration.class) public class WebApplication {   public static void main(String[] args) {  SpringApplication.run(WebApplication.class, args);  }   @Bean  public JobRunrConfigurationResult initJobRunr(ApplicationContext applicationContext) {  return JobRunr.configure()  .useJobActivator(applicationContext::getBean)  .useStorageProvider(SqlStorageProviderFactory  .using(applicationContext.getBean(DataSource.class)))  .useBackgroundJobServer()  .useJmxExtensions()  .useDashboard()  .">
+    <meta name="description" content="Use the Fluent API to configure JobRunr in your application within minutes.">
     
     
       <meta name="keywords" content="JobRunr Configuration">

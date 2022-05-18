@@ -36,8 +36,7 @@ if (!doNotTrack) {
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Einreihen und Verarbeiten in derselben JVM-Instanz in Quarkus Hier finden Sie ein beispiel wie Sie JobRunr in Quarkus integrieren können.
-public class JobRunrProvider {   @Produces  @Singleton  public BackgroundJobServer backgroundJobServer(StorageProvider storageProvider, JobActivator jobActivator) {  final BackgroundJobServer backgroundJobServer = new BackgroundJobServer(storageProvider, jobActivator);  backgroundJobServer.start();  return backgroundJobServer;  }   @Produces  @Singleton  public JobRunrDashboardWebServer dashboardWebServer(StorageProvider storageProvider, JsonMapper jsonMapper) {  final JobRunrDashboardWebServer jobRunrDashboardWebServer = new JobRunrDashboardWebServer(storageProvider, jsonMapper);  jobRunrDashboardWebServer.">
+    <meta name="description" content="JobRunr lässt sich in nahezu jedes Framework integrieren - auch in Quarkus">
     
     
     
