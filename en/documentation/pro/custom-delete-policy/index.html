@@ -357,6 +357,7 @@ JobRunr already allows you to configure the deletion policy for all jobs in the 
 <p>JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration. By default, succeeded jobs will go to the deleted state after 36 hours and they will then be permanently deleted after 72 hours.</p>
 <p>Thanks to the <code>deleteOnSuccess</code> and <code>deleteOnFailure</code> attributes on the <code>@Job</code> annotation you know have fine-grained control per Job on when it will move from the <code>Succeeded</code> state to the <code>Deleted</code> state and when the <code>Job</code> will be deleted permanently.</p>
 <h2 id="usage">Usage</h2>
+<h3 id="using-java-8-lambdas">Using Java 8 lambda&rsquo;s</h3>
 <p>Specifying a custom delete policy for a job is easy thanks to the <code>Job</code> annotation. Just add it to your service method and specify when you want your job to be deleted.</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>deleteOnSuccess<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PT10M!PT10M&#34;</span><span style="color:#f92672">)</span>
@@ -364,6 +365,32 @@ JobRunr already allows you to configure the deletion policy for all jobs in the 
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">list</span><span style="color:#f92672">(</span>importDirectory<span style="color:#f92672">).</span><span style="color:#a6e22e">findAny</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> fileImportService<span style="color:#f92672">.</span><span style="color:#a6e22e">import</span><span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">list</span><span style="color:#f92672">(</span>importDirectory<span style="color:#f92672">).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>toList<span style="color:#f92672">())));</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h3 id="using-jobrequest-and-jobrequesthandler">Using JobRequest and JobRequestHandler</h3>
+<p>When you are using a <code>JobRequest</code> and a <code>JobRequestHandler</code>, just add the <code>@Job</code> annotation to the run method of the handler.</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImportFilesJobRequest</span> <span style="color:#66d9ef">implements</span> JobRequest <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String folder<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ImportFilesJobRequest</span><span style="color:#f92672">(</span>String folder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">folder</span> <span style="color:#f92672">=</span> folder<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Class<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> JobRequestHandler<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getJobRequestHandler</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ImportFilesJobRequestHandler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImportJobRequestHandler</span> <span style="color:#66d9ef">implements</span> JobRequestHandler<span style="color:#f92672">&lt;</span>ImportFilesJobRequest<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>deleteOnSuccess<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PT10M!PT10M&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>ImportFilesJobRequest importFiles<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// business logic here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div></figure>
 <br>
