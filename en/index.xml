@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Sep 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr v5.3.0</title>
+      <link>https://www.jobrunr.io/en/blog/2022-10-03-jobrunr-5.3.0/</link>
+      <pubDate>Mon, 03 Oct 2022 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-10-03-jobrunr-5.3.0/</guid>
+      <description>Support for Spring Boot 3.0.0 and Kotlin 1.7.20</description>
     </item>
     
     <item>
