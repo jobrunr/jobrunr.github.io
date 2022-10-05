@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Oct 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr and Daylight Saving Time</title>
+      <link>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</link>
+      <pubDate>Wed, 05 Oct 2022 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</guid>
+      <description>Let&amp;rsquo;s dig deeper on the impact of Daylight Saving Time and scheduled JobRunr Jobs</description>
     </item>
     
     <item>

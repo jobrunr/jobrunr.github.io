@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JobRunr and Daylight Saving Time</title>
+      <link>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</link>
+      <pubDate>Wed, 05 Oct 2022 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</guid>
+      <description>Let&amp;rsquo;s dig deeper on the impact of Daylight Saving Time and scheduled JobRunr Jobs</description>
+    </item>
+    
+    <item>
       <title>JobRunr v5.3.0</title>
       <link>https://www.jobrunr.io/en/blog/2022-10-03-jobrunr-5.3.0/</link>
       <pubDate>Mon, 03 Oct 2022 09:12:23 +0200</pubDate>
