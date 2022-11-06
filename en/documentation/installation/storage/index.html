@@ -357,11 +357,11 @@ if (!doNotTrack) {
 </blockquote>
 <h4 id="run-the-databasecreator">Run the DatabaseCreator</h4>
 <p>The DatabaseCreator class allows you to create the necessary tables using a terminal. You must provide a user that has DDL rights.</p>
-<pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar org.jobrunr.storage.sql.common.DatabaseCreator {jdbcUrl} {userName} {password}
+<pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar;slf4j-api.jar org.jobrunr.storage.sql.common.DatabaseCreator {jdbcUrl} {userName} {password}
 </code></pre><p>If the command succeeds, a confirmation message will be shown.</p>
 <h4 id="apply-the-sql-scripts-yourself">Apply the SQL scripts yourself</h4>
 <p>To generate the sql scripts for your database so you can apply them yourself, use the following command (the files will be generated in the current directory):</p>
-<pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar org.jobrunr.storage.sql.common.DatabaseSqlMigrationFileProvider {databaseType} ({tablePrefix})
+<pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar;slf4j-api.jar org.jobrunr.storage.sql.common.DatabaseSqlMigrationFileProvider {databaseType} ({tablePrefix})
 </code></pre><p>Once you created the tables, you can configure JobRunr as follows (when using <code>jobrunr-spring-boot-starter</code>, this is not necessary):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>JobRunr<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">useStorageProvider</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> DefaultSqlStorageProvider<span style="color:#f92672">(</span>dataSource<span style="color:#f92672">,</span> DatabaseOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">SKIP_CREATE</span><span style="color:#f92672">))</span>

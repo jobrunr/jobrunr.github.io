@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Oct 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>Oooh, the irony</title>
+      <link>https://www.jobrunr.io/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</link>
+      <pubDate>Sat, 05 Nov 2022 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</guid>
+      <description>A crime scene investigation on what went wrong with JobRunr when Daylight Saving Time ended.</description>
     </item>
     
     <item>
@@ -704,6 +713,16 @@ A BackgroundJobServer can have multiple server tags and a job can specify only o
     </item>
     
     <item>
+      <title>Third Party Software Notices</title>
+      <link>https://www.jobrunr.io/en/licensing/third-party/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
+      <description>JobRunr products use software provided by third parties, including open source software. The following copyright statements and licenses apply to various components that are distributed with various JobRunr products. The JobRunr product that includes this file does not necessarily use all of the third party software components referred to below.
+Licensee must fully agree and comply with these license terms or must not use these components. The third party license terms apply only to the respective software to which the license pertains, and the third party license terms do not apply to the JobRunr software.</description>
+    </item>
+    
+    <item>
       <title>Transaction plugin</title>
       <link>https://www.jobrunr.io/en/documentation/pro/transactions/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -889,15 +908,6 @@ Remember that background jobs may be processed days or weeks after they were enq
       
       <guid>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</guid>
       <description>The birth of JobRunr - easy process long-running jobs!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.jobrunr.io/en/licensing/third-party/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
-      <description></description>
     </item>
     
   </channel>

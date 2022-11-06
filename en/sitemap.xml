@@ -33,9 +33,14 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2022-10-05T09:12:23+02:00</lastmod>
+    <lastmod>2022-11-05T09:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</loc>
+    <lastmod>2022-11-05T09:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -328,6 +333,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/licensing/third-party/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/transactions/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -466,10 +476,6 @@
   <url>
     <loc>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</loc>
     <lastmod>2020-04-08T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/licensing/third-party/</loc>
   </url>
   
   <url>

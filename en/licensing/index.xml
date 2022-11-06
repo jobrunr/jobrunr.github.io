@@ -26,12 +26,13 @@
     </item>
     
     <item>
-      <title></title>
+      <title>Third Party Software Notices</title>
       <link>https://www.jobrunr.io/en/licensing/third-party/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
-      <description></description>
+      <description>JobRunr products use software provided by third parties, including open source software. The following copyright statements and licenses apply to various components that are distributed with various JobRunr products. The JobRunr product that includes this file does not necessarily use all of the third party software components referred to below.
+Licensee must fully agree and comply with these license terms or must not use these components. The third party license terms apply only to the respective software to which the license pertains, and the third party license terms do not apply to the JobRunr software.</description>
     </item>
     
   </channel>
