@@ -124,18 +124,18 @@ if (!doNotTrack) {
             <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
             <script>
                 const langLink = document.getElementById("lang-link");
-                const langSelector = document.getElementById("lang-selector");
-
-                const hideLangSelector = () => {
-                    langSelector.style.display = 'none';
-                };
-                
-                const showLangSelector = () => {
-                    langSelector.style.display = 'block';
-                    setTimeout(hideLangSelector, 3000);
-                };
-
-                langLink.addEventListener("mouseover", showLangSelector);
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
             </script>
         </div>
     </div>
@@ -235,7 +235,6 @@ The GitHub CLA helps ensure the smooth operation and usability of the open sourc
 </main>
 
 
-
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright">
@@ -253,6 +252,7 @@ The GitHub CLA helps ensure the smooth operation and usability of the open sourc
     </div>
 
     
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://www.jobrunr.io/js/jobrunr-version.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js"></script>
@@ -282,5 +282,60 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
+
+  <div class="popup">
+    <button id="close">&times;</button>
+    <a href="/en/webinar">
+      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
+    </a>
+  </div>
+
+  <script type="text/javascript">
+    window.addEventListener("load", (event) => {
+        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
+        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
+        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
+        if(!webinarShownToday && timesShown <= 3) {
+          setTimeout(
+            function open(event){
+                document.querySelector(".popup").style.display = "block";
+                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
+                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
+            },
+            2000);
+        }
+    });
+    document.querySelector("#close").addEventListener("click", () => {
+        document.querySelector(".popup").style.display = "none";
+    });
+  </script>
+  <style>
+    .popup{
+        background-color: #000;
+        width: 450px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins",sans-serif;
+        display: none;
+        text-align: center;
+        z-index: 2000;
+    }
+    .popup button{
+        position: absolute;
+        float: right;
+        left: 93%;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        z-index: 2010;
+    }
+  </style>
+
 </body>
 </html>
