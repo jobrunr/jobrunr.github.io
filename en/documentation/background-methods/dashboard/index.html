@@ -70,7 +70,7 @@ Using fluent configuration
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.f2e3062342f774093a964dc0a63b159acd177baae8ba3c900288039bcc3cf9ac.css" integrity="sha256-8uMGI0L3dAk6lk3ApjsVms0Xe6roujyQAogDm8w8&#43;aw=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.3f5792ac50fc1eb02b5478e06312f0b35298a737ed77e759ade084823329a895.css" integrity="sha256-P1eSrFD8HrArVHjgYxLws1KYpzftd&#43;dZreCEgjMpqJU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.c9d1df86a3d364c1052d5e74cb11a6446609f4e81de21e66de46421d26c53826.css" integrity="sha256-ydHfhqPTZMEFLV50yxGmRGYJ9Ogd4h5m3kZCHSbFOCY=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -276,11 +276,15 @@ Using fluent configuration
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/real-time-scheduling/">Real-time scheduling and enqueueing</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/queues/">Queues</a>
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/job-chaining/">Job Chaining</a>
+                                <a href="/en/documentation/pro/job-chaining/">Workflows using Job Chains</a>
                             </li>
                         
                             <li class="">
@@ -350,6 +354,8 @@ Using fluent configuration
     </ul>
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
+                
+
                 <h1 class="post-full-title">Dashboard</h1>
                 
                     <p class="post-full-custom-excerpt"> The built-in dashboard gives you helpful insights into your background jobs</p>
@@ -371,7 +377,7 @@ Using fluent configuration
 </span></span></code></pre></div><figcaption>Using the application.properties you can enable the dashboard which will be started on the given port</figcaption>
 </figure>
 <blockquote>
-<p>Do you want a more powerful dashboard? Do you need to configure a context path to support a proxy? Have a look at the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>!</p>
+<p>Do you want a more powerful dashboard with authentication, configurable context path or even embedded within Spring, Micronaut or Quarkus? Then have a look at the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>!</p>
 </blockquote>
 <h2 id="screenshots">Screenshots</h2>
 <figure>
@@ -399,7 +405,7 @@ An overview of all recurring jobs with the ability to trigger or delete them</fi
 <img src="/documentation/job-servers.webp" class="kg-image">
 <figcaption>An overview of all background job servers processing background jobs</figcaption>
 </figure>
-<h2 id="jobrunr-pro-comes-with-handy-dashboard-improvements">JobRunr pro comes with handy dashboard improvements</h2>
+<h2 id="jobrunr-pro-comes-with-handy-dashboard-improvements">JobRunr Pro comes with handy dashboard improvements</h2>
 <figure>
 <img src="/documentation/jobrunr-pro-enqueued.webp" class="kg-image">
 <figcaption>Thanks to queues, we have an overview how many jobs are enqueued on the high-prio queue, standard queue and low-prio queue</figcaption>
@@ -467,60 +473,6 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
-
-  <div class="popup">
-    <button id="close">&times;</button>
-    <a href="/en/webinar">
-      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
-    </a>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 3) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            2000);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-    });
-  </script>
-  <style>
-    .popup{
-        background-color: #000;
-        width: 450px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        left: 50%;
-        top: 50%;
-        border-radius: 8px;
-        font-family: "Poppins",sans-serif;
-        display: none;
-        text-align: center;
-        z-index: 2000;
-    }
-    .popup button{
-        position: absolute;
-        float: right;
-        left: 93%;
-        background-color: transparent;
-        font-size: 30px;
-        color: #c5c5c5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 2010;
-    }
-  </style>
 
 </body>
 </html>

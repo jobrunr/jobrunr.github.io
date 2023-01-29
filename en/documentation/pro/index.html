@@ -61,7 +61,7 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.f2e3062342f774093a964dc0a63b159acd177baae8ba3c900288039bcc3cf9ac.css" integrity="sha256-8uMGI0L3dAk6lk3ApjsVms0Xe6roujyQAogDm8w8&#43;aw=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.3f5792ac50fc1eb02b5478e06312f0b35298a737ed77e759ade084823329a895.css" integrity="sha256-P1eSrFD8HrArVHjgYxLws1KYpzftd&#43;dZreCEgjMpqJU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.c9d1df86a3d364c1052d5e74cb11a6446609f4e81de21e66de46421d26c53826.css" integrity="sha256-ydHfhqPTZMEFLV50yxGmRGYJ9Ogd4h5m3kZCHSbFOCY=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -267,11 +267,15 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/real-time-scheduling/">Real-time scheduling and enqueueing</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/queues/">Queues</a>
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/job-chaining/">Job Chaining</a>
+                                <a href="/en/documentation/pro/job-chaining/">Workflows using Job Chains</a>
                             </li>
                         
                             <li class="">
@@ -341,6 +345,8 @@ if (!doNotTrack) {
     </ul>
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
+                
+
                 <h1 class="post-full-title">JobRunr Pro</h1>
                 
                     <p class="post-full-custom-excerpt"> Add some steroids to JobRunr to support your difficult business processes.</p>
@@ -349,25 +355,61 @@ if (!doNotTrack) {
             <section class="post-full-content">
                 
 
-<p>JobRunr Pro is a drop-in replacement for JobRunr, available under a <a href="https://www.jobrunr.io/en/pricing/">paid subscription</a> and adds a lot of extra functionality to support your difficult business processes:</p>
+<p>JobRunr Pro is a drop-in replacement for JobRunr, available under a <a href="https://www.jobrunr.io/en/pricing/">paid subscription</a> and adds a lot of extra functionality to support your difficult business processes.</p>
+<p><span class="label professional">
+    <span>JobRunr Pro Professional</span>
+</span><br>
+The professional version adds the following features:</p>
 <ul>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>:</strong> are you processing a lot of jobs and do you quickly need to find that one job? Thanks to the Job Filter feature in the JobRunr Pro dashboard you will quickly find any job by name, method signature or any other filters.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>:</strong> are you processing a lot of jobs and do you quickly need to find that one job? Thanks to the Job Search feature in the JobRunr Pro dashboard you will quickly find any job by name, method signature or any other fields.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/transactions/">Transaction plugin</a>:</strong> are you using the <a href="https://www.jobrunr.io/en/documentation/configuration/spring/">Spring Boot Starter</a> or the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/">Micronaut integration</a>? Enjoy out of the box integration with their transactions using the <code>@Transactional</code> annotation thanks to the Transaction plugin.</li>
-<li><strong>Instant job processing:</strong> Are you in a hurry? JobRunr Pro starts processing your enqueued jobs instantly.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/queues/">Queues</a>:</strong> or are you processing a lot of jobs and do you have critical business processes that must finish on-time? Queues to the rescue! Just schedule your job with a higher priority and it will bypass all the other jobs.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a>:</strong> reuse existing service methods and chain jobs to have cleaner code and an immediate overview of your business process.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a>:</strong> batches allow you to create a bunch of background jobs atomically and combined with <a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a> they can make complex workflows easy!</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/server-tags/">Server Tags</a>:</strong> do you have jobs that can only run on certain servers (e.g. Jobs that should only run on Windows, Linux, &hellip;)? Server Tags let you filter jobs by certain tags so that they are only run on certain servers.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/mutexes/">Mutexes</a>:</strong> do you consume a resource in your jobs that can not be shared? Thanks to mutexes, JobRunr will postpone jobs with shared mutexes until the mutex is free.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">Replace your jobs</a>:</strong> are you enqueueing your jobs with an external id and do you need to replace a job? By default, JobRunr will ignore the update to <a href="https://www.jobrunr.io/en/documentation/faq/#im-listening-for-jobs-using-service-bus-messages-in-a-load-balanced-environment-and-i-want-to-schedule-jobs-only-once">avoid job duplicates in a load-balanced environment</a>. Have a look at <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">replacing your jobs</a> using <code>enqueueOrReplace</code> and <code>scheduleOrReplace</code>.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/results/">Job Results</a>:</strong> are your jobs returning results? Do you have API clients polling for the outcome of a certain job? Thanks to <code>JobResults</code> you can easily return results without needing to worry about (D)DOS attacks. //TODO</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-filters/">Job Filters</a>:</strong> do you want to execute some custom business logic when a Job succeeds or fails? JobRunr filters to the rescue! And in JobRunr Pro, JobRunr filters can be any Spring / Micronaut / Quarkus bean - JobRunr will automatically find and use them.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/migrations/">Job Migrations</a>:</strong> easily migrate existing scheduled jobs via job migrations - CI/CD for your background jobs is now easier than ever. Or, you can just make your old job methods package private and JobRunr Pro will still execute them.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>:</strong> You probably like clean code? Then you also like a clean dashboard. Using a custom delete policy, you can delete jobs faster and keep dashboard and database clean.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-filters/">Custom extensions using Job Filters</a>:</strong> do you want to execute some custom business logic when a Job succeeds or fails? JobRunr filters to the rescue! And in JobRunr Pro, JobRunr filters can be any Spring / Micronaut / Quarkus bean - JobRunr will automatically find and use them.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/">Database fault-tolerance</a>:</strong> is your SQL / NoSQL database sometimes going down? Are you having connection troubles from your application to your database? JobRunr Pro has you covered and it will automatically stop job processing temporarily in this case. The moment your database is back online, JobRunr will start processing jobs again as if nothing ever happened.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/migrations/">CI/CD integration and Job Migrations</a>:</strong> test whether your recent refactoring did not break any job and easily migrate existing scheduled jobs via job migrations. CI/CD for your background jobs is now easier than ever. Or, you can just make your old job methods package private and JobRunr Pro will still execute them.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>:</strong> You probably like clean code? Then you also like a clean dashboard. Using a custom delete policy, you can delete jobs faster and keep the dashboard and database clean and mean - increasing performance.</li>
 <li><strong>Custom Retry Policy:</strong> Do you have some special needs regarding retrying failed Jobs? Then use the <code>CustomRetryPolicy</code> where you can specify the time to wait between each retry or just implement your own <code>RetryPolicy</code> if you want to have full control.</li>
 <li><strong>Pause recurring jobs:</strong> Do you want to pause your recurring jobs? Just pause them from the dashboard and resume them whenever you are ready.</li>
 <li><strong>Start &amp; Stop Background Job Processing:</strong> Do you want to stop background job processing for a while? Just stop the background job servers from the dashboard and start them whenever you are ready.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/">Database fault-tolerance</a>:</strong> is your SQL / NoSQL database sometimes going down? Are you having connection troubles from your application to your database? JobRunr Pro has you covered and it will automatically stop job processing temporarily in this case. The moment your database is back online, JobRunr will start processing jobs again as if nothing ever happened.</li>
+</ul>
+<p><span class="label business">
+    <span>JobRunr Pro Business</span>
+</span><br>
+The business version adds all the features of JobRunr Pro Professional, plus the following features:</p>
+<ul>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Workflows via Job Chaining</a>:</strong> reuse existing service methods and chain jobs to have cleaner code and an immediate overview of your business process.</p>
+</li>
+<li>
+<p><strong>Instant job processing:</strong> Are you in a hurry? JobRunr Pro starts processing your enqueued jobs instantly.</p>
+</li>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/">Real-time scheduling</a>:</strong> Are you very punctually? JobRunr Pro has support for real-time scheduling and enqueueing and makes sure your jobs run at the exact moment you specified!</p>
+</li>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a>:</strong> batches allow you to create a bunch of background jobs atomically and combined with <a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a> they can make complex workflows easy!</p>
+</li>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/server-tags/">Server Tags</a>:</strong> do you have jobs that can only run on certain servers (e.g. Jobs that should only run on Windows, Linux, &hellip;)? Server Tags let you filter jobs by certain tags so that they are only run on certain servers.</p>
+</li>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/mutexes/">Mutexes</a>:</strong> do you consume a resource in your jobs that can not be shared? Thanks to mutexes, JobRunr will postpone jobs with shared mutexes until the mutex is free.</p>
+</li>
+<li>
+<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/results/">Job Results</a>:</strong> are your jobs returning results? Do you have API clients polling for the outcome of a certain job? Thanks to <code>JobResults</code> you can easily return results without needing to worry about (D)DOS attacks. //TODO</p>
+</li>
+</ul>
+<p><span class="label enterprise">
+    <span>JobRunr Pro Enterprise</span>
+</span><br>
+The enterprise version adds all the features of JobRunr Pro Business, plus the following features:</p>
+<ul>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/">Unlimited recurring jobs</a>:</strong> enjoy (almost) unlimited recurring jobs using JobRunr Pro Enterprise. We have personally tested with up to 10.000 jobs per minute (in combination with <code>CustomDeletePolicy</code>).</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/#recurring-jobs-missed-during-downtime">Schedule recurring jobs skipped during downtime</a>:</strong> are you redeploying but do you have some business critical Recurring Jobs that may not be skipped? Just configure your jobs with the <code>scheduleSkippedJobsDuringDowntime</code> and JobRunr Pro will schedule all of the skipped jobs as soon as a <code>BackgroundJobServer</code> is up &amp; running again.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#restrict-access-using-openid-authentication">Dashboard security</a>:</strong> add SSO and security to your dashboard with the OpenID integration and limit access to authorized personnel only.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#embed-the-dashboard-within-spring-application-server">Dashboard embedded within your application framework</a>:</strong> instead of running an embedded server, you can run the dashboard within your existing application server. Save resources and plug-in any security framework you already have running in-house.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#gdpr-compliant-dashboard">GDPR compliant dashboard</a>:</strong> hide sensitive information from preying eyes in the dashboard using the GDPR toggle.</li>
 </ul>
 <h3 id="upcoming-features">Upcoming features</h3>
 <p>JobRunr Pro is by no means a finished product - subscribing will allow me to build extra features including:</p>
@@ -432,60 +474,6 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
-
-  <div class="popup">
-    <button id="close">&times;</button>
-    <a href="/en/webinar">
-      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
-    </a>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 3) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            2000);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-    });
-  </script>
-  <style>
-    .popup{
-        background-color: #000;
-        width: 450px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        left: 50%;
-        top: 50%;
-        border-radius: 8px;
-        font-family: "Poppins",sans-serif;
-        display: none;
-        text-align: center;
-        z-index: 2000;
-    }
-    .popup button{
-        position: absolute;
-        float: right;
-        left: 93%;
-        background-color: transparent;
-        font-size: 30px;
-        color: #c5c5c5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 2010;
-    }
-  </style>
 
 </body>
 </html>

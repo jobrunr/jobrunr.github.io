@@ -33,9 +33,14 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2022-12-06T09:12:23+02:00</lastmod>
+    <lastmod>2023-01-27T09:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2023-01-27-jobrunr-v6.0.0/</loc>
+    <lastmod>2023-01-27T09:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -298,11 +303,6 @@
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/job-chaining/</loc>
-    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/job-filters/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -333,6 +333,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/licensing/royalty-free-eula/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -354,6 +359,11 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/transactions/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/job-chaining/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   

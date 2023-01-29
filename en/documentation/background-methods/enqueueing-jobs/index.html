@@ -68,7 +68,7 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.f2e3062342f774093a964dc0a63b159acd177baae8ba3c900288039bcc3cf9ac.css" integrity="sha256-8uMGI0L3dAk6lk3ApjsVms0Xe6roujyQAogDm8w8&#43;aw=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.3f5792ac50fc1eb02b5478e06312f0b35298a737ed77e759ade084823329a895.css" integrity="sha256-P1eSrFD8HrArVHjgYxLws1KYpzftd&#43;dZreCEgjMpqJU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.c9d1df86a3d364c1052d5e74cb11a6446609f4e81de21e66de46421d26c53826.css" integrity="sha256-ydHfhqPTZMEFLV50yxGmRGYJ9Ogd4h5m3kZCHSbFOCY=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -274,11 +274,15 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/real-time-scheduling/">Real-time scheduling and enqueueing</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/queues/">Queues</a>
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/job-chaining/">Job Chaining</a>
+                                <a href="/en/documentation/pro/job-chaining/">Workflows using Job Chains</a>
                             </li>
                         
                             <li class="">
@@ -348,6 +352,8 @@ if (!doNotTrack) {
     </ul>
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
+                
+
                 <h1 class="post-full-title">Enqueueing jobs</h1>
                 
                     <p class="post-full-custom-excerpt"> Fire-and-forget method invocation has never been simpler thanks to JobRunr.</p>
@@ -367,21 +373,28 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>JobId jobId <span style="color:#f92672">=</span> BackgroundJobRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> MyJobRequest<span style="color:#f92672">());</span>
 </span></span></code></pre></div><figcaption>This enqueues a background job using an implementation of the JobRequest interface. The interface defines a handler that will be used to run the background job. During execution of the background job, the IoC container will need to provide an instance of that handler - in this case an instance of type MyJobRequestHandler.</figcaption>
 </figure>
-<p>The enqueue method does not call the target method immediately, it runs the following steps instead:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>JobId jobId <span style="color:#f92672">=</span> BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>aJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Generate sales report&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.&lt;</span>SalesReportService<span style="color:#f92672">&gt;</span>withDetails<span style="color:#f92672">(</span>service <span style="color:#f92672">-&gt;</span> service<span style="color:#f92672">.</span><span style="color:#a6e22e">generateSalesReport</span><span style="color:#f92672">()));</span>
+</span></span></code></pre></div><figcaption>This enqueues a background job using the JobBuilder. All Job properties are properties are configurable when using the JobBuilder, including the name and the amount of retries.</figcaption>
+</figure>
+<p>The methods above do not call the target method immediately but instead run the following steps:</p>
 <ul>
-<li>Analyse the lambda to extract the method information and all its arguments or use the <code>JobRequest</code>.</li>
-<li>Serialize the method information and all its arguments.</li>
-<li>Create a new background job based on the serialized information.</li>
-<li>Save background job to the configured <code>StorageProvider</code>.</li>
-<li>After these steps were performed, the <code>BackgroundJob.enqueue</code> method immediately returns to the caller. Another JobRunr component, called <code>BackgroundJobServer</code>, checks the persistent storage for enqueued background jobs and performs them in a reliable way.</li>
+<li>Either the <code>JobRequest</code> is used or the lambda is analyzed to extract the method information and all its arguments.</li>
+<li>The method information and all its arguments are serialized to JSON.</li>
+<li>A new background job is created based on the serialized information.</li>
+<li>The background job is saved to the configured <code>StorageProvider</code>.</li>
+<li>After these steps were performed, the <code>BackgroundJob.enqueue</code> or <code>BackgroundJob.create</code> method immediately returns to the caller. Another JobRunr component, called <code>BackgroundJobServer</code>, checks the persistent storage for enqueued background jobs and performs them in a reliable way.</li>
 </ul>
-<p>Instead of the static method call <code>BackgroundJob.enqueue</code> you can also use the <code>JobScheduler</code> bean. It has exactly the same methods as the <code>BackgroundJob</code> class. To use it, just let your dependency injection framework inject an instance of the <code>JobScheduler</code> bean and continue as before:</p>
+<p>Instead of the static methods on the <code>BackgroundJob</code> class, you can also use the <code>JobScheduler</code> bean. It has exactly the same methods as the <code>BackgroundJob</code> class. To use it, just let your dependency injection framework inject an instance of the <code>JobScheduler</code> bean and continue as before:</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> myService<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
-</span></span></code></pre></div><figcaption>Background job scheduling using the JobScheduler bean</figcaption>
+</span></span></code></pre></div><figcaption>Enqueueing background jobs using the JobScheduler bean</figcaption>
 </figure>
 <p>As before, you also do not need an instance of the myService available if the <code>MyService</code> class is know by your dependency injection framework.</p>
 <figure>
@@ -389,14 +402,26 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.&lt;</span>MyService<span style="color:#f92672">&gt;</span>enqueue<span style="color:#f92672">(</span>x <span style="color:#f92672">-&gt;</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
-</span></span></code></pre></div><figcaption>Background job scheduling using the JobScheduler bean without a reference to the MyService instance. The MyService instance will be resolved using the IoC framework when the background job is started.</figcaption>
+</span></span></code></pre></div><figcaption>Enqueueing background jobs using the JobScheduler bean without a reference to the MyService instance. The MyService instance will be resolved using the IoC framework when the background job is started.</figcaption>
 </figure>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobRequestScheduler jobRequestScheduler<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>jobRequestScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> MyJobRequest<span style="color:#f92672">());</span>
-</span></span></code></pre></div><figcaption>Background job scheduling using the JobRequestScheduler bean. The handler for `MyJobRequest` will be resolved using the IoC framework when the background job is started.</figcaption>
+</span></span></code></pre></div><figcaption>Enqueueing background jobs using the JobRequestScheduler bean. The handler for `MyJobRequest` will be resolved using the IoC framework when the background job is started.</figcaption>
+</figure>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> SalesReportService salesReportService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>aJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Generate sales report&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> salesReportService<span style="color:#f92672">.</span><span style="color:#a6e22e">generateSalesReport</span><span style="color:#f92672">()));</span>
+</span></span></code></pre></div><figcaption>Enqueueing background jobs scheduling using the JobBuilder pattern.</figcaption>
 </figure>
 <h2 id="enqueueing-background-jobs-in-bulk">Enqueueing background jobs in bulk</h2>
 <p>Sometimes you want to enqueue a lot of jobs - for example send an email to all users. JobRunr can process a Java 8 Stream<T> of objects and for each item in that Stream, create a background job. The benefit of this is that it saves these jobs in bulk to the database - resulting in a big performance improvement.</p>
@@ -417,8 +442,15 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>BackgroundJobRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span>jobStream<span style="color:#f92672">);</span>
 </span></span></code></pre></div><figcaption>Enqueueing emails in bulk using the Stream API with an instance of the mailService not available</figcaption>
 </figure>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>JobBuilder<span style="color:#f92672">&gt;</span> jobStream <span style="color:#f92672">=</span> userRepository
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">getAllUsers</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>user <span style="color:#f92672">-&gt;</span> aJob<span style="color:#f92672">().</span><span style="color:#a6e22e">withName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Send email&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">withJobRequest</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SendMailJobRequest<span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;mail-template-key&#34;</span><span style="color:#f92672">)));</span>
+</span></span><span style="display:flex;"><span>BackgroundJobRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>jobStream<span style="color:#f92672">);</span>
+</span></span></code></pre></div><figcaption>Enqueueing emails in bulk using the Stream API by means of the JobBuilder pattern</figcaption>
+</figure>
 <p>This allows for nice integration with the Spring Data framework which can return Java 8 Streams - this way, items can be processed incrementally and the entire database must not be put into memory.</p>
-<p>Off-course the above three enqueueing methods can also be done using the JobScheduler bean.</p>
+<p>Off-course the above methods to enqueue jobs can also be done using the JobScheduler bean.</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
@@ -440,6 +472,15 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>user <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> SendMailJobRequest<span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;mail-template-key&#34;</span><span style="color:#f92672">));</span>
 </span></span><span style="display:flex;"><span>jobRequestScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span>jobStream<span style="color:#f92672">);</span>
 </span></span></code></pre></div><figcaption>Enqueueing emails in bulk using the Stream API by means of a JobRequest.</figcaption>
+</figure>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>JobBuilder<span style="color:#f92672">&gt;</span> jobStream <span style="color:#f92672">=</span> userRepository
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">getAllUsers</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>user <span style="color:#f92672">-&gt;</span> aJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">withName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Send email&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">withJobRequest</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SendMailJobRequest<span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;mail-template-key&#34;</span><span style="color:#f92672">)));</span>
+</span></span><span style="display:flex;"><span>jobRequestScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>jobStream<span style="color:#f92672">);</span>
+</span></span></code></pre></div><figcaption>Enqueueing emails in bulk using the Stream API by means of the JobBuilder pattern</figcaption>
 </figure>
 <p>Please also see the <a href="https://www.jobrunr.io/en/documentation/background-methods/best-practices/">best practices</a> for more information.</p>
 
@@ -498,60 +539,6 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
-
-  <div class="popup">
-    <button id="close">&times;</button>
-    <a href="/en/webinar">
-      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
-    </a>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 3) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            2000);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-    });
-  </script>
-  <style>
-    .popup{
-        background-color: #000;
-        width: 450px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        left: 50%;
-        top: 50%;
-        border-radius: 8px;
-        font-family: "Poppins",sans-serif;
-        display: none;
-        text-align: center;
-        z-index: 2000;
-    }
-    .popup button{
-        position: absolute;
-        float: right;
-        left: 93%;
-        background-color: transparent;
-        font-size: 30px;
-        color: #c5c5c5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 2010;
-    }
-  </style>
 
 </body>
 </html>

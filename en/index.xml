@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Dec 2022 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr &amp; JobRunr Pro v6.0.0</title>
+      <link>https://www.jobrunr.io/en/blog/2023-01-27-jobrunr-v6.0.0/</link>
+      <pubDate>Fri, 27 Jan 2023 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2023-01-27-jobrunr-v6.0.0/</guid>
+      <description>New API, Job labels and a bunch a dashboard improvements!</description>
     </item>
     
     <item>
@@ -522,8 +531,9 @@ You can then fetch the result of that job using the id of the job.
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
-      <description>Creating a recurring job (also known as a CRON or crontab job) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension):
- Note that recurring jobs may not be executed on the exact moment you specify using your CRON expression: Whenever JobRunr fetches all the jobs that are scheduled and need to be executed, it fetches all jobs that need to happen in the next poll interval and enqueues them immediately.</description>
+      <description>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension).
+On this page you can learn about:
+ Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs Important remarks!</description>
     </item>
     
     <item>
@@ -543,7 +553,8 @@ You can then fetch the result of that job using the id of the job.
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</guid>
       <description>Sometimes you may want to postpone a method invocation; for example, to send an email to newly registered users a day after their registration. To do this, just call the BackgroundJob.schedule method and pass the desired delay:
- BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  JobRunr&amp;rsquo;s BackgroundJobServer periodically checks all scheduled jobs and enqueues them when it is time to run them, allowing workers to execute them. By default, the check interval is equal to 15 seconds, but you can change it by passing the relevant argument to the BackgroundJobServer constructor.</description>
+ BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  You can also use the JobBuilder to achieve the same result:
+  BackgroundJob.create(aJob()  .withName(&amp;#34;Send welcome email to newly registered users&amp;#34;)  .scheduleIn(Duration.ofDays(1))  .&amp;lt;EmailService&amp;gt;withDetails(x -&amp;gt; x.</description>
     </item>
     
     <item>
@@ -570,7 +581,7 @@ You can then fetch the result of that job using the id of the job.
       <pubDate>Fri, 04 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/contact/</guid>
-      <description>Considering a JobRunr Pro license? Contact me and we&amp;rsquo;ll see together whether JobRunr can bring any value to your business</description>
+      <description>Considering a JobRunr Pro license? Contact us and we&amp;rsquo;ll see together whether JobRunr can bring any value to your business</description>
     </item>
     
     <item>
@@ -649,16 +660,6 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
-      <title>Job Chaining</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
-      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
-      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
- @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
-    </item>
-    
-    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -685,8 +686,8 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
-      <description>Job search Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded? JobRunr Pro has you covered - thanks to a new feature called Job Search.
- Thanks to job filters, you can quickly find the job you are interested in.   Note that users using Redis as StorageProvider can only filter on State, Job Signature, Queue and ServerTag.</description>
+      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:
+ Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise  Restrict access using OpenID Authentication JobRunr Pro Enterprise  Embed the dashboard within Spring Server JobRunr Pro Enterprise  GDPR compliant Dashboard  Find any Job using the search functionality Are you processing millions of jobs?</description>
     </item>
     
     <item>
@@ -696,8 +697,7 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
       <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
-Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use
- @Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() {  System.</description>
+Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
     </item>
     
     <item>
@@ -707,8 +707,19 @@ Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to 
       
       <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
       <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
-Usage Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
+Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
 public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>
+    </item>
+    
+    <item>
+      <title>Real-time scheduling and enqueueing</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</guid>
+      <description>Do your jobs need to run some jobs on an exact moment? JobRunr Pro will do realtime enqueueing out-of-the-box!
+Some history For performance reasons, JobRunr fetches all the jobs that need to be executed during the whole next pollIntervalInSeconds. This allows JobRunr to query, update and save jobs in bulk and that&amp;rsquo;s the reason why scheduled and recurring jobs are sometimes performed a couple of seconds too early.
+JobRunr Pro to the rescue!</description>
     </item>
     
     <item>
@@ -758,6 +769,16 @@ Licensee must fully agree and comply with these license terms or must not use th
       <description>The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.
  @Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler;  @Transactional public void createUserAndSendWelcomeEmail(User user) {  userRepositoy.save(user);  jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); }  Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.
   How does it work?</description>
+    </item>
+    
+    <item>
+      <title>Workflows using Job Chains</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
+      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
+Job chaining via continueWith  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
     </item>
     
     <item>

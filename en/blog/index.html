@@ -62,7 +62,7 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.f2e3062342f774093a964dc0a63b159acd177baae8ba3c900288039bcc3cf9ac.css" integrity="sha256-8uMGI0L3dAk6lk3ApjsVms0Xe6roujyQAogDm8w8&#43;aw=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.3f5792ac50fc1eb02b5478e06312f0b35298a737ed77e759ade084823329a895.css" integrity="sha256-P1eSrFD8HrArVHjgYxLws1KYpzftd&#43;dZreCEgjMpqJU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.c9d1df86a3d364c1052d5e74cb11a6446609f4e81de21e66de46421d26c53826.css" integrity="sha256-ydHfhqPTZMEFLV50yxGmRGYJ9Ogd4h5m3kZCHSbFOCY=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -149,6 +149,53 @@ if (!doNotTrack) {
             <article class="post-card post
 
  post-card-large 
+ ">
+
+        
+            <a class="post-card-image-link" href="https://www.jobrunr.io/en/blog/2023-01-27-jobrunr-v6.0.0/">
+                <img class="post-card-image"src="/blog/2023-01-27-JobRunr-v6.png" alt="JobRunr &amp; JobRunr Pro v6.0.0"/>
+            </a>
+        
+    
+        <div class="post-card-content">
+    
+            <a class="post-card-content-link" href="https://www.jobrunr.io/en/blog/2023-01-27-jobrunr-v6.0.0/">
+    
+                <header class="post-card-header">
+                    
+                        
+                        <div class="post-card-primary-tag">blog</div>
+                    
+
+                    <h2 class="post-card-title">JobRunr &amp; JobRunr Pro v6.0.0</h2>
+                </header>
+    
+                <section class="post-card-excerpt">
+                    <p>New API, Job labels and a bunch a dashboard improvements!</p>
+                </section>
+    
+            </a>
+
+            <footer class="post-card-meta">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">Ronald Dehuysser</div>
+                            <a href="https://test.com" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+                        </li>
+                    </ul>
+                    <div class="post-card-byline-content">
+                        <span>Ronald Dehuysser</span>
+                        <span class="post-card-byline-date"><time datetime="2023-91-01">27 January 2023</time>
+                            <span class="bull">&bull;</span> 7 min read</span>
+                    </div>
+                </footer>
+    
+        </div>
+
+</article>
+    <article class="post-card post
+
+
  ">
 
         
@@ -2127,60 +2174,6 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
-
-  <div class="popup">
-    <button id="close">&times;</button>
-    <a href="/en/webinar">
-      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
-    </a>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 3) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            2000);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-    });
-  </script>
-  <style>
-    .popup{
-        background-color: #000;
-        width: 450px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        left: 50%;
-        top: 50%;
-        border-radius: 8px;
-        font-family: "Poppins",sans-serif;
-        display: none;
-        text-align: center;
-        z-index: 2000;
-    }
-    .popup button{
-        position: absolute;
-        float: right;
-        left: 93%;
-        background-color: transparent;
-        font-size: 30px;
-        color: #c5c5c5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 2010;
-    }
-  </style>
 
 </body>
 </html>

@@ -66,7 +66,7 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.f2e3062342f774093a964dc0a63b159acd177baae8ba3c900288039bcc3cf9ac.css" integrity="sha256-8uMGI0L3dAk6lk3ApjsVms0Xe6roujyQAogDm8w8&#43;aw=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.3f5792ac50fc1eb02b5478e06312f0b35298a737ed77e759ade084823329a895.css" integrity="sha256-P1eSrFD8HrArVHjgYxLws1KYpzftd&#43;dZreCEgjMpqJU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.c9d1df86a3d364c1052d5e74cb11a6446609f4e81de21e66de46421d26c53826.css" integrity="sha256-ydHfhqPTZMEFLV50yxGmRGYJ9Ogd4h5m3kZCHSbFOCY=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -272,11 +272,15 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/real-time-scheduling/">Real-time scheduling and enqueueing</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/queues/">Queues</a>
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/job-chaining/">Job Chaining</a>
+                                <a href="/en/documentation/pro/job-chaining/">Workflows using Job Chains</a>
                             </li>
                         
                             <li class="">
@@ -346,25 +350,40 @@ if (!doNotTrack) {
     </ul>
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
+                
+
                 <h1 class="post-full-title">Recurring jobs</h1>
                 
-                    <p class="post-full-custom-excerpt"> Schedule recurring jobs with a single line of code using any CRON expression.</p>
+                    <p class="post-full-custom-excerpt"> Schedule recurring jobs with a single line of code using any CRON expression or interval.</p>
                 
             </header>
             <section class="post-full-content">
-                <p>Creating a recurring job (also known as a CRON or crontab job) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the <code>jobrunr-spring-boot-starter</code>, <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>):</p>
+                <p>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the <code>jobrunr-spring-boot-starter</code>, <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>).</p>
+<p>On this page you can learn about:</p>
+<ul>
+<li><a href="#using-a-cron-expression">Create a recurring job using a CRON expression</a></li>
+<li><a href="#using-an-interval">Create a recurring job using an Interval</a></li>
+<li><a href="#managing-recurring-jobs">Managing recurring jobs</a></li>
+<li><a href="#deleting-recurring-jobs">Deleting recurring jobs</a></li>
+<li><a href="#important-remarks">Important remarks!</a></li>
+<li><span class="label enterprise">
+    <span>JobRunr Pro Enterprise</span>
+</span> <a href="#recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</a></li>
+<li><span class="label enterprise">
+    <span>JobRunr Pro Enterprise</span>
+</span> <a href="#concurrent-recurring-jobs">Concurrent recurring jobs</a></li>
+</ul>
 <blockquote>
-<p>Note that recurring jobs may not be executed on the exact moment you specify using your CRON expression: Whenever JobRunr fetches all the jobs that are scheduled and need to be executed, it fetches all jobs that need to happen in the next poll interval and enqueues them immediately. This may result in a difference of a couple of seconds.</p>
+<p>Note that JobRunr OSS supports up to <strong>100 recurring jobs</strong> (depending on the performance of your SQL or NoSQL database). Do you need to run more than 100 recurring jobs? This is supported in JobRunr Pro!</p>
 </blockquote>
-<h2 id="using-a-cron-expression">Using a Cron expression</h2>
+<blockquote>
+<p>Note that recurring jobs may not be executed on the exact moment you specify using your CRON expression: Whenever JobRunr fetches all the jobs that are scheduled and need to be executed, it fetches all jobs that need to happen in the next poll interval and enqueues them immediately. This may result in a difference of a couple of seconds. If you need real-time scheduling, then have a look at <a href="https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/">JobRunr Pro</a>.</p>
+</blockquote>
+<h2 id="using-a-cron-expression">Using a CRON expression</h2>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span>Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">daily</span><span style="color:#f92672">(),</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Easy!&#34;</span><span style="color:#f92672">));</span>
 </span></span></code></pre></div></figure>
-<p>This line creates a new recurring CRON job entry in the <code>StorageProvider</code>. A special component in <code>BackgroundJobServer</code> checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs. This enables you to track them as usual.</p>
-<blockquote>
-<p><strong>Remark:</strong> for recurring methods to work, at least one BackgroundJobServer should be running all the time and the jobs should be registered on startup of your application.
-Also note that the <strong>smallest possible cron interval</strong> for your recurring jobs is <strong>every 5 seconds</strong>. JobRunr prevents creating recurring jobs every with cron values less than 5 seconds (e.g. every second) as it would generate too much load on your StorageProvider (SQL or noSQL database).</p>
-</blockquote>
+<p>This line creates a new recurring CRON job entry in the <code>StorageProvider</code>. A special component in <code>BackgroundJobServer</code> checks the recurring jobs with a fixed interval (the <code>pollIntervalInSeconds</code>) and then enqueues them as fire-and-forget jobs. This enables you to track them as usual.</p>
 <p>The <code>Cron</code> class contains different methods and overloads to run jobs on a minute, hourly, daily, weekly, monthly and yearly basis. You can also use a standard CRON expressions to specify a more complex schedule:</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;0 12 * */2&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">));</span>
@@ -382,64 +401,122 @@ Also note that the <strong>smallest possible cron interval</strong> for your rec
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>jobRequestScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span>Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">daily</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">new</span> SysOutJobRequest<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Easy!&#34;</span><span style="color:#f92672">));</span>
 </span></span></code></pre></div></figure>
-<h2 id="using-a-duration">Using a Duration</h2>
+<p>You can also create a recurring job with a CRON expression using the builder pattern:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">createRecurrently</span><span style="color:#f92672">(</span>aRecurringJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withCron</span><span style="color:#f92672">(</span>Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">daily</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;I&#39;m created by the builder!&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div></figure>
+<p>If you are using the <code>jobrunr-spring-boot-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code> this becomes even easier: just add the <code>@Recurring</code> annotation to any bean method and JobRunr will schedule it as a recurring job:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> cron <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*/5 * * * *&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My recurring job&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// your business logic here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h2 id="using-an-interval">Using an Interval</h2>
 <p>Instead of giving a Cron expression, you can also give a duration. This will make sure that the recurring job will now be executed using a fixed interval starting the moment the recurring job was scheduled.</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span>Duration<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;P5D&#34;</span><span style="color:#f92672">),</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Easy!&#34;</span><span style="color:#f92672">));</span>
 </span></span></code></pre></div></figure>
-<p>All the examples above create a new recurring job entry in the <code>StorageProvider</code>. A special component in <code>BackgroundJobServer</code> checks the recurring jobs on a minute-based interval and then enqueues them as fire-and-forget jobs. This enables you to track them as usual.</p>
-<h3 id="specifying-identifiers">Specifying identifiers</h3>
-<p>Each recurring job has its own unique identifier. In the previous examples it was generated implicitly, using the type and method names of the given call expression (resulting in &ldquo;<code>System.out.println</code>&rdquo; as the identifier). The <code>BackgroundJob</code> and <code>JobScheduler</code> class contains overloads that take an explicitly defined job identifier. This way, you can refer to the job later on.</p>
+<p>Also in this case, you can create a recurring job with a fixed interval using the builder pattern:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">createRecurrently</span><span style="color:#f92672">(</span>aRecurringJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withInterval</span><span style="color:#f92672">(</span>Duration<span style="color:#f92672">.</span><span style="color:#a6e22e">ofDays</span><span style="color:#f92672">(</span>3<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;I&#39;m created by the builder!&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div></figure>
+<p>If you are using the <code>jobrunr-spring-boot-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code> this stays as easy as with a CRON expression: add the <code>@Recurring</code> annotation to any bean method with the <code>interval</code> attribute where you can pass an ISO8601 duration. JobRunr will schedule it again as a recurring job using the provided interval:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> interval <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;P2D8H&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My recurring job&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// your business logic here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h2 id="managing-recurring-jobs">Managing recurring jobs</h2>
+<p>Each recurring job has its own unique identifier. In the previous examples it was generated implicitly, using the type and method names of the given lambda expression (resulting in &ldquo;<code>System.out.println()</code>&rdquo; as the identifier). The <code>BackgroundJob</code> and <code>JobScheduler</code> class contains overloads that take an explicitly defined job identifier. This way, you can refer to the job later on.</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some-id&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;0 12 * */2&#34;</span><span style="color:#f92672">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">));</span>
-</span></span></code></pre></div><p>The call to the <code>scheduleRecurrently</code> method will create a new recurring job if no recurring job with that id exists or else update the existing job with that identifier.</p>
+</span></span></code></pre></div></figure>
+<p>If you are using the <code>JobBuilder</code> pattern, this becomes:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">createRecurrently</span><span style="color:#f92672">(</span>aRecurringJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some-id&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withCron</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;0 12 * */2&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">)));</span>
+</span></span></code></pre></div></figure>
+<p>The methods above will create a new recurring job if no recurring job with that id exists or else update the existing job with the given identifier.</p>
 <blockquote>
 <p>Identifiers should be unique - use unique identifiers for each recurring job, otherwise you’ll end with a single job.</p>
 </blockquote>
-<h3 id="manipulating-recurring-jobs">Manipulating recurring jobs</h3>
-<p>You can remove an existing recurring job by calling the <code>BackgroundJob.delete</code> method. It does not throw an exception when there is no such recurring job.</p>
-<h3 id="registering-your-recurring-jobs">Registering your recurring jobs</h3>
-<p>To make sure that your recurring jobs are properly registered, you need to make sure that the code to register these jobs (e.g. the examples above), is run when your application starts (which can either be a webapp, a console app, &hellip;). This is different for each application/environment. The easiest way to do so is via the <code>@Recurring</code> annotation that ships with the <code>jobrunr-spring-boot-starter</code>, the <code>quarkus-jobrunr</code> extension or the <code>jobrunr-micronaut-feature</code>. Here are some examples on how it could be done:</p>
-<h6 id="spring-framework">Spring Framework</h6>
-<p><strong>Using JobRunr&rsquo;s @Recurring annotation</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleService</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> cron <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*/5 * * * *&#34;</span><span style="color:#f92672">)</span>
+<h2 id="deleting-recurring-jobs">Deleting recurring jobs</h2>
+<p>You can remove an existing recurring job either via the dashboard or by calling the <code>BackgroundJob.delete</code> method with the id of the recurring job. It does not throw an exception when there is no such recurring job.</p>
+<h2 id="recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</h2>
+<span class="label enterprise">
+    <span>JobRunr Pro Enterprise</span>
+</span>
+<p>If for some reason all of your servers are down (e.g. deploying a new version / scheduled down time / &hellip;), JobRunr OSS skips these recurring jobs: as there is no background job server running, it will not be able to schedule these recurring jobs.</p>
+<p><strong>JobRunr Pro Enterprise improves this and adds the capability to catch up all of the skipped recurring jobs</strong>: for each run that was skipped during the downtime for a certain recurring job, it will schedule a job.</p>
+<p>This feature is disabled by default and can be enabled using the following setting:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> interval <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;P2D8H&#34;</span><span style="color:#f92672">,</span> scheduleJobsSkippedDuringDowntime<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My recurring job&#34;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// your business logic here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// you can also conditionally enqueue a new job - better visibility in the dashboard
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><h6 id="micronaut">Micronaut</h6>
-<p><strong>Using JobRunr&rsquo;s @Recurring annotation</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Singleton</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleService</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> cron <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*/5 * * * *&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div></figure>
+<p>If you are using the <code>JobBuilder</code>, this is also possible:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">createRecurrently</span><span style="color:#f92672">(</span>aRecurringJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some-id&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withCron</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;0 12 * */2&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withScheduleJobsSkippedDuringDowntime</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">)));</span>
+</span></span></code></pre></div></figure>
+<h2 id="concurrent-recurring-jobs">Concurrent recurring jobs</h2>
+<span class="label enterprise">
+    <span>JobRunr Pro Enterprise</span>
+</span>
+<p>JobRunr by default does not allow recurring jobs - the reason being is that if your recurring jobs for some reason take longer than the given CRON expression or interval, you may create more jobs than you can process.
+So, if a job instance created by a recurring job is still in state <code>SCHEDULED</code>, <code>ENQUEUED</code> or <code>PROCESSING</code> and it&rsquo;s time to again queue a new instance of the recurring job then this last instance will not be created.</p>
+<p>Sometimes the business requirements define that recurring jobs may not be skipped in any case and your recurring job runs very fast in 95% of the cases. But you have some outliers (e.g. due to a lot of work to process) that may take longer than the given CRON expression or interval. <strong>JobRunr Pro comes to the rescue</strong> with the option <code>maxConcurrentJobs</code> to create a certain amount of job instances of that recurring job that will run concurrently.</p>
+<p>By default, <code>maxConcurrentJobs</code> is set to 1 but this setting can be changed per recurring job:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> interval <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PT5M&#34;</span><span style="color:#f92672">,</span> maxConcurrentJobs<span style="color:#f92672">=</span>4<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My recurring job&#34;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// your business logic here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// you can also conditionally enqueue a new job - better visibility in the dashboard
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if for some reason this method takes more than 5 minutes (=PT5M), 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// JobRunr will create up to 4 concurrent job instances of this recurring job
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><h6 id="quarkus">Quarkus</h6>
-<p><strong>Using JobRunr&rsquo;s @Recurring annotation</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@ApplicationScoped</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RegisterForReflection</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleService</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> cron <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*/5 * * * *&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My recurring job&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// your business logic here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// you can also conditionally enqueue a new job - better visibility in the dashboard
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><h6 id="other-ways">Other ways</h6>
-<p>If you are not using an integration with a certain framework, you will need to register these scheduled jobs yourselves using Container Startup Event listeners.</p>
+</span></span></code></pre></div></figure>
+<p>If you are using the JobBuilder, this is also possible:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">createRecurrently</span><span style="color:#f92672">(</span>aRecurringJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some-id&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withInterval</span><span style="color:#f92672">(</span>Duration<span style="color:#f92672">.</span><span style="color:#a6e22e">ofMinutes</span><span style="color:#f92672">(</span>5<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withMaxConcurrentJobs</span><span style="color:#f92672">(</span>4<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">)));</span>
+</span></span></code></pre></div></figure>
+<h2 id="important-remarks">Important remarks!</h2>
+<blockquote>
+<p><strong>Remark 1:</strong> for recurring jobs to work, at least one BackgroundJobServer should be running all the time.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remark 2:</strong> also, for recurring job to work, they should be registered at application startup (which can either be a webapp, a console app, &hellip;). This is different for each application/environment. The easiest way to do so is via the <code>@Recurring</code> annotation that ships with the <code>jobrunr-spring-boot-starter</code>, the <code>quarkus-jobrunr</code> extension or the <code>jobrunr-micronaut-feature</code> as shown above. If you are not using an integration with a certain framework, you will need to register these scheduled jobs yourselves using Container Startup Event listeners.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remark 3:</strong> also note that the <strong>smallest possible cron interval</strong> for your recurring jobs is <strong>every 5 seconds</strong>. JobRunr prevents creating recurring jobs every with cron values less than 5 seconds (e.g. every second) as it would generate too much load on your StorageProvider (SQL or noSQL database).</p>
+</blockquote>
 
             </section>
         </article>
@@ -496,60 +573,6 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 </script>
-
-  <div class="popup">
-    <button id="close">&times;</button>
-    <a href="/en/webinar">
-      <img src="/2023-01-19-jobrunr-webinar.jpeg" width="100%" height="100%"/>
-    </a>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2023-01-25T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 3) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            2000);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-    });
-  </script>
-  <style>
-    .popup{
-        background-color: #000;
-        width: 450px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        left: 50%;
-        top: 50%;
-        border-radius: 8px;
-        font-family: "Poppins",sans-serif;
-        display: none;
-        text-align: center;
-        z-index: 2000;
-    }
-    .popup button{
-        position: absolute;
-        float: right;
-        left: 93%;
-        background-color: transparent;
-        font-size: 30px;
-        color: #c5c5c5;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 2010;
-    }
-  </style>
 
 </body>
 </html>

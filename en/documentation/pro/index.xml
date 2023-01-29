@@ -70,16 +70,6 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
-      <title>Job Chaining</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
-      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
-      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
- @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
-    </item>
-    
-    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -96,8 +86,8 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
-      <description>Job search Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded? JobRunr Pro has you covered - thanks to a new feature called Job Search.
- Thanks to job filters, you can quickly find the job you are interested in.   Note that users using Redis as StorageProvider can only filter on State, Job Signature, Queue and ServerTag.</description>
+      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:
+ Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise  Restrict access using OpenID Authentication JobRunr Pro Enterprise  Embed the dashboard within Spring Server JobRunr Pro Enterprise  GDPR compliant Dashboard  Find any Job using the search functionality Are you processing millions of jobs?</description>
     </item>
     
     <item>
@@ -107,8 +97,7 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
       <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
-Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use
- @Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() {  System.</description>
+Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
     </item>
     
     <item>
@@ -118,8 +107,19 @@ Usage Using a mutex is as easy as using Queues and Server Tags, again thanks to 
       
       <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
       <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
-Usage Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
+Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
 public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>
+    </item>
+    
+    <item>
+      <title>Real-time scheduling and enqueueing</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</guid>
+      <description>Do your jobs need to run some jobs on an exact moment? JobRunr Pro will do realtime enqueueing out-of-the-box!
+Some history For performance reasons, JobRunr fetches all the jobs that need to be executed during the whole next pollIntervalInSeconds. This allows JobRunr to query, update and save jobs in bulk and that&amp;rsquo;s the reason why scheduled and recurring jobs are sometimes performed a couple of seconds too early.
+JobRunr Pro to the rescue!</description>
     </item>
     
     <item>
@@ -141,6 +141,16 @@ A BackgroundJobServer can have multiple server tags and a job can specify only o
       <description>The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.
  @Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler;  @Transactional public void createUserAndSendWelcomeEmail(User user) {  userRepositoy.save(user);  jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); }  Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.
   How does it work?</description>
+    </item>
+    
+    <item>
+      <title>Workflows using Job Chains</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
+      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
+Job chaining via continueWith  @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService;  public void createArchiveAndNotify(String folder) {  BackgroundJob  .enqueue(() -&amp;gt; archiveService.createArchive(folder))  .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) }  The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
     </item>
     
   </channel>
