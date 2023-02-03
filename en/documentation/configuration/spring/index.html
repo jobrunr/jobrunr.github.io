@@ -61,7 +61,7 @@ if (!doNotTrack) {
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.7bdc533a3c83e19f8986fbcda5877748b9e52fd6223d5b413dc961e7ecde3bf2.css" integrity="sha256-e9xTOjyD4Z&#43;JhvvNpYd3SLnlL9YiPVtBPclh5&#43;zeO/I=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.7c86be0604777ae48429c57b9a574970505e93cb127f77655638051dded2eda5.css" integrity="sha256-fIa&#43;BgR3euSEKcV7mldJcFBek8sSf3dlVjgFHd7S7aU=" media="screen">
     <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.d4473f3ef629c5464b9dbd4731446230e251c792e8b48f335405dcf29f32b820.css" integrity="sha256-1Ec/PvYpxUZLnb1HMURiMOJRx5LotI8zVAXc8p8yuCA=" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
@@ -356,7 +356,7 @@ if (!doNotTrack) {
                 <p>Integration with Spring cannot be easier using the <code>jobrunr-spring-boot-starter</code>! There is even a complete example project available at <a href="https://github.com/jobrunr/example-spring">https://github.com/jobrunr/example-spring</a>.</p>
 <p><strong>To add JobRunr to your Spring project, these are the steps you need to take:</strong></p>
 <ol>
-<li>Add the <code>jobrunr-spring-boot-starter</code> dependency to your project</li>
+<li>Depending on your version of Spring Boot, add the <code>jobrunr-spring-boot-2-starter</code> or <code>jobrunr-spring-boot-3-starter</code> dependency to your project</li>
 <li>Configure JobRunr via the Spring <code>application.properties</code> file</li>
 <li>Inject the <code>JobScheduler</code> or <code>JobRequestScheduler</code> bean and use it to create background jobs!</li>
 </ol>
@@ -366,16 +366,16 @@ if (!doNotTrack) {
 
 
 <h2 id="add-the-dependency-to-the-starter">Add the dependency to the starter</h2>
-<p>As the <code>jobrunr-spring-boot-starter</code> is available in Maven Central, all you need to do is add this dependency:</p>
+<p>As the <code>jobrunr-spring-boot-2-starter</code> and <code>jobrunr-spring-boot-3-starter</code> are available in Maven Central, all you need to do is add this dependency:</p>
 <h3 id="maven">Maven</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span> 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-starter<span style="color:#f92672">&lt;/artifactId&gt;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-x-starter<span style="color:#f92672">&lt;/artifactId&gt;</span> <span style="color:#75715e">&lt;!-- replace x with your Spring Boot version --&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>${jobrunr.version}<span style="color:#f92672">&lt;/version&gt;</span> 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><h3 id="gradle">Gradle</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">jobrunr</span><span style="color:#f92672">:</span>jobrunr<span style="color:#f92672">-</span>spring<span style="color:#f92672">-</span>boot<span style="color:#f92672">-</span>starter<span style="color:#f92672">:</span>$<span style="color:#f92672">{</span>jobrunr<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-</span></span></code></pre></div><br/>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">jobrunr</span><span style="color:#f92672">:</span>jobrunr<span style="color:#f92672">-</span>spring<span style="color:#f92672">-</span>boot<span style="color:#f92672">-</span>x<span style="color:#f92672">-</span>starter<span style="color:#f92672">:</span>$<span style="color:#f92672">{</span>jobrunr<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#75715e">// replace x with your Spring Boot version
+</span></span></span></code></pre></div><br/>
 <blockquote>
 <p>Do note that if you are <strong>not</strong> working in a web environment, you also need to add either <em>Jackson</em>, <em>Gson</em> or <em>Yasson</em> for Json serialization. See the <a href="https://www.jobrunr.io/en/documentation/installation/">installation</a> page for more info.</p>
 </blockquote>
@@ -389,7 +389,7 @@ org.jobrunr.dashboard.enabled=true
 If no such bean is defined, you will either need to define it or create a <code>StorageProvider</code> bean yourself.</p>
 </blockquote>
 <h2 id="features">Features</h2>
-<p>The <code>jobrunr-spring-boot-starter</code> not only adds distributed background Job Processing to your application but also adds health actuators and micrometer performance counters.</p>
+<p>The <code>jobrunr-spring-boot-2-starter</code> and <code>jobrunr-spring-boot-3-starter</code> not only add distributed background Job Processing to your application but also add health actuators and micrometer performance counters.</p>
 <h2 id="advanced-configuration">Advanced Configuration</h2>
 <p>Every aspect of JobRunr can be configured via the <code>application.properties</code>. Below you will find all settings including their default value.</p>
 <pre tabindex="0"><code>org.jobrunr.database.skip-create=false
