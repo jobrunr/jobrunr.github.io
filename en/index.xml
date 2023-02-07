@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Jan 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,42 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr Kubernetes Autoscaling Internship</title>
+      <link>https://www.jobrunr.io/en/jobs/internship-kubernetes/</link>
+      <pubDate>Mon, 06 Feb 2023 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/jobs/internship-kubernetes/</guid>
+      <description>Deep dive into the cloud-native world!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr ML Internship</title>
+      <link>https://www.jobrunr.io/en/jobs/internship-ml/</link>
+      <pubDate>Mon, 06 Feb 2023 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/jobs/internship-ml/</guid>
+      <description>Deep dive into ML to optimize job throughput</description>
+    </item>
+    
+    <item>
+      <title>JobRunr NoSQL Internship</title>
+      <link>https://www.jobrunr.io/en/jobs/internship-nosql/</link>
+      <pubDate>Mon, 06 Feb 2023 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/jobs/internship-nosql/</guid>
+      <description>Deep dive into the world of NoSQL</description>
+    </item>
+    
+    <item>
+      <title>JobRunr Performance Testing Internship</title>
+      <link>https://www.jobrunr.io/en/jobs/internship-testbed/</link>
+      <pubDate>Mon, 06 Feb 2023 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/jobs/internship-testbed/</guid>
+      <description>Deep dive into the world of performance tuning by setting up a repeatable test environment</description>
     </item>
     
     <item>
