@@ -77,7 +77,7 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
       <guid>https://www.jobrunr.io/en/documentation/pro/job-filters/</guid>
       <description>A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
 Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.
- @Component public class NotifyJobCreatedFilter implements JobClientFilter, JobServerFilter {   private SlackNotificationService slackNotificationService;   public NotifyJobCreatedFilter(SlackNotificationService slackNotificationService) {  this.</description>
+ @Component public class NotifyJobCreatedFilter implements JobClientFilter, ApplyStateFilter {   private SlackNotificationService slackNotificationService;   public NotifyJobCreatedFilter(SlackNotificationService slackNotificationService) {  this.</description>
     </item>
     
     <item>
