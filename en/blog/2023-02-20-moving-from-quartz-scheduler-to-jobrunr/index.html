@@ -224,7 +224,7 @@ if (!doNotTrack) {
 <p>Overall, if you&rsquo;re looking for a modern, flexible, and easy-to-use job scheduling library that offers built-in support for background processing and can integrate with multiple backends, JobRunr may be a good choice for you.</p>
 <h2 id="migration-from-quartz-scheduler-to-jobrunr">Migration from Quartz Scheduler to JobRunr</h2>
 <p>In the examples below, you will be using the latest example from the <a href="http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/quick-start-guide.html">Quartz Quick Start Guide</a>. To make the example a bit more realistic, some job parameters that will be consumed by the job are added.
-If you&rsquo;re more a <code>give me the source code kind of guy</code>, the examples below are also <a href="https://github.com/jobrunr/quartz-to-jobrunr">available on GitHub</a>.</p>
+If you&rsquo;re more a <code>give me the source code kind of guy</code>, the examples below are also   <a href="https://github.com/jobrunr/quartz-to-jobrunr">available on GitHub</a>.</p>
 <h3 id="add-the-jobrunr-dependency">Add the JobRunr Dependency</h3>
 <p>If you want to migrate from Quartz to JobRunr, you&rsquo;ll need to add the JobRunr dependency and a dependency for JSON serialization (e.g. Jackson or GSON). To do so, add the following dependency to your <code>pom.xml</code>:</p>
 <figure style="width: 80%; margin: 0 auto 2em 0">
@@ -376,8 +376,7 @@ If you&rsquo;re more a <code>give me the source code kind of guy</code>, the exa
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// define the job and tie it to our HelloJob class
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDetail jobDetail <span style="color:#f92672">=</span> newJob<span style="color:#f92672">(</span>HelloJob<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">storeDurably</span><span style="color:#f92672">()</span> <span style="color:#75715e">// otherwise it cannot be triggered immediately
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create the JobDataMap
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDataMap jobDataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobDataMap<span style="color:#f92672">();</span>
@@ -487,8 +486,7 @@ If you&rsquo;re more a <code>give me the source code kind of guy</code>, the exa
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// define the job and tie it to our HelloJob class
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDetail jobDetail <span style="color:#f92672">=</span> newJob<span style="color:#f92672">(</span>HelloJob<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">storeDurably</span><span style="color:#f92672">()</span> <span style="color:#75715e">// otherwise it cannot be triggered immediately
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create the JobDataMap
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDataMap jobDataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobDataMap<span style="color:#f92672">();</span>
