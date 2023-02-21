@@ -223,9 +223,10 @@ if (!doNotTrack) {
 </ul>
 <p>Overall, if you&rsquo;re looking for a modern, flexible, and easy-to-use job scheduling library that offers built-in support for background processing and can integrate with multiple backends, JobRunr may be a good choice for you.</p>
 <h2 id="migration-from-quartz-scheduler-to-jobrunr">Migration from Quartz Scheduler to JobRunr</h2>
-<p>In the examples below, you will be using the latest example from the <a href="http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/quick-start-guide.html">Quartz Quick Start Guide</a>. To make the example a bit more realistic, some job parameters that will be consumed by the job are added.</p>
+<p>In the examples below, you will be using the latest example from the <a href="http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/quick-start-guide.html">Quartz Quick Start Guide</a>. To make the example a bit more realistic, some job parameters that will be consumed by the job are added.
+If you&rsquo;re more a <code>give me the source code kind of guy</code>, the examples below are also <a href="https://github.com/jobrunr/quartz-to-jobrunr">available on GitHub</a>.</p>
 <h3 id="add-the-jobrunr-dependency">Add the JobRunr Dependency</h3>
-<p>If you want to migrate from Quartz to JobRunr, you&rsquo;ll need to add the JobRunr dependency. To do so, add the following dependency to your <code>pom.xml</code>:</p>
+<p>If you want to migrate from Quartz to JobRunr, you&rsquo;ll need to add the JobRunr dependency and a dependency for JSON serialization (e.g. Jackson or GSON). To do so, add the following dependency to your <code>pom.xml</code>:</p>
 <figure style="width: 80%; margin: 0 auto 2em 0">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -600,6 +601,7 @@ if (!doNotTrack) {
 <p>Migrating from JobRunr to Quartz is not difficult - you can easily use your existing methods or swith to a <code>JobRequest</code> and a <code>JobRequestHandler</code>.
 With its modern features and simple API, you can quickly and easily create one-off jobs, schedule jobs to run at a specific time or after a specific interval.</p>
 <p>JobRunr&rsquo;s enterprise-grade capabilities ensure reliability, security, and support for large-scale production deployments, making it the ideal choice for any Java scheduling needs. And, it also comes with great support if you take a <a href="https://www.jobrunr.io/en/pricing/">JobRunr Pro license</a>.</p>
+<p>If you want to review the source code for the examples above, you can find them over on <a href="https://github.com/jobrunr/quartz-to-jobrunr">GitHub</a>.</p>
 <h2 id="but-wait-im-using-insert-your-preferred-framework-here">But wait! I&rsquo;m using [insert your preferred framework here]!</h2>
 <p>Are you using Spring Boot, Micronaut or Quarkus? JobRunr has you covered! If you&rsquo;re using Spring Boot, just add following dependency to your <code>pom.xml</code>:</p>
 <figure style="width: 80%; margin: 0 auto 2em 0">
