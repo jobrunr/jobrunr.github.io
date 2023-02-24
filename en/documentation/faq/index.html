@@ -294,10 +294,6 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/job-filters/">Job Filters</a>
-                            </li>
-                        
-                            <li class="">
                                 <a href="/en/documentation/pro/results/">Job Result</a>
                             </li>
                         
@@ -306,7 +302,15 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/migrations/">CI / CD &amp; Job Migrations</a>
+                                <a href="/en/documentation/pro/custom-retry-policy/">Custom Retry Policy</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/job-filters/">Job Filters</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>
                             </li>
                         
                             <li class="">
@@ -314,7 +318,11 @@ if (!doNotTrack) {
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>
+                                <a href="/en/documentation/pro/migrations/">CI / CD &amp; Job Migrations</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/database-migrations/">Database Migrations</a>
                             </li>
                         
                     </ul>
@@ -374,6 +382,9 @@ Next, the master reelection process starts which is again nothing more than the 
 <li>it checks for orphaned jobs and reschedules them</li>
 <li>it does some zookeeping like deleting all the succeeded jobs</li>
 </ul>
+<h3 id="what-happens-to-my-scheduled-and-recurring-jobs-if-my-backgroundjobserver-is-down">What happens to my scheduled and recurring jobs if my <code>BackgroundJobServer</code> is down</h3>
+<p>All scheduled jobs will run again at their scheduled time as soon as the server is up again. However, all scheduled jobs that have a scheduled time in the past (because they were not executed during downtime), will run as soon as the server is started.</p>
+<p>Recurring jobs that were missed during downtime will not be scheduled again in JobRunr OSS once your <code>BackgroundJobServer</code> is up again. <strong>JobRunr Pro</strong> does have a feature to schedule the jobs that were skipped during downtime.</p>
 <h3 id="my-recurring-jobs-are-not-running-nor-available-in-the-dashboard">My recurring jobs are not running nor available in the dashboard?</h3>
 <p>To schedule your recurring jobs, you must make sure that the code scheduling these jobs is executed on startup of your application. See the examples in <a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/#registering-your-recurring-jobs">Recurring jobs</a></p>
 <h3 id="jobrunr-stops-completely-if-my-sql--nosql-database-goes-down">JobRunr stops completely if my SQL / NoSQL database goes down</h3>
@@ -389,6 +400,11 @@ Next, the master reelection process starts which is again nothing more than the 
 <p>JobRunr Pro improves this by monitoring if the <code>StorageProvider</code> comes up again and if so, automatically restarts processing on all the different <code>BackgroundJobServer</code>s.</p>
 </blockquote>
 <!-- ### How can I control the amount of workers per BackgroundJobServer? -->
+<h3 id="im-seeing-an-exception-regarding-a-version-check">I&rsquo;m seeing an exception regarding a version check</h3>
+<p>I&rsquo;m seeing the following exception in my logs:</p>
+<pre tabindex="0"><code>Unable to check for new JobRunr version: api.github.com
+</code></pre><p>In the past (and even now), too many GitHub issues are created with people not running the latest JobRunr version (so their issue is often already resolved in a later version). This version check polls GitHub to see whether there is a new version and shows a notification in the dashboard if that&rsquo;s the case.</p>
+<p>You cannot disable it in the free version.</p>
 <h2 id="job-faq">Job FAQ</h2>
 <h3 id="how-does-jobrunr-make-sure-to-only-process-a-job-once">How does JobRunr make sure to only process a job once?</h3>
 <p>JobRunr uses <a href="https://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic locking</a> to make sure that a job is only processed once.
@@ -405,7 +421,7 @@ If it succeeds, it means that the job is not being processed by another <code>Ba
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h3 id="what-if-my-job-is-in-a-state-where-i-do-not-want-to-retry-up-to-10-times">What if my job is in a state where I do not want to retry up to 10 times?</h3>
-<p>In case you encounter a state where it does not make sense anymore to retry, you can throw a <code>JobRunrException</code>:</p>
+<p>In case you encounter a state where it does not make sense anymore to retry, you can throw a <code>JobRunrException</code> with as second parameter <code>true</code> (= <code>doNotRetry</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Doing some work&#34;</span><span style="color:#f92672">,</span> retries <span style="color:#f92672">=</span> 20<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>itsBeerOClockTime<span style="color:#f92672">())</span> <span style="color:#f92672">{</span>

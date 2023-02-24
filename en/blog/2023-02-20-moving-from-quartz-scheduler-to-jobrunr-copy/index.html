@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-5770953-9', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3K00HKL9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3K00HKL9D');
+</script>
+<script type='text/javascript' src='https://websense.vtiger.com/load/widgets.js?id=VWT-vcUT261Y2gxUePMxRBGGNx'></script>
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>How to move from Quartz to JobRunr · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="An in-depth guide on how to switch from Quartz Scheduler to JobRunr">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="How to move from Quartz to JobRunr" />
+    <meta name="twitter:description" content="An in-depth guide on how to switch from Quartz Scheduler to JobRunr" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="How to move from Quartz to JobRunr" />
+<meta property="og:description" content="An in-depth guide on how to switch from Quartz Scheduler to JobRunr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr-copy/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-20T09:12:23+02:00" />
+<meta property="article:modified_time" content="2023-02-20T09:12:23+02:00" />
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.10da4f6d253c43b3b80744facf7bef0961198020c6280d480c4ebfc8c6f8a9cd.css" integrity="sha256-ENpPbSU8Q7O4B0T6z3vvCWEZgCDGKA1IDE6/yMb4qc0=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.d4473f3ef629c5464b9dbd4731446230e251c792e8b48f335405dcf29f32b820.css" integrity="sha256-1Ec/PvYpxUZLnb1HMURiMOJRx5LotI8zVAXc8p8yuCA=" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body class=" post-template ">
+
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner"><nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr%20copy.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/blog">blog</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">How to move from Quartz to JobRunr</h1>
+
+                
+                    <p class="post-full-custom-excerpt">An in-depth guide on how to switch from Quartz Scheduler to JobRunr</p>
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Ronald Dehuysser</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Ronald Dehuysser</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2023-92-02">20 February 2023</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 12 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+                
+            </header>
+
+            
+            <figure class="post-full-image">
+                <img src="/blog/2023-02-20-from-quartz-to-jobrunr.png" alt="How to move from Quartz to JobRunr" />
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    
+
+<blockquote>
+<p>TLDR; If you&rsquo;re using Quartz as your job scheduler and you&rsquo;re looking for an alternative that&rsquo;s more modern, flexible, and powerful, JobRunr might be just what you need. In this blog post, we&rsquo;ll explore how to move from Quartz to JobRunr, step by step. You can also use it to compare JobRunr as a Java Scheduler with Quartz.</p>
+</blockquote>
+<div style="text-align: center; margin-bottom: 1em;">
+  <a href="https://github.com/jobrunr/jobrunr" class="btn btn-black btn-lg" target="_blank" rel="noopener" style="display: inline-block; height: 45px; margin-right: 1rem;">
+      <svg viewBox="0 0 16 16" style="margin: -4px 10px 0 0; display: inline-block; vertical-align: text-top; fill: currentColor; width: 25px; height: 25px;" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+      <span>Star us on GitHub!</span>
+  </a>
+</div>
+<h2 id="why-move-from-quartz-scheduler-to-jobrunr">Why move from Quartz Scheduler to JobRunr?</h2>
+<p>Quartz is a popular open-source job scheduling library that has been around for many years. While Quartz is a solid solution, JobRunr, also <a href="https://github.com/jobrunr/jobrunr">open-source and available on GitHub</a>, is a newer and more modern alternative that offers a number of advantages over Quartz. Here are some reasons why you might want to consider moving from Quartz to JobRunr:</p>
+<ul>
+<li><strong>Simple and modern API:</strong> JobRunr has a clean and modern API that is easy to use and understand: you only need a Java 8 lambda. It&rsquo;s designed to be intuitive, to provide a simple way to schedule and manage jobs and supports recent JSR&rsquo;s (e.g. JSR 310 - the Java 8 Date and Time API).</li>
+<li><strong>Cloud-native by default:</strong> JobRunr includes built-in support for cloud-native, distributed background processing, making it easy to perform long-running tasks asynchronously. This can improve the performance and scalability of your application without impact on the code.</li>
+<li><strong>Support for multiple SQL and NoSQL databases:</strong> JobRunr supports <a href="https://www.jobrunr.io/en/documentation/installation/storage/">multiple databases</a>, including PostgreSQL, MySQL, MariaDB, Oracle and SQL Server, as well as NoSQL databases like MongoDB.</li>
+<li><strong>Built-in dashboard:</strong> JobRunr comes with a <a href="https://www.jobrunr.io/en/documentation/background-methods/dashboard/">built-in dashboard</a> that allows you to monitor your jobs in real-time.</li>
+<li><strong>Reliable in all situations:</strong> JobRunr will retry any job that fails automatically up to 10 times with a smart back-off policy. No need to worry about external services that go down or network hiccups.</li>
+<li><strong>Flexible and extensible architecture:</strong> JobRunr is built with a modular architecture that allows you to easily customize and extend its functionality using <a href="https://www.jobrunr.io/en/documentation/pro/job-filters/">JobFilters</a>. This makes it easier to adapt JobRunr to your specific use case.</li>
+<li><strong>Active development and community:</strong> JobRunr is <a href="https://github.com/jobrunr/jobrunr">actively developed and maintained</a> by a dedicated team of developers, with <a href="https://github.com/jobrunr/jobrunr/releases">regular releases and updates</a>. It has currently no known <a href="https://ossindex.sonatype.org/component/pkg:maven/org.jobrunr/jobrunr">vulnerabilities</a> and has an active community of users who contribute to the project and <a href="https://github.com/jobrunr/jobrunr/discussions">offer support</a>.</li>
+</ul>
+<p>Overall, if you&rsquo;re looking for a modern, flexible, and easy-to-use job scheduling library that offers built-in support for background processing and can integrate with multiple backends, JobRunr may be a good choice for you.</p>
+<h2 id="migration-from-quartz-scheduler-to-jobrunr">Migration from Quartz Scheduler to JobRunr</h2>
+<p>In the examples below, you will be using the latest example from the <a href="http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/quick-start-guide.html">Quartz Quick Start Guide</a>. To make the example a bit more realistic, some job parameters that will be consumed by the job are added.
+If you&rsquo;re more a <code>give me the source code kind of guy</code>, the examples below are also   <a href="https://github.com/jobrunr/quartz-to-jobrunr">available on GitHub</a>.</p>
+<h3 id="add-the-jobrunr-dependency">Add the JobRunr Dependency</h3>
+<p>If you want to migrate from Quartz to JobRunr, you&rsquo;ll need to add the JobRunr dependency and a dependency for JSON serialization (e.g. Jackson or GSON). To do so, add the following dependency to your <code>pom.xml</code>:</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>6.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div></figure>
+<h3 id="creating-one-off-jobs">Creating one-off jobs</h3>
+<p>A one-off job is a job that you can create to distribute load over multiple servers (e.g. on your preferred cloud provider). You can create a long-running one-off job from your web-application that is then immediately stored in a database and thus not blocking the <code>HttpRequest</code>. Another server can then pick these jobs from the database and process them.</p>
+<h6 id="creating-a-one-off-job-using-quartz">Creating a one-off job using Quartz</h6>
+<p>If you want to create a one-off job using Quartz, you will first need to create an implementation of the <code>org.quartz.Job</code> interface. Once you have done that, you can trigger the job using a <code>JobKey</code> and the <code>JobDataMap</code>.</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.quartz<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.impl.StdSchedulerFactory<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.JobBuilder.newJob<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QuartzExampleOneOffJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we create an implementation of a Job that will be executed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#66d9ef">implements</span> Job <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>JobExecutionContext jobExecutionContext<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> JobExecutionException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// get the variables from the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            String framework <span style="color:#f92672">=</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            Instant createdAt <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Instant<span style="color:#f92672">)</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> createdAt<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Grab the Scheduler instance from the Factory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Scheduler scheduler <span style="color:#f92672">=</span> StdSchedulerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getDefaultScheduler</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create a JobKey so we can trigger it instantly
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobKey jobKey <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobKey<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;job1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;group1&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// define the job and tie it to our HelloJob class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDetail jobDetail <span style="color:#f92672">=</span> newJob<span style="color:#f92672">(</span>HelloJob<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">storeDurably</span><span style="color:#f92672">()</span> <span style="color:#75715e">// otherwise it cannot be triggered immediately
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// store the job in the job store
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">addJob</span><span style="color:#f92672">(</span>jobDetail<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDataMap jobDataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobDataMap<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Quartz&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">,</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// trigger the job using the JobKey and the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">triggerJob</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">,</span> jobDataMap<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// and start it off
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SchedulerException se<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            se<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h6 id="creating-a-one-off-job-using-jobrunr">Creating a one-off job using JobRunr</h6>
+<p>If you want to create a one-off job with JobRunr, you can use any existing class or bean and just call the actual method using a Java 8 lambda using the <a href="https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/"><code>JobScheduler.enqueue</code></a> method.</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.jobrunr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.scheduling.JobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobRunrExampleOneOffJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we can use any class or bean without implementing an interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span>String framework<span style="color:#f92672">,</span> Instant createdAt<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> createdAt<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a JobScheduler using a factory method with defaults
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        JobScheduler jobScheduler <span style="color:#f92672">=</span> JobRunrFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">initializeJobRunr</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create and trigger your job
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        jobScheduler<span style="color:#f92672">.&lt;</span>HelloJob<span style="color:#f92672">&gt;</span>enqueue<span style="color:#f92672">(</span>x <span style="color:#f92672">-&gt;</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JobRunr&#34;</span><span style="color:#f92672">,</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h3 id="scheduling-a-job-in-the-future">Scheduling a job in the future</h3>
+<p>Sometimes you may want to schedule a job in the future (e.g. sending an email one day after a user who signed up). These scheduled jobs will not be executed immediately but will be stored in the database until they need to be run.</p>
+<h6 id="creating-a-scheduled-job-using-quartz">Creating a scheduled job using Quartz</h6>
+<p>If you want to create a scheduled job using Quartz, we will again need to create an implementation of the <code>org.quartz.Job</code> interface. Once we have that, we can trigger the job using a <code>JobKey</code> and the <code>JobDataMap</code>.</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.quartz<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.impl.StdSchedulerFactory<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.sql.Date<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.temporal.ChronoUnit<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> java.time.Instant.now<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.JobBuilder.newJob<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.SimpleScheduleBuilder.simpleSchedule<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.TriggerBuilder.newTrigger<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QuartzExampleScheduledJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we create an implementation of a Job that will be executed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#66d9ef">implements</span> Job <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>JobExecutionContext jobExecutionContext<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> JobExecutionException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// get the variables from the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            String framework <span style="color:#f92672">=</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            Instant createdAt <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Instant<span style="color:#f92672">)</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> createdAt<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Grab the Scheduler instance from the Factory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Scheduler scheduler <span style="color:#f92672">=</span> StdSchedulerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getDefaultScheduler</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create a JobKey so we can trigger it instantly
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobKey jobKey <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobKey<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;job1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;group1&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// define the job and tie it to our HelloJob class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDetail jobDetail <span style="color:#f92672">=</span> newJob<span style="color:#f92672">(</span>HelloJob<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDataMap jobDataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobDataMap<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Quartz&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">,</span> now<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Create the trigger to schedule the job 1 day from now and the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Trigger trigger <span style="color:#f92672">=</span> newTrigger<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;trigger1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;group1&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">startAt</span><span style="color:#f92672">(</span>Date<span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span>now<span style="color:#f92672">().</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> ChronoUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">DAYS</span><span style="color:#f92672">)))</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">forJob</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">usingJobData</span><span style="color:#f92672">(</span>jobDataMap<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// schedule the job using the jobDetail and the trigger
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleJob</span><span style="color:#f92672">(</span>jobDetail<span style="color:#f92672">,</span> trigger<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// and start it off
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SchedulerException se<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            se<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h6 id="creating-a-scheduled-job-using-jobrunr">Creating a scheduled job using JobRunr</h6>
+<p>If you want to create a scheduled job using JobRunr, we can use again use the same approach as before using a Java 8 lambda and the <a href="https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/"><code>JobScheduler.schedule</code></a> method..</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.jobrunr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.scheduling.JobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.temporal.ChronoUnit<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> java.time.Instant.now<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobRunrExampleScheduledJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we can use any class or bean without implementing an interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span>String framework<span style="color:#f92672">,</span> Instant createdAt<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> createdAt<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a JobScheduler using a factory method with defaults
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        JobScheduler jobScheduler <span style="color:#f92672">=</span> JobRunrFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">initializeJobRunr</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create and schedule your job one day from now
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        jobScheduler<span style="color:#f92672">.&lt;</span>HelloJob<span style="color:#f92672">&gt;</span>schedule<span style="color:#f92672">(</span>now<span style="color:#f92672">().</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> ChronoUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">DAYS</span><span style="color:#f92672">),</span> x <span style="color:#f92672">-&gt;</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JobRunr&#34;</span><span style="color:#f92672">,</span> now<span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h3 id="creating-a-recurring-or-cron-job">Creating a recurring or CRON job</h3>
+<p>Sometimes you may want to create a job that runs every x amount of time (e.g. to see whether new data is available in a file share). These recurring jobs will again not be executed immediately but will be stored in the database until they need to be run.</p>
+<h6 id="creating-a-recurring-job-using-quartz">Creating a recurring job using Quartz</h6>
+<p>If you want to create a recurring job using Quartz, we will again need to create an implementation of the <code>org.quartz.Job</code> interface. Once we have that, we can trigger the job using a <code>JobKey</code>, the <code>JobDataMap</code> and a <code>schedule</code>.</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.quartz<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.quartz.impl.StdSchedulerFactory<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.sql.Date<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.temporal.ChronoUnit<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> java.time.Instant.now<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.CronScheduleBuilder.cronSchedule<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.JobBuilder.newJob<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.SimpleScheduleBuilder.simpleSchedule<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.quartz.TriggerBuilder.newTrigger<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QuartzExampleRecurringJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we create an implementation of a Job that will be executed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#66d9ef">implements</span> Job <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>JobExecutionContext jobExecutionContext<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> JobExecutionException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// get the variables from the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            String framework <span style="color:#f92672">=</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            Instant createdAt <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Instant<span style="color:#f92672">)</span> jobExecutionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getMergedJobDataMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;(created at &#34;</span> <span style="color:#f92672">+</span> createdAt <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Grab the Scheduler instance from the Factory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Scheduler scheduler <span style="color:#f92672">=</span> StdSchedulerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getDefaultScheduler</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create a JobKey so we can trigger it instantly
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobKey jobKey <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobKey<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;job1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;group1&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// define the job and tie it to our HelloJob class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDetail jobDetail <span style="color:#f92672">=</span> newJob<span style="color:#f92672">(</span>HelloJob<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// create the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            JobDataMap jobDataMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JobDataMap<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Quartz&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            jobDataMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">,</span> now<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Create the trigger for the job using a cronSchedule that runs every 30 seconds and pass the JobDataMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Trigger trigger <span style="color:#f92672">=</span>  newTrigger<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withIdentity</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;trigger1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;group1&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">startNow</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withSchedule</span><span style="color:#f92672">(</span>cronSchedule<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;0/30 * * * * ? *&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">forJob</span><span style="color:#f92672">(</span>jobKey<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">usingJobData</span><span style="color:#f92672">(</span>jobDataMap<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// schedule the job using the jobDetail and the trigger
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleJob</span><span style="color:#f92672">(</span>jobDetail<span style="color:#f92672">,</span> trigger<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// and start it off
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            scheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SchedulerException se<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            se<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h6 id="creating-a-recurring-job-using-jobrunr">Creating a recurring job using JobRunr</h6>
+<p>If you want to create a one-off job using JobRunr, we can use again use the same approach as before using a Java 8 lambda and the <a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/"><code>JobScheduler.scheduleRecurrently</code></a> method..</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.jobrunr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.scheduling.JobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.Instant<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.jobrunr.scheduling.cron.Cron.every30seconds<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobRunrExampleRecurringJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// we can use any class or bean without implementing an interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloJob</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span>String framework<span style="color:#f92672">,</span> Instant createdAt<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// run the actual business code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>framework <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; says Hello at &#34;</span> <span style="color:#f92672">+</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;(created at &#34;</span> <span style="color:#f92672">+</span> createdAt <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a JobScheduler using a factory method with defaults
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        JobScheduler jobScheduler <span style="color:#f92672">=</span> JobRunrFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">initializeJobRunr</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Schedule your job every 30 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        jobScheduler<span style="color:#f92672">.&lt;</span>HelloJob<span style="color:#f92672">&gt;</span>scheduleRecurrently<span style="color:#f92672">(</span>every30seconds<span style="color:#f92672">(),</span> x <span style="color:#f92672">-&gt;</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JobRunr&#34;</span><span style="color:#f92672">,</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// keep the main thread running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></figure>
+<h3 id="but-i-do-not-want-to-use-java-8-lambdas">But I do not want to use Java 8 lambda&rsquo;s&hellip;</h3>
+<p>No worries, also in this case, we have your back. You can also create a Job using a <code>JobRequest</code> and <code>JobRequestHandler</code> (which is based on the command &amp; command handler pattern):</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyJobRequest</span> <span style="color:#66d9ef">implements</span> JobRequest <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> UUID id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyJobRequest</span><span style="color:#f92672">(</span>UUID id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Class<span style="color:#f92672">&lt;</span>MyJobRequestHandler<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getJobRequestHandler</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> MyJobRequestHandler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> UUID <span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>JobId jobId <span style="color:#f92672">=</span> BackgroundJobRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> MyJobRequest<span style="color:#f92672">(</span>id<span style="color:#f92672">));</span>
+</span></span></code></pre></div><figcaption>This enqueues a background job using a JobRequest. The JobRequest can contain data and when the actual job will be invoked, the JobRequest object will be provided to the run method of the JobRequestHandler.</figcaption>
+</figure>
+<p>When using a <code>JobRequest</code> to create jobs it is important to note that the <code>JobRequest</code> itself is nothing more than a <strong>data transfer object</strong>. You should not pass services or beans with it. The smaller the <code>JobRequest</code> is, the better as it will be serialized to Json and stored in your StorageProvider.</p>
+<blockquote>
+<p>Note that your <code>JobRequest</code> will be serialized and deserialized to/from Json. This also means that it needs a default no-arg constructor and that all fields must also be capable of being serialized/deserialized to/from Json.</p>
+</blockquote>
+<p>A <code>JobRequestHandler</code> is a regular service (e.g. a Spring bean) where you can inject other services and must be resolvable by your IoC container. When your job will be invoked, JobRunr asks the IoC container for the relevant <code>JobRequestHandler</code>, calls the <code>run</code> method of the instance and passes the <code>JobRequest</code> as an argument. You can then use all the data from your <code>JobRequest</code> inside your <code>JobRequestHandler</code> to bring your job to a good end.</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyJobRequestHandler</span> <span style="color:#66d9ef">implements</span> JobRequestHandler<span style="color:#f92672">&lt;</span>MyJobRequest<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> SomeService someService<span style="color:#f92672">;</span> <span style="color:#75715e">// you can inject other services (or constructor-injection)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Some neat Job Display Name&#34;</span><span style="color:#f92672">,</span> retries <span style="color:#f92672">=</span> 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>MyJobRequest jobRequest<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// do your background work here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><figcaption>This JobRequestHandler handles all MyJobRequests. As it is a regular bean, you can inject other services.</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Migrating from JobRunr to Quartz is not difficult - you can easily use your existing methods or swith to a <code>JobRequest</code> and a <code>JobRequestHandler</code>.
+With its modern features and simple API, you can quickly and easily create one-off jobs, schedule jobs to run at a specific time or after a specific interval.</p>
+<p>JobRunr&rsquo;s enterprise-grade capabilities ensure reliability, security, and support for large-scale production deployments, making it the ideal choice for any Java scheduling needs. And, it also comes with great support if you take a <a href="https://www.jobrunr.io/en/pricing/">JobRunr Pro license</a>.</p>
+<p>If you want to review the source code for the examples above, you can find them over on <a href="https://github.com/jobrunr/quartz-to-jobrunr">GitHub</a>.</p>
+<h2 id="but-wait-im-using-insert-your-preferred-framework-here">But wait! I&rsquo;m using [insert your preferred framework here]!</h2>
+<p>Are you using Spring Boot, Micronaut or Quarkus? JobRunr has you covered! If you&rsquo;re using Spring Boot, just add following dependency to your <code>pom.xml</code>:</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-3-starter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>6.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div></figure>
+<p>Next, configure which JobRunr features you want to enable using the <code>application.properties</code>:</p>
+<pre tabindex="0"><code class="language-properties" data-lang="properties">org.jobrunr.background-job-server.enabled=true # if you want to enable job processing
+org.jobrunr.dashboard.enabled=true # if you want to enable the dashboard
+</code></pre><p>Now you can inject the <code>JobScheduler</code> bean and create or schedule any job!</p>
+<h2 id="ooh-yeah-there-is-one-more-thing-an-awesome-dashboard">Ooh yeah, there is one more thing&hellip; an awesome dashboard!</h2>
+<p>Did you know that JobRunr also comes with a built-in dashboard that allows you to monitor all your jobs and the servers that participate in Job Processing? Well, off-course there is!</p>
+<figure>
+<img src="/documentation/jobs-enqueued.webp" class="kg-image">
+<figcaption>An overview of all enqueued jobs</figcaption>
+</figure>
+<p>And you can instantly view the exact reason why a Job failed&hellip;</p>
+<figure>
+<img src="/documentation/job-details-failed-2.webp" class="kg-image">
+<figcaption>When a job failed, you see a detailed message why it failed</figcaption>
+</figure>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright">
+                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                </section>
+                <section class="love" style="opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Ronald Dehuysser</a></div>
+                    <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3 by Jonathan Janssens</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://www.jobrunr.io/js/jobrunr-version.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "transparent",
+      "border": "#fff",
+      "text": "#fff"
+    }
+  },
+  "content": {
+    "link": "Learn more about cookies"
+  }
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+</body>
+</html>

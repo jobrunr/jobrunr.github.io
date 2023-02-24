@@ -8,11 +8,20 @@
     <language>en</language>
     <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JobRunr &amp; JobRunr Pro v6.1.0</title>
+      <link>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</link>
+      <pubDate>Fri, 24 Feb 2023 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</guid>
+      <description>An important bugfix and Job Filters improved a lot!</description>
+    </item>
+    
+    <item>
       <title>How to move from Quartz to JobRunr</title>
-      <link>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr-copy/</link>
       <pubDate>Mon, 20 Feb 2023 09:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr-copy/</guid>
       <description>An in-depth guide on how to switch from Quartz Scheduler to JobRunr</description>
     </item>
     
@@ -31,7 +40,7 @@
       <pubDate>Sun, 29 Jan 2023 09:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/blog/2023-01-29-jobrunr-v6.0.0/</guid>
-      <description>New API, Job labels and a bunch a dashboard improvements!</description>
+      <description>New API, Job labels and a bunch of dashboard improvements!</description>
     </item>
     
     <item>

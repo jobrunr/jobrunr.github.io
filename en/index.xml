@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Feb 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -210,11 +210,20 @@ Fork the project and make contributions on GitHub!</description>
     </item>
     
     <item>
+      <title>JobRunr &amp; JobRunr Pro v6.1.0</title>
+      <link>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</link>
+      <pubDate>Fri, 24 Feb 2023 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</guid>
+      <description>An important bugfix and Job Filters improved a lot!</description>
+    </item>
+    
+    <item>
       <title>How to move from Quartz to JobRunr</title>
-      <link>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr-copy/</link>
       <pubDate>Mon, 20 Feb 2023 09:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr-copy/</guid>
       <description>An in-depth guide on how to switch from Quartz Scheduler to JobRunr</description>
     </item>
     
@@ -269,7 +278,7 @@ Fork the project and make contributions on GitHub!</description>
       <pubDate>Sun, 29 Jan 2023 09:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/blog/2023-01-29-jobrunr-v6.0.0/</guid>
-      <description>New API, Job labels and a bunch a dashboard improvements!</description>
+      <description>New API, Job labels and a bunch of dashboard improvements!</description>
     </item>
     
     <item>
@@ -461,6 +470,16 @@ JobRunr already allows you to configure the deletion policy for all jobs in the 
       <guid>https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/</guid>
       <description>JobRunr by defaults stops completely if my SQL / NoSQL database goes down and there is a reason for this - JobRunr namely uses your database for a lot of things:
  Master node election for the BackgroundJobServer Fetching the details of a Job and update the state when it&amp;rsquo;s done Monitoring whether there are no zombie jobs (jobs that were being processed on a BackgroundJobServer node that crashed) Optimistic locking so that a job will be only executed once &amp;hellip;  The moment JobRunr loses it’s connection to the database (or the database goes down), there will be a lot of threads that will try to read and write updates to the database but all of these will off-course fail.</description>
+    </item>
+    
+    <item>
+      <title>Database Migrations</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/database-migrations/</link>
+      <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/database-migrations/</guid>
+      <description>JobRunr will by default perform all database related migrations automatically for you.
+If you are not allowed to have a user using DDL rights at runtime or if due to company policies, you cannot have JobRunr do the migrations for you, there are several options which we will discuss below. If you manually take control of your migrations, please note that we may introduce changes with a new to the database schema.</description>
     </item>
     
     <item>
@@ -714,14 +733,24 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
+      <title>Custom Retry Policy</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/</guid>
+      <description>By default, JobRunr will retry any failed jobs automatically up to 10 times with a smart, exponential back-off policy.
+However, sometimes you may need a custom retry policy as it does not make sense to have exponential back-off policy. Or, you need a different retry policy per job.
+A custom RetryPolicy for all your jobs If you want to have the same RetryPolicy for all jobs and you are using the jobrunr-spring-boot-x-starter, the jobrunr-micronaut-feature or the jobrunr-quarkus-extension, you can easily configure this in via your application&amp;rsquo;s properties.</description>
+    </item>
+    
+    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/pro/job-filters/</guid>
       <description>A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.
-Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter.
- @Component public class NotifyJobCreatedFilter implements JobClientFilter, ApplyStateFilter {   private SlackNotificationService slackNotificationService;   public NotifyJobCreatedFilter(SlackNotificationService slackNotificationService) {  this.</description>
+Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter. Other filters are also available like the ApplyStateFilter and the ElectStateFilter.</description>
     </item>
     
     <item>
