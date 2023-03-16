@@ -56,8 +56,7 @@ On this page you can learn about:
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/background-jobs-dependencies/</guid>
       <description>TLDR; If you are using either the JobRunr Spring Boot Starter, Micronaut Integration or Quarkus Extension, you can just have beans or services injected into your background job (e.g. the service class that you are calling) and JobRequestHandler.
-A long, long time ago&amp;hellip; There was a background job that needed a certain dependency to fulfill it&amp;rsquo;s work&amp;hellip;
-In almost every job you’ll want to use other classes of your application to perform different work and keep your code clean and simple.</description>
+How to deal with dependencies on other beans and/or services? In almost every job you’ll want to use other classes of your application to perform different work and keep your code clean and simple.</description>
     </item>
     
     <item>
@@ -90,7 +89,7 @@ Using fluent configuration
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/</guid>
       <description>Bad things happen. Any method can throw different types of exceptions. These exceptions can be caused either by programming errors that require you to re-deploy the application, or transient errors, that can be fixed without additional deployment.
-JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with increasing delay modifier.</description>
+JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with a smart exponential back-off policy.</description>
     </item>
     
     <item>

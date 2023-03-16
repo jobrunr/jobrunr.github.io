@@ -299,17 +299,12 @@ A label can be added both via the existing <code>@Job</code> annotation or the n
 </ul>
 <h2 id="new-features-in-jobrunr-pro">New features in JobRunr Pro</h2>
 <p><span class="label professional">
-    <span>JobRunr Pro Professional</span>
+    <span>JobRunr Pro </span>
 </span>- the improved dashboard helps your team save even more time:</p>
 <ul>
 <li><strong><a href="https://github.com/jobrunr/jobrunr-pro/issues/62">Recurring Jobs tab</a></strong>: The recurring jobs view has improved &hellip; a lot! You can now search for Recurring Jobs by name, label, nextRun, &hellip; .  This comes in handy when you have a lot of recurring jobs.</li>
 <li><strong><a href="https://github.com/jobrunr/jobrunr-pro/issues/11">Jobs tab</a></strong>: The jobs views has also seen some love and you can now also search for jobs by id and by recurring job id. This allows you to have an instant overview of all the different job instances for a certain recurring job.</li>
 <li><strong><a href="https://github.com/jobrunr/jobrunr-pro/issues/41">Other improvements</a></strong>: you will now also see the server tags in the Background Job Server tab</li>
-</ul>
-<p><span class="label business">
-    <span>JobRunr Pro Business</span>
-</span>- some great new features to take your job scheduling to the next level:</p>
-<ul>
 <li><strong><a href="https://github.com/jobrunr/jobrunr/issues/410">Custom Authentication Provider</a></strong>: you can now plugin your own Authentication Provider allowing to plug in custom authentication</li>
 <li><strong><a href="https://github.com/jobrunr/jobrunr-pro/issues/99">Queues improvements</a></strong>: a queue name should be an enum and this is now possible! When creating a job for a certain queue, you can now just pass an enum! To setup your queues, you can now also use the following property: <code>org.jobrunr.queues.from-enum=your.package.QueueName</code> where you pass the fully qualified class name to your enum containing the different queues.</li>
 <li><strong><a href="https://github.com/jobrunr/jobrunr-pro/issues/19">Real-time enqueueing</a></strong>: JobRunr Pro will by default do real-time enqueueing - e.g. if you schedule a Job each night at 8pm, it will now also be enqueued exactly at 8pm (unless you have more than 1000 jobs to enqueue at that time as otherwise it may have a huge performance impact).</li>

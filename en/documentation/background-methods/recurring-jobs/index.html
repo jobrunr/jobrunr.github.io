@@ -315,10 +315,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/custom-retry-policy/">Custom Retry Policy</a>
-                            </li>
-                        
-                            <li class="">
                                 <a href="/en/documentation/pro/job-filters/">Job Filters</a>
                             </li>
                         
@@ -385,11 +381,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#managing-recurring-jobs">Managing recurring jobs</a></li>
 <li><a href="#deleting-recurring-jobs">Deleting recurring jobs</a></li>
 <li><a href="#important-remarks">Important remarks!</a></li>
-<li><span class="label enterprise">
-    <span>JobRunr Pro Enterprise</span>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
 </span> <a href="#recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</a></li>
-<li><span class="label enterprise">
-    <span>JobRunr Pro Enterprise</span>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
 </span> <a href="#concurrent-recurring-jobs">Concurrent recurring jobs</a></li>
 </ul>
 <blockquote>
@@ -481,11 +477,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="deleting-recurring-jobs">Deleting recurring jobs</h2>
 <p>You can remove an existing recurring job either via the dashboard or by calling the <code>BackgroundJob.delete</code> method with the id of the recurring job. It does not throw an exception when there is no such recurring job.</p>
 <h2 id="recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</h2>
-<span class="label enterprise">
-    <span>JobRunr Pro Enterprise</span>
+<span class="label professional">
+    <span>JobRunr Pro</span>
 </span>
 <p>If for some reason all of your servers are down (e.g. deploying a new version / scheduled down time / &hellip;), JobRunr OSS skips these recurring jobs: as there is no background job server running, it will not be able to schedule these recurring jobs.</p>
-<p><strong>JobRunr Pro Enterprise improves this and adds the capability to catch up all of the skipped recurring jobs</strong>: for each run that was skipped during the downtime for a certain recurring job, it will schedule a job.</p>
+<p><strong>JobRunr Pro improves this and adds the capability to catch up all of the skipped recurring jobs</strong>: for each run that was skipped during the downtime for a certain recurring job, it will schedule a job.</p>
 <p>This feature is disabled by default and can be enabled using the following setting:</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> interval <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;P2D8H&#34;</span><span style="color:#f92672">,</span> scheduleJobsSkippedDuringDowntime<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span>
@@ -503,8 +499,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Powerful!&#34;</span><span style="color:#f92672">)));</span>
 </span></span></code></pre></div></figure>
 <h2 id="concurrent-recurring-jobs">Concurrent recurring jobs</h2>
-<span class="label enterprise">
-    <span>JobRunr Pro Enterprise</span>
+<span class="label professional">
+    <span>JobRunr Pro</span>
 </span>
 <p>JobRunr by default does not allow recurring jobs - the reason being is that if your recurring jobs for some reason take longer than the given CRON expression or interval, you may create more jobs than you can process.
 So, if a job instance created by a recurring job is still in state <code>SCHEDULED</code>, <code>ENQUEUED</code> or <code>PROCESSING</code> and it&rsquo;s time to again queue a new instance of the recurring job then this last instance will not be created.</p>

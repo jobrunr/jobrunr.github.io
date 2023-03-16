@@ -80,17 +80,6 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
-      <title>Custom Retry Policy</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/</link>
-      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      
-      <guid>https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/</guid>
-      <description>By default, JobRunr will retry any failed jobs automatically up to 10 times with a smart, exponential back-off policy.
-However, sometimes you may need a custom retry policy as it does not make sense to have exponential back-off policy. Or, you need a different retry policy per job.
-A custom RetryPolicy for all your jobs If you want to have the same RetryPolicy for all jobs and you are using the jobrunr-spring-boot-x-starter, the jobrunr-micronaut-feature or the jobrunr-quarkus-extension, you can easily configure this in via your application&amp;rsquo;s properties.</description>
-    </item>
-    
-    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>

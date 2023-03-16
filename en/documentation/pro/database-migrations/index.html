@@ -315,10 +315,6 @@ If you are not allowed to have a user using DDL rights at runtime or if due to c
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/custom-retry-policy/">Custom Retry Policy</a>
-                            </li>
-                        
-                            <li class="">
                                 <a href="/en/documentation/pro/job-filters/">Job Filters</a>
                             </li>
                         
@@ -370,7 +366,7 @@ If you are not allowed to have a user using DDL rights at runtime or if due to c
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
                 
-                    <div style="margin-bottom: 0.75em;"><span class="label business"><span>JobRunr Pro Business</span></span></div>
+                    <div style="margin-bottom: 0.75em;"><span class="label professional"><span>JobRunr Pro</span></span></div>
                 
 
                 <h1 class="post-full-title">Database Migrations</h1>
@@ -387,19 +383,13 @@ If you are not allowed to have a user using DDL rights at runtime or if due to c
 <pre tabindex="0"><code>org.jobrunr.database.skip-create=true
 </code></pre><p>Let&rsquo;s go over the different options to migrate your database:</p>
 <h4 id="setup-a-custom-user-only-for-the-database-migrations">Setup a custom user only for the Database Migrations</h4>
-<span class="label business">
-    <span>JobRunr Pro Business</span>
-</span>
-<p>In JobRunr Pro Business, you can setup a different user that will only be used during the database setup and migrations. As soon as the migrations are done, it will not be used anymore. This user can be configured in a property or in an environment variable.</p>
+<p>In JobRunr Pro, you can setup a different user that will only be used during the database setup and migrations. As soon as the migrations are done, it will not be used anymore. This user can be configured in a property or in an environment variable.</p>
 <p>To do so in Spring Boot, use the following <code>application.properties</code>:</p>
 <pre tabindex="0"><code>org.jobrunr.database.skip-create=false
 org.jobrunr.database.migration.username={ddl-user-name}
 org.jobrunr.database.migration.password={ddl-user-password}
 </code></pre><h4 id="generate-flyway-or-liquibase-migrations">Generate Flyway or Liquibase migrations</h4>
-<span class="label business">
-    <span>JobRunr Pro Business</span>
-</span>
-<p>Another option in JobRunr Pro Business, is to export the SQL Scripts in Flyway or Liquibase compatible format. You can then add these migrations to your existing managed sql scripts and do the JobRunr related database changes using your tool of choice.</p>
+<p>Another option in JobRunr Pro, is to export the SQL Scripts in Flyway or Liquibase compatible format. You can then add these migrations to your existing managed sql scripts and do the JobRunr related database changes using your tool of choice.</p>
 <p>To do so, use the <code>DatabaseSqlMigrationFileProvider</code>:</p>
 <pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar;slf4j-api.jar org.jobrunr.storage.sql.common.DatabaseSqlMigrationFileProvider {databaseType} (-DtablePrefix=...) (-DdatabaseManager=...) (-Doutput=...)
   where:

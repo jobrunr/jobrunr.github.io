@@ -310,10 +310,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/custom-retry-policy/">Custom Retry Policy</a>
-                            </li>
-                        
-                            <li class="">
                                 <a href="/en/documentation/pro/job-filters/">Job Filters</a>
                             </li>
                         
@@ -375,57 +371,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
 
 <p>JobRunr Pro is a drop-in replacement for JobRunr, available under a <a href="https://www.jobrunr.io/en/pricing/">paid subscription</a> and adds a lot of extra functionality to support your difficult business processes.</p>
-<p><span class="label professional">
-    <span>JobRunr Pro Professional</span>
-</span><br>
-The professional version adds the following features:</p>
 <ul>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>:</strong> are you processing a lot of jobs and do you quickly need to find that one job? Thanks to the Job Search feature in the JobRunr Pro dashboard you will quickly find any job by name, method signature or any other fields.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/transactions/">Transaction plugin</a>:</strong> are you using the <a href="https://www.jobrunr.io/en/documentation/configuration/spring/">Spring Boot Starter</a> or the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/">Micronaut integration</a>? Enjoy out of the box integration with their transactions using the <code>@Transactional</code> annotation thanks to the Transaction plugin.</li>
+<li><strong>Instant job processing:</strong> Are you in a hurry? JobRunr Pro starts processing your enqueued jobs instantly.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/">Real-time scheduling</a>:</strong> Are you very punctually? JobRunr Pro has support for real-time scheduling and enqueueing and makes sure your jobs run at the exact moment you specified!</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/queues/">Queues</a>:</strong> or are you processing a lot of jobs and do you have critical business processes that must finish on-time? Queues to the rescue! Just schedule your job with a higher priority and it will bypass all the other jobs.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Workflows via Job Chaining</a>:</strong> reuse existing service methods and chain jobs to have cleaner code and an immediate overview of your business process.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a>:</strong> batches allow you to create a bunch of background jobs atomically and combined with <a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a> they can make complex workflows easy!</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/#recurring-jobs-missed-during-downtime">Schedule recurring jobs skipped during downtime</a>:</strong> are you redeploying but do you have some business critical Recurring Jobs that may not be skipped? Just configure your jobs with the <code>scheduleSkippedJobsDuringDowntime</code> and JobRunr Pro will schedule all of the skipped jobs as soon as a <code>BackgroundJobServer</code> is up &amp; running again.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/server-tags/">Server Tags</a>:</strong> do you have jobs that can only run on certain servers (e.g. Jobs that should only run on Windows, Linux, &hellip;)? Server Tags let you filter jobs by certain tags so that they are only run on certain servers.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/mutexes/">Mutexes</a>:</strong> do you consume a resource in your jobs that can not be shared? Thanks to mutexes, JobRunr will postpone jobs with shared mutexes until the mutex is free.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/results/">Job Results</a>:</strong> are your jobs returning results? Do you have API clients polling for the outcome of a certain job? Thanks to <code>JobResults</code> you can easily return results without needing to worry about (D)DOS attacks.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">Replace your jobs</a>:</strong> are you enqueueing your jobs with an external id and do you need to replace a job? By default, JobRunr will ignore the update to <a href="https://www.jobrunr.io/en/documentation/faq/#im-listening-for-jobs-using-service-bus-messages-in-a-load-balanced-environment-and-i-want-to-schedule-jobs-only-once">avoid job duplicates in a load-balanced environment</a>. Have a look at <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">replacing your jobs</a> using <code>enqueueOrReplace</code> and <code>scheduleOrReplace</code>.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/#custom-retrypolicy-configuration">Custom Retry Policy</a>:</strong> Do you have some special needs regarding retrying failed Jobs? Then use the <code>CustomRetryPolicy</code> where you can specify the time to wait between each retry or just implement your own <code>RetryPolicy</code> if you want to have full control.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-filters/">Custom extensions using Job Filters</a>:</strong> do you want to execute some custom business logic when a Job succeeds or fails? JobRunr filters to the rescue! And in JobRunr Pro, JobRunr filters can be any Spring / Micronaut / Quarkus bean - JobRunr will automatically find and use them.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>:</strong> You probably like clean code? Then you also like a clean dashboard. Using a custom delete policy, you can delete jobs faster and keep the dashboard and database clean and mean - increasing performance.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/">Database fault-tolerance</a>:</strong> is your SQL / NoSQL database sometimes going down? Are you having connection troubles from your application to your database? JobRunr Pro has you covered and it will automatically stop job processing temporarily in this case. The moment your database is back online, JobRunr will start processing jobs again as if nothing ever happened.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/migrations/">CI/CD integration and Job Migrations</a>:</strong> test whether your recent refactoring did not break any job and easily migrate existing scheduled jobs via job migrations. CI/CD for your background jobs is now easier than ever. Or, you can just make your old job methods package private and JobRunr Pro will still execute them.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>:</strong> You probably like clean code? Then you also like a clean dashboard. Using a custom delete policy, you can delete jobs faster and keep the dashboard and database clean and mean - increasing performance.</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/">Custom Retry Policy</a>:</strong> Do you have some special needs regarding retrying failed Jobs? Then use the <code>CustomRetryPolicy</code> where you can specify the time to wait between each retry or just implement your own <code>RetryPolicy</code> if you want to have full control.</li>
 <li><strong>Pause recurring jobs:</strong> Do you want to pause your recurring jobs? Just pause them from the dashboard and resume them whenever you are ready.</li>
 <li><strong>Start &amp; Stop Background Job Processing:</strong> Do you want to stop background job processing for a while? Just stop the background job servers from the dashboard and start them whenever you are ready.</li>
-</ul>
-<p><span class="label business">
-    <span>JobRunr Pro Business</span>
-</span><br>
-The business version adds all the features of JobRunr Pro Professional, plus the following features:</p>
-<ul>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Workflows via Job Chaining</a>:</strong> reuse existing service methods and chain jobs to have cleaner code and an immediate overview of your business process.</p>
-</li>
-<li>
-<p><strong>Instant job processing:</strong> Are you in a hurry? JobRunr Pro starts processing your enqueued jobs instantly.</p>
-</li>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/">Real-time scheduling</a>:</strong> Are you very punctually? JobRunr Pro has support for real-time scheduling and enqueueing and makes sure your jobs run at the exact moment you specified!</p>
-</li>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a>:</strong> batches allow you to create a bunch of background jobs atomically and combined with <a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a> they can make complex workflows easy!</p>
-</li>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/server-tags/">Server Tags</a>:</strong> do you have jobs that can only run on certain servers (e.g. Jobs that should only run on Windows, Linux, &hellip;)? Server Tags let you filter jobs by certain tags so that they are only run on certain servers.</p>
-</li>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/mutexes/">Mutexes</a>:</strong> do you consume a resource in your jobs that can not be shared? Thanks to mutexes, JobRunr will postpone jobs with shared mutexes until the mutex is free.</p>
-</li>
-<li>
-<p><strong><a href="https://www.jobrunr.io/en/documentation/pro/results/">Job Results</a>:</strong> are your jobs returning results? Do you have API clients polling for the outcome of a certain job? Thanks to <code>JobResults</code> you can easily return results without needing to worry about (D)DOS attacks. //TODO</p>
-</li>
 </ul>
 <p><span class="label enterprise">
     <span>JobRunr Pro Enterprise</span>
 </span><br>
-The enterprise version adds all the features of JobRunr Pro Business, plus the following features:</p>
+The enterprise version adds all the features of JobRunr Pro, plus the following features:</p>
 <ul>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/">Unlimited recurring jobs</a>:</strong> enjoy (almost) unlimited recurring jobs using JobRunr Pro Enterprise. We have personally tested with up to 10.000 jobs per minute (in combination with <code>CustomDeletePolicy</code>).</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/#recurring-jobs-missed-during-downtime">Schedule recurring jobs skipped during downtime</a>:</strong> are you redeploying but do you have some business critical Recurring Jobs that may not be skipped? Just configure your jobs with the <code>scheduleSkippedJobsDuringDowntime</code> and JobRunr Pro will schedule all of the skipped jobs as soon as a <code>BackgroundJobServer</code> is up &amp; running again.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#restrict-access-using-openid-authentication">Dashboard security</a>:</strong> add SSO and security to your dashboard with the OpenID integration and limit access to authorized personnel only.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#embed-the-dashboard-within-spring-application-server">Dashboard embedded within your application framework</a>:</strong> instead of running an embedded server, you can run the dashboard within your existing application server. Save resources and plug-in any security framework you already have running in-house.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/#gdpr-compliant-dashboard">GDPR compliant dashboard</a>:</strong> hide sensitive information from preying eyes in the dashboard using the GDPR toggle.</li>

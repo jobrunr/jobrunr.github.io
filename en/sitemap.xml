@@ -33,13 +33,18 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2023-02-24T09:12:23+02:00</lastmod>
+    <lastmod>2023-03-16T09:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</loc>
+    <loc>https://www.jobrunr.io/en/blog/2023-03-16-10-billion-jobs/</loc>
+    <lastmod>2023-03-16T09:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0-copy/</loc>
     <lastmod>2023-02-24T09:12:23+02:00</lastmod>
   </url>
   
@@ -469,11 +474,6 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/migrations/</loc>
-    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/custom-retry-policy/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
