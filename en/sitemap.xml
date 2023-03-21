@@ -254,6 +254,21 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/privacy/</loc>
+    <lastmod>2022-03-04T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/privacy/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/blog/2021-11-10-java-cron-job/</loc>
     <lastmod>2021-11-10T08:00:00+02:00</lastmod>
   </url>
@@ -410,6 +425,16 @@
   <url>
     <loc>https://www.jobrunr.io/en/contact/</loc>
     <lastmod>2020-09-04T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/privacy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/contact/"
+                />
   </url>
   
   <url>
@@ -478,6 +503,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/licensing/lgpl/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/job-filters/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -524,6 +554,11 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/licensing/standard-eula/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/licensing/info/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
