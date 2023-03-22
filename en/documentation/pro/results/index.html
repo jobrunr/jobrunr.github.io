@@ -461,6 +461,9 @@ You can then fetch the result of that job using the id of the job.
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><figcaption>For a JobRequest, just use the JobRequestHandler and return the result in the runAndReturn method.</figcaption>
 </figure>
+<blockquote>
+<p><strong>Important:</strong> a Job can only have one result. When a <code>SUCCEEDED</code> job with a Job Result is retried, only the last result is kept.</p>
+</blockquote>
 
 
 
