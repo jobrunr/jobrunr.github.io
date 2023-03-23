@@ -52,7 +52,7 @@ Background jobs are regular java methods with regular arguments – no super cla
       
       <guid>https://www.jobrunr.io/en/homepage/feature-02/</guid>
       <description>Background jobs are created in a persistent storage and supports RDBMS like MySql/MariaDB, PostgreSQL, Oracle, SQL Server, DB2 and also NoSQL databases like ElasticSearch, Redis and MongoDB.
-You can safely restart your application and use JobRunr without worrying about loosing jobs.</description>
+You can safely restart your application and use JobRunr without worrying about losing jobs.</description>
     </item>
     
     <item>
