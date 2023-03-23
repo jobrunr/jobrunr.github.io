@@ -476,21 +476,24 @@ This is manifested as follows:</p>
 <li>on MongoDB, the aggregation by <code>state</code> takes a lot of time</li>
 </ul>
 <p><strong>Cause</strong><br/>
-There are 3 possible causes for this:</p>
+There are a couple of possible causes for this:</p>
 <ul>
 <li>Before JobRunr 6 and only if you&rsquo;re using a framework integration (the <code>jobrunr-spring-boot-starter</code>, <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>), these integrations automatically make sure that each background job server is also participating in MicroMeter reporting. The query to do this reporting however is quite heavy on you database.</li>
 <li>You are using the <code>fluent</code> configuration and use the <code>.useMicroMeterIntegration(new JobRunrMicroMeterIntegration(...))</code> on each <code>BackgroundJobServer</code></li>
 <li>You are running multiple instances of the dashboard (e.g. on each <code>BackgroundJobServer</code>).</li>
+<li>Your code is calling the <code>StorageProvider.getJobStats()</code> method a lot.</li>
 </ul>
 <p><strong>Solution</strong><br/></p>
 <ul>
-<li>If you are running JobRunr 5 (so JobRunr 5.x.x and lower) and the use a framework integration, please make sure to disable the micrometer integration which is enabled by default (before v6 it is enabled by default, as of v6, it is disabled by default). You can do so by means of the following setting (here is the <code>jobrunr-spring-boot-starter</code> example):</li>
+<li>If you are running JobRunr 5 (so JobRunr 5.x.x and lower) and use a framework integration, please make sure to disable the micrometer integration which is enabled by default (in v5.x.x and lower it is enabled by default, as of v6, it is disabled by default). You can do so by means of the following setting (here is the <code>jobrunr-spring-boot-starter</code> example):</li>
 </ul>
 <figure style="margin-left: 2em">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">jobrunr</span><span style="color:#f92672">.</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span>job<span style="color:#f92672">-</span>server<span style="color:#f92672">.</span><span style="color:#a6e22e">metrics</span><span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>
 </span></span></code></pre></div></figure>
 <ul>
+<li>if you have configured MicroMeter integration by means of the fluent API, only do so one server.</li>
 <li>Only enable the dashboard on one server. You can do so by means of the properties if you are using a framework integration (the <code>jobrunr-spring-boot-starter</code>, <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>) or by means of the <code>useDashboardIf(guard, ...)</code> method of the fluent API.</li>
+<li>Do not call the <code>StorageProvider.getJobStats()</code> method too many times.</li>
 </ul>
 
             </section>
