@@ -249,8 +249,18 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-web-crawling-and-sentiment-analysis/</loc>
+    <lastmod>2022-04-09T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/blog/2022-03-30-jobrunr-v5.0.0/</loc>
     <lastmod>2022-03-30T08:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-image-analysis/</loc>
+    <lastmod>2022-03-10T11:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -291,6 +301,21 @@
   <url>
     <loc>https://www.jobrunr.io/en/documentation/configuration/spring/</loc>
     <lastmod>2021-08-24T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-benefit-calculation/</loc>
+    <lastmod>2021-08-10T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-hardware-programming/</loc>
+    <lastmod>2021-08-10T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-property-management/</loc>
+    <lastmod>2021-08-10T11:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -696,6 +721,13 @@
   <url>
     <loc>https://www.jobrunr.io/en/documentation/installation/storage/</loc>
     <lastmod>2020-04-30T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/</loc>
+    <lastmod>2020-04-30T11:12:23+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>

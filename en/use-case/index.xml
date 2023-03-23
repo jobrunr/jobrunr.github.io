@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Use Cases on JobRunr</title>
+    <link>https://www.jobrunr.io/en/use-case/</link>
+    <description>Recent content in Use Cases on JobRunr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/use-case/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How JobRunr Pro Empowers Brand Protection through Parallel Web Crawling and Sentiment Analysis</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-web-crawling-and-sentiment-analysis/</link>
+      <pubDate>Sat, 09 Apr 2022 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-web-crawling-and-sentiment-analysis/</guid>
+      <description>Brand protection is more crucial than ever. JobRunr Pro, an advanced job scheduling platform, has emerged as a powerful tool for distributed web crawling and sentiment analysis by businesses that want to improve their brand protection strategy, leveraging parallel processing and monitoring tools to maximize efficiency and effectiveness.</description>
+    </item>
+    
+    <item>
+      <title>Leveraging JobRunr Pro for Efficient Medical Image Analysis in Med-Tech</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-image-analysis/</link>
+      <pubDate>Thu, 10 Mar 2022 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-image-analysis/</guid>
+      <description>Medical image analysis plays a critical role in the diagnosis, monitoring, and treatment of various diseases. By implementing JobRunr Pro, a powerful background job SDK, to manage and distribute the medical image analysis over multiple servers, a med-tech company has increased throughput by a whopping 1000% while ensuring data privacy.</description>
+    </item>
+    
+    <item>
+      <title>Efficient Calculation of Extra Legal Benefits for Construction Workers with JobRunr Pro</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-benefit-calculation/</link>
+      <pubDate>Tue, 10 Aug 2021 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-benefit-calculation/</guid>
+      <description>Social Security Funds are responsible for calculating and disbursing extra legal benefits for construction workers, taking into account a lot of data. With JobRunr Pro&amp;rsquo;s distributed nature and workflow feature, a Social Security Fund has significantly sped up the process, resulting in accurate and efficient calculations, document generation, and reporting.</description>
+    </item>
+    
+    <item>
+      <title>JobRunr Pro Streamlines VoIP Deployment for Telecom Solution Providers</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-hardware-programming/</link>
+      <pubDate>Tue, 10 Aug 2021 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-hardware-programming/</guid>
+      <description>One of the main issues faced by VoIP providers is that the hardware is not always available or online when programming is needed. JobRunr Pro, a powerful background job processing library, offers an effective solution to this problem by automatically retrying until the programming of the hardware is successful.</description>
+    </item>
+    
+    <item>
+      <title>Streamlining Property Management Operations with JobRunr Pro</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-property-management/</link>
+      <pubDate>Tue, 10 Aug 2021 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-property-management/</guid>
+      <description>Property management companies handle an extensive range of tasks, from updating property sales ads on various online marketplaces to ensuring timely rental payments and document contract signings. JobRunr Pro helps to automate these tasks, simplifying their software architecture and streamlines all property management operations.</description>
+    </item>
+    
+  </channel>
+</rss>
