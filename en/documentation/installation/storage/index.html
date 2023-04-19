@@ -6,7 +6,6 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-    <link href="https://www.googletagmanager.com/gtag/js?id=GTM-MX5H2KM" rel="preload" as="script" />
     <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
@@ -394,15 +393,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><strong>Important</strong>: you will need to add the correct dependency (jdbc-driver) for each of the databases below.</p>
 </blockquote>
 <h2 id="sql-databases">SQL databases</h2>
-<p>By default, JobRunr will automatically create the necessary tables for your database. If however you do not want to give the JobRunr DataSource DDL rights, you can easily create the tables JobRunr uses yourself using one of the following methods:</p>
+<p>Setting up an SQL database is easy-peasy because you probably don&rsquo;t need to do a thing!</p>
 <blockquote>
 <p>Running MySQL or MariaDB? Make sure <a href="">your connection string</a> is setup that it <a href="https://stackoverflow.com/questions/1646171/mysql-datetime-fields-and-daylight-savings-time-how-do-i-reference-the-extra">UTC timestamps correctly</a>.</p>
 </blockquote>
-<h4 id="run-the-databasecreator">Run the DatabaseCreator</h4>
+<h4 id="sit-back-relax-and-let-jobrunr-do-the-work-for-you">Sit back, relax and let JobRunr do the work for you!</h4>
+<p>By default, <strong>JobRunr will automatically create the necessary tables</strong> for your database. Just like Liquibase and Flyway, it comes with a database migration manager that manages the database for you.</p>
+<h4 id="setting-up-the-database-yourself">Setting up the database yourself</h4>
+<p>If however you do not want to give the JobRunr DataSource DDL rights, you can easily create the tables JobRunr uses yourself using one of the following methods:</p>
+<h6 id="run-the-databasecreator">Run the DatabaseCreator</h6>
 <p>The DatabaseCreator class allows you to create the necessary tables using a terminal. You must provide a user that has DDL rights.</p>
 <pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar;slf4j-api.jar org.jobrunr.storage.sql.common.DatabaseCreator {jdbcUrl} {userName} {password}
 </code></pre><p>If the command succeeds, a confirmation message will be shown.</p>
-<h4 id="apply-the-sql-scripts-yourself">Apply the SQL scripts yourself</h4>
+<h6 id="apply-the-sql-scripts-yourself">Apply the SQL scripts yourself</h6>
 <p>To generate the sql scripts for your database so you can apply them yourself, use the following command (the files will be generated in the current directory):</p>
 <pre tabindex="0"><code>java -cp jobrunr-${jobrunr.version}.jar;slf4j-api.jar org.jobrunr.storage.sql.common.DatabaseSqlMigrationFileProvider {databaseType} ({tablePrefix})
 </code></pre><p>Once you created the tables, you can configure JobRunr as follows (when using <code>jobrunr-spring-boot-starter</code>, this is not necessary):</p>
