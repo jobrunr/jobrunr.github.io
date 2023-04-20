@@ -793,6 +793,17 @@ On this page you can learn about:
     </item>
     
     <item>
+      <title>Advanced CRON expressions</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/advanced-cron-expressions/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/advanced-cron-expressions/</guid>
+      <description>JobRunr Pro has support for more difficult CRON expressions.
+See some examples below:
+ BackgroundJob.scheduleRecurrently(Cron.firstDayOfTheMonth(10, 30), () -&amp;gt; System.out.println(&amp;#34;First day of the month!&amp;#34;)); This will run at 10:30 am on the first day of the month.   BackgroundJob.scheduleRecurrently(Cron.firstBusinessDayOfTheMonth(10, 30), () -&amp;gt; System.out.println(&amp;#34;First business day of the month!&amp;#34;)); This will run at 10:30 am on the first business day of the month, even if the first day of the month is a Saturday or a Sunday   BackgroundJob.</description>
+    </item>
+    
+    <item>
       <title>Batches</title>
       <link>https://www.jobrunr.io/en/documentation/pro/batches/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
