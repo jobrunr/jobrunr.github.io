@@ -424,10 +424,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </figure>
 <h2 id="how-does-it-all-work">How does it all work?</h2>
 <ul>
-<li>When enqueueing a background job, the lambda is decomposed and saved into the storage provider as Json.</li>
+<li>You can enqueue, schedule or schedule a recurring background <a href="#job">Job</a> the <a href="#jobscheduler">JobScheduler</a>.</li>
+<li>The <a href="#jobscheduler">JobScheduler</a> analyses and decomposes the lambda to a JSON object and saves it into the <a href="#storage-provider">StorageProvider</a>.</li>
 <li>JobRunr returns immediately to the caller so that it is not blocking</li>
-<li>One or more background job servers poll the storage provider for new enqueued jobs and process them</li>
-<li>When finished, it updates the state in the storage provider and fetches the next job to perform</li>
+<li>One or more <a href="#backgroundjobserver">BackgroundJobServers</a> poll the <a href="#storage-provider">StorageProvider</a> for new enqueued jobs and process them</li>
+<li>When a job has been processed, it updates the state in the <a href="#storage-provider">StorageProvider</a> and fetches the next job to perform</li>
 </ul>
 
 
