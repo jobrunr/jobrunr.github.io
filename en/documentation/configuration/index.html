@@ -399,6 +399,7 @@ Once you have configured JobRunr, various beans and helper classes are available
 <li><code>JobRequestScheduler</code>: a bean that will allow you to enqueue and schedule jobs using instances of the <code>JobRequest</code> interface. For each <code>JobRequest</code> an appropriate handler should be created.</li>
 <li><code>BackgroundJob</code>: a helper class that wraps a <code>JobScheduler</code> and has static methods to enqueue and schedule jobs using Java 8 lambda&rsquo;s</li>
 <li><code>BackgroundJobRequest</code>: a helper class that wraps a <code>JobRequestScheduler</code> and has static methods to enqueue and schedule jobs using instances of the <code>JobRequest</code> interface.</li>
+<li><code>BackgroundJobServer</code>: the server responsible for managing and processing jobs</li>
 </ul>
 
             </section>

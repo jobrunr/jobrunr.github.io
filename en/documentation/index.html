@@ -467,6 +467,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="backgroundjobserver">BackgroundJobServer</h3>
 <p>The <code>BackgroundJobServer</code> class processes background jobs by querying the StorageProvider. Roughly speaking, it’s a set of background threads that listen to the storage provider for new background jobs, and perform them by first de-serializing the stored type, method and arguments and then executing it.</p>
 <p>You can place this <code>BackgroundJobServer</code> in any process you want - even if you terminate a process, your background jobs will be retried automatically after restart. So in a basic configuration for a web application, you don’t need to use any Windows services for background processing anymore.</p>
+<blockquote>
+<p><u><strong>IMPORTANT:</strong></u>
+<br/><strong>Remark 1</strong>: You should have always 1 <code>BackgroundJobServer</code> running as it is responsible to see whether any jobs need to be processed.
+<br/><strong>Remark 2</strong>: You should have only 1 <code>BackgroundJobServer</code> per application / JVM instance. If you want to process more jobs or you want to distribute the jobs over multiple JVM&rsquo;s, you must launch a complete new instance of your application. <strong>Starting multiple <code>BackgroundJobServers</code> within the same JVM instance is bad practice and should NOT be done.</strong></p>
+</blockquote>
 <h3 id="jobactivator">JobActivator</h3>
 <p>Most enterprise applications make use of an <a href="https://en.wikipedia.org/wiki/Inversion_of_control">IoC framework</a> like <a href="https://github.com/spring-projects/spring-framework">Spring</a> or <a href="https://github.com/google/guice">Guice</a> - we off course support these IoC frameworks. The <code>JobActivator</code> is a Java 8 functional interface and has the responsability to lookup the correct class on which the background job method is defined.</p>
 <figure>
