@@ -127,8 +127,8 @@ Usage via @Job annotation Using a mutex is as easy as using Queues and Server Ta
       
       <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
       <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
-Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.
-public static final String HighPrioQueue = &amp;#34;high-prio&amp;#34;; public static final String DefaultQueue = &amp;#34;default&amp;#34;; public static final String LowPrioQueue = &amp;#34;low-prio&amp;#34;;  public void runJobs() {  BackgroundJob.</description>
+ Note: JobRunr Pro supports up to 5 different queues.
+ Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.</description>
     </item>
     
     <item>

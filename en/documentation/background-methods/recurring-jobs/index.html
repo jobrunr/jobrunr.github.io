@@ -526,7 +526,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <span class="label professional">
     <span>JobRunr Pro</span>
 </span>
-<p>JobRunr by default does not allow recurring jobs - the reason being is that if your recurring jobs for some reason take longer than the given CRON expression or interval, you may create more jobs than you can process.
+<p>JobRunr by default does not allow concurrent recurring jobs - the reason being is that if your recurring jobs for some reason take longer than the given CRON expression or interval, you may create more jobs than you can process.
 So, if a job instance created by a recurring job is still in state <code>SCHEDULED</code>, <code>ENQUEUED</code> or <code>PROCESSING</code> and it&rsquo;s time to again queue a new instance of the recurring job then this last instance will not be created.</p>
 <p>Sometimes the business requirements define that recurring jobs may not be skipped in any case and your recurring job runs very fast in 95% of the cases. But you have some outliers (e.g. due to a lot of work to process) that may take longer than the given CRON expression or interval. <strong>JobRunr Pro comes to the rescue</strong> with the option <code>maxConcurrentJobs</code> to create a certain amount of job instances of that recurring job that will run concurrently.</p>
 <p>By default, <code>maxConcurrentJobs</code> is set to 1 but this setting can be changed per recurring job:</p>
