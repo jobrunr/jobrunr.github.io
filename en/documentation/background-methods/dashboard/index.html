@@ -309,7 +309,11 @@ Using fluent configuration
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/queues/">Queues</a>
+                                <a href="/en/documentation/pro/dynamic-queues/">Dynamic Queues</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/priority-queues/">Priority Queues</a>
                             </li>
                         
                             <li class="">
@@ -418,6 +422,24 @@ Using fluent configuration
 <blockquote>
 <p>Do you want a more powerful dashboard with authentication, configurable context path or even embedded within Spring, Micronaut or Quarkus? Then have a look at the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>!</p>
 </blockquote>
+<br/>
+<p><strong>Readable Job Names thanks to the <code>@Job</code> annotation or the <code>JobBuilder</code></strong><br/>
+You can easily configure your Job Name and some Job Labels for the dashboard by means of the <code>@Job</code> annotation:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sending email to %2 (requestId: %X{request.id})&#34;</span><span style="color:#f92672">,</span> labels <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;tenant:%0&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">})</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendEmail</span><span style="color:#f92672">(</span>String tenant<span style="color:#f92672">,</span> String from<span style="color:#f92672">,</span> String to<span style="color:#f92672">,</span> String subject<span style="color:#f92672">,</span> String body<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// business code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><figcaption>We can use the @Job annotation to provide the dashboard with a readable Job name and some labels.<br/>These properties support parameter substitution. In the example above, %2 will be replaced with the `to` parameter. You can also access the SLF4J Mapped Diagnostic Context (see %X{request.id}).<br/>The same is also possible for labels.</figcaption>
+</figure>
+<p>This is of-course also possible using the <code>JobBuilder</code> pattern:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>aJob<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Sending email to &#34;</span> <span style="color:#f92672">+</span> to<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withLabels</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tenant:&#34;</span> <span style="color:#f92672">+</span> tenant<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">withDetails</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> emailService<span style="color:#f92672">.</span><span style="color:#a6e22e">sendEmail</span><span style="color:#f92672">(</span>tenant<span style="color:#f92672">,</span> from<span style="color:#f92672">,</span> to<span style="color:#f92672">,</span> subject<span style="color:#f92672">,</span> body<span style="color:#f92672">)))</span>
+</span></span></code></pre></div><figcaption>We can use the JobBuilder pattern to provide the dashboard with a readable Job name and some labels.</figcaption>
+</figure>
 <h2 id="screenshots">Screenshots</h2>
 <figure>
 <img src="/documentation/jobrunr-overview-1.webp" class="kg-image">

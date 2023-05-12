@@ -91,6 +91,17 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
+      <title>Dynamic Queues</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</guid>
+      <description>Are you running a multi-tenant application? Or do you have diverse types of jobs where certain types of jobs could potentially trigger peak workloads? Use JobRunr&amp;rsquo;s built-in dynamic queues to make sure that there is some fair-use and all jobs get a fair amount of resources!
+ Note: JobRunr Pro supports unlimited dynamic queues and they can be used together with the priority queues.
+ Example Use Cases  In a multi-tenant application where each tenant can initiate their own jobs, JobRunr ensures fair-use processing.</description>
+    </item>
+    
+    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -121,14 +132,14 @@ Usage via @Job annotation Using a mutex is as easy as using Queues and Server Ta
     </item>
     
     <item>
-      <title>Queues</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/queues/</link>
+      <title>Priority Queues</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/priority-queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
-      <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
- Note: JobRunr Pro supports up to 5 different queues.
- Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.</description>
+      <guid>https://www.jobrunr.io/en/documentation/pro/priority-queues/</guid>
+      <description>Are you processing millions of jobs? Do you have some high priority jobs that need to finish fast? Use JobRunr priority queues to make sure that critical jobs cut in front of already enqueued jobs.
+ Note: JobRunr Pro supports up to 5 different priority queues and they can be used together with the load-balancing feature.
+ Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation.</description>
     </item>
     
     <item>

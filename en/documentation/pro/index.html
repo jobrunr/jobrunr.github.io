@@ -300,7 +300,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </li>
                         
                             <li class="">
-                                <a href="/en/documentation/pro/queues/">Queues</a>
+                                <a href="/en/documentation/pro/dynamic-queues/">Dynamic Queues</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/priority-queues/">Priority Queues</a>
                             </li>
                         
                             <li class="">
@@ -400,7 +404,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/transactions/">Transaction plugin</a>:</strong> are you using the <a href="https://www.jobrunr.io/en/documentation/configuration/spring/">Spring Boot Starter</a> or the <a href="https://www.jobrunr.io/en/documentation/configuration/micronaut/">Micronaut integration</a>? Enjoy out of the box integration with their transactions using the <code>@Transactional</code> annotation thanks to the Transaction plugin.</li>
 <li><strong>Instant job processing:</strong> Are you in a hurry? JobRunr Pro starts processing your enqueued jobs instantly.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/">Real-time scheduling</a>:</strong> Are you very punctually? JobRunr Pro has support for real-time scheduling and enqueueing and makes sure your jobs run at the exact moment you specified!</li>
-<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/queues/">Queues</a>:</strong> or are you processing a lot of jobs and do you have critical business processes that must finish on-time? Queues to the rescue! Just schedule your job with a higher priority and it will bypass all the other jobs.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/dynamic-queues/">Dynamic Queues</a>:</strong> are you managing a multi-tenant application where a single tenant could potentially generate millions of jobs? Thanks to dynamic queues, a fair-usage policy is enforced, thereby ensuring that other tenants maintain their ability to process jobs effectively.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/priority-queues/">Priority Queues</a>:</strong> are you processing a lot of jobs and do you have critical business processes that must finish on-time? Priority queues to the rescue! Just schedule your job with a higher priority and it will bypass all the other jobs.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Workflows via Job Chaining</a>:</strong> reuse existing service methods and chain jobs to have cleaner code and an immediate overview of your business process.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a>:</strong> batches allow you to create a bunch of background jobs atomically and combined with <a href="https://www.jobrunr.io/en/documentation/pro/job-chaining/">Job Chaining</a> they can make complex workflows easy!</li>
 <li><strong><a href="">Advanced CRON Expressions</a>:</strong> do you need to run recurring jobs on some special moments like the first business day of the month or the last business day of the month? JobRunr Pro has a CRON expression parser on steroids and supports your really complex schedule requirements.</li>

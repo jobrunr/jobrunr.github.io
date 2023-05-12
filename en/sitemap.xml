@@ -33,9 +33,14 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2023-04-11T09:12:23+02:00</lastmod>
+    <lastmod>2023-05-11T09:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2023-05-11-jobrunr-v6.2.0/</loc>
+    <lastmod>2023-05-11T09:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -543,6 +548,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/licensing/lgpl/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -573,7 +583,7 @@
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/documentation/pro/queues/</loc>
+    <loc>https://www.jobrunr.io/en/documentation/pro/priority-queues/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   

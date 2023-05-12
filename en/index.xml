@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Apr 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 May 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -207,6 +207,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr &amp; JobRunr Pro v6.2.0</title>
+      <link>https://www.jobrunr.io/en/blog/2023-05-11-jobrunr-v6.2.0/</link>
+      <pubDate>Thu, 11 May 2023 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2023-05-11-jobrunr-v6.2.0/</guid>
+      <description>Performance improvements, Quarkus 3 support, an important bugfix and dynamic queues in JobRunr Pro!</description>
     </item>
     
     <item>
@@ -825,6 +834,17 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
+      <title>Dynamic Queues</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</guid>
+      <description>Are you running a multi-tenant application? Or do you have diverse types of jobs where certain types of jobs could potentially trigger peak workloads? Use JobRunr&amp;rsquo;s built-in dynamic queues to make sure that there is some fair-use and all jobs get a fair amount of resources!
+ Note: JobRunr Pro supports unlimited dynamic queues and they can be used together with the priority queues.
+ Example Use Cases  In a multi-tenant application where each tenant can initiate their own jobs, JobRunr ensures fair-use processing.</description>
+    </item>
+    
+    <item>
       <title>GNU Lesser General Public License</title>
       <link>https://www.jobrunr.io/en/licensing/lgpl/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -874,14 +894,14 @@ Usage via @Job annotation Using a mutex is as easy as using Queues and Server Ta
     </item>
     
     <item>
-      <title>Queues</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/queues/</link>
+      <title>Priority Queues</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/priority-queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       
-      <guid>https://www.jobrunr.io/en/documentation/pro/queues/</guid>
-      <description>Are you processing millions of jobs? Do you have some high-prio jobs that need to finish fast? Use JobRunr queues to make sure that critical jobs cut in front of already enqueued jobs.
- Note: JobRunr Pro supports up to 5 different queues.
- Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation. Just add it to your service method and specify on which queue you want to run it.</description>
+      <guid>https://www.jobrunr.io/en/documentation/pro/priority-queues/</guid>
+      <description>Are you processing millions of jobs? Do you have some high priority jobs that need to finish fast? Use JobRunr priority queues to make sure that critical jobs cut in front of already enqueued jobs.
+ Note: JobRunr Pro supports up to 5 different priority queues and they can be used together with the load-balancing feature.
+ Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation.</description>
     </item>
     
     <item>
