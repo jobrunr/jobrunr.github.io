@@ -885,7 +885,7 @@ Open-source and free for commercial use.<span class="sub-title">Alternative for 
             showDeveloperTab();
         } else if('manager' == searchParams.get("tab")) {
             showManagerTab();
-        } else if (document.referrer && (document.referrer.includes('github.com') || document.referrer.includes('ycombinator.com') || document.referrer.includes('localhost'))) {
+        } else if (document.referrer && (document.referrer.includes('github.com') || document.referrer.includes('ycombinator.com') || document.referrer.includes('infoq.com') || document.referrer.includes('localhost'))) {
             console.log(`Hi there, I'm Ronald - the creator of JobRunr. Nice meeting you!`);
             showDeveloperTab();
             document.getElementById('developer-no-referrer').style.display = 'none';
@@ -895,6 +895,8 @@ Open-source and free for commercial use.<span class="sub-title">Alternative for 
                 developerRefererSpan.innerHTML = `Since you're coming from GitHub, I assume you're <strong>not</strong> interested in the <a href="/en/?tab=manager">marketing fluff</a> and switched tabs for you.&nbsp;See below how easy it is to use JobRunr!`;
             } else if(document.referrer.includes('ycombinator.com')) {
                 developerRefererSpan.innerHTML = `Since you're coming from Hacker News, I assume you're <strong>not</strong> interested in the <a href="/en/?tab=manager">marketing fluff</a> and switched tabs for you.&nbsp;See below how easy it is to use JobRunr!`;
+            } else if(document.referrer.includes('infoq.com')) {
+                developerRefererSpan.innerHTML = `Since you're coming from InfoQ, I assume you're <strong>not</strong> interested in the <a href="/en/?tab=manager">marketing fluff</a> and switched tabs for you.&nbsp;See below how easy it is to use JobRunr!`;
             } else if(document.referrer.includes('localhost')) {
                 developerRefererSpan.innerHTML = `Since you're coming from Hacker News, I assume you're <strong>not</strong> interested in the <a href="/en/?tab=manager">marketing fluff</a> and switched tabs for you.&nbsp;See below how easy it is to use JobRunr!`;
             }
