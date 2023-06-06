@@ -562,7 +562,7 @@ So, if a job instance created by a recurring job is still in state <code>SCHEDUL
 <p><strong>Remark 3:</strong> please note that the <strong>cron interval</strong> or <strong>duration</strong> for your recurring jobs <strong>must be more than your <code>pollIntervalInSeconds</code></strong>. If your <code>pollIntervalInSeconds</code> is greater than your cron interval or duration of your recurring jobs, JobRunr will launch multiple instances of the same recurring job to keep up. This means that the same recurring job will be launched multiple times at the same moment.</p>
 </blockquote>
 <blockquote>
-<p><strong>Remark 4:</strong> also note that the <strong>smallest possible cron interval</strong> for your recurring jobs is <strong>every 5 seconds</strong>. JobRunr prevents creating recurring jobs every with cron values less than 5 seconds (e.g. every second) as it would generate too much load on your StorageProvider (SQL or noSQL database).</p>
+<p><strong>Remark 4:</strong> also note that the <strong>smallest possible cron interval</strong> for your recurring jobs is <strong>every 5 seconds</strong>. JobRunr prevents creating recurring jobs with cron values less than every 5 seconds (e.g. every second) as it would generate too much load on your StorageProvider (SQL or noSQL database).</p>
 </blockquote>
 
             </section>
