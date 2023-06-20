@@ -53,17 +53,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     
-    <title>Fluent API · JobRunr</title>
+    <title>Observability · JobRunr</title>
 
     
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Use the Fluent API to configure JobRunr in your application within minutes.">
+    <meta name="description" content="JobRunr Pro integrates with your observability platform to make sure all your jobs keep running like clockwork">
     
-    
-      <meta name="keywords" content="JobRunr Configuration">
     
     
     <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
@@ -72,14 +70,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
-    <meta name="twitter:title" content="Fluent API" />
+    <meta name="twitter:title" content="Observability" />
+    <meta name="twitter:description" content="Although the JobRunr Pro Dashboard gives instant insights how your jobs are doing, you may already have an observability platform like Jaeger, HoneyComb or New Relic running. JobRunr Pro out-of-the box integrates with many of these observability platforms so you can keep on top of things.
+MicroMeter Job Timings JobRunr allows to export amount of jobs processed, average job duration, maximum job duration and other metrics like job failure count per job." />
     <meta name="twitter:creator" content="@rdehuyss" />
     <meta name="twitter:site" content="@jobrunr" />
 
-    <meta property="og:title" content="Fluent API" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.jobrunr.io/en/documentation/configuration/fluent/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/>
+    <meta property="og:title" content="Observability" />
+<meta property="og:description" content="Although the JobRunr Pro Dashboard gives instant insights how your jobs are doing, you may already have an observability platform like Jaeger, HoneyComb or New Relic running. JobRunr Pro out-of-the box integrates with many of these observability platforms so you can keep on top of things.
+MicroMeter Job Timings JobRunr allows to export amount of jobs processed, average job duration, maximum job duration and other metrics like job failure count per job." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/documentation/pro/observability/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="documentation" />
+<meta property="article:published_time" content="2020-08-27T11:12:23+02:00" />
+<meta property="article:modified_time" content="2020-08-27T11:12:23+02:00" />
 
 
 
@@ -147,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </style>
 
             
-            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/documentation/configuration/fluent/_index.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/documentation/pro/observability.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
             <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
             <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
             <script>
@@ -206,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         
                     </ul>
                 
-                    <li class="active">
+                    <li class="">
                         <a href="/en/documentation/configuration/">
                             
                             Configuration
@@ -214,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </li>
                     <ul class="sub-menu">
                         
-                            <li class="active">
+                            <li class="">
                                 <a href="/en/documentation/configuration/fluent/">Fluent API</a>
                             </li>
                         
@@ -282,7 +285,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         
                     </ul>
                 
-                    <li class="">
+                    <li class="active">
                         <a href="/en/documentation/pro/">
                             
                             JobRunr Pro
@@ -294,7 +297,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 <a href="/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>
                             </li>
                         
-                            <li class="">
+                            <li class="active">
                                 <a href="/en/documentation/pro/observability/">Observability</a>
                             </li>
                         
@@ -400,127 +403,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </aside><article class="post-full post no-image no-image">
             <header class="post-full-header">
                 
-
-                <h1 class="post-full-title">Fluent API</h1>
+                    <div style="margin-bottom: 0.75em;"><span class="label professional"><span>JobRunr Pro</span></span></div>
                 
-                    <p class="post-full-custom-excerpt"> Use the Fluent API to configure JobRunr in your application within minutes.</p>
+
+                <h1 class="post-full-title">Observability</h1>
+                
+                    <p class="post-full-custom-excerpt"> JobRunr Pro integrates with your observability platform to make sure all your jobs keep running like clockwork</p>
                 
             </header>
             <section class="post-full-content">
-                <h2 id="enqueueing-and-processing-in-the-same-jvm-instance">Enqueueing and processing in the same JVM instance</h2>
-<p>JobRunr can easily be configured using the Fluent API to enqueue and process jobs within the same application:</p>
-<blockquote>
-<p><strong>Note</strong>: although this example uses Spring, you</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        JobScheduler jobScheduler <span style="color:#f92672">=</span> JobRunr<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useStorageProvider</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InMemoryStorageProvider<span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useBackgroundJobServer</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useDashboard</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">getJobScheduler</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Up &amp; Running from a background Job&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><strong>What happens here?</strong></p>
-<ul>
-<li>a simple Java class called <code>Application</code> with a <code>main</code> method is created</li>
-<li>the important things to note about the configuration are:
-<ul>
-<li>the Fluent API is started using JobRunr.configure()</li>
-<li>after that, a <code>StorageProvider</code> is created - in this case an <code>InMemoryStorageProvider</code>.</li>
-<li>we enable the <code>BackgroundJobServer</code> which will process the actual jobs</li>
-<li>wen enable the <code>Dashboard</code></li>
-<li>the Fluent API is ended with the initialize method call from which the <code>JobScheduler</code> is retrieved.</li>
-</ul>
-</li>
-<li>after that, you can start to create Background Jobs!</li>
-</ul>
-<h2 id="enqueueing-and-processing-in-different-jvm-instances">Enqueueing and processing in different JVM instances</h2>
-<p>As we want to enqueue jobs in one JVM and process jobs in another JVM, we will need to use a <code>StorageProvider</code> can be shared (so not the <code>InMemoryStorageProvider</code>). This can be a SQL Database or a NoSQL Database like MongoDB.</p>
-<h3 id="1-enqueueing-background-jobs-via-the-enqueueingapplication">1. Enqueueing background jobs via the <code>EnqueueingApplication</code>:</h3>
-<p>In the application that enqueues background jobs, the Fluent API is used again and speaks for itself. The important thing to note is that we will not add the <code>useBackgroundJobServer()</code> method as we do not want to process jobs in this JVM instance. Omitting this line results in the fact that no <code>BackgroundJobServer</code> will be started.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EnqueueingApplication</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        HikariConfig config <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HikariConfig<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setJdbcUrl</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your jdbc url&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setUsername</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your database username&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setPassword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your database password&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        HikariDataSource dataSource <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HikariDataSource<span style="color:#f92672">(</span>config<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        JobScheduler jobScheduler <span style="color:#f92672">=</span> JobRunr<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useStorageProvider</span><span style="color:#f92672">(</span>SqlStorageProviderFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">using</span><span style="color:#f92672">(</span>dataSource<span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useDashboard</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">getJobScheduler</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Up &amp; Running from a background Job&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><strong>What happens here?</strong></p>
-<ul>
-<li>a simple Java class called <code>EnqueueingApplication</code> with a <code>main</code> method is created. It will only create jobs but will not process them.</li>
-<li>the important things to note about the configuration are:
-<ul>
-<li>the Fluent API is started using JobRunr.configure()</li>
-<li>after that, a <code>StorageProvider</code> is created - in this case an instance of a <code>SqlStorageProvider</code>.</li>
-<li>wen enable the <code>Dashboard</code> again</li>
-<li>the Fluent API is ended with the initialize method call from which the <code>JobScheduler</code> is retrieved.</li>
-</ul>
-</li>
-<li>after that, you can start to create Background Jobs! But &hellip; they will not be processed in this JVM. See the chapter below on how to process the actual jobs.</li>
-</ul>
-<h3 id="2-processing-background-jobs-via-the-processingapplication">2. Processing background jobs via the <code>ProcessingApplication</code>:</h3>
-<p>In the application that processes background jobs, the Fluent API is used again and speaks for itself:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProcessingApplication</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        HikariConfig config <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HikariConfig<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setJdbcUrl</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your jdbc url&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setUsername</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your database username&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        config<span style="color:#f92672">.</span><span style="color:#a6e22e">setPassword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your database password&gt;&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        HikariDataSource dataSource <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HikariDataSource<span style="color:#f92672">(</span>config<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        JobRunrPro<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useStorageProvider</span><span style="color:#f92672">(</span>SqlStorageProviderFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">using</span><span style="color:#f92672">(</span>dataSource<span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useBackgroundJobServer</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">useJmxExtensions</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><strong>What happens here?</strong></p>
-<ul>
-<li>a simple Java class called <code>ProcessingApplication</code> with a <code>main</code> method is created. It will only process jobs in this case.</li>
-<li>the important things to note about the configuration are:
-<ul>
-<li>the Fluent API is started using JobRunr.configure()</li>
-<li>after that, a <code>StorageProvider</code> is created - in this case an instance of a <code>SqlStorageProvider</code>. It must use the same database settings as the <code>EnqueueingApplication</code></li>
-<li>the Fluent API is ended with the initialize method call</li>
-</ul>
-</li>
-<li>after that, jobs created in the <code>EnqueueingApplication</code> (running in JVM instance A) will automatically be processed in <code>ProcessingApplication</code> (running in JVM instance B).</li>
-</ul>
-<h2 id="advanced-configuration">Advanced Configuration</h2>
-<p>The JobRunr configuration allows you to setup JobRunr completely to your liking:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> isBackgroundJobServerEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span> <span style="color:#75715e">// or get it via ENV variables
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">boolean</span> isDashboardEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span> <span style="color:#75715e">// or get it via ENV variables
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>JobRunr<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useJobActivator</span><span style="color:#f92672">(</span>jobActivator<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useJobStorageProvider</span><span style="color:#f92672">(</span>jobStorageProvider<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">withJobFilter</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> RetryFilter<span style="color:#f92672">(</span>2<span style="color:#f92672">))</span> <span style="color:#75715e">// only do two retries by default
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useBackgroundJobServerIf</span><span style="color:#f92672">(</span>isBackgroundJobServerEnabled<span style="color:#f92672">,</span> 
-</span></span><span style="display:flex;"><span>                usingStandardBackgroundJobServerConfiguration<span style="color:#f92672">().</span><span style="color:#a6e22e">andWorkerCount</span><span style="color:#f92672">(</span>4<span style="color:#f92672">))</span>  <span style="color:#75715e">// only use 4 worker threads (extra options available)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useDashboardIf</span><span style="color:#f92672">(</span>isDashboardEnabled<span style="color:#f92672">,</span> 80<span style="color:#f92672">)</span> <span style="color:#75715e">// start on port 80 instead of 8000
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useJmxExtensions</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">useMicroMeter</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> JobRunrMicroMeterIntegration<span style="color:#f92672">(</span>meterRegistry<span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
-</span></span></code></pre></div><blockquote>
-<p>For more options, check out the <a href="https://www.javadoc.io/doc/org.jobrunr/jobrunr/latest/index.html">JobRunr JavaDocs</a>.</p>
-</blockquote>
+                
+
+<p>Although the JobRunr Pro Dashboard gives instant insights how your jobs are doing, you may already have an observability platform like <a href="https://www.jaegertracing.io/">Jaeger</a>, <a href="https://www.honeycomb.io">HoneyComb</a> or <a href="https://newrelic.com">New Relic</a> running. JobRunr Pro out-of-the box integrates with many of these observability platforms so you can keep on top of things.</p>
+<h2 id="micrometer-job-timings">MicroMeter Job Timings</h2>
+<p>JobRunr allows to export amount of jobs processed, average job duration, maximum job duration and other metrics like job failure count per job. This allows you to reuse your existing tools like <a href="https://prometheus.io">Prometheus</a>, <a href="https://grafana.net">Grafana</a>, &hellip; and be notified by your existing alerting platform in case things go south.</p>
+<h3 id="configuration">Configuration</h3>
+<p>You can easily enable these timings in Spring Boot, Micronaut and Quarkus using your existing configuration:</p>
+<figure>
+<pre tabindex="0"><code>org.jobrunr.jobs.metrics.micrometer-timers.enabled=true
+</code></pre><figcaption>This configuration shows how to enable the MicroMeter timers.</figcaption>
+</figure>
+
+
+<h2 id="observability">Observability</h2>
+<p>You can also integrate JobRunr with your observability platform thanks to <a href="https://opentelemetry.io/">OpenTelemetry</a> and <a href="https://micrometer.io/">MicroMeter</a>.</p>
+<p>Using the integration of your choice will not only show you the TraceId within the JobRunr Pro Dashboard but it will also show detailed job information in your observability platform.</p>
+<figure>
+<img src="/documentation/jobrunr-pro-traceid.png" class="kg-image">
+<figcaption>Jaeger - the duration and all the different API interactions over multiple microservices are automatically available</figcaption>
+</figure>
+<figure>
+<img src="/documentation/jobrunr-pro-jaeger-succeeded-job.png" class="kg-image">
+<figcaption>Jaeger - the duration and all the different API interactions over multiple microservices are automatically available</figcaption>
+</figure>
+<figure>
+<img src="/documentation/jobrunr-pro-jaeger-failed-job.png" class="kg-image">
+<figcaption>Jaeger - if a job failed, you can easily see what is happening</figcaption>
+</figure>
+<h3 id="configuration-1">Configuration</h3>
+<p>You can easily enable observability in Spring Boot, Micronaut and Quarkus using your existing configuration:</p>
+<figure>
+<pre tabindex="0"><code># enable linking from within the JobRunr Pro Dashboard to your Tracing Provider
+org.jobrunr.dashboard.integrations.observability.jaeger.root-url=http://localhost:16686/
+
+# if you prefer MicroMeter
+org.jobrunr.jobs.metrics.micrometer-observability.enabled=true
+
+# or, if you prefer OpenTelemetry
+org.jobrunr.jobs.metrics.otel-observability.enabled=true
+</code></pre><figcaption>Just define your preferred observability intregration.</figcaption>
+</figure>
+
+
 
             </section>
         </article>

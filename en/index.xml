@@ -872,6 +872,17 @@ JobRunr Pro has you covered thanks to the JobRegressionGuard:
     </item>
     
     <item>
+      <title>Issue Tracking Integration</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/issuetracking-integration/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/issuetracking-integration/</guid>
+      <description>Some jobs may fail due to downtime of an external system, some unforeseen circumstances or perhaps due to a bug.
+JobRunr Pro integrates with GitHub issues and Jira so you can easily create an issue in case of a job failure. It will prefill all fields so you can save time and do what you do best: create excelling software without bugs 😊.
+ Create an issue for failed jobs with 1 click in your issue tracking software.</description>
+    </item>
+    
+    <item>
       <title>Job Filters</title>
       <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
@@ -909,6 +920,16 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
       <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.
 Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
+    </item>
+    
+    <item>
+      <title>Observability</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/observability/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/observability/</guid>
+      <description>Although the JobRunr Pro Dashboard gives instant insights how your jobs are doing, you may already have an observability platform like Jaeger, HoneyComb or New Relic running. JobRunr Pro out-of-the box integrates with many of these observability platforms so you can keep on top of things.
+MicroMeter Job Timings JobRunr allows to export amount of jobs processed, average job duration, maximum job duration and other metrics like job failure count per job.</description>
     </item>
     
     <item>

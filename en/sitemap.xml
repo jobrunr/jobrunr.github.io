@@ -568,6 +568,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/issuetracking-integration/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/job-filters/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
@@ -589,6 +594,11 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/documentation/pro/mutexes/</loc>
+    <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/observability/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
   </url>
   
