@@ -6,7 +6,16 @@
     <description>Recent content in Jobs on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Feb 2023 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/jobs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2023 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/jobs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Junior Full Stack Engineer at JobRunr</title>
+      <link>https://www.jobrunr.io/en/jobs/full-stack-engineer/</link>
+      <pubDate>Fri, 11 Aug 2023 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/jobs/full-stack-engineer/</guid>
+      <description>Help shape us the future of JobRunr and contribute to open-source software!</description>
+    </item>
+    
     <item>
       <title>JobRunr Kubernetes Autoscaling Internship</title>
       <link>https://www.jobrunr.io/en/jobs/internship-kubernetes/</link>
