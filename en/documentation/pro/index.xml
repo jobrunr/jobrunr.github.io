@@ -123,6 +123,16 @@ Usage To create a Job Filter, just implement a bean with the interface JobClient
     </item>
     
     <item>
+      <title>Job time-outs</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/job-timeout/</link>
+      <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/documentation/pro/job-timeout/</guid>
+      <description>Do you have jobs that take forever due to some 3th party libraries that are unreliable? Or are your job executions sometimes stuck due to networking issues? With JobRunr Pro, you can have your jobs fail automatically if they take too long.
+Usage via @Job annotation Using a job timeout is really easy, again thanks to the Job annotation. Just add the annotation to your service method and specify the job process timeout in ISO8601 Duration format:</description>
+    </item>
+    
+    <item>
       <title>JobRunr Pro Dashboard</title>
       <link>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>

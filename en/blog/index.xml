@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JobRunr &amp; JobRunr Pro v6.3.0</title>
+      <link>https://www.jobrunr.io/en/blog/2023-07-14-jobrunr-v6.3.0/</link>
+      <pubDate>Mon, 14 Aug 2023 09:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2023-07-14-jobrunr-v6.3.0/</guid>
+      <description>Stability improvements, Dashboard improvements, Micronaut 4 support, Kotlin 1.9 support and Job Timeouts!</description>
+    </item>
+    
+    <item>
       <title>More than 3500 trees 🌳 planted!</title>
       <link>https://www.jobrunr.io/en/blog/2023-06-17-jobrunr-loves-teamtrees/</link>
       <pubDate>Sat, 17 Jun 2023 09:12:23 +0200</pubDate>

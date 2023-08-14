@@ -345,6 +345,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/job-timeout/">Job time-outs</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>
                             </li>
                         
@@ -422,6 +426,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/#recurring-jobs-missed-during-downtime">Schedule recurring jobs skipped during downtime</a>:</strong> are you redeploying but do you have some business critical Recurring Jobs that may not be skipped? Just configure your jobs with the <code>scheduleSkippedJobsDuringDowntime</code> and JobRunr Pro will schedule all of the skipped jobs as soon as a <code>BackgroundJobServer</code> is up &amp; running again.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/server-tags/">Server Tags</a>:</strong> do you have jobs that can only run on certain servers (e.g. Jobs that should only run on Windows, Linux, &hellip;)? Server Tags let you filter jobs by certain tags so that they are only run on certain servers.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/mutexes/">Mutexes</a>:</strong> do you consume a resource in your jobs that can not be shared? Thanks to mutexes, JobRunr will postpone jobs with shared mutexes until the mutex is free.</li>
+<li><strong><a href="https://www.jobrunr.io/en/documentation/pro/job-timeout/">Job time-outs</a>:</strong> Do you have jobs that take forever due to some 3th party libraries that are unreliable? JobRunr Pro will interrupt your forever taking jobs is you specify a <code>processTimeOut</code>.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/results/">Job Results</a>:</strong> are your jobs returning results? Do you have API clients polling for the outcome of a certain job? Thanks to <code>JobResults</code> you can easily return results without needing to worry about (D)DOS attacks.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">Replace your jobs</a>:</strong> are you enqueueing your jobs with an external id and do you need to replace a job? By default, JobRunr will ignore the update to <a href="https://www.jobrunr.io/en/documentation/faq/#im-listening-for-jobs-using-service-bus-messages-in-a-load-balanced-environment-and-i-want-to-schedule-jobs-only-once">avoid job duplicates in a load-balanced environment</a>. Have a look at <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">replacing your jobs</a> using <code>enqueueOrReplace</code> and <code>scheduleOrReplace</code>.</li>
 <li><strong><a href="https://www.jobrunr.io/en/documentation/background-methods/dealing-with-exceptions/#custom-retrypolicy-configuration">Custom Retry Policy</a>:</strong> Do you have some special needs regarding retrying failed Jobs? Then use the <code>CustomRetryPolicy</code> where you can specify the time to wait between each retry or just implement your own <code>RetryPolicy</code> if you want to have full control.</li>
