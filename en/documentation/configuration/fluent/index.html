@@ -414,7 +414,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <h2 id="enqueueing-and-processing-in-the-same-jvm-instance">Enqueueing and processing in the same JVM instance</h2>
 <p>JobRunr can easily be configured using the Fluent API to enqueue and process jobs within the same application:</p>
 <blockquote>
-<p><strong>Note</strong>: although this example uses Spring, this is not a prerequisite. JobRunr can also work fine without any framework. Important is that the <code>jobScheduler</code> should be a <strong>singleton</strong> in all cases.</p>
+<p><strong>Note</strong>: although most of the examples use Spring, this is not a prerequisite as shown below. JobRunr can also work fine without any framework. Important is that the <code>jobScheduler</code> should be a <strong>singleton</strong> in all cases.</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>
@@ -472,7 +472,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li>the Fluent API is started using JobRunr.configure()</li>
 <li>after that, a <code>StorageProvider</code> is created - in this case an instance of a <code>SqlStorageProvider</code>.</li>
-<li>wen enable the <code>Dashboard</code> again</li>
+<li>we enable the <code>Dashboard</code> again</li>
 <li>the Fluent API is ended with the initialize method call from which the <code>JobScheduler</code> is retrieved.</li>
 </ul>
 </li>
