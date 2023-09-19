@@ -1,14 +1,575 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><link rel=dns-prefetch href=https://www.googletagmanager.com><link rel=dns-prefetch href=https://cdn.jsdelivr.net><link rel=dns-prefetch href=https://cdnjs.cloudflare.com><link href=https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js rel=preload as=script><link href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js rel=preload as=script><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","G-J3K00HKL9D")</script><script type=text/javascript>(function(e,o,t,i,a,n,s){e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},n=o.createElement(i),n.async=1,n.src="https://www.clarity.ms/tag/"+a,s=o.getElementsByTagName(i)[0],s.parentNode.insertBefore(n,s)})(window,document,"clarity","script","gndsmglzod")</script><meta http-equiv=x-ua-compatible content="IE=edge"><title>Documentation · JobRunr</title><meta name=HandheldFriendly content="True"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Find out all about the architecture and terminology behind JobRunr"><meta name=keywords content="Java Job Manager,Quartz Alternative,Spring Batch Alternative,Distributed Java Job Processing,Background Job Scheduling,java scheduler,java cron,job runner,jobrunner"><meta name=author content="Ronald Dehuysser, ronald@dehuysser.be"><meta name=twitter:card content="summary"><meta name=twitter:image content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><meta name=twitter:image:alt content="JobRunr - get jobs done"><meta name=twitter:title content="Documentation"><meta name=twitter:description content="Find out all about the architecture and terminology behind JobRunr"><meta name=twitter:creator content="@rdehuyss"><meta name=twitter:site content="@jobrunr"><meta property="og:title" content="Documentation"><meta property="og:description" content="Find out all about the architecture and terminology behind JobRunr"><meta property="og:type" content="website"><meta property="og:url" content="https://www.jobrunr.io/en/documentation/"><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><link rel=stylesheet href=https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media=screen><link rel=stylesheet href=https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media=screen><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css><link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css></head><body class=tag-template><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=site-wrapper><header class="site-header leftnav" style=height:64px><div class="outer site-nav-main"><div class=inner><nav id=site-nav class=site-nav><div class=site-nav-left><a class=site-nav-logo href=https://www.jobrunr.io/en/><img src=https://www.jobrunr.io/images/jobrunr-logo-white.webp alt=JobRunr height=21px width=91px></a><div class=site-nav-content><ul class=nav role=menu><li class=nav-home role=menuitem><a href=/en/>Home</a></li><li class=nav-home role=menuitem><a href=/en/documentation/>Documentation</a></li><li class=nav-home role=menuitem><a href=/en/pricing/>JobRunr Pro</a></li><li class=nav-home role=menuitem><a href=/en/use-case/>Use Cases</a></li><li class=nav-home role=menuitem><a href=/en/blog/>Blog</a></li></ul></div></div><div class=site-nav-right><div id=social-links class=social-links><style>div.social-links{position:relative}#lang-selector{display:none;background-color:#90a2aa;position:absolute;left:10px;top:56px;z-index:50}#lang-selector li{list-style-type:none}#lang-selector li a{color:#fff;text-transform:uppercase}</style><a class="social-link social-link-tw" href=https://github.com/jobrunr/website/tree/master/content/en/documentation/_index.md title="Edit this page on GitHub" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562.0 24l1.438-7.128 5.689 5.69zm1.414-1.414L19.769 9.923l-5.69-5.692L2.852 15.458l5.689 5.69zM18.309.0l-2.816 2.817 5.691 5.691L24 5.689l-5.691-5.689z"/></svg></a><a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&screen_name=jobrunr&tw_p=followbutton" title="Follow us on Twitter" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088.0 01-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015.0 01-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25.0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688.0 5.063-.875 7.188-2.5-1.25.0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5.0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673.0 01-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228.0 01-1.875-2c-.5-.875-.688-1.813-.688-2.75.0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579.0 011.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48.0 003.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a><a class="social-link social-link-gh" style=color:#fff href=https://github.com/jobrunr/jobrunr title="View code on Github" target=_blank rel=noopener><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63.0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577.0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93.0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176.0.0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22.0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22.0 1.606-.015 2.896-.015 3.286.0.315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>Source Code</a>
-<script>const langLink=document.getElementById("lang-link");if(langLink){const e=document.getElementById("lang-selector"),t=()=>{e.style.display="none"},n=()=>{e.style.display="block",setTimeout(t,3e3)};langLink.addEventListener("mouseover",n)}</script></div></div></nav></div></div></header><main id=site-main class="site-main documentation outer"><div class=inner><aside><ul><li><a href=/en/documentation/5-minute-intro/>5 minute intro</a></li><ul class=sub-menu></ul><li><a href=/en/documentation/installation/>Installation</a></li><ul class=sub-menu><li><a href=/en/documentation/installation/storage/>Storage</a></li></ul><li><a href=/en/documentation/configuration/>Configuration</a></li><ul class=sub-menu><li><a href=/en/documentation/configuration/fluent/>Fluent API</a></li><li><a href=/en/documentation/configuration/spring/>Spring Boot Starter</a></li><li><a href=/en/documentation/configuration/micronaut/>Micronaut Integration</a></li><li><a href=/en/documentation/configuration/quarkus/>Quarkus Extension</a></li></ul><li><a href=/en/documentation/background-methods/>Background methods</a></li><ul class=sub-menu><li><a href=/en/documentation/background-methods/dashboard/>Dashboard</a></li><li><a href=/en/documentation/background-methods/enqueueing-jobs/>Enqueueing jobs</a></li><li><a href=/en/documentation/background-methods/scheduling-jobs/>Scheduling jobs</a></li><li><a href=/en/documentation/background-methods/recurring-jobs/>Recurring jobs</a></li><li><a href=/en/documentation/background-methods/deleting-jobs/>Deleting jobs</a></li><li><a href=/en/documentation/background-methods/passing-arguments/>Passing arguments</a></li><li><a href=/en/documentation/background-methods/background-jobs-dependencies/>Background job dependencies</a></li><li><a href=/en/documentation/background-methods/dealing-with-exceptions/>Dealing with exceptions</a></li><li><a href=/en/documentation/background-methods/logging-progress/>Logging & job progress</a></li><li><a href=/en/documentation/background-methods/best-practices/>Best practices</a></li></ul><li><a href=/en/documentation/pro/>JobRunr Pro</a></li><ul class=sub-menu><li><a href=/en/documentation/pro/jobrunr-pro-dashboard/>JobRunr Pro Dashboard</a></li><li><a href=/en/documentation/pro/observability/>Observability</a></li><li><a href=/en/documentation/pro/transactions/>Transaction plugin</a></li><li><a href=/en/documentation/pro/real-time-scheduling/>Real-time scheduling and enqueueing</a></li><li><a href=/en/documentation/pro/dynamic-queues/>Dynamic Queues</a></li><li><a href=/en/documentation/pro/priority-queues/>Priority Queues</a></li><li><a href=/en/documentation/pro/job-chaining/>Workflows using Job Chains</a></li><li><a href=/en/documentation/pro/batches/>Batches</a></li><li><a href=/en/documentation/pro/advanced-cron-expressions/>Advanced CRON expressions</a></li><li><a href=/en/documentation/pro/server-tags/>Server Tags</a></li><li><a href=/en/documentation/pro/mutexes/>Mutexes</a></li><li><a href=/en/documentation/pro/results/>Job Result</a></li><li><a href=/en/documentation/pro/replace-jobs/>Replacing jobs</a></li><li><a href=/en/documentation/pro/job-filters/>Job Filters</a></li><li><a href=/en/documentation/pro/job-timeout/>Job time-outs</a></li><li><a href=/en/documentation/pro/custom-delete-policy/>Custom delete policy</a></li><li><a href=/en/documentation/pro/database-fault-tolerance/>Database Fault Tolerance</a></li><li><a href=/en/documentation/pro/migrations/>CI / CD & Job Migrations</a></li><li><a href=/en/documentation/pro/database-migrations/>Database Migrations</a></li><li><a href=/en/documentation/pro/issuetracking-integration/>Issue Tracking Integration</a></li></ul><li><a href=/en/documentation/faq/>FAQ</a></li><ul class=sub-menu></ul><li><a href=/en/documentation/alternatives/>JobRunr compared</a></li><ul class=sub-menu></ul></ul></aside><article class="post-full post no-image no-image"><header class=post-full-header><h1 class=post-full-title>Documentation</h1><p class=post-full-custom-excerpt>The architecture and terminology behind JobRunr</p></header><section class=post-full-content><style>#mobile-notice{display:none}@media only screen and (max-width:600px){#mobile-notice{display:block}}</style><div class=star-btn style="text-align:center;margin:2rem 0 3rem"><a href=https://github.com/jobrunr/jobrunr class="btn btn-black btn-lg" target=_blank rel=noopener style=display:inline-block;height:45px;margin-right:1rem><svg viewBox="0 0 16 16" style="margin:-4px 10px 0 0;display:inline-block;vertical-align:text-top;fill:currentColor;width:25px;height:25px" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36.0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg><span>Star JobRunr on Github</span></a></div><div id=mobile-notice style=margin-top:1rem><blockquote><p>Visiting via your mobile phone? Note that the JobRunr website is more extensive on desktop.</p></blockquote></div><h2 id=architecture>Architecture</h2><figure><p><img src=/documentation/architecture.webp alt=Architecture></p><figcaption>JobRunr architecture</figcaption></figure><h2 id=how-does-it-all-work>How does it all work?</h2><ul><li>You can enqueue, schedule or schedule a recurring background <a href=#job>Job</a> the <a href=#jobscheduler>JobScheduler</a>.</li><li>The <a href=#jobscheduler>JobScheduler</a> analyses and decomposes the lambda to a JSON object and saves it into the <a href=#storage-provider>StorageProvider</a>.</li><li>JobRunr returns immediately to the caller so that it is not blocking</li><li>One or more <a href=#backgroundjobserver>BackgroundJobServers</a> poll the <a href=#storage-provider>StorageProvider</a> for new enqueued jobs and process them</li><li>When a job has been processed, it updates the state in the <a href=#storage-provider>StorageProvider</a> and fetches the next job to perform</li></ul><h2 id=terminology>Terminology</h2><h3 id=job>Job</h3><p>At the core of JobRunr, we have the <code>Job</code> entity - it contains the name, the signature, the <code>JobDetails</code> (the type, the method to execute and all arguments) and the history - including all states - of the background job itself. A <code>Job</code> is a unit of work that should be performed outside of the current execution context, e.g. in a background thread, other process, or even on different server – all is possible with JobRunr, without any additional configuration.</p><figure><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>BackgroundJob<span style=color:#f92672>.</span><span style=color:#a6e22e>enqueue</span><span style=color:#f92672>(()</span> <span style=color:#f92672>-&gt;</span> System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Simple!&#34;</span><span style=color:#f92672>));</span>
-</span></span></code></pre></div><figcaption>Instead of calling the method immediately, JobRunr serializes the type (System), static field (out) and method name (println, with all the parameter types to identify it later), and all the given arguments, and stores it as Json using a StorageProvider. It will then later be processed by a BackgroundJobServer<figcaption></figure><h3 id=recurringjob>RecurringJob</h3><p>A <code>RecurringJob</code> is in essence a <code>Job</code> with a CRON schedule or a fixed interval. A special component within JobRunr checks the recurring jobs and then enqueues them as fire-and-forget jobs when the time has come to run the job in question.</p><h3 id=storage-provider>Storage Provider</h3><p>A <code>StorageProvider</code> is a place where JobRunr keeps all the information related to background job processing. All the details like types, method names, arguments, etc. are serialized to Json and placed into storage, no data is kept in a process’ memory. The <code>StorageProvider</code> is abstracted in JobRunr well enough to be implemented for RDBMS and NoSQL solutions.</p><blockquote><p>This is the main decision you must make, and the only configuration required before you start using the framework.</p></blockquote><h3 id=backgroundjob>BackgroundJob</h3><p><code>BackgroundJob</code> is a class that allows to enqueue background jobs using static helper methods - it in fact delegates everything to the JobScheduler. You are completely free to choose how to enqueue background jobs - either using the static helper methods in the <code>BackgroundJob</code> class or either directly on the <code>JobScheduler</code> class. It may help readability but can make things more difficult to test.</p><h3 id=jobscheduler>JobScheduler</h3><p>The <code>JobScheduler</code> is responsible for analyzing the lambda, collecting all the required job parameters, creating background jobs and saving them into the <code>StorageProvider</code>. This process is very fast and once it is stored in the <code>StorageProvider</code>, it returns to the caller immediately.</p><h3 id=backgroundjobrequest>BackgroundJobRequest</h3><p><code>BackgroundJobRequest</code> is also a class that allows to enqueue background jobs using static helper methods - it in fact delegates everything to the <code>JobRequestScheduler</code>. You are again completely free to choose how to enqueue background jobs - either using the static helper methods in the <code>BackgroundJobRequest</code> class or either directly on the <code>JobRequestScheduler</code> class. It may help readability but can make things more difficult to test.</p><h3 id=jobrequestscheduler>JobRequestScheduler</h3><p>The <code>JobScheduler</code> is responsible for transforming a <code>JobRequest</code> together with its internal data to a background job and save it into the <code>StorageProvider</code>. This process is very fast and once it is stored in the <code>StorageProvider</code>, it returns to the caller immediately.</p><h3 id=jobrequest>JobRequest</h3><p>A <code>JobRequest</code> is an interface that allows to create a background job. It can contain extra data that also will be serialized and will be saved into the <code>StorageProvider</code>. When you implement this interface, you will need to provide the <code>JobRequestHandler</code>-class which will process your <code>JobRequest</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>JobRequest</span> <span style=color:#66d9ef>extends</span> JobRunrJob <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>    Class<span style=color:#f92672>&lt;?</span> <span style=color:#66d9ef>extends</span> JobRequestHandler<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>getJobRequestHandler</span><span style=color:#f92672>();</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
-</span></span></code></pre></div><h3 id=jobrequesthandler>JobRequestHandler</h3><p>A <code>JobRequestHandler</code> is an interface that that will be used to run the background job during job execution. As a parameter, it will receive the <code>JobRequest</code> and can thus access all data that was provided when the job was created.</p><h3 id=job-annotation>Job annotation</h3><p>The <code>@Job</code> annotation allows you to manage certain aspects from a Job like the name and the label (visible in the dashboard), the amount of retries and various other aspects like the <code>queue</code>, the <code>server tag</code> and the <code>mutex</code> if you are using JobRunr Pro.</p><h3 id=jobbuilder>JobBuilder</h3><p>The <code>JobBuilder</code> is an alternative to the <code>@Job</code> annotation and also allows you to configure all the different aspects from a Job. The difference is that using the <code>JobBuilder</code> certain aspects can be set at runtime which is not possible via the <code>@Job</code> annotation.</p><h3 id=backgroundjobserver>BackgroundJobServer</h3><p>The <code>BackgroundJobServer</code> class processes background jobs by querying the StorageProvider. Roughly speaking, it’s a set of background threads that listen to the storage provider for new background jobs, and perform them by first de-serializing the stored type, method and arguments and then executing it.</p><p>You can place this <code>BackgroundJobServer</code> in any process you want - even if you terminate a process, your background jobs will be retried automatically after restart. So in a basic configuration for a web application, you don’t need to use any Windows services for background processing anymore.</p><blockquote><p><u><strong>IMPORTANT:</strong></u><br><strong>Remark 1</strong>: You should have always 1 <code>BackgroundJobServer</code> running as it is responsible to see whether any jobs need to be processed.<br><strong>Remark 2</strong>: You should have only 1 <code>BackgroundJobServer</code> per application / JVM instance. If you want to process more jobs or you want to distribute the jobs over multiple JVM&rsquo;s, you must launch a complete new instance of your application. <strong>Starting multiple <code>BackgroundJobServers</code> within the same JVM instance is bad practice and should NOT be done.</strong></p></blockquote><h3 id=jobactivator>JobActivator</h3><p>Most enterprise applications make use of an <a href=https://en.wikipedia.org/wiki/Inversion_of_control>IoC framework</a> like <a href=https://github.com/spring-projects/spring-framework>Spring</a> or <a href=https://github.com/google/guice>Guice</a> - we off course support these IoC frameworks. The <code>JobActivator</code> is a Java 8 functional interface and has the responsability to lookup the correct class on which the background job method is defined.</p><figure><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>JobActivator</span> <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> T <span style=color:#a6e22e>activateJob</span><span style=color:#f92672>(</span>Class<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> type<span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
-</span></span></code></pre></div><figcaption>Given a class, the JobActivator must return a instance of that class that is completely initialized</figcaption></figure><h3 id=jobrunrdashboardwebserver>JobRunrDashboardWebServer</h3><p>The <code>JobRunrDashboardWebserver</code> gives insights in all jobs that are enqueued, being processed, have succeeded or have failed. You can see on which <code>BackgroundJobServer</code> a background job is being processed, the current state it is in and in case of a failure, have a look at why it failed.
-The dashboard exists out of a React frontend and makes use of a REST API.</p><h3 id=jobmapper>JobMapper</h3><p>The <code>JobMapper</code> is used to serialize and deserialize the job to Json as all jobs are stored in the <code>StorageProvider</code> as Json. It uses the <code>JsonMapper</code> underneath and has some utility functions to serialize a Job and a RecurringJob.</p><h3 id=jsonmapper>JsonMapper</h3><p>The <code>JsonMapper</code> is the abstraction layer above either <a href=https://github.com/FasterXML/jackson>Jackson</a>, <a href=https://github.com/google/gson>Gson</a> or <a href=http://json-b.net/>Json-B</a>. It is used by the JobMapper and the JobRunrDashboardWebServer to map domain objects like <code>Job</code> and <code>RecurringJob</code> to json entities for the REST API.</p><h3 id=jobfilter>JobFilter</h3><p>The <code>JobFilter</code> allows you to extend and intervene with background jobs in JobRunr. There are several types of JobFilters:</p><ul><li><code>JobClientFilter</code>: filters that are called before and after the job is created</li><li><code>JobServerFilter</code>: filters that are called before and after the processing of the job</li><li><code>ElectStateFilter</code>: a filter that decides the new state based on the old state</li><li><code>ApplyStateFilter</code>: filters that are called when a state change happens within a job</li></ul><h3 id=retryfilter>RetryFilter</h3><p>This is a default filter of type <code>ElectStateFilter</code> and is automatically added for each job which is run by JobRunr. When a job fails, the <code>RetryFilter</code> will automatically retry the job 10 times with an exponential back-off policy. Is some API server down while processing jobs? No worries, JobRunr has you covered.</p><h3 id=jobcontext>JobContext</h3><p>If access is needed to info about the background job itself (like the id of the job, the name, the state, &mldr;) within the execution, the <code>JobContext</code> comes in handy. Using it is simple: if you use Java 8 lambda&rsquo;s you just need to pass an extra parameter of type <code>JobContext.Null</code> to your background job method and at execution time an instance will be injected into your background job method. If you use a <code>JobRequest</code> then it is available as a default method on <code>JobRequestHandler</code> interface.</p><blockquote><p>Note: that this is best avoided as it couples your domain logic tightly with JobRunr.</p></blockquote><figure><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>BackgroundJob<span style=color:#f92672>.</span><span style=color:#a6e22e>enqueue</span><span style=color:#f92672>(()</span> <span style=color:#f92672>-&gt;</span> myService<span style=color:#f92672>.</span><span style=color:#a6e22e>doWork</span><span style=color:#f92672>(</span>JobContext<span style=color:#f92672>.</span><span style=color:#a6e22e>Null</span><span style=color:#f92672>));</span>
-</span></span></code></pre></div><figcaption>When executing the doWork method of myService, JobContext will be available</figcaption></figure></section></article></div></main><footer class="site-footer outer"><div class="site-footer-content inner"><section class=copyright style=align-self:start>&copy; <a href=https://www.jobrunr.io>JobRunr</a></section><section class=love style=align-self:start;opacity:.7>Made with <strong style=color:red;font-size:large>&#9829;</strong> in Belgium</section><nav class=site-footer-nav><div><div><a href=/en/about/ rel=noopener style=opacity:.5>JobRunr by Rosoco BV (BE 0807596165)</a></div><div><a href=/en/licensing/info/ rel=noopener style=opacity:.5>Terms of use</a></div><div><a href=/en/privacy/ rel=noopener style=opacity:.5>Privacy</a></div></div></nav></div></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js defer></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js defer></script>
-<script src=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js defer></script>
-<script>window.addEventListener("load",e=>{setTimeout(()=>{window.cookieconsent.initialise({palette:{popup:{background:"#000"},button:{background:"transparent",border:"#fff",text:"#fff"}},content:{link:"Learn more about cookies"}})},5e3)});for(var links=document.querySelectorAll("a"),i=0;i<links.length;i++)links[i].hostname!=window.location.hostname&&(links[i].target="_blank",links[i].rel="noopener")</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+    
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "gndsmglzod");
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Documentation · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Find out all about the architecture and terminology behind JobRunr">
+    
+    
+      <meta name="keywords" content="Java Job Manager,Quartz Alternative,Spring Batch Alternative,Distributed Java Job Processing,Background Job Scheduling,java scheduler,java cron,job runner,jobrunner">
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="Documentation" />
+    <meta name="twitter:description" content="Find out all about the architecture and terminology behind JobRunr" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="Documentation" />
+<meta property="og:description" content="Find out all about the architecture and terminology behind JobRunr" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.jobrunr.io/en/documentation/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/>
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css" integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body class=" tag-template  ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header leftnav" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/documentation/_index.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main documentation outer">
+    <div class="inner">
+<aside>
+    <ul>
+        
+        
+            
+        
+            
+                
+                    <li class="">
+                        <a href="/en/documentation/5-minute-intro/">
+                            
+                            5 minute intro
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/installation/">
+                            
+                            Installation
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                            <li class="">
+                                <a href="/en/documentation/installation/storage/">Storage</a>
+                            </li>
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/configuration/">
+                            
+                            Configuration
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/fluent/">Fluent API</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/spring/">Spring Boot Starter</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/micronaut/">Micronaut Integration</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/quarkus/">Quarkus Extension</a>
+                            </li>
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/background-methods/">
+                            
+                            Background methods
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/dashboard/">Dashboard</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/enqueueing-jobs/">Enqueueing jobs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/scheduling-jobs/">Scheduling jobs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/recurring-jobs/">Recurring jobs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/deleting-jobs/">Deleting jobs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/passing-arguments/">Passing arguments</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/background-jobs-dependencies/">Background job dependencies</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/dealing-with-exceptions/">Dealing with exceptions</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/logging-progress/">Logging &amp; job progress</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/background-methods/best-practices/">Best practices</a>
+                            </li>
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/pro/">
+                            
+                            JobRunr Pro
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/jobrunr-pro-dashboard/">JobRunr Pro Dashboard</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/observability/">Observability</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/transactions/">Transaction plugin</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/real-time-scheduling/">Real-time scheduling and enqueueing</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/dynamic-queues/">Dynamic Queues</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/priority-queues/">Priority Queues</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/job-chaining/">Workflows using Job Chains</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/batches/">Batches</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/advanced-cron-expressions/">Advanced CRON expressions</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/server-tags/">Server Tags</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/mutexes/">Mutexes</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/results/">Job Result</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/replace-jobs/">Replacing jobs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/job-filters/">Job Filters</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/job-timeout/">Job time-outs</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/custom-delete-policy/">Custom delete policy</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/database-fault-tolerance/">Database Fault Tolerance</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/migrations/">CI / CD &amp; Job Migrations</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/database-migrations/">Database Migrations</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/pro/issuetracking-integration/">Issue Tracking Integration</a>
+                            </li>
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/faq/">
+                            
+                            FAQ
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                    </ul>
+                
+                    <li class="">
+                        <a href="/en/documentation/alternatives/">
+                            
+                            JobRunr compared
+                        </a>
+                    </li>
+                    <ul class="sub-menu">
+                        
+                    </ul>
+                
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</aside><article class="post-full post no-image no-image">
+            <header class="post-full-header">
+                
+
+                <h1 class="post-full-title">Documentation</h1>
+                
+                    <p class="post-full-custom-excerpt"> The architecture and terminology behind JobRunr</p>
+                
+            </header>
+            <section class="post-full-content">
+                <style>
+#mobile-notice {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #mobile-notice {
+    display: block;
+  }
+}
+</style>
+<div class="star-btn" style="text-align: center; margin: 2rem 0 3rem;">
+  <a href="https://github.com/jobrunr/jobrunr" class="btn btn-black btn-lg" target="_blank" rel="noopener" style="display: inline-block; height: 45px; margin-right: 1rem;">
+      <svg viewBox="0 0 16 16" style="margin: -4px 10px 0 0; display: inline-block; vertical-align: text-top; fill: currentColor; width: 25px; height: 25px;" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+      <span>Star JobRunr on Github</span>
+  </a>
+</div>
+<div id="mobile-notice" style="margin-top: 1rem">
+<blockquote>
+<p>Visiting via your mobile phone? Note that the JobRunr website is more extensive on desktop.</p>
+</blockquote>
+</div>
+<h2 id="architecture">Architecture</h2>
+<figure>
+<p>
+
+
+<img src="/documentation/architecture.webp" alt="Architecture" />
+
+
+
+</p>
+  <figcaption>JobRunr architecture</figcaption>
+</figure>
+<h2 id="how-does-it-all-work">How does it all work?</h2>
+<ul>
+<li>You can enqueue, schedule or schedule a recurring background <a href="#job">Job</a> the <a href="#jobscheduler">JobScheduler</a>.</li>
+<li>The <a href="#jobscheduler">JobScheduler</a> analyses and decomposes the lambda to a JSON object and saves it into the <a href="#storage-provider">StorageProvider</a>.</li>
+<li>JobRunr returns immediately to the caller so that it is not blocking</li>
+<li>One or more <a href="#backgroundjobserver">BackgroundJobServers</a> poll the <a href="#storage-provider">StorageProvider</a> for new enqueued jobs and process them</li>
+<li>When a job has been processed, it updates the state in the <a href="#storage-provider">StorageProvider</a> and fetches the next job to perform</li>
+</ul>
+
+
+<h2 id="terminology">Terminology</h2>
+<h3 id="job">Job</h3>
+<p>At the core of JobRunr, we have the <code>Job</code> entity - it contains the name, the signature, the <code>JobDetails</code> (the type, the method to execute and all arguments) and the history - including all states - of the background job itself. A <code>Job</code> is a unit of work that should be performed outside of the current execution context, e.g. in a background thread, other process, or even on different server – all is possible with JobRunr, without any additional configuration.</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Simple!&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div><figcaption>Instead of calling the method immediately, JobRunr serializes the type (System), static field (out) and method name (println, with all the parameter types to identify it later), and all the given arguments, and stores it as Json using a StorageProvider. It will then later be processed by a BackgroundJobServer<figcaption>
+</figure>
+<h3 id="recurringjob">RecurringJob</h3>
+<p>A <code>RecurringJob</code> is in essence a <code>Job</code> with a CRON schedule or a fixed interval. A special component within JobRunr checks the recurring jobs and then enqueues them as fire-and-forget jobs when the time has come to run the job in question.</p>
+<h3 id="storage-provider">Storage Provider</h3>
+<p>A <code>StorageProvider</code> is a place where JobRunr keeps all the information related to background job processing. All the details like types, method names, arguments, etc. are serialized to Json and placed into storage, no data is kept in a process’ memory. The <code>StorageProvider</code> is abstracted in JobRunr well enough to be implemented for RDBMS and NoSQL solutions.</p>
+<blockquote>
+<p>This is the main decision you must make, and the only configuration required before you start using the framework.</p>
+</blockquote>
+<h3 id="backgroundjob">BackgroundJob</h3>
+<p><code>BackgroundJob</code> is a class that allows to enqueue background jobs using static helper methods - it in fact delegates everything to the JobScheduler. You are completely free to choose how to enqueue background jobs - either using the static helper methods in the <code>BackgroundJob</code> class or either directly on the <code>JobScheduler</code> class. It may help readability but can make things more difficult to test.</p>
+<h3 id="jobscheduler">JobScheduler</h3>
+<p>The <code>JobScheduler</code> is responsible for analyzing the lambda, collecting all the required job parameters, creating background jobs and saving them into the <code>StorageProvider</code>. This process is very fast and once it is stored in the <code>StorageProvider</code>, it returns to the caller immediately.</p>
+<h3 id="backgroundjobrequest">BackgroundJobRequest</h3>
+<p><code>BackgroundJobRequest</code> is also a class that allows to enqueue background jobs using static helper methods - it in fact delegates everything to the <code>JobRequestScheduler</code>. You are again completely free to choose how to enqueue background jobs - either using the static helper methods in the <code>BackgroundJobRequest</code> class or either directly on the <code>JobRequestScheduler</code> class. It may help readability but can make things more difficult to test.</p>
+<h3 id="jobrequestscheduler">JobRequestScheduler</h3>
+<p>The <code>JobScheduler</code> is responsible for transforming a <code>JobRequest</code> together with its internal data to a background job and save it into the <code>StorageProvider</code>. This process is very fast and once it is stored in the <code>StorageProvider</code>, it returns to the caller immediately.</p>
+<h3 id="jobrequest">JobRequest</h3>
+<p>A <code>JobRequest</code> is an interface that allows to create a background job. It can contain extra data that also will be serialized and will be saved into the <code>StorageProvider</code>. When you implement this interface, you will need to provide the <code>JobRequestHandler</code>-class which will process your <code>JobRequest</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JobRequest</span> <span style="color:#66d9ef">extends</span> JobRunrJob <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Class<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> JobRequestHandler<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getJobRequestHandler</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="jobrequesthandler">JobRequestHandler</h3>
+<p>A <code>JobRequestHandler</code> is an interface that that will be used to run the background job during job execution. As a parameter, it will receive the <code>JobRequest</code> and can thus access all data that was provided when the job was created.</p>
+<h3 id="job-annotation">Job annotation</h3>
+<p>The <code>@Job</code> annotation allows you to manage certain aspects from a Job like the name and the label (visible in the dashboard), the amount of retries and various other aspects like the <code>queue</code>, the <code>server tag</code> and the <code>mutex</code> if you are using JobRunr Pro.</p>
+<h3 id="jobbuilder">JobBuilder</h3>
+<p>The <code>JobBuilder</code> is an alternative to the <code>@Job</code> annotation and also allows you to configure all the different aspects from a Job. The difference is that using the <code>JobBuilder</code> certain aspects can be set at runtime which is not possible via the <code>@Job</code> annotation.</p>
+<h3 id="backgroundjobserver">BackgroundJobServer</h3>
+<p>The <code>BackgroundJobServer</code> class processes background jobs by querying the StorageProvider. Roughly speaking, it’s a set of background threads that listen to the storage provider for new background jobs, and perform them by first de-serializing the stored type, method and arguments and then executing it.</p>
+<p>You can place this <code>BackgroundJobServer</code> in any process you want - even if you terminate a process, your background jobs will be retried automatically after restart. So in a basic configuration for a web application, you don’t need to use any Windows services for background processing anymore.</p>
+<blockquote>
+<p><u><strong>IMPORTANT:</strong></u>
+<br/><strong>Remark 1</strong>: You should have always 1 <code>BackgroundJobServer</code> running as it is responsible to see whether any jobs need to be processed.
+<br/><strong>Remark 2</strong>: You should have only 1 <code>BackgroundJobServer</code> per application / JVM instance. If you want to process more jobs or you want to distribute the jobs over multiple JVM&rsquo;s, you must launch a complete new instance of your application. <strong>Starting multiple <code>BackgroundJobServers</code> within the same JVM instance is bad practice and should NOT be done.</strong></p>
+</blockquote>
+<h3 id="jobactivator">JobActivator</h3>
+<p>Most enterprise applications make use of an <a href="https://en.wikipedia.org/wiki/Inversion_of_control">IoC framework</a> like <a href="https://github.com/spring-projects/spring-framework">Spring</a> or <a href="https://github.com/google/guice">Guice</a> - we off course support these IoC frameworks. The <code>JobActivator</code> is a Java 8 functional interface and has the responsability to lookup the correct class on which the background job method is defined.</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JobActivator</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">activateJob</span><span style="color:#f92672">(</span>Class<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> type<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><figcaption>Given a class, the JobActivator must return a instance of that class that is completely initialized</figcaption>
+</figure>
+<h3 id="jobrunrdashboardwebserver">JobRunrDashboardWebServer</h3>
+<p>The <code>JobRunrDashboardWebserver</code> gives insights in all jobs that are enqueued, being processed, have succeeded or have failed. You can see on which <code>BackgroundJobServer</code> a background job is being processed, the current state it is in and in case of a failure, have a look at why it failed.
+The dashboard exists out of a React frontend and makes use of a REST API.</p>
+<h3 id="jobmapper">JobMapper</h3>
+<p>The <code>JobMapper</code> is used to serialize and deserialize the job to Json as all jobs are stored in the <code>StorageProvider</code> as Json. It uses the <code>JsonMapper</code> underneath and has some utility functions to serialize a Job and a RecurringJob.</p>
+<h3 id="jsonmapper">JsonMapper</h3>
+<p>The <code>JsonMapper</code> is the abstraction layer above either <a href="https://github.com/FasterXML/jackson">Jackson</a>, <a href="https://github.com/google/gson">Gson</a> or <a href="http://json-b.net/">Json-B</a>. It is used by the JobMapper and the JobRunrDashboardWebServer to map domain objects like <code>Job</code> and <code>RecurringJob</code> to json entities for the REST API.</p>
+<h3 id="jobfilter">JobFilter</h3>
+<p>The <code>JobFilter</code> allows you to extend and intervene with background jobs in JobRunr. There are several types of JobFilters:</p>
+<ul>
+<li><code>JobClientFilter</code>: filters that are called before and after the job is created</li>
+<li><code>JobServerFilter</code>: filters that are called before and after the processing of the job</li>
+<li><code>ElectStateFilter</code>: a filter that decides the new state based on the old state</li>
+<li><code>ApplyStateFilter</code>: filters that are called when a state change happens within a job</li>
+</ul>
+<h3 id="retryfilter">RetryFilter</h3>
+<p>This is a default filter of type <code>ElectStateFilter</code> and is automatically added for each job which is run by JobRunr. When a job fails, the <code>RetryFilter</code> will automatically retry the job 10 times with an exponential back-off policy. Is some API server down while processing jobs? No worries, JobRunr has you covered.</p>
+<h3 id="jobcontext">JobContext</h3>
+<p>If access is needed to info about the background job itself (like the id of the job, the name, the state, &hellip;) within the execution, the <code>JobContext</code> comes in handy. Using it is simple: if you use Java 8 lambda&rsquo;s you just need to pass an extra parameter of type <code>JobContext.Null</code> to your background job method and at execution time an instance will be injected into your background job method. If you use a <code>JobRequest</code> then it is available as a default method on <code>JobRequestHandler</code> interface.</p>
+<blockquote>
+<p>Note: that this is best avoided as it couples your domain logic tightly with JobRunr.</p>
+</blockquote>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> myService<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span>JobContext<span style="color:#f92672">.</span><span style="color:#a6e22e">Null</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div><figcaption>When executing the doWork method of myService, JobContext will be available</figcaption>
+</figure>
+            </section>
+        </article>
+        
+    </div>
+</main>
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+</body>
+</html>

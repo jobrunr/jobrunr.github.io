@@ -1,7 +1,381 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><link rel=dns-prefetch href=https://www.googletagmanager.com><link rel=dns-prefetch href=https://cdn.jsdelivr.net><link rel=dns-prefetch href=https://cdnjs.cloudflare.com><link href=https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js rel=preload as=script><link href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js rel=preload as=script><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","G-J3K00HKL9D")</script><script type=text/javascript>(function(e,o,t,i,a,n,s){e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},n=o.createElement(i),n.async=1,n.src="https://www.clarity.ms/tag/"+a,s=o.getElementsByTagName(i)[0],s.parentNode.insertBefore(n,s)})(window,document,"clarity","script","gndsmglzod")</script><meta http-equiv=x-ua-compatible content="IE=edge"><title>Launching a developer product - part 2 · JobRunr</title><meta name=HandheldFriendly content="True"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Jeeeejj! I have a 1000 stars in GitHub!"><meta name=author content="Ronald Dehuysser, ronald@dehuysser.be"><meta name=twitter:card content="summary"><meta name=twitter:image content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><meta name=twitter:image:alt content="JobRunr - get jobs done"><meta name=twitter:title content="Launching a developer product - part 2"><meta name=twitter:description content="Jeeeejj! I have a 1000 stars in GitHub!"><meta name=twitter:creator content="@rdehuyss"><meta name=twitter:site content="@jobrunr"><meta property="og:title" content="Launching a developer product - part 2"><meta property="og:description" content="Jeeeejj! I have a 1000 stars in GitHub!"><meta property="og:type" content="article"><meta property="og:url" content="https://www.jobrunr.io/en/blog/2022-06-10-my-own-product-part-2/"><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><meta property="article:section" content="blog"><meta property="article:published_time" content="2022-06-10T11:12:23+02:00"><meta property="article:modified_time" content="2022-06-10T11:12:23+02:00"><link rel=stylesheet href=https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media=screen><link rel=stylesheet href=https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media=screen><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css><link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css></head><body class=post-template><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=site-wrapper><header class=site-header style=height:64px><div class="outer site-nav-main"><div class=inner><nav id=site-nav class=site-nav><div class=site-nav-left><a class=site-nav-logo href=https://www.jobrunr.io/en/><img src=https://www.jobrunr.io/images/jobrunr-logo-white.webp alt=JobRunr height=21px width=91px></a><div class=site-nav-content><ul class=nav role=menu><li class=nav-home role=menuitem><a href=/en/>Home</a></li><li class=nav-home role=menuitem><a href=/en/documentation/>Documentation</a></li><li class=nav-home role=menuitem><a href=/en/pricing/>JobRunr Pro</a></li><li class=nav-home role=menuitem><a href=/en/use-case/>Use Cases</a></li><li class=nav-home role=menuitem><a href=/en/blog/>Blog</a></li></ul></div></div><div class=site-nav-right><div id=social-links class=social-links><style>div.social-links{position:relative}#lang-selector{display:none;background-color:#90a2aa;position:absolute;left:10px;top:56px;z-index:50}#lang-selector li{list-style-type:none}#lang-selector li a{color:#fff;text-transform:uppercase}</style><a class="social-link social-link-tw" href=https://github.com/jobrunr/website/tree/master/content/en/blog/2022-06-10-my-own-product-part-2.md title="Edit this page on GitHub" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562.0 24l1.438-7.128 5.689 5.69zm1.414-1.414L19.769 9.923l-5.69-5.692L2.852 15.458l5.689 5.69zM18.309.0l-2.816 2.817 5.691 5.691L24 5.689l-5.691-5.689z"/></svg></a><a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&screen_name=jobrunr&tw_p=followbutton" title="Follow us on Twitter" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088.0 01-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015.0 01-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25.0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688.0 5.063-.875 7.188-2.5-1.25.0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5.0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673.0 01-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228.0 01-1.875-2c-.5-.875-.688-1.813-.688-2.75.0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579.0 011.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48.0 003.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a><a class="social-link social-link-gh" style=color:#fff href=https://github.com/jobrunr/jobrunr title="View code on Github" target=_blank rel=noopener><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63.0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577.0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93.0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176.0.0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22.0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22.0 1.606-.015 2.896-.015 3.286.0.315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>Source Code</a>
-<script>const langLink=document.getElementById("lang-link");if(langLink){const e=document.getElementById("lang-selector"),t=()=>{e.style.display="none"},n=()=>{e.style.display="block",setTimeout(t,3e3)};langLink.addEventListener("mouseover",n)}</script></div></div></nav></div></div></header><main id=site-main class="site-main outer"><div class=inner><article class="post-full post"><header class=post-full-header><section class=post-full-tags><a href=/en/tags/blog>blog</a></section><h1 class=post-full-title>Launching a developer product - part 2</h1><p class=post-full-custom-excerpt>Jeeeejj! I have a 1000 stars in GitHub!</p><div class=post-full-byline><section class=post-full-byline-content><ul class=author-list><li class=author-list-item><div class=author-card><div class=author-profile-image><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21.0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#fff"/></g></svg></div><div class=author-info><div class=author-info><h2>Ronald Dehuysser</h2></div></div></div><a href=# class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21.0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#fff"/></g></svg></a></li></ul><section class=post-full-byline-meta><h4 class=author-name>Ronald Dehuysser</h4><div class=byline-meta-content><time class=byline-meta-date datetime=2022-116-06>10 June 2022</time>
-<span class=byline-reading-time><span class=bull>&bull;</span> 7 min read</span></div></section></section></div></header><figure class="post-full-image blog"><img src=/blog/2022-06-10-my-own-product-part2.png alt=blog/2022-06-10-my-own-product-part2.png></figure><section class=post-full-content><div class=post-content><p>This is the story about <a href=https://www.jobrunr.io/en/><strong>JobRunr</strong></a>, a distributed background job processing framework for Java and <a href=https://www.jobrunr.io/en/documentation/pro/><strong>JobRunr Pro</strong></a> a drop-in replacement which adds extra features like Queues, Atomic batches, job chaining and more.</p><p>You can read <a href=https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/>part 1 here</a>. Part 2 comes almost 2 years later (rather 950 GitHub stars later). What a crazy ride it has been!</p><h3 id=some-history>Some history</h3><p>So, on the 4th of September 2020, I blogged for the first time how it was to start a freemium developer product in the Java world. Back then, I hadn&rsquo;t sold a single Pro license and although I had some users liking my product, I started of with only 19 unique downloads per month. That same week saw also the release of JobRunr 1.0.0 with the <code>jobrunr-spring-boot-starter</code> integration.</p><p>As I could not live forever without any income, I took on another contracting role but In my spare time (mostly evenings, weekends and holidays), I kept on working on JobRunr. Below you will find the journey from September 2020 until today.</p><h3 id=october-2020>October 2020</h3><p>October 2020 saw the first contribution of a Spring Core Contributor, <a href=https://github.com/snicoll>Stéphane Nicoll</a> (how cool is that!) and in release v1.1.0 I made some improvements when Jobs are not found anymore due to refactoring in your code. As of then, a message is shown in the dashboard if one of your scheduled jobs does not exist in your code.</p><h3 id=november-2020---my-first-customer>November 2020 - my first customer!</h3><p>Then, in November 2020 it finally happened: I was contacted by KomaK with the request to add support for DocumentDB and it resulted in my first sold license. Thanks, <a href=https://www.komak.fr/>KomaK</a> for the trust! It resulted in the first 25 trees being planted.</p><h3 id=january-2021---jobrunr-featured-on-oracle-blog>January 2021 - JobRunr featured on Oracle Blog!</h3><p>In January 2021, a tutorial on how to use JobRunr was featured in Oracle Java Magazine, the Java resource for developers worldwide. I quickly found out how warm and welcoming the Java community is and I want to take this opportunity to thank <a href=https://twitter.com/zeichick>Alan Zeichick</a>, the editor in chief of Oracle Java Magazine. Colleagues who knew I was working on JobRunr, reached out and told me about the Oracle article - it was fun to see and gather all the feedback.</p><h3 id=february-2021---the-release-called-made-in-germany>February 2021 - the release called Made In Germany</h3><p>As I had some concurrency issues that were hard to track down, I added a <a href=../2021-02-07-v1.3/>feature in JobRunr</a> that automatically suggests to create a Github issue in case such a concurrency issue happened. It allowed me to track down these <a href="https://github.com/jobrunr/jobrunr/issues?q=is%3Aissue+%22Severe+JobRunr+Exception%22">difficult and nasty bugs</a> and it helped me to improve JobRunr even more.</p><h3 id=april-2021-until-july-2021---a-lot-of-releases>April 2021 until July 2021 - a lot of releases!</h3><p>In April 2021 I released JobRunr 2.0.0 - it was a breaking release as I added support for Kotlin and the argument order when creating jobs changed. JobRunr 3.x was released and I added the option to search for Jobs in the JobRunr Pro dashboard.</p><p>But I noticed something changing: the amount of downloads from JobRunr kept on rising month after month and I had 2800 unique downloads in July 2021!</p><figure><img src=/blog/2022-06-10-my-own-product-part2-unique-downloads-july2021.png><figcaption>2800 unique downloads of JobRunr in July 2021!</figcaption></figure><h3 id=august-2021---my-second-customer>August 2021 - my second customer!</h3><p>Only 10 months (🤣) after my first customer, I was contacted by <a href=https://www.ecg.co/>ECG inc</a> and they were also interested in a JobRunr Pro license. It was an easy sell as they needed a specific JobRunr Pro feature and it resulted in another <a href="https://teamtrees.org/search?q=ecg">75 planted trees</a>.</p><h3 id=september-2021---jobrunr-400-the-biggest-release-since-jobrunr-100>September 2021 - JobRunr 4.0.0, the biggest release since JobRunr 1.0.0</h3><p>During my holidays (COVID was still a thing and travel was still a hassle), I continued to work on JobRunr and JobRunr Pro and it resulted in one of the best releases. A lot of improvements were done:</p><ul><li><strong>Job Analysis Performance Mode</strong>: thanks to some smart caching, Job Analysis is now faster than ever</li><li><strong>JobRequest and JobRequestHandler</strong>: this release introduced the JobRequest and JobRequesthandler. It was a new way to create jobs using the command / commandhandler pattern (meaning you can use objects instead of lambda’s to create background jobs). I added it after feedback from users on Reddit.</li><li><strong>Integration with other frameworks</strong>: the Spring Boot Integration was improved and support for Micronaut and Quarkus was added.</li></ul><h3 id=september-until-december-2021---small--incremental-improvements>September until December 2021 - small & incremental improvements</h3><p>From September 2021 I worked less on JobRunr as I took on a new role as the CTO of a startup, <a href=https://www.ventory.io>Ventory</a>. However, the usage of JobRunr kept on growing and <a href=https://twitter.com/starbuxman>Josh Long aka starbuxman</a> wrote about JobRunr in his weekly newsletter &lsquo;<a href=https://spring.io/blog/2021/10/05/this-week-in-spring-october-5th-2021>This week in Spring!</a>&rsquo;. It didn&rsquo;t take long before I was invited for his great podcast series - <a href=https://spring.io/blog/2021/12/16/a-bootiful-podcast-ronald-dehuysser-creator-of-the-distributed-job-scheduler-jobrunr>a Bootiful Podcast</a>. And that same night, we started pairing and added Spring Native support to JobRunr. Again this showed me how warm and welcoming the whole <a href=https://twitter.com/springboot>Spring Boot</a> and <a href=https://twitter.com/java>Java</a> community is!</p><h3 id=january-until-may-2022---jobrunr-500>January until May 2022 - JobRunr 5.0.0</h3><p>After working hours, I continued making improvements to both JobRunr and JobRunr Pro and March 2022 saw the release of <a href=../2022-03-30-jobrunr-v5.0.0>JobRunr and JobRunr Pro 5.0.0</a>. Some highly anticipated features were added to JobRunr Pro like a <a href=https://www.jobrunr.io/en/documentation/pro/transactions/>Spring Boot Transaction</a> plugin, instant job processing, <a href=https://www.jobrunr.io/en/documentation/pro/replace-jobs/>updating of jobs</a> and an <a href=https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/>improved dashboard</a>.
-More companies reached out and I was able to sell 6 more licenses. As <a href=https://www.jobrunr.io/en/about/#eco-friendly-software>I care about our planet</a>, this resulted in <a href="https://teamtrees.org/search?q=JobRunr">950 new trees</a> being planted!</p><h3 id=may-2022---springio>May 2022 - Spring.io!</h3><p>The crazy ride continued and I was invited to speak at <a href=https://2022.springio.net/sessions/backgroundjobenqueue-systemoutprintlnthis-is-all-you-need-for-distributed-background-jobs>Spring.io Barcelona</a> before an audience of 250 people. I had a blast presenting JobRunr and I also received a lot of nice feedback. Mental note: if you will do live coding on stage, do practice with <code>presenter mode</code> in Intellij :-).</p><h3 id=where-are-we-in-june-2022>Where are we in June 2022</h3><p>On June 10, I received 1000 GitHub stars!</p><figure><img src=/blog/2022-06-10-my-own-product-part2-github-stars.png><figcaption>1000 GitHub stars JobRunr in June 2022!</figcaption></figure><p>If I compare my Google analytics from 2020 to 2022, there also definitely an increase:</p><figure><img src=/blog/2022-06-10-my-own-product-part2-google-analytics.png><figcaption>The google analytics for the <a href=https://www.jobrunr.io/>jobrunr.io</a> website.</figcaption></figure><p>And the unique downloads via Maven Central has also boomed:</p><figure><img src=/blog/2022-06-10-my-own-product-part2-unique-downloads-growth.png><figcaption>The growth of JobRunr over the last 12 months.</figcaption></figure><p>JobRunr tends to work well for long projects as JobRunr 1.x is about 10% of the unique downloads today:</p><figure><img src=/blog/2022-06-10-my-own-product-part2-unique-downloads-may2022.png><figcaption>JobRunr downloads in May 2022</figcaption></figure><h3 id=going-forward>Going forward</h3><img src=/blog/2022-06-10-my-own-product-part2-bus-factor.png style="margin:1.5em 1.5em 1.5em 0"><p>As the project is growing, it&rsquo;s time to do some governance. I don&rsquo;t want to be a project where the bus factor is 1. That&rsquo;s why I have recently onboarded <a href=https://github.com/RenaudBernon>Renaud Bernon</a>, another great developer who will be maintaining JobRunr and JobRunr Pro together with me. Welcome <a href=https://github.com/RenaudBernon>Renaud</a>!</p><h3 id=last-but-not-least>Last but not least&mldr;</h3><p>I would like to thank all the JobRunr Pro customers and amazing people that helped on JobRunr - without them, JobRunr would not be the product it is now.</p><p>Thanks <a href=https://twitter.com/RenaudBernon>Renaud</a>, for embarking on this adventure together with me!<br>Thanks <a href=https://twitter.com/starbuxman>Josh</a>, for pairing with me with during christmas holidays!<br>Thanks <a href=https://twitter.com/sergialmar>Sergi</a>, for giving me the opportunity to speak on <a href=https://2022.springio.net>Spring.io</a>!<br>Thanks <a href=https://twitter.com/mpredli>Michael</a>, for following the JobRunr repo so dilligent and writing about JobRunr on each minor release.<br>Thanks <a href=https://twitter.com/zeichick>Alan</a>, for having articles about JobRunr in <a href=https://twitter.com/Oraclejavamag>@OracleJavaMag</a>.<br>Thanks <a href=https://www.baeldung.com/java-jobrunr-spring>Eugen</a> and <a href=https://mkyong.com/spring-boot/spring-boot-jobrunr-examples/>Yong</a> for publising the articles about JobRunr.<br>Thanks <a href=https://github.com/1cg>Carson</a>, for pairing with me and searching for the Redis support in JobRunr.<br>Thanks <a href=https://github.com/biggms8x8>Graham</a> and <a href=https://github.com/BilalKamran>Bilal</a>, for searching for that one difficult issue together with me!<br>Thanks <a href=https://github.com/sazzad16>Sazzadul</a>, for helping me with the Redis integration!<br>Thanks <a href=https://github.com/datnguyen293>Dat</a>, <a href=https://github.com/patkujawa-wf>Pat</a> and <a href=https://github.com/dmurphy-ambra>David</a>, for believing in the product and your awesome feedback.<br></p><p><strong>And off-course all the contributors:</strong><br>Thanks <a href=https://github.com/eddumelendez>Eddú</a>, for the help with the awesome TestContainers!<br>Thanks <a href=https://github.com/gilberto-p-matos>Gilberto</a>, for the great discussion and PR you created.<br>Thanks <a href=https://github.com/dawiemalan>Dawie</a>, for adding support for interval in the <code>@Recurring</code> annotation.<br>Thanks <a href=https://github.com/pixnbit>Pixnbit</a>, for helping with the transactions in Micronaut.<br>Thanks <a href=https://github.com/kfowler>Kevin</a>, for adding support for multiple datasources.<br>Thanks <a href=https://github.com/jeremylong>Jeremy</a>, for helping with the docs.<br>Thanks <a href=https://github.com/shinsunyoung>Sunyoung</a>, for helping with internationalization in the Dashboard.<br>Thanks <a href=https://github.com/daniela-tumbraegel>Daniela</a>, for adding support for interval in recurring jobs! This was some great work!<br>Thanks <a href=https://github.com/angry-cellophane>Alexander</a>, for making the exceptions more readable.<br>Thanks <a href=https://github.com/sa1nt>Anatolijs</a>, for supporting <code>table-prefixes</code> in MongoDB.<br>Thanks <a href=https://github.com/tang>Pei-Tang</a>, for all your help with recurring jobs.<br>Thanks <a href=https://github.com/neildeng>Neil</a>, for helping with the table name prefixes.<br>Thanks <a href=https://github.com/benallard>Benoît</a>, for your help with the logging.<br>Thanks <a href=https://github.com/dtrouillet>Damien</a>, to make the dashbord secure.<br>Thanks <a href=https://github.com/hankem>Manfred</a>, for improving the <a href=https://github.com/TNG/ArchUnit>ArchUnit</a> tests.<br>Thanks <a href=https://github.com/metlaivan>Ivan</a>, for fixing one of the tests!<br>Thanks <a href=https://github.com/jakub-hirnsal>Jakub</a>, for improving the Mongo integration!<br>Thanks <a href=https://github.com/thorasine>Krisztián</a>, for improving the Readme.<br>Thanks <a href=https://github.com/snicoll>Stéphane</a>, for improving the Spring Fluent API example.<br>Thanks <a href=https://github.com/daniiell3>Daniell</a>, for making the dashboard port configurable.<br>Thanks <a href=https://github.com/hatahet>Ziad</a>, for cleaning up some of the code.<br></p><p>And I&rsquo;m sure I&rsquo;ve forgotten some people too, so also a big thank you for everybody that helped but that I forgot for some reason! Feel free to reach out and I&rsquo;ll make sure I will add you to this list.</p><p>Thanks again,<br>Ronald</p></div></section></article></div></main><footer class="site-footer outer"><div class="site-footer-content inner"><section class=copyright style=align-self:start>&copy; <a href=https://www.jobrunr.io>JobRunr</a></section><section class=love style=align-self:start;opacity:.7>Made with <strong style=color:red;font-size:large>&#9829;</strong> in Belgium</section><nav class=site-footer-nav><div><div><a href=/en/about/ rel=noopener style=opacity:.5>JobRunr by Rosoco BV (BE 0807596165)</a></div><div><a href=/en/licensing/info/ rel=noopener style=opacity:.5>Terms of use</a></div><div><a href=/en/privacy/ rel=noopener style=opacity:.5>Privacy</a></div></div></nav></div></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js defer></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js defer></script>
-<script src=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js defer></script>
-<script>window.addEventListener("load",e=>{setTimeout(()=>{window.cookieconsent.initialise({palette:{popup:{background:"#000"},button:{background:"transparent",border:"#fff",text:"#fff"}},content:{link:"Learn more about cookies"}})},5e3)});for(var links=document.querySelectorAll("a"),i=0;i<links.length;i++)links[i].hostname!=window.location.hostname&&(links[i].target="_blank",links[i].rel="noopener")</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+    
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "gndsmglzod");
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Launching a developer product - part 2 · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Jeeeejj! I have a 1000 stars in GitHub!">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="Launching a developer product - part 2" />
+    <meta name="twitter:description" content="Jeeeejj! I have a 1000 stars in GitHub!" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="Launching a developer product - part 2" />
+<meta property="og:description" content="Jeeeejj! I have a 1000 stars in GitHub!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/2022-06-10-my-own-product-part-2/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-06-10T11:12:23+02:00" />
+<meta property="article:modified_time" content="2022-06-10T11:12:23+02:00" />
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css" integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/blog/2022-06-10-my-own-product-part-2.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/blog">blog</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Launching a developer product - part 2</h1>
+
+                
+                    <p class="post-full-custom-excerpt">Jeeeejj! I have a 1000 stars in GitHub!</p>
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Ronald Dehuysser</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Ronald Dehuysser</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2022-116-06">10 June 2022</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 7 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+                
+            </header>
+
+            
+            
+            
+            <figure class="post-full-image blog">
+            
+                <img src="/blog/2022-06-10-my-own-product-part2.png" alt="blog/2022-06-10-my-own-product-part2.png"/>
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>This is the story about <a href="https://www.jobrunr.io/en/"><strong>JobRunr</strong></a>, a distributed background job processing framework for Java and <a href="https://www.jobrunr.io/en/documentation/pro/"><strong>JobRunr Pro</strong></a> a drop-in replacement which adds extra features like Queues, Atomic batches, job chaining and more.</p>
+<p>You can read <a href="https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/">part 1 here</a>. Part 2 comes almost 2 years later (rather 950 GitHub stars later). What a crazy ride it has been!</p>
+<h3 id="some-history">Some history</h3>
+<p>So, on the 4th of September 2020, I blogged for the first time how it was to start a freemium developer product in the Java world. Back then, I hadn&rsquo;t sold a single Pro license and although I had some users liking my product, I started of with only 19 unique downloads per month. That same week saw also the release of JobRunr 1.0.0 with the <code>jobrunr-spring-boot-starter</code> integration.</p>
+<p>As I could not live forever without any income, I took on another contracting role but In my spare time (mostly evenings, weekends and holidays), I kept on working on JobRunr. Below you will find the journey from September 2020 until today.</p>
+<h3 id="october-2020">October 2020</h3>
+<p>October 2020 saw the first contribution of a Spring Core Contributor, <a href="https://github.com/snicoll">Stéphane Nicoll</a> (how cool is that!) and in release v1.1.0 I made some improvements when Jobs are not found anymore due to refactoring in your code. As of then, a message is shown in the dashboard if one of your scheduled jobs does not exist in your code.</p>
+<h3 id="november-2020---my-first-customer">November 2020 - my first customer!</h3>
+<p>Then, in November 2020 it finally happened: I was contacted by KomaK with the request to add support for DocumentDB and it resulted in my first sold license. Thanks, <a href="https://www.komak.fr/">KomaK</a> for the trust! It resulted in the first 25 trees being planted.</p>
+<h3 id="january-2021---jobrunr-featured-on-oracle-blog">January 2021 - JobRunr featured on Oracle Blog!</h3>
+<p>In January 2021, a tutorial on how to use JobRunr was featured in Oracle Java Magazine, the Java resource for developers worldwide. I quickly found out how warm and welcoming the Java community is and I want to take this opportunity to thank <a href="https://twitter.com/zeichick">Alan Zeichick</a>, the editor in chief of Oracle Java Magazine. Colleagues who knew I was working on JobRunr, reached out and told me about the Oracle article - it was fun to see and gather all the feedback.</p>
+<h3 id="february-2021---the-release-called-made-in-germany">February 2021 - the release called Made In Germany</h3>
+<p>As I had some concurrency issues that were hard to track down, I added a <a href="../2021-02-07-v1.3/">feature in JobRunr</a> that automatically suggests to create a Github issue in case such a concurrency issue happened. It allowed me to track down these <a href="https://github.com/jobrunr/jobrunr/issues?q=is%3Aissue+%22Severe+JobRunr+Exception%22">difficult and nasty bugs</a> and it helped me to improve JobRunr even more.</p>
+<h3 id="april-2021-until-july-2021---a-lot-of-releases">April 2021 until July 2021 - a lot of releases!</h3>
+<p>In April 2021 I released JobRunr 2.0.0 - it was a breaking release as I added support for Kotlin and the argument order when creating jobs changed. JobRunr 3.x was released and I added the option to search for Jobs in the JobRunr Pro dashboard.</p>
+<p>But I noticed something changing: the amount of downloads from JobRunr kept on rising month after month and I had 2800 unique downloads in July 2021!</p>
+<figure>
+<img src="/blog/2022-06-10-my-own-product-part2-unique-downloads-july2021.png" />
+<figcaption>2800 unique downloads of JobRunr in July 2021!</figcaption>
+</figure>
+<h3 id="august-2021---my-second-customer">August 2021 - my second customer!</h3>
+<p>Only 10 months (🤣) after my first customer, I was contacted by <a href="https://www.ecg.co/">ECG inc</a> and they were also interested in a JobRunr Pro license. It was an easy sell as they needed a specific JobRunr Pro feature and it resulted in another <a href="https://teamtrees.org/search?q=ecg">75 planted trees</a>.</p>
+<h3 id="september-2021---jobrunr-400-the-biggest-release-since-jobrunr-100">September 2021 - JobRunr 4.0.0, the biggest release since JobRunr 1.0.0</h3>
+<p>During my holidays (COVID was still a thing and travel was still a hassle), I continued to work on JobRunr and JobRunr Pro and it resulted in one of the best releases. A lot of improvements were done:</p>
+<ul>
+<li><strong>Job Analysis Performance Mode</strong>: thanks to some smart caching, Job Analysis is now faster than ever</li>
+<li><strong>JobRequest and JobRequestHandler</strong>: this release introduced the JobRequest and JobRequesthandler. It was a new way to create jobs using the command / commandhandler pattern (meaning you can use objects instead of lambda’s to create background jobs). I added it after feedback from users on Reddit.</li>
+<li><strong>Integration with other frameworks</strong>: the Spring Boot Integration was improved and support for Micronaut and Quarkus was added.</li>
+</ul>
+<h3 id="september-until-december-2021---small--incremental-improvements">September until December 2021 - small &amp; incremental improvements</h3>
+<p>From September 2021 I worked less on JobRunr as I took on a new role as the CTO of a startup, <a href="https://www.ventory.io">Ventory</a>. However, the usage of JobRunr kept on growing and <a href="https://twitter.com/starbuxman">Josh Long aka starbuxman</a> wrote about JobRunr in his weekly newsletter &lsquo;<a href="https://spring.io/blog/2021/10/05/this-week-in-spring-october-5th-2021">This week in Spring!</a>&rsquo;. It didn&rsquo;t take long before I was invited for his great podcast series - <a href="https://spring.io/blog/2021/12/16/a-bootiful-podcast-ronald-dehuysser-creator-of-the-distributed-job-scheduler-jobrunr">a Bootiful Podcast</a>. And that same night, we started pairing and added Spring Native support to JobRunr. Again this showed me how warm and welcoming the whole <a href="https://twitter.com/springboot">Spring Boot</a> and <a href="https://twitter.com/java">Java</a> community is!</p>
+<h3 id="january-until-may-2022---jobrunr-500">January until May 2022 - JobRunr 5.0.0</h3>
+<p>After working hours, I continued making improvements to both JobRunr and JobRunr Pro and March 2022 saw the release of <a href="../2022-03-30-jobrunr-v5.0.0">JobRunr and JobRunr Pro 5.0.0</a>. Some highly anticipated features were added to JobRunr Pro like a <a href="https://www.jobrunr.io/en/documentation/pro/transactions/">Spring Boot Transaction</a> plugin, instant job processing, <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">updating of jobs</a> and an <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/">improved dashboard</a>.
+More companies reached out and I was able to sell 6 more licenses. As <a href="https://www.jobrunr.io/en/about/#eco-friendly-software">I care about our planet</a>, this resulted in <a href="https://teamtrees.org/search?q=JobRunr">950 new trees</a> being planted!</p>
+<h3 id="may-2022---springio">May 2022 - Spring.io!</h3>
+<p>The crazy ride continued and I was invited to speak at <a href="https://2022.springio.net/sessions/backgroundjobenqueue-systemoutprintlnthis-is-all-you-need-for-distributed-background-jobs">Spring.io Barcelona</a> before an audience of 250 people. I had a blast presenting JobRunr and I also received a lot of nice feedback. Mental note: if you will do live coding on stage, do practice with <code>presenter mode</code> in Intellij :-).</p>
+<h3 id="where-are-we-in-june-2022">Where are we in June 2022</h3>
+<p>On June 10, I received 1000 GitHub stars!</p>
+<figure>
+<img src="/blog/2022-06-10-my-own-product-part2-github-stars.png" />
+<figcaption>1000 GitHub stars JobRunr in June 2022!</figcaption>
+</figure>
+<p>If I compare my Google analytics from 2020 to 2022, there also definitely an increase:</p>
+<figure>
+<img src="/blog/2022-06-10-my-own-product-part2-google-analytics.png" />
+<figcaption>The google analytics for the <a href="https://www.jobrunr.io/">jobrunr.io</a> website.</figcaption>
+</figure>
+<p>And the unique downloads via Maven Central has also boomed:</p>
+<figure>
+<img src="/blog/2022-06-10-my-own-product-part2-unique-downloads-growth.png" />
+<figcaption>The growth of JobRunr over the last 12 months.</figcaption>
+</figure>
+<p>JobRunr tends to work well for long projects as JobRunr 1.x is about 10% of the unique downloads today:</p>
+<figure>
+<img src="/blog/2022-06-10-my-own-product-part2-unique-downloads-may2022.png" />
+<figcaption>JobRunr downloads in May 2022</figcaption>
+</figure>
+<h3 id="going-forward">Going forward</h3>
+<img src="/blog/2022-06-10-my-own-product-part2-bus-factor.png" style="margin: 1.5em 1.5em 1.5em 0"/>
+<p>As the project is growing, it&rsquo;s time to do some governance. I don&rsquo;t want to be a project where the bus factor is 1. That&rsquo;s why I have recently onboarded <a href="https://github.com/RenaudBernon">Renaud Bernon</a>, another great developer who will be maintaining JobRunr and JobRunr Pro together with me. Welcome <a href="https://github.com/RenaudBernon">Renaud</a>!</p>
+<h3 id="last-but-not-least">Last but not least&hellip;</h3>
+<p>I would like to thank all the JobRunr Pro customers and amazing people that helped on JobRunr - without them, JobRunr would not be the product it is now.</p>
+<p>Thanks <a href="https://twitter.com/RenaudBernon">Renaud</a>, for embarking on this adventure together with me!<br/>
+Thanks <a href="https://twitter.com/starbuxman">Josh</a>, for pairing with me with during christmas holidays!<br/>
+Thanks <a href="https://twitter.com/sergialmar">Sergi</a>, for giving me the opportunity to speak on <a href="https://2022.springio.net">Spring.io</a>!<br/>
+Thanks <a href="https://twitter.com/mpredli">Michael</a>, for following the JobRunr repo so dilligent and writing about JobRunr on each minor release.<br/>
+Thanks <a href="https://twitter.com/zeichick">Alan</a>, for having articles about JobRunr in <a href="https://twitter.com/Oraclejavamag">@OracleJavaMag</a>.<br/>
+Thanks <a href="https://www.baeldung.com/java-jobrunr-spring">Eugen</a> and <a href="https://mkyong.com/spring-boot/spring-boot-jobrunr-examples/">Yong</a> for publising the articles about JobRunr.<br/>
+Thanks <a href="https://github.com/1cg">Carson</a>, for pairing with me and searching for the Redis support in JobRunr.<br/>
+Thanks <a href="https://github.com/biggms8x8">Graham</a> and <a href="https://github.com/BilalKamran">Bilal</a>, for searching for that one difficult issue together with me!<br/>
+Thanks <a href="https://github.com/sazzad16">Sazzadul</a>, for helping me with the Redis integration!<br/>
+Thanks <a href="https://github.com/datnguyen293">Dat</a>, <a href="https://github.com/patkujawa-wf">Pat</a> and <a href="https://github.com/dmurphy-ambra">David</a>, for believing in the product and your awesome feedback.<br/></p>
+<p><strong>And off-course all the contributors:</strong><br>
+Thanks <a href="https://github.com/eddumelendez">Eddú</a>, for the help with the awesome TestContainers!<br/>
+Thanks <a href="https://github.com/gilberto-p-matos">Gilberto</a>, for the great discussion and PR you created.<br/>
+Thanks <a href="https://github.com/dawiemalan">Dawie</a>, for adding support for interval in the <code>@Recurring</code> annotation.<br/>
+Thanks <a href="https://github.com/pixnbit">Pixnbit</a>, for helping with the transactions in Micronaut.<br/>
+Thanks <a href="https://github.com/kfowler">Kevin</a>, for adding support for multiple datasources.<br/>
+Thanks <a href="https://github.com/jeremylong">Jeremy</a>, for helping with the docs.<br/>
+Thanks <a href="https://github.com/shinsunyoung">Sunyoung</a>, for helping with internationalization in the Dashboard.<br/>
+Thanks <a href="https://github.com/daniela-tumbraegel">Daniela</a>, for adding support for interval in recurring jobs! This was some great work!<br/>
+Thanks <a href="https://github.com/angry-cellophane">Alexander</a>, for making the exceptions more readable.<br/>
+Thanks <a href="https://github.com/sa1nt">Anatolijs</a>, for supporting <code>table-prefixes</code> in MongoDB.<br/>
+Thanks <a href="https://github.com/tang">Pei-Tang</a>, for all your help with recurring jobs.<br/>
+Thanks <a href="https://github.com/neildeng">Neil</a>, for helping with the table name prefixes.<br/>
+Thanks <a href="https://github.com/benallard">Benoît</a>, for your help with the logging.<br/>
+Thanks <a href="https://github.com/dtrouillet">Damien</a>, to make the dashbord secure.<br/>
+Thanks <a href="https://github.com/hankem">Manfred</a>, for improving the <a href="https://github.com/TNG/ArchUnit">ArchUnit</a> tests.<br/>
+Thanks <a href="https://github.com/metlaivan">Ivan</a>, for fixing one of the tests!<br/>
+Thanks <a href="https://github.com/jakub-hirnsal">Jakub</a>, for improving the Mongo integration!<br/>
+Thanks <a href="https://github.com/thorasine">Krisztián</a>, for improving the Readme.<br/>
+Thanks <a href="https://github.com/snicoll">Stéphane</a>, for improving the Spring Fluent API example.<br/>
+Thanks <a href="https://github.com/daniiell3">Daniell</a>, for making the dashboard port configurable.<br/>
+Thanks <a href="https://github.com/hatahet">Ziad</a>, for cleaning up some of the code.<br/></p>
+<p>And I&rsquo;m sure I&rsquo;ve forgotten some people too, so also a big thank you for everybody that helped but that I forgot for some reason! Feel free to reach out and I&rsquo;ll make sure I will add you to this list.</p>
+<p>Thanks again,<br/>
+Ronald</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+</body>
+</html>

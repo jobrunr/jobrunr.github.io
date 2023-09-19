@@ -1,35 +1,384 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><link rel=dns-prefetch href=https://www.googletagmanager.com><link rel=dns-prefetch href=https://cdn.jsdelivr.net><link rel=dns-prefetch href=https://cdnjs.cloudflare.com><link href=https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js rel=preload as=script><link href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js rel=preload as=script><link href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js rel=preload as=script><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","G-J3K00HKL9D")</script><script type=text/javascript>(function(e,o,t,i,a,n,s){e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},n=o.createElement(i),n.async=1,n.src="https://www.clarity.ms/tag/"+a,s=o.getElementsByTagName(i)[0],s.parentNode.insertBefore(n,s)})(window,document,"clarity","script","gndsmglzod")</script><meta http-equiv=x-ua-compatible content="IE=edge"><title>JobRunr - the best Java Scheduler? · JobRunr</title><meta name=HandheldFriendly content="True"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Easily schedule jobs in Java and monitor them using JobRunr"><meta name=author content="Ronald Dehuysser, ronald@dehuysser.be"><meta name=twitter:card content="summary"><meta name=twitter:image content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><meta name=twitter:image:alt content="JobRunr - get jobs done"><meta name=twitter:title content="JobRunr - the best Java Scheduler?"><meta name=twitter:description content="Easily schedule jobs in Java and monitor them using JobRunr"><meta name=twitter:creator content="@rdehuyss"><meta name=twitter:site content="@jobrunr"><meta property="og:title" content="JobRunr - the best Java Scheduler?"><meta property="og:description" content="Easily schedule jobs in Java and monitor them using JobRunr"><meta property="og:type" content="article"><meta property="og:url" content="https://www.jobrunr.io/en/blog/2023-02-13-java-scheduler/"><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"><meta property="article:section" content="blog"><meta property="article:published_time" content="2023-02-13T09:12:23+02:00"><meta property="article:modified_time" content="2023-02-13T09:12:23+02:00"><link rel=stylesheet href=https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media=screen><link rel=stylesheet href=https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media=screen><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css><link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css></head><body class=post-template><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=site-wrapper><header class=site-header style=height:64px><div class="outer site-nav-main"><div class=inner><nav id=site-nav class=site-nav><div class=site-nav-left><a class=site-nav-logo href=https://www.jobrunr.io/en/><img src=https://www.jobrunr.io/images/jobrunr-logo-white.webp alt=JobRunr height=21px width=91px></a><div class=site-nav-content><ul class=nav role=menu><li class=nav-home role=menuitem><a href=/en/>Home</a></li><li class=nav-home role=menuitem><a href=/en/documentation/>Documentation</a></li><li class=nav-home role=menuitem><a href=/en/pricing/>JobRunr Pro</a></li><li class=nav-home role=menuitem><a href=/en/use-case/>Use Cases</a></li><li class=nav-home role=menuitem><a href=/en/blog/>Blog</a></li></ul></div></div><div class=site-nav-right><div id=social-links class=social-links><style>div.social-links{position:relative}#lang-selector{display:none;background-color:#90a2aa;position:absolute;left:10px;top:56px;z-index:50}#lang-selector li{list-style-type:none}#lang-selector li a{color:#fff;text-transform:uppercase}</style><a class="social-link social-link-tw" href=https://github.com/jobrunr/website/tree/master/content/en/blog/2023-02-13-java-scheduler.md title="Edit this page on GitHub" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562.0 24l1.438-7.128 5.689 5.69zm1.414-1.414L19.769 9.923l-5.69-5.692L2.852 15.458l5.689 5.69zM18.309.0l-2.816 2.817 5.691 5.691L24 5.689l-5.691-5.689z"/></svg></a><a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&screen_name=jobrunr&tw_p=followbutton" title="Follow us on Twitter" target=_blank rel=noopener><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088.0 01-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015.0 01-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25.0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688.0 5.063-.875 7.188-2.5-1.25.0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5.0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673.0 01-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228.0 01-1.875-2c-.5-.875-.688-1.813-.688-2.75.0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579.0 011.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48.0 003.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a><a class="social-link social-link-gh" style=color:#fff href=https://github.com/jobrunr/jobrunr title="View code on Github" target=_blank rel=noopener><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63.0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577.0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93.0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176.0.0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22.0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22.0 1.606-.015 2.896-.015 3.286.0.315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>Source Code</a>
-<script>const langLink=document.getElementById("lang-link");if(langLink){const e=document.getElementById("lang-selector"),t=()=>{e.style.display="none"},n=()=>{e.style.display="block",setTimeout(t,3e3)};langLink.addEventListener("mouseover",n)}</script></div></div></nav></div></div></header><main id=site-main class="site-main outer"><div class=inner><article class="post-full post"><header class=post-full-header><section class=post-full-tags><a href=/en/tags/blog>blog</a></section><h1 class=post-full-title>JobRunr - the best Java Scheduler?</h1><p class=post-full-custom-excerpt>Easily schedule jobs in Java and monitor them using JobRunr</p><div class=post-full-byline><section class=post-full-byline-content><ul class=author-list><li class=author-list-item><div class=author-card><div class=author-profile-image><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21.0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#fff"/></g></svg></div><div class=author-info><div class=author-info><h2>Ronald Dehuysser</h2></div></div></div><a href=# class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21.0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#fff"/></g></svg></a></li></ul><section class=post-full-byline-meta><h4 class=author-name>Ronald Dehuysser</h4><div class=byline-meta-content><time class=byline-meta-date datetime=2023-92-02>13 February 2023</time>
-<span class=byline-reading-time><span class=bull>&bull;</span> 5 min read</span></div></section></section></div></header><figure class="post-full-image blog"><img src=/blog/2023-02-13-java-scheduler.png alt=blog/2023-02-13-java-scheduler.png></figure><section class=post-full-content><div class=post-content><h2 id=what-is-a-scheduler-in-java>What is a Scheduler in Java?</h2><p>In Java, a scheduler is a tool that allows you to execute tasks or jobs at a specific time or after a specific interval.
-This is useful for tasks such as sending emails, create recurring automated reports, batch import files from XML or JSON or performing any other type of automated task.</p><h2 id=which-is-the-best-scheduler-for-java>Which is the Best Scheduler for Java?</h2><p>When it comes to choosing the best scheduler for Java, JobRunr stands out from the competition. While there are some other scheduler frameworks available for Java, including the standard <code>java.util.TimerTask</code> and <code>java.util.concurrent.ScheduledExecutorService</code>, Quartz and DB-Scheduler, JobRunr offers a number of advantages over these traditional frameworks.
-Features of JobRunr include:</p><ul><li>a really easy API that allows you to schedule any job with just one line of code or by means of the <code>@Recurring</code> annotation</li><li>an embedded dashboard showing you the status of each job</li><li>distributed execution over different JVM instances</li><li>integration with various frameworks including Spring Boot, Micronaut and Quarkus.</li></ul><p>Unlike Quartz, which is quite a heavy and complex framework, JobRunr is a more modern, lightweight, and easy-to-use scheduler. Additionally, JobRunr is designed with enterprise-grade capabilities, providing reliability, security, and support for large-scale production deployments.</p><h2 id=what-types-of-job-scheduling-exist>What Types of Job Scheduling Exist?</h2><p>When it comes to scheduling jobs in Java, there are three main types of scheduling to consider: direct execution, scheduled execution in the future, and recurring execution by means of a cron expression.</p><ul><li><strong>Direct execution</strong>: This type of scheduling is used when you want a job to be executed immediately. It is often used for one-off tasks or to distribute load over multiple servers. JobRunr allows to create a one-off job by means the the <code>enqueue</code> function on the <code>BackgroundJob</code> class or the <code>JobScheduler</code> class.</li></ul><figure style=width:100%;margin-left:3em;margin-top:-1em><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>BackgroundJob<span style=color:#f92672>.</span><span style=color:#a6e22e>enqueue</span><span style=color:#f92672>(()</span> <span style=color:#f92672>-&gt;</span> System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;This will run immediately and perhaps even on another server&#34;</span><span style=color:#f92672>));</span>
-</span></span></code></pre></div></figure><ul><li><strong>Scheduled execution in the future</strong>: This type of scheduling allows you to schedule a job to be executed at a specific time in the future. This is useful for tasks that need to be executed at a specific time, such as sending out reminders or triggering reports. To do so, you can use the <code>schedule</code> method in JobRunr:</li></ul><figure style=width:100%;margin-left:3em;margin-top:-1em><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>BackgroundJob<span style=color:#f92672>.</span><span style=color:#a6e22e>schedule</span><span style=color:#f92672>(</span>Instant<span style=color:#f92672>.</span><span style=color:#a6e22e>now</span><span style=color:#f92672>().</span><span style=color:#a6e22e>plus</span><span style=color:#f92672>(</span>5<span style=color:#f92672>,</span> DAYS<span style=color:#f92672>),</span> <span style=color:#f92672>()</span> <span style=color:#f92672>-&gt;</span> System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;This will run 5 days from now!&#34;</span><span style=color:#f92672>));</span>
-</span></span></code></pre></div></figure><ul><li><strong>Recurring execution by means of a cron expression</strong>: This type of scheduling is used when you want a job to be executed repeatedly at specific intervals, such as every day, every week, or every month.</li></ul><figure style=width:100%;margin-left:3em;margin-top:-1em><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>BackgroundJob<span style=color:#f92672>.</span><span style=color:#a6e22e>scheduleRecurrently</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;*/5 * * * *&#34;</span><span style=color:#f92672>,</span> <span style=color:#f92672>()</span> <span style=color:#f92672>-&gt;</span> System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;This will be printed every 5 minutes!&#34;</span><span style=color:#f92672>));</span>
-</span></span></code></pre></div></figure><br><h2 id=how-to-implement-job-scheduling-in-java-with-jobrunr>How to implement Job Scheduling in Java with JobRunr?</h2><p>Getting started with JobRunr as a Java Scheduler is really easy - in fact we promise you will be up & running in 5 minutes! In this example, we will use the Spring Boot Starter to quickly add scheduling to your Spring Boot application.</p><h3 id=1-add-the-jobrunr-dependency-to-your-project>1. Add the JobRunr dependency to your project</h3><p>Using your build tool of choice, add the dependency to the JobRunr Spring Boot Starter artifact. We&rsquo;ll be using Maven in this example, so we need to have the following declared in our <code>pom.xml</code>:</p><figure style="width:50%;margin:0 auto 1em 0"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;groupId&gt;</span>org.jobrunr<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;artifactId&gt;</span>jobrunr-spring-boot-2-starter<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;version&gt;</span>6.0.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span></code></pre></div></figure><h3 id=2-make-sure-you-have-a-storageprovider>2. Make sure you have a StorageProvider</h3><p>JobRunr will need to save your jobs in a SQL or NoSQL database by means of a <code>StorageProvider</code>. Thanks to the <code>jobrunr-spring-boot-2-starter</code>, JobRunr will automatically try to use your existing <code>DataSource</code>. In this example, we will use the H2 Database. To do so, also add the H2 dependency to your <code>pom.xml</code>.</p><figure style="width:50%;margin:0 auto 1em 0"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>com.h2database<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>h2<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span></code></pre></div></figure><h3 id=3-configure-jobrunr-using-springs-applicationproperties>3. Configure JobRunr using Spring&rsquo;s application.properties.</h3><p>To configure JobRunr, you can leverage the <code>application.properties</code> file from Spring Boot. In this example, we will enable all off JobRunr&rsquo;s features including the actual job processing and the dashboard.</p><figure style="width:50%;margin:0 auto 1em 0"><pre tabindex=0><code>org.jobrunr.background-job-server.enabled=true
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+    
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "gndsmglzod");
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>JobRunr - the best Java Scheduler? · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Easily schedule jobs in Java and monitor them using JobRunr">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="JobRunr - the best Java Scheduler?" />
+    <meta name="twitter:description" content="Easily schedule jobs in Java and monitor them using JobRunr" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="JobRunr - the best Java Scheduler?" />
+<meta property="og:description" content="Easily schedule jobs in Java and monitor them using JobRunr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/2023-02-13-java-scheduler/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-13T09:12:23+02:00" />
+<meta property="article:modified_time" content="2023-02-13T09:12:23+02:00" />
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css" integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/blog/2023-02-13-java-scheduler.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/blog">blog</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">JobRunr - the best Java Scheduler?</h1>
+
+                
+                    <p class="post-full-custom-excerpt">Easily schedule jobs in Java and monitor them using JobRunr</p>
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Ronald Dehuysser</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Ronald Dehuysser</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2023-92-02">13 February 2023</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+                
+            </header>
+
+            
+            
+            
+            <figure class="post-full-image blog">
+            
+                <img src="/blog/2023-02-13-java-scheduler.png" alt="blog/2023-02-13-java-scheduler.png"/>
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    
+
+<h2 id="what-is-a-scheduler-in-java">What is a Scheduler in Java?</h2>
+<p>In Java, a scheduler is a tool that allows you to execute tasks or jobs at a specific time or after a specific interval.
+This is useful for tasks such as sending emails, create recurring automated reports, batch import files from XML or JSON or performing any other type of automated task.</p>
+<h2 id="which-is-the-best-scheduler-for-java">Which is the Best Scheduler for Java?</h2>
+<p>When it comes to choosing the best scheduler for Java, JobRunr stands out from the competition. While there are some other scheduler frameworks available for Java, including the standard <code>java.util.TimerTask</code> and <code>java.util.concurrent.ScheduledExecutorService</code>, Quartz and DB-Scheduler, JobRunr offers a number of advantages over these traditional frameworks.
+Features of JobRunr include:</p>
+<ul>
+<li>a really easy API that allows you to schedule any job with just one line of code or by means of the <code>@Recurring</code> annotation</li>
+<li>an embedded dashboard showing you the status of each job</li>
+<li>distributed execution over different JVM instances</li>
+<li>integration with various frameworks including Spring Boot, Micronaut and Quarkus.</li>
+</ul>
+<p>Unlike Quartz, which is quite a heavy and complex framework, JobRunr is a more modern, lightweight, and easy-to-use scheduler. Additionally, JobRunr is designed with enterprise-grade capabilities, providing reliability, security, and support for large-scale production deployments.</p>
+<h2 id="what-types-of-job-scheduling-exist">What Types of Job Scheduling Exist?</h2>
+<p>When it comes to scheduling jobs in Java, there are three main types of scheduling to consider: direct execution, scheduled execution in the future, and recurring execution by means of a cron expression.</p>
+<ul>
+<li><strong>Direct execution</strong>: This type of scheduling is used when you want a job to be executed immediately. It is often used for one-off tasks or to distribute load over multiple servers. JobRunr allows to create a one-off job by means the the <code>enqueue</code> function on the <code>BackgroundJob</code> class or the <code>JobScheduler</code> class.</li>
+</ul>
+<figure style="width: 100%; margin-left: 3em; margin-top: -1em;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This will run immediately and perhaps even on another server&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div></figure>
+<ul>
+<li><strong>Scheduled execution in the future</strong>: This type of scheduling allows you to schedule a job to be executed at a specific time in the future. This is useful for tasks that need to be executed at a specific time, such as sending out reminders or triggering reports. To do so, you can use the <code>schedule</code> method in JobRunr:</li>
+</ul>
+<figure style="width: 100%; margin-left: 3em; margin-top: -1em;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">schedule</span><span style="color:#f92672">(</span>Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">().</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> DAYS<span style="color:#f92672">),</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This will run 5 days from now!&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div></figure>
+<ul>
+<li><strong>Recurring execution by means of a cron expression</strong>: This type of scheduling is used when you want a job to be executed repeatedly at specific intervals, such as every day, every week, or every month.</li>
+</ul>
+<figure style="width: 100%; margin-left: 3em; margin-top: -1em;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BackgroundJob<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*/5 * * * *&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This will be printed every 5 minutes!&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div></figure>
+<br />
+<h2 id="how-to-implement-job-scheduling-in-java-with-jobrunr">How to implement Job Scheduling in Java with JobRunr?</h2>
+<p>Getting started with JobRunr as a Java Scheduler is really easy - in fact we promise you will be up &amp; running in 5 minutes! In this example, we will use the Spring Boot Starter to quickly add scheduling to your Spring Boot application.</p>
+<h3 id="1-add-the-jobrunr-dependency-to-your-project">1. Add the JobRunr dependency to your project</h3>
+<p>Using your build tool of choice, add the dependency to the JobRunr Spring Boot Starter artifact. We&rsquo;ll be using Maven in this example, so we need to have the following declared in our <code>pom.xml</code>:</p>
+<figure style="width: 50%; margin: 0 auto 1em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-2-starter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>6.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div></figure>
+<h3 id="2-make-sure-you-have-a-storageprovider">2. Make sure you have a StorageProvider</h3>
+<p>JobRunr will need to save your jobs in a SQL or NoSQL database by means of a <code>StorageProvider</code>. Thanks to the <code>jobrunr-spring-boot-2-starter</code>, JobRunr will automatically try to use your existing <code>DataSource</code>. In this example, we will use the H2 Database. To do so, also add the H2 dependency to your <code>pom.xml</code>.</p>
+<figure style="width: 50%; margin: 0 auto 1em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.h2database<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>h2<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div></figure>
+<h3 id="3-configure-jobrunr-using-springs-applicationproperties">3. Configure JobRunr using Spring&rsquo;s application.properties.</h3>
+<p>To configure JobRunr, you can leverage the <code>application.properties</code> file from Spring Boot. In this example, we will enable all off JobRunr&rsquo;s features including the actual job processing and the dashboard.</p>
+<figure style="width: 50%; margin: 0 auto 1em 0">
+<pre tabindex="0"><code>org.jobrunr.background-job-server.enabled=true
 org.jobrunr.dashboard.enabled=true
-</code></pre></figure><h3 id=4-start-creating-jobs-using-jobrunrs-java-job-scheduler-api>4. Start creating jobs using JobRunr&rsquo;s java job scheduler API</h3><h6 id=easily-create-one-off-jobs>Easily create one-off jobs:</h6><p>Now that we have setup our dependencies, we can easily create fire-and-forget jobs using the <code>enqueue</code> method:</p><figure style="width:80%;margin:0 auto 1em 0"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Inject</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> JobScheduler jobScheduler<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>jobScheduler<span style=color:#f92672>.</span><span style=color:#a6e22e>enqueue</span><span style=color:#f92672>(()</span> <span style=color:#f92672>-&gt;</span> myService<span style=color:#f92672>.</span><span style=color:#a6e22e>doWork</span><span style=color:#f92672>());</span>
-</span></span></code></pre></div><figcaption>Enqueueing background jobs using the JobScheduler bean</figcaption></figure><p>This line makes sure that the lambda – including type, method, and arguments – is serialized as JSON to persistent storage (an RDBMS like Oracle, Postgres, MySql, and MariaDB or a NoSQL database).</p><p>A dedicated worker pool of threads running in all the different BackgroundJobServers will then execute these queued background jobs as soon as possible, in a first-in-first-out manner. JobRunr guarantees the <strong>execution of your job by a single worker</strong> by means of optimistic locking.</p><h6 id=schedule-a-job-in-the-future>Schedule a job in the future:</h6><p>We can also schedule jobs in the future using the schedule method:</p><figure style="width:80%;margin:0 auto 2em 0"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Inject</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> JobScheduler jobScheduler<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>jobScheduler<span style=color:#f92672>.</span><span style=color:#a6e22e>schedule</span><span style=color:#f92672>(</span>now<span style=color:#f92672>().</span><span style=color:#a6e22e>plus</span><span style=color:#f92672>(</span>8<span style=color:#f92672>,</span> HOURS<span style=color:#f92672>),</span> <span style=color:#f92672>()</span> <span style=color:#f92672>-&gt;</span> myService<span style=color:#f92672>.</span><span style=color:#a6e22e>doWork</span><span style=color:#f92672>());</span>
-</span></span></code></pre></div><figcaption>Scheduling a job in the future using the JobRunr Job Scheduler</figcaption></figure><h6 id=schedule-a-recurrent-job-using-a-cron-expression>Schedule a recurrent job using a CRON expression:</h6><p>If we want to have recurrent jobs, we need to use the <code>scheduleRecurrently</code> method:</p><figure style="width:80%;margin:0 auto 2em 0"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Inject</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> JobScheduler jobScheduler<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>jobScheduler<span style=color:#f92672>.</span><span style=color:#a6e22e>scheduleRecurrently</span><span style=color:#f92672>(</span>Cron<span style=color:#f92672>.</span><span style=color:#a6e22e>daily</span><span style=color:#f92672>(),</span> <span style=color:#f92672>()</span> <span style=color:#f92672>-&gt;</span> myService<span style=color:#f92672>.</span><span style=color:#a6e22e>doWork</span><span style=color:#f92672>());</span>
-</span></span></code></pre></div><figcaption>Scheduling a recurring jobs using a CRON expression</figcaption></figure><h3 id=5-visit-the-dashboard-and-see-how-your-jobs-are-doing>5. Visit the dashboard and see how your jobs are doing!</h3><figure><img src=/documentation/jobs-enqueued.webp class=kg-image><figcaption>An overview of all enqueued jobs</figcaption></figure><h2 id=conclusion>Conclusion</h2><p>JobRunr is probably the best choice for a scheduler in any Java project.
-With its modern features and simple API, you can quickly and easily create one-off jobs, schedule jobs to run at a specific time or after a specific interval.</p><p>JobRunr&rsquo;s enterprise-grade capabilities ensure reliability, security, and support for large-scale production deployments, making it the ideal choice for any Java scheduling needs. And, it also comes with great support if you take a <a href=https://www.jobrunr.io/en/pricing/>JobRunr Pro license</a>.</p></div></section></article></div></main><footer class="site-footer outer"><div class="site-footer-content inner"><section class=copyright style=align-self:start>&copy; <a href=https://www.jobrunr.io>JobRunr</a></section><section class=love style=align-self:start;opacity:.7>Made with <strong style=color:red;font-size:large>&#9829;</strong> in Belgium</section><nav class=site-footer-nav><div><div><a href=/en/about/ rel=noopener style=opacity:.5>JobRunr by Rosoco BV (BE 0807596165)</a></div><div><a href=/en/licensing/info/ rel=noopener style=opacity:.5>Terms of use</a></div><div><a href=/en/privacy/ rel=noopener style=opacity:.5>Privacy</a></div></div></nav></div></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js defer></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js defer></script>
-<script src=https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js defer></script>
-<script>window.addEventListener("load",e=>{setTimeout(()=>{window.cookieconsent.initialise({palette:{popup:{background:"#000"},button:{background:"transparent",border:"#fff",text:"#fff"}},content:{link:"Learn more about cookies"}})},5e3)});for(var links=document.querySelectorAll("a"),i=0;i<links.length;i++)links[i].hostname!=window.location.hostname&&(links[i].target="_blank",links[i].rel="noopener")</script></body></html>
+</code></pre></figure>
+<h3 id="4-start-creating-jobs-using-jobrunrs-java-job-scheduler-api">4. Start creating jobs using JobRunr&rsquo;s java job scheduler API</h3>
+<h6 id="easily-create-one-off-jobs">Easily create one-off jobs:</h6>
+<p>Now that we have setup our dependencies, we can easily create fire-and-forget jobs using the <code>enqueue</code> method:</p>
+<figure style="width: 80%; margin: 0 auto 1em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> myService<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><figcaption>Enqueueing background jobs using the JobScheduler bean</figcaption>
+</figure>
+<p>This line makes sure that the lambda – including type, method, and arguments – is serialized as JSON to persistent storage (an RDBMS like Oracle, Postgres, MySql, and MariaDB or a NoSQL database).</p>
+<p>A dedicated worker pool of threads running in all the different BackgroundJobServers will then execute these queued background jobs as soon as possible, in a first-in-first-out manner. JobRunr guarantees the <strong>execution of your job by a single worker</strong> by means of optimistic locking.</p>
+<h6 id="schedule-a-job-in-the-future">Schedule a job in the future:</h6>
+<p>We can also schedule jobs in the future using the schedule method:</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">schedule</span><span style="color:#f92672">(</span>now<span style="color:#f92672">().</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>8<span style="color:#f92672">,</span> HOURS<span style="color:#f92672">),</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> myService<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><figcaption>Scheduling a job in the future using the JobRunr Job Scheduler</figcaption>
+</figure>
+<h6 id="schedule-a-recurrent-job-using-a-cron-expression">Schedule a recurrent job using a CRON expression:</h6>
+<p>If we want to have recurrent jobs, we need to use the <code>scheduleRecurrently</code> method:</p>
+<figure style="width: 80%; margin: 0 auto 2em 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(</span>Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">daily</span><span style="color:#f92672">(),</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> myService<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><figcaption>Scheduling a recurring jobs using a CRON expression</figcaption>
+</figure>
+<h3 id="5-visit-the-dashboard-and-see-how-your-jobs-are-doing">5. Visit the dashboard and see how your jobs are doing!</h3>
+<figure>
+<img src="/documentation/jobs-enqueued.webp" class="kg-image">
+<figcaption>An overview of all enqueued jobs</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>JobRunr is probably the best choice for a scheduler in any Java project.
+With its modern features and simple API, you can quickly and easily create one-off jobs, schedule jobs to run at a specific time or after a specific interval.</p>
+<p>JobRunr&rsquo;s enterprise-grade capabilities ensure reliability, security, and support for large-scale production deployments, making it the ideal choice for any Java scheduling needs. And, it also comes with great support if you take a <a href="https://www.jobrunr.io/en/pricing/">JobRunr Pro license</a>.</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+</body>
+</html>
