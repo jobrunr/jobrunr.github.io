@@ -403,7 +403,7 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
 <p>In the previous paragraph it is mentioned that JobRunr will <strong>try</strong> to change the state of the <code>Job</code> to failed, because state transition is one of places where job filters can intercept and change the state transition. The <code>RetryFilter</code> class is one of them, that reschedules the failed job to be automatically retried after increasing delay.</p>
 <p>This filter is applied globally to all methods and has 10 retry attempts by default. So, your methods will be retried in case of exception automatically, and you receive warning log messages on every failed attempt. If retry attempts exceeded their maximum, the job will stay in the Failed state (with an error log message), and you will be able to retry it manually.</p>
 <h2 id="configuration">Configuration</h2>
-<p>You can off-course configure how many retries JobRunr will do by default.</p>
+<p>You can of course configure how many retries JobRunr will do by default.</p>
 <ul>
 <li><a href="#default-retry-policy-configuration">Default retry policy configuration</a></li>
 <li><a href="#per-job">Per Job</a></li>

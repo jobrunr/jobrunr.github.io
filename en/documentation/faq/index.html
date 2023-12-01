@@ -422,7 +422,7 @@ Next, the master reelection process starts which is again nothing more than the 
 <li>Optimistic locking so that a job will be only executed once</li>
 <li>&hellip;</li>
 </ul>
-<p>The moment JobRunr loses it&rsquo;s connection to the database (or the database goes down), there will be a lot of threads that will try to write updates to the database but all of these writes will off-course fail. This will result in <strong>a huge amount of logging</strong> and if JobRunr would try to continue job processing, it would flood the disks fast because of each attempt to process a job fails. That&rsquo;s why I decided that if there are too many exceptions because of the <code>StorageProvider</code>, JobRunr stops all background job processing. This can off-course be monitored via the dashboard and health endpoints.</p>
+<p>The moment JobRunr loses it&rsquo;s connection to the database (or the database goes down), there will be a lot of threads that will try to write updates to the database but all of these writes will of course fail. This will result in <strong>a huge amount of logging</strong> and if JobRunr would try to continue job processing, it would flood the disks fast because of each attempt to process a job fails. That&rsquo;s why I decided that if there are too many exceptions because of the <code>StorageProvider</code>, JobRunr stops all background job processing. This can of course be monitored via the dashboard and health endpoints.</p>
 <blockquote>
 <p>JobRunr Pro improves this by monitoring if the <code>StorageProvider</code> comes up again and if so, automatically restarts processing on all the different <code>BackgroundJobServer</code>s.</p>
 </blockquote>

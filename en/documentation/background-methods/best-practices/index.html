@@ -437,7 +437,7 @@ public void backgroundMethod(Entity entity) { } Consider doing this:" />
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><br/>
 <h3 id="do-not-catch-throwable">Do not catch Throwable!</h3>
-<p>If your background job method catches <code>java.lang.Exception</code> or <code>java.lang.Throwable</code> and this exception is not rethrown, JobRunr is off-course not aware that something went wrong and thinks the job finished successfully.</p>
+<p>If your background job method catches <code>java.lang.Exception</code> or <code>java.lang.Throwable</code> and this exception is not rethrown, JobRunr is of course not aware that something went wrong and thinks the job finished successfully.</p>
 <blockquote>
 <p>Never catch <code>Exception</code> or <code>Throwable</code> - JobRunr will take care of it for you!</p>
 </blockquote>

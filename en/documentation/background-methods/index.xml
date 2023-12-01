@@ -33,7 +33,7 @@
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
-      <description>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension).
+      <description>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension ).
 On this page you can learn about:
  Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs Important remarks!</description>
     </item>
@@ -45,8 +45,8 @@ On this page you can learn about:
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/</guid>
       <description>Sometimes you may want to postpone a method invocation; for example, to send an email to newly registered users a day after their registration. To do this, just call the BackgroundJob.schedule method and pass the desired delay:
- BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plusHours(24),  x -&amp;gt; x.sendNewlyRegisteredEmail());  You can also use the JobBuilder to achieve the same result:
-  BackgroundJob.create(aJob()  .withName(&amp;#34;Send welcome email to newly registered users&amp;#34;)  .scheduleIn(Duration.ofDays(1))  .&amp;lt;EmailService&amp;gt;withDetails(x -&amp;gt; x.</description>
+ BackgroundJob.schedule&amp;lt;EmailService&amp;gt;(Instant.now().plus(24, ChronoUnit.HOURS),  x -&amp;gt; x.sendNewlyRegisteredEmail());  You can also use the JobBuilder to achieve the same result:
+  BackgroundJob.create(aJob()  .withName(&amp;#34;Send welcome email to newly registered users&amp;#34;)  .scheduleIn(Duration.ofDays(1))  .</description>
     </item>
     
     <item>
@@ -77,9 +77,9 @@ public void backgroundMethod(Entity entity) { } Consider doing this:</descriptio
       
       <guid>https://www.jobrunr.io/en/documentation/background-methods/dashboard/</guid>
       <description>JobRunr includes a built-in dashboard which gives helpful insights into your background job methods. The dashboard allows you to see and control any aspect of background job processing - you have a detailed view on any exception that occurred and you can see the complete background job history.
-By default, it is available on the following url: http://localhost:8000. Off-course, this is configurable:
+By default, it is available on the following url: http://localhost:8000. Of course, this is configurable:
 Using fluent configuration
-  JobRunr.configure()  .useDashboard(8000) The dashboard will be started on port 8000  Using Spring configuration</description>
+  JobRunr.configure()  .</description>
     </item>
     
     <item>
