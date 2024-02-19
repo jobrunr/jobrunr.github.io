@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+    
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "gndsmglzod");
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>JobRunr on Java Magazine · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="A guide on how to run background jobs in Spring with JobRunr">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="JobRunr on Java Magazine" />
+    <meta name="twitter:description" content="A guide on how to run background jobs in Spring with JobRunr" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="JobRunr on Java Magazine" />
+<meta property="og:description" content="A guide on how to run background jobs in Spring with JobRunr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/_jobrunr-java-mag/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-10-22T11:12:23+02:00" />
+<meta property="article:modified_time" content="2020-10-22T11:12:23+02:00" />
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.8135b58e502f426216daba9b673c2e57f5b05394302768c041681c94397b49e1.css" integrity="sha256-gTW1jlAvQmIW2rqbZzwuV/WwU5QwJ2jAQWgclDl7SeE=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io/en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://github.com/jobrunr/website/tree/master/content/en/blog/_jobrunr-java-mag.md" title="Edit this page on GitHub" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 32 32"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg></a>
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/blog">blog</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">JobRunr on Java Magazine</h1>
+
+                
+                    <p class="post-full-custom-excerpt">A guide on how to run background jobs in Spring with JobRunr</p>
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Ronald Dehuysser</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta">
+                            
+                                <h4 class="author-name">Ronald Dehuysser</h4>
+                            
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2020-1110-10">22 October 2020</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+                
+            </header>
+
+            
+            
+            
+            <figure class="post-full-image">
+            
+                <img src="/blog/2020-04-08-get-shit-done.webp" alt="blog/2020-04-08-get-shit-done.webp"/>
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <h2 id="overview">Overview</h2>
+<p>In this tutorial, we&rsquo;re going to look into distributed background job scheduling and processing in Java using JobRunr and have it integrate with Spring.</p>
+<p><a href="https://github.com/jobrunr/jobrunr">JobRunr</a> is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface. A job can be a short or long-running process, and it will be automatically offloaded to a background thread so that the current web request is not blocked.</p>
+<p>To do its job, JobRunr analyses the Java 8 lambda. It serializes it as JSON, and stores it into either a relational database or a NoSQL data store.</p>
+<p>If we see that we&rsquo;re producing too many background jobs and our server can not cope with the load, we can easily scale horizontally by just adding extra instances of our application. JobRunr will share the load automatically and distribute all jobs over the different instances of our application.</p>
+<p>It also contains an automatic retry feature with an exponential back-off policy for failed jobs. There is also a built-in dashboard that allows us to monitor all jobs. JobRunr is self-maintaining – succeeded jobs will automatically be deleted after a configurable amount of time so there is no need to perform manual storage cleanup.</p>
+<h2 id="setup">Setup</h2>
+<h3 id="maven-dependency">Maven Dependency</h3>
+<p>Let&rsquo;s jump straight to the Java code. But before that, we need to have the following <a href="https://search.maven.org/search?q=g:org.jobrunr%20AND%20a:jobrunr-spring-boot-starter">Maven dependency</a> declared in our pom.xml file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-starter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.2.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h3 id="jobrunr-setup">JobRunr Setup</h3>
+<p>As we&rsquo;re using the <code>jobrunr-spring-boot-starter</code> dependency, setup is easy. We only need to add some properties to the <code>application.properties</code>:</p>
+<pre tabindex="0"><code class="language-properties" data-lang="properties">org.jobrunr.background-job-server.enabled=true
+org.jobrunr.dashboard.enabled=true
+</code></pre><p>The first property tells JobRunr that we want to start an instance of a <code>BackgroundJobServer</code> which is responsible to process jobs. The second property tells JobRunr to start the embedded dashboard. More documentation is available on <a href="https://www.jobrunr.io/en/documentation/configuration/spring/">jobrunr.io</a></p>
+<p>By default, the jobrunr-spring-boot-starter will try to use your existing <code>DataSource</code> in case of a relational database to store all the job-related information. However, since we will use an in-memory data store, we need to provide a StorageProvider bean (the <code>JobMapper</code> bean will be provided by the <code>jobrunr-spring-boot-starter</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> StorageProvider <span style="color:#a6e22e">storageProvider</span><span style="color:#f92672">(</span>JobMapper jobMapper<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    InMemoryStorageProvider storageProvider <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InMemoryStorageProvider<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    storageProvider<span style="color:#f92672">.</span><span style="color:#a6e22e">setJobMapper</span><span style="color:#f92672">(</span>jobMapper<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> storageProvider<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
+<h3 id="inject-dependencies">Inject dependencies</h3>
+<p>To create jobs, we&rsquo;ll need to inject the <code>jobScheduler</code> and your existing service from which we want to create a job:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> JobScheduler jobScheduler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> SampleJobService sampleJobService<span style="color:#f92672">;</span>
+</span></span></code></pre></div><h3 id="creating-fire-and-forget-jobs">Creating fire-and-forget jobs</h3>
+<p>Now that we have our dependencies injected, we can create fire-and-forget jobs using the <code>enqueue</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> sampleJobService<span style="color:#f92672">.</span><span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><p>Jobs can of course have parameters, just like any other lambda.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">enqueue</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> sampleJobService<span style="color:#f92672">.</span><span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some string&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div><p>So, what happens behind the scene? JobRunr takes the lambda and analyses it using <a href="https://asm.ow2.io/">ASM</a>. It extracts the correct class (in this case <code>SampleJobService</code>) and the correct method (<code>executeSampleJob</code>) and serializes all this information together with the parameters into a small Json object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;lambdaType&#34;</span>: <span style="color:#e6db74">&#34;org.jobrunr.jobs.lambdas.JobLambda&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;className&#34;</span>: <span style="color:#e6db74">&#34;com.example.services.SampleJobService&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;methodName&#34;</span>: <span style="color:#e6db74">&#34;executeSampleJob&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;jobParameters&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;className&#34;</span>: <span style="color:#e6db74">&#34;java.lang.String&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;object&#34;</span>: <span style="color:#e6db74">&#34;some string&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This information, together with some extra information about the Job itself is all serialized via the <code>StorageProvider</code> to your choice of data store (your SQL or NoSQL database).</p>
+<p>One or more <code>BackgroundJobServers</code> monitor the <code>StorageProvider</code> and take jobs from it. Since the BackgroundJobServers use optimistic locking, each job will be processed only once and all the different BackgroundJobServers will share the load. This works out great on Kubernetes where you can scale horizontally to have all your jobs processed faster by just bringing up more instances of your application.</p>
+<h3 id="scheduling-jobs-in-the-future">Scheduling jobs in the future</h3>
+<p>We can also schedule jobs in the future using the <code>schedule</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">schedule</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> sampleJobService<span style="color:#f92672">.</span><span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">(),</span> LocalDateTime<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">().</span><span style="color:#a6e22e">plusHours</span><span style="color:#f92672">(</span>5<span style="color:#f92672">));</span>
+</span></span></code></pre></div><h3 id="scheduling-jobs-recurrently">Scheduling jobs recurrently</h3>
+<p>If we want to have recurrent jobs, we need to use the <code>scheduleRecurrently</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>jobScheduler<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleRecurrently</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> sampleJobService<span style="color:#f92672">.</span><span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">(),</span> Cron<span style="color:#f92672">.</span><span style="color:#a6e22e">hourly</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><h3 id="annotating-with-the-job-annotation">Annotating with the @Job Annotation</h3>
+<p>To control all aspects of a job, we can annotate our service method with the <code>@Job</code> annotation. This allows setting the display name in the dashboard and configuring the number of retries in case a job fails.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Job</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The sample job with variable %0&#34;</span><span style="color:#f92672">,</span> retries <span style="color:#f92672">=</span> 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">executeSampleJob</span><span style="color:#f92672">(</span>String variable<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>We can even use variables that are passed to our job in the display name by means of the String.format() syntax.</p>
+<p>If we have very specific use cases where we would want to retry a specific job only on a certain exception, we can write our own ElectStateFilter where we have access to the Job and full control on how to proceed.</p>
+<h2 id="dashboard">Dashboard</h2>
+<p>JobRunr comes with a built-in dashboard which allows us to monitor our jobs. If you visit <a href="http://localhost:8000">http://localhost:8000</a>, you will have the possibility to inspect all the jobs, including the recurrent jobs.</p>
+<figure>
+<img src="https://www.jobrunr.io/blog/2020-04-20-jobrunr-overview.png">
+</figure>
+<p>Bad things can happen, for example, an SSL certificate expired, or a disk is full. JobRunr, by default, will reschedule the background job with an exponential back-off policy. If the background job continues to fail ten times, only then will it go to the Failed state. You can then decide to re-queue the failed job from the dashboard when the root cause has been solved.</p>
+<p>All of this is visible in the dashboard, including each retry with the exact error message and the complete stack trace of why a job failed:</p>
+<figure>
+<img src="https://www.jobrunr.io/blog/jobrunr-java-mag-1024x498.png">
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this article, we built a basic scheduler using JobRunr with the <code>jobrunr-spring-boot-starter</code>. The key takeaway from this tutorial is that we were able to create a job with just one line of code and without any XML-based configuration or the need to implement an interface.</p>
+<p>The complete source code for the example is available over on <a href="https://github.com/jobrunr/example-java-mag">GitHub</a>.</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+</body>
+</html>

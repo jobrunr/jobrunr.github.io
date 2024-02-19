@@ -35,7 +35,7 @@
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
       <description>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension ).
 On this page you can learn about:
- Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs Important remarks!</description>
+ Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs JobRunr Pro  Pause and Resume recurring jobs JobRunr Pro  Advanced Cron Expressions JobRunr Pro  Custom Recurring Job Schedules JobRunr Pro  Recurring jobs missed during downtime JobRunr Pro  Concurrent recurring jobs Important remarks!</description>
     </item>
     
     <item>

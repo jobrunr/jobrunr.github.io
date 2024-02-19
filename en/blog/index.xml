@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>More than 15.000 trees 🌳 planted!</title>
+      <link>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</link>
+      <pubDate>Thu, 18 Jan 2024 09:00:00 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</guid>
+      <description>Buy JobRunr Pro and plant trees!</description>
+    </item>
+    
+    <item>
       <title>JobRunr at Devoxx 2023</title>
       <link>https://www.jobrunr.io/en/blog/2023-09-19-jobrunr-devoxx/</link>
       <pubDate>Tue, 19 Sep 2023 09:12:23 +0200</pubDate>
@@ -347,6 +356,24 @@
       
       <guid>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</guid>
       <description>Again support for a new datastore - this time for Amazon DocumentDB!</description>
+    </item>
+    
+    <item>
+      <title>JobRunr on Java Magazine</title>
+      <link>https://www.jobrunr.io/en/blog/_jobrunr-java-mag/</link>
+      <pubDate>Thu, 22 Oct 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/_jobrunr-java-mag/</guid>
+      <description>A guide on how to run background jobs in Spring with JobRunr</description>
+    </item>
+    
+    <item>
+      <title>JobRunr on Mkyong.com</title>
+      <link>https://www.jobrunr.io/en/blog/_jobrunr-mkyong/</link>
+      <pubDate>Thu, 22 Oct 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/_jobrunr-mkyong/</guid>
+      <description>A guide on how to run background jobs in Spring with JobRunr</description>
     </item>
     
     <item>

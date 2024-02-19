@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Sep 2023 09:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jan 2024 09:00:00 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
@@ -63,6 +63,15 @@ You can safely restart your application and use JobRunr without worrying about l
       <guid>https://www.jobrunr.io/en/homepage/example-02/</guid>
       <description>Scheduled and delayed jobs are also executed only once but will run at the specified time.
 BackgroundJob.schedule(now().plusHours(5),  () -&amp;gt; System.out.println(&amp;#34;Reliable!&amp;#34;)); </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.jobrunr.io/en/homepage/quote-03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/homepage/quote-03/</guid>
+      <description>Thanks for JobRunr! It helped us deliver our project on time and budget. Initially we thought to build our own batch framework but we could never have build such a quality product in the time available.</description>
     </item>
     
     <item>
@@ -207,6 +216,15 @@ Fork the project and make contributions on GitHub!</description>
       
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    
+    <item>
+      <title>More than 15.000 trees 🌳 planted!</title>
+      <link>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</link>
+      <pubDate>Thu, 18 Jan 2024 09:00:00 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</guid>
+      <description>Buy JobRunr Pro and plant trees!</description>
     </item>
     
     <item>
@@ -681,6 +699,24 @@ If you are not allowed to have a user using DDL rights at runtime or if due to c
     </item>
     
     <item>
+      <title>JobRunr on Java Magazine</title>
+      <link>https://www.jobrunr.io/en/blog/_jobrunr-java-mag/</link>
+      <pubDate>Thu, 22 Oct 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/_jobrunr-java-mag/</guid>
+      <description>A guide on how to run background jobs in Spring with JobRunr</description>
+    </item>
+    
+    <item>
+      <title>JobRunr on Mkyong.com</title>
+      <link>https://www.jobrunr.io/en/blog/_jobrunr-mkyong/</link>
+      <pubDate>Thu, 22 Oct 2020 11:12:23 +0200</pubDate>
+      
+      <guid>https://www.jobrunr.io/en/blog/_jobrunr-mkyong/</guid>
+      <description>A guide on how to run background jobs in Spring with JobRunr</description>
+    </item>
+    
+    <item>
       <title>v1.1.0 - Notifications</title>
       <link>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</link>
       <pubDate>Wed, 21 Oct 2020 11:12:23 +0200</pubDate>
@@ -750,7 +786,7 @@ You can then fetch the result of that job using the id of the job.
       <guid>https://www.jobrunr.io/en/documentation/background-methods/recurring-jobs/</guid>
       <description>Creating a recurring job (either a CRON job or a job with a fixed defined interval) is just as simple as creating a background job – you only need to write a single line of code (and it is even less if you use the jobrunr-spring-boot-starter, jobrunr-micronaut-feature or the jobrunr-quarkus-extension ).
 On this page you can learn about:
- Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs Important remarks!</description>
+ Create a recurring job using a CRON expression Create a recurring job using an Interval Managing recurring jobs Deleting recurring jobs JobRunr Pro  Pause and Resume recurring jobs JobRunr Pro  Advanced Cron Expressions JobRunr Pro  Custom Recurring Job Schedules JobRunr Pro  Recurring jobs missed during downtime JobRunr Pro  Concurrent recurring jobs Important remarks!</description>
     </item>
     
     <item>

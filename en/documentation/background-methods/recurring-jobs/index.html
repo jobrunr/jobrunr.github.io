@@ -400,13 +400,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#using-an-interval">Create a recurring job using an Interval</a></li>
 <li><a href="#managing-recurring-jobs">Managing recurring jobs</a></li>
 <li><a href="#deleting-recurring-jobs">Deleting recurring jobs</a></li>
-<li><a href="#important-remarks">Important remarks!</a></li>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
+</span> <a href="#pause-and-resume-recurring-jobs">Pause and Resume recurring jobs</a></li>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
+</span> <a href="#advanced-cron-expressions">Advanced Cron Expressions</a></li>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
+</span> <a href="#custom-recurring-job-schedules">Custom Recurring Job Schedules</a></li>
 <li><span class="label professional">
     <span>JobRunr Pro</span>
 </span> <a href="#recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</a></li>
 <li><span class="label professional">
     <span>JobRunr Pro</span>
 </span> <a href="#concurrent-recurring-jobs">Concurrent recurring jobs</a></li>
+<li><a href="#important-remarks">Important remarks!</a></li>
 </ul>
 <blockquote>
 <p>Note that JobRunr OSS supports up to <strong>100 recurring jobs</strong> (depending on the performance of your SQL or NoSQL database). Do you need to run more than 100 recurring jobs? This is supported in JobRunr Pro!</p>
@@ -496,6 +505,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </blockquote>
 <h2 id="deleting-recurring-jobs">Deleting recurring jobs</h2>
 <p>You can remove an existing recurring job either via the dashboard or by calling the <code>BackgroundJob.delete</code> method with the id of the recurring job. It does not throw an exception when there is no such recurring job.</p>
+<h2 id="pause-and-resume-recurring-jobs">Pause and Resume recurring jobs</h2>
+<p><span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
+Using JobRunr Pro, you can pause and resume recurring jobs from the dashboard and using the API.</p>
+<h2 id="advanced-cron-expressions">Advanced CRON Expressions</h2>
+<p><span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
+Do you need to run recurring jobs on some special moments like the first business day of the month or the last business day of the month? JobRunr Pro has a CRON expression parser on steroids and supports your really complex schedule requirements.</p>
+<h3 id="l-character"><code>L</code> character</h3>
+<p><code>L</code> stands for &ldquo;last&rdquo;. When used in the day-of-week field, it allows specifying constructs such as &ldquo;the last Friday&rdquo; (<code>5L</code>) of a given month. In the day-of-month field, it specifies the last day of the month.</p>
+<p><strong>Some examples:</strong></p>
+<ul>
+<li><code>0 0 * * 5L</code>: midnight the last Friday of each month</li>
+<li><code>0 0 * 2 1L</code>: midnight the last Monday of each February</li>
+<li><code>0 0 L *  *</code>: midnight the last day of each month</li>
+<li><code>0 0 L 2  *</code>: midnight the last day of each February</li>
+</ul>
+<h3 id="-character"><code>#</code> character</h3>
+<p><code>#</code> is allowed for the day-of-week field, and must be followed by a number between one and five. It allows specifying constructs such as &ldquo;the second Friday&rdquo; of a given month.</p>
+<p><strong>Some examples:</strong></p>
+<ul>
+<li><code>0 0 * * 1#1</code>: midnight the first Monday of each month</li>
+<li><code>0 0 * 1 1#1</code>: midnight the first Monday of each January</li>
+<li><code>0 0 * * 5#3</code>: midnight the third Friday of each month</li>
+</ul>
+<h3 id="w-character"><code>W</code> character</h3>
+<p>The <code>W</code> character is allowed for the day-of-month field. This character is used to specify the weekday (Monday-Friday) nearest the given day. As an example, if &ldquo;15W&rdquo; is specified as the value for the day-of-month field, the meaning is: &ldquo;the nearest weekday to the 15th of the month.&rdquo; So, if the 15th is a Saturday, the trigger fires on Friday the 14th. If the 15th is a Sunday, the trigger fires on Monday the 16th. If the 15th is a Tuesday, then it fires on Tuesday the 15th. However, if &ldquo;1W&rdquo; is specified as the value for day-of-month, and the 1st is a Saturday, the trigger fires on Monday the 3rd, as it does not &lsquo;jump&rsquo; over the boundary of a month&rsquo;s days. The &lsquo;W&rsquo; character can be specified only when the day-of-month is a single day, not a range or list of days.</p>
+<p><strong>Some examples:</strong></p>
+<ul>
+<li><code>0 0 1W * *</code>: midnight the first Monday of each month</li>
+<li><code>0 0 1W+2 * *</code>: midnight 2 days after the first Monday of each month</li>
+<li><code>0 0 20W * *</code>: midnight on the 20th or the closest workday to the 20th</li>
+</ul>
+<h2 id="custom-recurring-job-schedules">Custom Recurring Job Schedules</h2>
+<span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
+<p>Do you have really complex recurring job schedule? Just extend the class <code>org.jobrunr.scheduling.custom.CustomSchedule</code> and implement one method where you provide the next <code>java.time.Instant</code> your job should run. For example:</p>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Recurring</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-recurring-job&#34;</span><span style="color:#f92672">,</span> customSchedule <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.project.services.MySchedule(2025-01-01T01:00:00.000Z,2026-01-01T01:00:00.000Z,2027-01-01T01:00:00.000Z)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myRecurringMethod</span><span style="color:#f92672">(</span>JobContext jobContext<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;My recurring job method&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><figcaption>JobRunr will instantiate the class com.project.services.MySchedule and pass the content between the parentheses as input to the constructor. You can use any String input you want to determine when the recurring job should run.</figcaption>
+</figure>
 <h2 id="recurring-jobs-missed-during-downtime">Recurring jobs missed during downtime</h2>
 <span class="label professional">
     <span>JobRunr Pro</span>
