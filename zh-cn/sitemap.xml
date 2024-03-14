@@ -6,6 +6,11 @@
     <loc>https://www.jobrunr.io/zh-cn/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ch"
                 href="https://www.jobrunr.io/ch/"
                 />

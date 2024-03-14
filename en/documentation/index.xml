@@ -6,28 +6,21 @@
     <description>Recent content in Documentation on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:12:23 +0200</lastBuildDate><atom:link href="https://www.jobrunr.io/en/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Sep 2020 11:12:23 +0200</lastBuildDate>
+    <atom:link href="https://www.jobrunr.io/en/documentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frequently Asked Questions</title>
       <link>https://www.jobrunr.io/en/documentation/faq/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
-      
       <guid>https://www.jobrunr.io/en/documentation/faq/</guid>
-      <description>BackgroundJobServer FAQ Does JobRunr need open ports for distributing jobs? No, JobRunr does not require an open port for distributing the workload - this is orchestrated via the StorageProvider.
-How is the coordination between different nodes done? Each BackgroundJobServer registers itself on startup in the StorageProvider. For an RDBMS, this is a plain old table called jobrunr_backgroundjobservers. The master is the server which is the longest running (so, the one that was registered as first node).</description>
+      <description>BackgroundJobServer FAQ Does JobRunr need open ports for distributing jobs? No, JobRunr does not require an open port for distributing the workload - this is orchestrated via the StorageProvider.&#xA;How is the coordination between different nodes done? Each BackgroundJobServer registers itself on startup in the StorageProvider. For an RDBMS, this is a plain old table called jobrunr_backgroundjobservers. The master is the server which is the longest running (so, the one that was registered as first node).</description>
     </item>
-    
     <item>
       <title>JobRunr compared</title>
       <link>https://www.jobrunr.io/en/documentation/alternatives/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
-      
       <guid>https://www.jobrunr.io/en/documentation/alternatives/</guid>
-      <description>Below you can find an external audit where JobRunr is compared to some alternatives.
- This report was created on June 19, 2020 and updated on July 09, 2021.
- Feature matrix The following tables provides an overview of each approach’s features.
-   Project characteristics JobRunr Quartz Native JEE (Timer, ExecutorService) Spring (scheduling support) db-scheduler     Licence LGPL v3 Apache v2.0 GNU GPL v2 Apache v2.</description>
+      <description>Below you can find an external audit where JobRunr is compared to some alternatives.&#xA;This report was created on June 19, 2020 and updated on July 09, 2021.&#xA;Feature matrix The following tables provides an overview of each approach’s features.&#xA;Project characteristics JobRunr Quartz Native JEE (Timer, ExecutorService) Spring (scheduling support) db-scheduler Licence LGPL v3 Apache v2.0 GNU GPL v2 Apache v2.0 Apache v2.0 Cost Free Free Free Free Free Project health Actively maintained since April 2020,</description>
     </item>
-    
   </channel>
 </rss>

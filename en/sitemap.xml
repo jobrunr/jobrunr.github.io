@@ -21,7 +21,6 @@
   
   
   
-  
   <url>
     <loc>https://www.jobrunr.io/en/try-jobrunr-pro/</loc>
     <lastmod>2022-03-15T11:12:23+02:00</lastmod>
@@ -34,9 +33,19 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/</loc>
-    <lastmod>2024-01-18T09:00:00+02:00</lastmod>
+    <lastmod>2120-10-22T11:12:23+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/blog/</loc>
+    <lastmod>2024-01-18T09:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/meta/</loc>
+    <lastmod>2024-01-18T09:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -305,6 +314,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/tags/use-case/</loc>
+    <lastmod>2022-04-09T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/blog/2022-03-30-jobrunr-v5.0.0/</loc>
     <lastmod>2022-03-30T08:00:00+02:00</lastmod>
   </url>
@@ -370,6 +384,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/tags/license/</loc>
+    <lastmod>2021-08-03T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</loc>
     <lastmod>2021-08-03T11:12:23+02:00</lastmod>
   </url>
@@ -415,6 +434,11 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/tags/release/</loc>
+    <lastmod>2021-04-26T21:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</loc>
     <lastmod>2021-04-26T21:00:00+02:00</lastmod>
   </url>
@@ -432,16 +456,6 @@
   <url>
     <loc>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</loc>
     <lastmod>2020-11-01T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/blog/_jobrunr-java-mag/</loc>
-    <lastmod>2020-10-22T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/blog/_jobrunr-mkyong/</loc>
-    <lastmod>2020-10-22T11:12:23+02:00</lastmod>
   </url>
   
   <url>
@@ -690,6 +704,11 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</loc>
+    <lastmod>2020-08-17T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/tutorial/</loc>
     <lastmod>2020-08-17T11:12:23+02:00</lastmod>
   </url>
   

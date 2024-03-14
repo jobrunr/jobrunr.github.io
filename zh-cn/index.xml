@@ -5,6 +5,7 @@
     <link>https://www.jobrunr.io/zh-cn/</link>
     <description>Recent content on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://www.jobrunr.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <atom:link href="https://www.jobrunr.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
