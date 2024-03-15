@@ -6,8 +6,15 @@
     <description>Recent content in Blog on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Jan 2024 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2024 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time for JobRunr v7.0.0!</title>
+      <link>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</link>
+      <pubDate>Fri, 15 Mar 2024 09:00:00 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</guid>
+      <description>We&amp;rsquo;re proud to announce the first release candidate of JobRunr &amp;amp; JobRunr Pro v7.0.0</description>
+    </item>
     <item>
       <title>More than 15.000 trees 🌳 planted!</title>
       <link>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</link>
