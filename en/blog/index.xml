@@ -6,8 +6,15 @@
     <description>Recent content in Blog on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Mar 2024 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2024 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://www.jobrunr.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Carbon-Aware Jobs in JobRunr</title>
+      <link>https://www.jobrunr.io/en/blog/2024-03-21-carbon-aware-job-scheduling/</link>
+      <pubDate>Thu, 21 Mar 2024 09:00:00 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/blog/2024-03-21-carbon-aware-job-scheduling/</guid>
+      <description>A Leap Towards Sustainable Computing</description>
+    </item>
     <item>
       <title>Time for JobRunr v7.0.0!</title>
       <link>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</link>
