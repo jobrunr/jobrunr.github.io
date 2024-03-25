@@ -290,7 +290,7 @@ for (var i = 0; i < links.length; i++) {
                 Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
                 Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
             },
-            2000);
+            100);
         }
     });
     document.querySelector("#close").addEventListener("click", () => {
