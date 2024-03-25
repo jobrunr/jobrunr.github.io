@@ -39,6 +39,36 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/webinar/</loc>
+    <lastmod>2024-03-22T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/jobs/internship-kubernetes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/jobs/internship-ml/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/jobs/internship-nosql/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/jobs/internship-testbed/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/webinar/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/tags/blog/</loc>
     <lastmod>2024-03-21T09:00:00+02:00</lastmod>
   </url>
@@ -139,6 +169,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://www.jobrunr.io/en/webinar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-ml/"
                 />
     <xhtml:link
@@ -150,11 +185,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-testbed/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/webinar/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -169,6 +199,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://www.jobrunr.io/en/webinar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-kubernetes/"
                 />
     <xhtml:link
@@ -180,11 +215,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-testbed/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/webinar/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -199,6 +229,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://www.jobrunr.io/en/webinar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-kubernetes/"
                 />
     <xhtml:link
@@ -214,11 +249,6 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/webinar/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-nosql/"
                 />
   </url>
@@ -226,6 +256,11 @@
   <url>
     <loc>https://www.jobrunr.io/en/jobs/internship-testbed/</loc>
     <lastmod>2023-02-06T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/webinar/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -240,11 +275,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://www.jobrunr.io/en/jobs/internship-nosql/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/webinar/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -555,36 +585,6 @@
   <url>
     <loc>https://www.jobrunr.io/en/webinar-subscribed/</loc>
     <lastmod>2020-09-04T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/webinar/</loc>
-    <lastmod>2020-09-04T11:12:23+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/jobs/internship-kubernetes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/jobs/internship-ml/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/jobs/internship-nosql/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/jobs/internship-testbed/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jobrunr.io/en/webinar/"
-                />
   </url>
   
   <url>
