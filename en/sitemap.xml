@@ -16,10 +16,26 @@
   
   
   
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/authentication/anonymous-authentication/</loc>
+  </url>
   
   
   
   
+  
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/authentication/basic-authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/intro/what-is-jobrunr/</loc>
+  </url>
   
   <url>
     <loc>https://www.jobrunr.io/en/try-jobrunr-pro/</loc>
@@ -27,8 +43,20 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/guides/authentication/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/get-jobrunr-pro/</loc>
     <lastmod>2022-03-15T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/intro/java-lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/intro/java-job-request/</loc>
   </url>
   
   <url>
@@ -40,16 +68,22 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/tags/blog/</loc>
-    <lastmod>2024-03-30T09:00:00+02:00</lastmod>
+    <lastmod>2024-04-06T09:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</loc>
-    <lastmod>2024-03-30T09:00:00+02:00</lastmod>
+    <loc>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</loc>
+    <lastmod>2024-04-06T09:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.jobrunr.io/en/tags/meta/</loc>
+    <lastmod>2024-04-06T09:00:00+02:00</lastmod>
+  </url>
+  
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</loc>
     <lastmod>2024-03-30T09:00:00+02:00</lastmod>
   </url>
   
@@ -91,6 +125,26 @@
   <url>
     <loc>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</loc>
     <lastmod>2024-03-15T09:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-decathlon/</loc>
+    <lastmod>2024-03-10T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/use-case/</loc>
+    <lastmod>2024-03-10T11:12:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</loc>
+    <lastmod>2024-02-05T14:19:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/documentation/configuration/virtual-threads/</loc>
+    <lastmod>2024-02-05T14:19:23+02:00</lastmod>
   </url>
   
   <url>
@@ -355,11 +409,6 @@
   
   <url>
     <loc>https://www.jobrunr.io/en/use-case/jobrunr-pro-web-crawling-and-sentiment-analysis/</loc>
-    <lastmod>2022-04-09T11:12:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jobrunr.io/en/tags/use-case/</loc>
     <lastmod>2022-04-09T11:12:23+02:00</lastmod>
   </url>
   
@@ -650,6 +699,16 @@
   <url>
     <loc>https://www.jobrunr.io/en/pricing/</loc>
     <lastmod>2020-08-27T11:12:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/getting-started-with-jobrunr-pro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jobrunr.io/en/pricing/"
+                />
   </url>
   
   <url>
@@ -866,7 +925,51 @@
   </url>
   
   <url>
+    <loc>https://www.jobrunr.io/en/tags/auth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/dashboard/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.jobrunr.io/en/homepage/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/java-8-lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/jobrequest/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/jobrunr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/jobrunr-pro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/micronaut/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/quarkus/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/tags/spring-boot/</loc>
   </url>
   
 </urlset>

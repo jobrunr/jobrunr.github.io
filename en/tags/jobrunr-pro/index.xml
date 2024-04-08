@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JobRunr Pro on JobRunr</title>
+    <link>https://www.jobrunr.io/en/tags/jobrunr-pro/</link>
+    <description>Recent content in JobRunr Pro on JobRunr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://www.jobrunr.io/en/tags/jobrunr-pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Secure your JobRunr Dashboard with Anonymous Authentication</title>
+      <link>https://www.jobrunr.io/en/guides/authentication/anonymous-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/authentication/anonymous-authentication/</guid>
+      <description>JobRunr Pro allows to define a set of rules to restrict the access to the JobRunr Pro Dashboard and its underlying REST API. In this guide, you will learn how to utilize the AnonymousAuthenticationProvider to implement authorization rules without the need for user authentication.&#xA;Prerequisites JobRunr Pro 7.0.0 or later You already know how to configure JobRunr What is an AnonymousAuthenticationProvider The AnonymousAuthenticationProvider is a simple authentication provider that allows you to specify authorization rules that are checked whenever we visit the dashboard and for all access to the REST API endpoints.</description>
+    </item>
+    <item>
+      <title>Secure your JobRunr Dashboard with Basic Authentication</title>
+      <link>https://www.jobrunr.io/en/guides/authentication/basic-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/authentication/basic-authentication/</guid>
+      <description>Basic authentication is an HTTP standard used for access control. Basic authentication is already available to both JobRunr OSS and JobRunr Pro. JobRunr Pro provides enhanced security by configuring the BasicAuthenticationProvider, allowing you to set up authorization rules for each user. In this guide, we&amp;rsquo;ll show you how to leverage the BasicAuthenticationProvider to secure your dashboard with customized access control.&#xA;Do not use BasicAuthenticationProvider on a dashboard that is publicly available on the internet as this authentication can be brute forced.</description>
+    </item>
+    <item>
+      <title>Authentication and Authorization Guides</title>
+      <link>https://www.jobrunr.io/en/guides/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/authentication/</guid>
+      <description>Authentication and Authorization Guides Explore JobRunr Pro&#39;s comprehensive collection of authentication and authorization guides to secure your dashboard effortlessly. Learn how to implement robust user authentication and fine-tuned authorization controls with our step-by-step tutorials.</description>
+    </item>
+  </channel>
+</rss>

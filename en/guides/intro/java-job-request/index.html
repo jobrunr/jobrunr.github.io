@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="This guide will explain you how to setup JobRunr and explore how to enqueue and schedule jobs using the JobRequest / JobRequestHandler pattern.">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler" />
+    <meta name="twitter:description" content="This guide will explain you how to setup JobRunr and explore how to enqueue and schedule jobs using the JobRequest / JobRequestHandler pattern." />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler" />
+<meta property="og:description" content="This guide will explain you how to setup JobRunr and explore how to enqueue and schedule jobs using the JobRequest / JobRequestHandler pattern." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/guides/intro/java-job-request/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="guides" />
+
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"></noscript>
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io//en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/guides/">guides</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post  no-image ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/jobrequest">JobRequest</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler</h1>
+
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        
+
+                        <section class="post-full-byline-meta" style="width: 100%">
+                            
+                            <div class="byline-meta-content">
+                                 
+                                <span class="byline-reading-time">7 min read</span>
+
+                                
+                                    <div class="framework-container" style="float: right; position: -webkit-sticky; position: sticky; z-index: 1000;">
+                                        <div class="nav-tabs">
+                                            <li class="framework-button active" data-type="fluent-api">Fluent API</li>
+                                            <li class="framework-button" data-type="spring-boot">Spring Boot</li>
+                                            <li class="framework-button" data-type="quarkus">Quarkus</li>
+                                            <li class="framework-button" data-type="micronaut">Micronaut</li>
+                                        </div>
+                                    </div>
+                                 
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                
+            </header>
+
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>In this guide, we will learn how to:</p>
+<ul>
+<li>setup JobRunr</li>
+<li>learn how to enqueue and schedule a job in vanilla Java or your favorite web framework using the <code>JobRequest</code> / <code>JobRequestHandler</code> pattern.</li>
+<li>monitor your jobs using the built-in dashboard</li>
+</ul>
+<h2 id="what-is-jobrunr">What is JobRunr</h2>
+<h3 id="introduction">Introduction</h3>
+<p><a href="https://github.com/jobrunr/jobrunr">JobRunr</a> is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface. A job can be a short or long-running process, and it will be automatically offloaded to a background thread so that the current web request is not blocked.</p>
+<p>To do its job (pun intended 😅), JobRunr can not only use a Java 8 lambda but it can also use the <a href="https://en.wikipedia.org/wiki/Command_pattern"><code>Command</code></a> / <a href="https://en.wikipedia.org/wiki/Command_pattern"><code>CommandHandler</code></a> pattern, in this case an implementation of a <code>JobRequest</code> and a <code>JobRequestHandler</code>. It serializes the <code>JobRequest</code> (consider it as a DTO) as JSON, and stores it into either a relational database or a NoSQL data store.</p>
+<h3 id="creating-jobs-using-the-jobrequest-and-jobrequesthandler-pattern">Creating jobs using the JobRequest and JobRequestHandler pattern</h3>
+<p>When we want to enqueue or schedule a job by means of a <code>JobRequest</code> we will need to create two classes, one implementing the <code>JobRequest</code> interface and one implementing the <code>JobRequestHandler</code> interface:</p>
+<figure style="width: 100%; max-width: 100%; margin: 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.demo.jobrunr.services;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">SendEmailJobRequest</span>(String to, String from, String subject, String body) <span style="color:#66d9ef">implements</span> JobRequest {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Class<span style="color:#f92672">&lt;</span>SendEmailJobRequestHandler<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getJobRequestHandler</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> SendEmailJobRequestHandler.<span style="color:#a6e22e">class</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></figure>
+<figure style="width: 100%; max-width: 100%; margin: 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.demo.jobrunr.services;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendEmailJobRequestHandler</span> <span style="color:#66d9ef">implements</span> JobRequestHandler<span style="color:#f92672">&lt;</span>SendEmailJobRequest<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>(SendEmailJobRequest jobRequest) <span style="color:#66d9ef">throws</span> InterruptedException {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// here you send the actual email using services like SendGrid or the SMTP service of your choice</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// all the data will be available on the JobRequest record</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></figure>
+<p>We can now create a job as follows:</p>
+<figure style="width: 100%; max-width: 100%; margin: 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onboardCustomer</span>(Customer customer) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ... other code like saving customer in DB</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// send the email via a BackgroundJobRequest</span>
+</span></span><span style="display:flex;"><span>    BackgroundJobRequest.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> SendEmailJobRequest(customer.<span style="color:#a6e22e">getEmailAddress</span>(), <span style="color:#e6db74">&#34;hello@jobrunr.io&#34;</span>, <span style="color:#e6db74">&#34;Happy you joined us!&#34;</span>, <span style="color:#e6db74">&#34;the email body...&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></figure>
+<p>Then JobRunr will analyze this lambda and create a JSON representation of it which can be saved in the SQL or NoSQL database and then be processed even on another server:</p>
+<figure style="width: 100%; max-width: 100%; margin: 0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;cacheable&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;className&#34;</span>: <span style="color:#e6db74">&#34;com.demo.jobrunr.services.SendEmailJobRequestHandler&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;staticFieldName&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;methodName&#34;</span>: <span style="color:#e6db74">&#34;run&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;jobParameters&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;className&#34;</span>: <span style="color:#e6db74">&#34;com.demo.jobrunr.services.SendEmailJobRequest&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;object&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;great@customer.com&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;hello@jobrunr.io&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;Happy you joined us!&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#e6db74">&#34;the email body...&#34;</span>
+</span></span><span style="display:flex;"><span>        } 
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></figure>
+<h2 id="setup">Setup</h2>
+<h3 id="maven-dependency">Maven dependency</h3>
+<p>Now that we know how JobRunr works, let’s jump straight to the Java code. But before that, we need to have the following Maven dependency declared in our <code>pom.xml</code> file:
+<div class="framework-content" data-type="fluent-api" aria-label="Fluent API">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>7.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jackson-databind<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>2.17.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#75715e">&lt;!-- use latest version --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>As JobRunr also needs a library for JSON handling, we also include <a href="https://github.com/FasterXML/jackson">Jackson</a> as a dependency.</p>
+    
+</div>
+<div class="framework-content" data-type="spring-boot" aria-label="Spring Boot">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-spring-boot-3-starter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>7.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>JobRunr also needs a library for JSON handling, but as Spring Boot by default comes with Jackson support this is already covered.</p>
+    
+</div>
+<div class="framework-content" data-type="quarkus" aria-label="Quarkus">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>quarkus-jobrunr<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>7.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jackson-databind<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>2.17.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#75715e">&lt;!-- use latest version --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>JobRunr also needs a library for JSON handling and just like Quarkus, JobRunr both supports Jackson and JSON-B.</p>
+    
+</div>
+<div class="framework-content" data-type="micronaut" aria-label="Micronaut">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.jobrunr<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jobrunr-micronaut-feature<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>7.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jackson-databind<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>2.17.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#75715e">&lt;!-- use latest version --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>JobRunr also needs a library for JSON handling - for Micronaut we recommend <a href="https://github.com/FasterXML/jackson">Jackson</a>.</p>
+    
+</div></p>
+<h3 id="jobrunr-configuration">JobRunr Configuration</h3>
+<p>Before we jump straight to how to create background jobs, we need to initialize JobRunr. In this guide, we will enable both the <code>BackgroundJobServer</code> so that jobs get processed and the dashboard.
+<div class="framework-content" data-type="fluent-api" aria-label="">
+    
+        <p>Configuring JobRunr using the Fluent API is really easy, we only need a bit of code to configure JobRunr:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        JobRunr
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">configure</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">useStorageProvider</span>(<span style="color:#66d9ef">new</span> InMemoryStorageProvider())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">useDashboard</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">useBackgroundJobServer</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">initialize</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="spring-boot" aria-label="">
+    
+        <p>As we’re using the <code>jobrunr-spring-boot-3-starter</code> dependency, this is easy. We only need to add some properties to the <code>application.properties</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">org.jobrunr.background-job-server.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">org.jobrunr.dashboard.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="quarkus" aria-label="">
+    
+        <p>As we’re using the <code>quarkus-jobrunr</code> extension, this is easy. We only need to add some properties to the <code>application.properties</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">quarkus.jobrunr.background-job-server.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">quarkus.jobrunr.dashboard.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="micronaut" aria-label="">
+    
+        <p>As we’re using the <code>jobrunr-micronaut-feature</code>, this is easy. We only need to add some properties to the <code>application.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">jobrunr</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">background-job-server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dashboard</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div>
+    
+</div></p>
+<h2 id="enqueueing-one-off-jobs">Enqueueing one-off jobs</h2>
+<p>Now, let’s find out how to create some fire-and-forget background jobs using JobRunr.
+<div class="framework-content" data-type="fluent-api" aria-label="">
+    
+        <p>We can now start using JobRunr by means of the <code>BackgroundJob</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ... </span>
+</span></span><span style="display:flex;"><span>        BackgroundJobRequest.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> SysOutJobRequest(<span style="color:#e6db74">&#34;This is a background job!&#34;</span>)); <span style="color:#75715e">// you will also need a SysOutJobRequestHandler to run the actual job</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="spring-boot" aria-label="">
+    
+        <p>When we want to create jobs, we’ll need to inject the <code>JobRequestScheduler</code> so we can pass it an implementation of a <code>JobRequest</code>, in this case a <code>MyJobRequest</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> JobRequestScheduler jobRequestScheduler;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JobController</span>(JobRequestScheduler jobRequestScheduler) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">jobRequestScheduler</span> <span style="color:#f92672">=</span> jobRequestScheduler;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/enqueue-example-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">enqueueExampleJob</span>(<span style="color:#a6e22e">@RequestParam</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;World&#34;</span>) String name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId enqueuedJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> MyJobRequest(name));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Enqueued: &#34;</span> <span style="color:#f92672">+</span> enqueuedJobId;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="quarkus" aria-label="">
+    
+        <p>When we want to create jobs, we’ll need to inject the <code>JobRequestScheduler</code> so we can pass it an implementation of a <code>JobRequest</code>, in this case a <code>MyJobRequest</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;jobs&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ApplicationScoped</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobResource</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span>    JobRequestScheduler jobRequestScheduler;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/simple-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">TEXT_PLAIN</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">simpleJob</span>(<span style="color:#a6e22e">@DefaultValue</span>(<span style="color:#e6db74">&#34;Hello world&#34;</span>) <span style="color:#a6e22e">@QueryParam</span>(<span style="color:#e6db74">&#34;value&#34;</span>) String value) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId enqueuedJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> MyJobRequest(value));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Enqueued: &#34;</span> <span style="color:#f92672">+</span> enqueuedJobId;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="micronaut" aria-label="">
+    
+        <p>When we want to create jobs, we’ll need to inject the <code>JobRequestScheduler</code> so we can pass it an implementation of a <code>JobRequest</code>, in this case a <code>MyJobRequest</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>(<span style="color:#e6db74">&#34;/jobs&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> JobRequestScheduler jobRequestScheduler;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Get</span>(<span style="color:#e6db74">&#34;/simple-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">TEXT_PLAIN</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">simpleJob</span>(<span style="color:#a6e22e">@QueryValue</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world&#34;</span>) String value) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId enqueuedJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> MyJobRequest(value));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Enqueued: &#34;</span> <span style="color:#f92672">+</span> enqueuedJobId;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div></p>
+<h2 id="scheduling-jobs">Scheduling jobs</h2>
+<p>We can also schedule jobs in the future using the schedule method:
+<div class="framework-content" data-type="fluent-api" aria-label="">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ... </span>
+</span></span><span style="display:flex;"><span>        BackgroundJob.<span style="color:#a6e22e">schedule</span>(LocalDateTime.<span style="color:#a6e22e">now</span>().<span style="color:#a6e22e">plusHours</span>(5), <span style="color:#66d9ef">new</span> SysOutJobRequest(<span style="color:#e6db74">&#34;This is a background job!&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="spring-boot" aria-label="">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/schedule-example-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">scheduleExampleJob</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@RequestParam</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;World&#34;</span>) String name,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@RequestParam</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;when&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PT3H&#34;</span>) String when) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId scheduledJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">schedule</span>(now().<span style="color:#a6e22e">plus</span>(Duration.<span style="color:#a6e22e">parse</span>(when)), <span style="color:#66d9ef">new</span> MyJobRequest(name));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Scheduled: &#34;</span> <span style="color:#f92672">+</span> scheduledJobId.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="quarkus" aria-label="">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;jobs&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ApplicationScoped</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobResource</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/schedule-simple-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">TEXT_PLAIN</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">scheduleSimpleJob</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@DefaultValue</span>(<span style="color:#e6db74">&#34;Hello world&#34;</span>) <span style="color:#a6e22e">@QueryParam</span>(<span style="color:#e6db74">&#34;value&#34;</span>) String value,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@DefaultValue</span>(<span style="color:#e6db74">&#34;PT3H&#34;</span>) <span style="color:#a6e22e">@QueryParam</span>(<span style="color:#e6db74">&#34;when&#34;</span>) String when) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId scheduledJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">schedule</span>(now().<span style="color:#a6e22e">plus</span>(Duration.<span style="color:#a6e22e">parse</span>(when)), <span style="color:#66d9ef">new</span> MyJobRequest(value));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Scheduled: &#34;</span> <span style="color:#f92672">+</span> scheduledJobId.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="micronaut" aria-label="">
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>(<span style="color:#e6db74">&#34;/jobs&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JobController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Get</span>(<span style="color:#e6db74">&#34;/schedule-simple-job&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">TEXT_PLAIN</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">scheduleSimpleJob</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@QueryValue</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world&#34;</span>) String value,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@QueryValue</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;when&#34;</span>, defaultValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PT3H&#34;</span>) String when) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> JobId scheduledJobId <span style="color:#f92672">=</span> jobRequestScheduler.<span style="color:#a6e22e">schedule</span>(now().<span style="color:#a6e22e">plus</span>(Duration.<span style="color:#a6e22e">parse</span>(when)), <span style="color:#66d9ef">new</span> MyJobRequest(value));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Job Request Scheduled: &#34;</span> <span style="color:#f92672">+</span> scheduledJobId.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div></p>
+<h2 id="monitoring-jobs-using-the-built-in-dashboard">Monitoring jobs using the built-in dashboard</h2>
+<p>JobRunr comes with a built-in dashboard that allows us to monitor our jobs. We can find it at http://localhost:8000 and inspect all the jobs, including all recurring jobs and an estimation of how long it will take until all the enqueued jobs are processed:</p>
+<figure>
+<img src="/documentation/jobrunr-overview-1.webp" class="kg-image">
+<figcaption>A complete overview of the amount of jobs that are being processed</figcaption>
+</figure>
+<p>Bad things can happen, for example, an SSL certificate expired, or a disk is full. JobRunr, by default, will reschedule the background job with an exponential back-off policy. If the background job continues to fail ten times, only then will it go to the Failed state. You can then decide to re-queue the failed job when the root cause has been solved.</p>
+<p>All of this is visible in the dashboard, including each retry with the exact error message and the complete stack trace of why a job failed:</p>
+<figure>
+<img src="/documentation/job-details-failed-2.webp" class="kg-image">
+<figcaption>When a job failed, you see a detailed message why it did fail</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this guide, we&rsquo;ve learned how to effortlessly set up and use JobRunr to create and schedule jobs using a <code>JobRequest</code> and <code>JobRequestHandler</code> and we also learned how to monitor jobs with its user-friendly dashboard.</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io/">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "gndsmglzod");
+</script>
+</body>
+</html>

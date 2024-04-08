@@ -20,7 +20,7 @@
       <link>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</guid>
-      <description>As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:&#xA;JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork()); This enqueues a background job using an instance of MyService which is available during enqueueing. JobId jobId = BackgroundJob.&amp;lt;MyService&amp;gt;enqueue(x -&amp;gt; x.doWork()); This enqueues a background job without a reference to an instance of MyService. During execution of the background job, the IoC container will need to provide an instance of type MyService.</description>
+      <description>Creating a background job with JobRunr is really easy. On this page you will learn how to:&#xA;create a single job using a Java 8 lambda create a single job using a JobRequest create many jobs using a Java 8 lambda create many jobs using a JobRequest JobRunr Pro Prevent duplicate jobs by an identifier JobRunr Pro Replace existing jobs Enqueueing a single background job Enqueueing a job using a Java 8 lambda As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:</description>
     </item>
     <item>
       <title>Recurring jobs</title>

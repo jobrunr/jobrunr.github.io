@@ -6,8 +6,15 @@
     <description>Recent content in JobRunr Pro on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Jun 2021 11:12:23 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 14:19:23 +0200</lastBuildDate>
     <atom:link href="https://www.jobrunr.io/en/documentation/pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rate Limiters</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</link>
+      <pubDate>Mon, 05 Feb 2024 14:19:23 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</guid>
+      <description>A rate limiter allows to control the execution rate of Jobs to avoid overwhelming some resources like external APIs or databases. JobRunr provides mutexes as a mean to only allow a single execution from a set of Jobs at a time. Rate limiters gives more flexibility, the amount of concurrent jobs can be configured using the ConcurrentJobRateLimiter or the limit may be set over a time window using SlidingTimeWindowRateLimiter.</description>
+    </item>
     <item>
       <title>Custom delete policy</title>
       <link>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</link>
@@ -97,14 +104,14 @@
       <link>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
-      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:&#xA;Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise Restrict access using OpenID Authentication JobRunr Pro Enterprise Embed the dashboard within Spring Server JobRunr Pro Enterprise GDPR compliant Dashboard Find any Job using the search functionality Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded?</description>
+      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:&#xA;Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise Restrict access using Single Sign On authentication JobRunr Pro Enterprise Embed the dashboard within Spring Server JobRunr Pro Enterprise GDPR compliant Dashboard Find any Job using the search functionality Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded?</description>
     </item>
     <item>
       <title>Mutexes</title>
       <link>https://www.jobrunr.io/en/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
-      <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.&#xA;Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
+      <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex.&#xA;Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use&#xA;@Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() { System.</description>
     </item>
     <item>
       <title>Observability</title>
@@ -146,7 +153,7 @@
       <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
-      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.&#xA;Job chaining via continueWith @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .enqueue(() -&amp;gt; archiveService.createArchive(folder)) .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) } The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
+      <description>JobRunr&amp;rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.&#xA;Job chaining via continueWith and onFailure Running a job after another job succeeded @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .</description>
     </item>
   </channel>
 </rss>

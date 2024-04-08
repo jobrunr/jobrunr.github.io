@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>JobRunr and JobRunr Pro v7.0.0! · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="We&rsquo;re proud to announce the latest release, JobRunr &amp; JobRunr Pro v7.0.0">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="JobRunr and JobRunr Pro v7.0.0!" />
+    <meta name="twitter:description" content="We&rsquo;re proud to announce the latest release, JobRunr &amp; JobRunr Pro v7.0.0" />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="JobRunr and JobRunr Pro v7.0.0!" />
+<meta property="og:description" content="We&rsquo;re proud to announce the latest release, JobRunr &amp; JobRunr Pro v7.0.0" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-04-06T09:00:00+02:00" />
+<meta property="article:modified_time" content="2024-04-06T09:00:00+02:00" />
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"></noscript>
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io//en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/guides/">guides</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/blog">blog</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">JobRunr and JobRunr Pro v7.0.0!</h1>
+
+                
+                    <p class="post-full-custom-excerpt">We&rsquo;re proud to announce the latest release, JobRunr &amp; JobRunr Pro v7.0.0</p>
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+    <li class="author-list-item">
+        <div class="author-card">
+            <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></div>
+            <div class="author-info">
+                <div class="author-info">
+                    <h2>Donata Petkevičiūtė</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg></a>
+    </li>
+</ul>
+
+                        <section class="post-full-byline-meta" style="width: 100%">
+                            
+                                <h4 class="author-name">Donata Petkevičiūtė</h4>
+                            
+                            <div class="byline-meta-content">
+                                
+                                    <time class="byline-meta-date" datetime="2024-94-04">6 April 2024</time>
+                                    <span class="bull">&bull;</span>
+                                 
+                                <span class="byline-reading-time">8 min read</span>
+
+                                 
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                
+            </header>
+
+            
+            
+            
+            <figure class="post-full-image blog">
+            
+                <img src="/blog/2024-04-09-jobrunr-jobrunr-pro-v7.png" alt="/blog/2024-04-09-jobrunr-jobrunr-pro-v7.png"/>
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    
+
+<div style="text-align: center;margin: -2em 0 2em;">
+<small style="font-size: 70%;"><a href='https://www.freepik.com/vectors/cartoon-astronaut'>Cartoon astronaut vector created by catalyststuff - www.freepik.com</a></small>
+</div>
+<style type="text/css">
+    .post-full-content img {display: inline-block; margin: 0 auto}
+</style>
+<h3 id="its-celebration-time-once-again-at-jobrunr">It&rsquo;s Celebration Time Once Again at JobRunr!</h3>
+<p>We are excited to announce the release of JobRunr v7.0.0 and JobRunr Pro v7.0.0. This major release is now available via Maven Central and directly for our Pro subscribers through the customer portal. Building on our promise to deliver robust job scheduling solutions, v7.0.0 brings a suite of powerful new features, substantial performance enhancements, and critical dashboard improvements. Let’s delve into what makes this release a game-changer for developers and enterprises alike for both <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#pro-version">JobRunr Pro</a> and <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#oss-version">JobRunr OSS</a>!.</p>
+<h1 id="what-is-new">What is new?</h1>
+<h2 id="pro-version">Pro Version:</h2>
+<h3 id="new-features">New Features</h3>
+<ul>
+<li>JobRunr Pro now has builtin support for Virtual Threads! They are enabled by default for JDK 21 and higher. <a href="https://github.com/jobrunr/jobrunr/pull/906">PR #906</a></li>
+<li>Improved OpenId authentication with authorization - add authorization support in the dashboard based on extensive rule-set. <a href="https://github.com/jobrunr/jobrunr-pro/pull/188">PR #188</a></li>
+<li>Dashboard GDPR/HIPAA support: allow to redact jobs so that no confidential information can be leaked. <a href="https://github.com/jobrunr/jobrunr-pro/pull/194">PR #194</a></li>
+<li>Rate Limiting - rate limit the amount of jobs being processed using either a <code>ConcurrentJobRateLimiter</code> and the <code>SlidingTimeWindowRateLimiter</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/202">PR #202</a></li>
+<li>Add support for Strings as a <code>JobIdentifier</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/285">PR #285</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/236">#236</a>)</li>
+<li>Workflow improvement: jobs can now continueOn success and continueOn failure or just onFailure. <a href="https://github.com/jobrunr/jobrunr-pro/pull/260">PR #260</a></li>
+<li>Make <code>BackgroundJobServer</code> shutdown period configurable. <a href="https://github.com/jobrunr/jobrunr-pro/pull/297">PR #297</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/236">#288</a>)</li>
+<li>Add option to skip retries with <code>DoNotRetryPolicy</code> for individual jobs and exceptions. <a href="https://github.com/jobrunr/jobrunr-pro/pull/303">PR #303</a></li>
+<li>Dashboard - add extra columns to job tables and allow to configure columns visibility. <a href="https://github.com/jobrunr/jobrunr-pro/pull/250">PR #250</a></li>
+<li>Cursor based Job Page - add support for Cursor Based Paging to support multi dashboard. <a href="https://github.com/jobrunr/jobrunr-pro/pull/212">PR #212</a></li>
+<li><code>InMemoryStorageProvider</code> now allows for a pollInterval as small as 200ms (useful for testing purposes). <a href="https://github.com/jobrunr/jobrunr-pro/pull/909">PR #909</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issue/619">#619</a>)</li>
+<li>Dynamic Queues can reserve a certain amount of the total workers using the <code>FixedSizeWorkerPoolDynamicQueuePolicy</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/237">PR #237</a></li>
+<li>Allow updating job labels from within a <code>JobFilter</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/251">PR #251</a> (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/239">#239</a>)</li>
+<li>Allow to delete recurring jobs automatically using a <code>deleteAt</code> hint. <a href="https://github.com/jobrunr/jobrunr-pro/pull/257">PR #257</a></li>
+<li>Add support for job progress monitoring via <code>JobServerFilter</code> to get notified on job progress. <a href="https://github.com/jobrunr/jobrunr-pro/pull/282">PR #282</a></li>
+</ul>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>BackgroundJobServer Master Tasks are now spread over multiple threads for smooth processing.  <a href="https://github.com/jobrunr/jobrunr-pro/pull/280">PR #280</a></li>
+<li>Use Time-based UUID&rsquo;s as ID&rsquo;s for jobs instead of UUID.randomUUID() for lower disk usage in databases. <a href="https://github.com/jobrunr/jobrunr/pull/890">PR #890</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/891">#891</a>)</li>
+<li>Significantly decrease JSON size. <a href="https://github.com/jobrunr/jobrunr/pull/892">PR #892</a></li>
+<li>Improve Dynamic Queue Policy in combination with rate limiters by slowly phasing out unused dynamic queues. <a href="https://github.com/jobrunr/jobrunr-pro/pull/216">PR #216</a></li>
+<li>Workflow improvement: jobs within batch jobs can now use continuations while batch jobs themselves have continuations. (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/201">#201</a>)</li>
+<li>Performance improvement: prevent Optimistic Locking Exceptions and use <code>select for update skip locked</code> if the database supports it. <a href="https://github.com/jobrunr/jobrunr/pull/904">PR #904</a></li>
+<li>Refactor batch jobs to not use metadata for succeeded child jobs. (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/217">#217</a>)</li>
+<li>Support for unlimited batch jobs. <a href="https://github.com/jobrunr/jobrunr-pro/pull/265">PR #265</a> (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/254">#254</a>)</li>
+<li>Dashboard: batch jobs are now directly visible on the jobs page. <a href="https://github.com/jobrunr/jobrunr-pro/pull/250">PR #250</a></li>
+<li>Improve Job Metrics using MicroMeter. <a href="https://github.com/jobrunr/jobrunr-pro/pull/274">PR #274</a> (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/242">#242</a>)</li>
+<li>Wait for database migrations to finish before starting background job processing <a href="https://github.com/jobrunr/jobrunr-pro/pull/266">PR #266</a></li>
+<li>Improve Recurring Jobs in Spring Boot / Micronaut / Quarkus and keep paused state. <a href="https://github.com/jobrunr/jobrunr-pro/pull/304">PR #304</a></li>
+<li>Fetch all <code>SCHEDULED</code> jobs at the same <code>pollInterval</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/273">PR #273</a></li>
+<li>JobRunr let&rsquo;s you know when your JobFilters are too slow via a warning. <a href="https://github.com/jobrunr/jobrunr-pro/pull/282">PR #961</a></li>
+<li>Query new JobRunr version via frontend instead of via the backend. <a href="https://github.com/jobrunr/jobrunr/pull/979">PR #979</a></li>
+<li>Refactor the <code>StorageProvider</code> and cleanup deprecated methods. <a href="https://github.com/jobrunr/jobrunr/pull/893">PR #893</a></li>
+<li>Performance improvement: improved SQL indexes (thanks to the customers who where willing to share their data)</li>
+<li>Log warning if ASM is not compatible. <a href="https://github.com/jobrunr/jobrunr/pull/925">PR #925</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/924">#924</a>)</li>
+</ul>
+<h3 id="fixed-bugs">Fixed bugs</h3>
+<ul>
+<li>Fix Bug where Micronaut integration fails if multiple servers are used. <a href="https://github.com/jobrunr/jobrunr/pull/852">PR #852</a></li>
+<li>Make sure MicroMeter Job metrics is also working with Fluent configuration .<a href="https://github.com/jobrunr/jobrunr-pro/pull/207">PR #207</a></li>
+<li>Fix when moving from JobRunr OSS v4 to JobRunr Pro v6. <a href="https://github.com/jobrunr/jobrunr/pull/880">PR #880</a></li>
+<li>Fix bug in<code>MigrateFromV5toV6Task</code> related <code>RecurringJobs</code> migration. <a href="https://github.com/jobrunr/jobrunr-pro/pull/238">PR #238</a></li>
+<li>Allow to gracefully stop the <code>BackgroundJobServer</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/272">PR #272</a></li>
+<li><code>enqueueOrReplace</code> and <code>scheduleOrReplace</code> now also update server tags <a href="https://github.com/jobrunr/jobrunr-pro/pull/267">PR #267</a> (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/164">#164</a>)</li>
+<li>Fix GraalVM native mode in Quarkus <a href="https://github.com/jobrunr/jobrunr-pro/pull/295">PR #295</a></li>
+<li>Make database migrations work on  WildFly. <a href="https://github.com/jobrunr/jobrunr/pull/883">PR #883</a></li>
+<li>Fix Bug <code>ApplyStateFilter</code> is called before save resulting in multiple calls to <code>onStateApplied</code>. <a href="https://github.com/jobrunr/jobrunr/pull/903">PR #903</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/902">#902</a>)</li>
+<li>Use Jackson by default in Quarkus if present. <a href="https://github.com/jobrunr/jobrunr/pull/913">PR #913</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/887">#887</a>)</li>
+<li>Fix Bug <code>JobServerFilter.onProcessingFailed</code> is not called when a job orphans (e.g. if background job server dies). <a href="https://github.com/jobrunr/jobrunr/pull/921">PR #921</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/920">#920</a>)</li>
+<li>Fix Bug <code>IllegalStateException</code>: Can not find variable 3 in stack. <a href="https://github.com/jobrunr/jobrunr/pull/941">PR #941</a>, <a href="https://github.com/jobrunr/jobrunr/pull/945">PR #945</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/942">#942</a>)</li>
+<li>Fix Bug <code>CronExpression.validateSchedule()</code> does not correctly check for interval size. <a href="https://github.com/jobrunr/jobrunr/pull/859">PR #859</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/858">#858</a>)</li>
+</ul>
+<h3 id="breaking-changes">Breaking changes</h3>
+<ul>
+<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotation.Recurring</code> and uses enums instead of booleans. The attributes <code>paused</code> and <code>scheduleJobsSkippedDuringDowntime</code> now use an enum instead of a boolean. This allows us to keep the paused state of a Recurring job even if you redeploy (default) whereas in the past, on redeploy, the Job would be started automatically again. If <code>paused</code> is put to false in the <code>@Recurring</code>, the Recurring job will start on redeploy even if it was paused before via the dashboard</li>
+<li><code>JobScheduler.delete(String id)</code> has been renamed to <code>JobScheduler.deleteRecurringJob(String id)</code></li>
+<li>The <code>StorageProvider</code> has been updated and is not backwards compatible as is the <code>Page</code> and <code>PageRequest</code>.  A new class <code>org.jobrunr.storage.Paging</code> was added where all utility methods regarding Paging have been collected</li>
+<li>For SQL databases, JobRunr deletes all indexes and recreates them for better performance. If you have a lot of jobs in your database, the migration may take a while. Also, on some databases <strong>column types are changed</strong> for better performance making this release not backwards compatible.</li>
+<li>JobRunr and JobRunr Pro 7 requires MongoDB Driver 5.0.0 or higher (please be aware that Spring Boot 3.2 still depends on Mongo 4.x)</li>
+<li><strong>We&rsquo;re also deprecating the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code></strong>. JobRunr 7 will be the last to support it.</li>
+<li>Overall <code>BatchJob</code>s logic has been rewritten, make sure <code>MigrateFromV6toV7Task</code> is run</li>
+</ul>
+<h2 id="oss-version">OSS version:</h2>
+<h3 id="new-features-1">New features</h3>
+<ul>
+<li>JobRunr now has builtin support for Virtual Threads! They are enabled by default for JDK 21 and higher. <a href="https://github.com/jobrunr/jobrunr/pull/906">PR #906</a></li>
+<li>InMemoryStorageProvider now allows for a pollInterval as small as 200ms (useful for testing purposes). <a href="https://github.com/jobrunr/jobrunr/pull/909">PR #909</a>  (fixes <a href="https://github.com/jobrunr/jobrunr/issues/619">#619</a>)</li>
+<li>Make BackgroundJob server shutdown period configurable. <a href="https://github.com/jobrunr/jobrunr/pull/973">PR #973</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/236">#288</a>)</li>
+</ul>
+<h3 id="enhancements-1">Enhancements</h3>
+<ul>
+<li>Use Time-based UUID&rsquo;s as ID&rsquo;s for jobs instead of UUID.randomUUID() for lower disk usage in databases. <a href="https://github.com/jobrunr/jobrunr/pull/890">PR #890</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/891">#891</a>)</li>
+<li>Significantly decrease JSON size, <a href="https://github.com/jobrunr/jobrunr/pull/892">PR #892</a></li>
+<li>Performance improvement: prevent Optimistic Locking Exceptions and use <code>select for update skip locked</code> if the database supports it <a href="https://github.com/jobrunr/jobrunr/pull/904">PR #904</a>:</li>
+<li>BackgroundJobServer Master Tasks are now spread over multiple threads for smooth processing. <a href="https://github.com/jobrunr/jobrunr/pull/954">PR #954</a></li>
+<li>Add access to labels via <code>JobContext</code>. <a href="https://github.com/jobrunr/jobrunr-pro/pull/969">PR #969</a> (fixes <a href="https://github.com/jobrunr/jobrunr-pro/issues/286">#286</a>)</li>
+<li>JobRunr let’s you know when your JobFilters are too slow via a warning. <a href="https://github.com/jobrunr/jobrunr/pull/961">PR #961</a></li>
+<li>Quarkus - Separate build time and runtime configuration. <a href="https://github.com/jobrunr/jobrunr/pull/845">PR #845</a></li>
+<li>Update ElasticSearch to new Java API. <a href="https://github.com/jobrunr/jobrunr/pull/850">PR #850</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/499">#499</a>)</li>
+<li>Wait for database migrations to finish before starting background job processing</li>
+<li>Query new JobRunr version via frontend instead of via the backend <a href="https://github.com/jobrunr/jobrunr/pull/979">PR #979</a></li>
+<li>Log warning if ASM is not compatible. <a href="https://github.com/jobrunr/jobrunr/pull/925">PR #925</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/924">#924</a>)</li>
+</ul>
+<h3 id="fixed-bugs-1">Fixed bugs</h3>
+<ul>
+<li>Make database migrations work on  WildFly. <a href="https://github.com/jobrunr/jobrunr/pull/883">PR #883</a></li>
+<li>Fix Bug <code>ApplyStateFilter</code> is called before save resulting in multiple calls to <code>onStateApplied</code>. <a href="https://github.com/jobrunr/jobrunr/pull/903">PR #903</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/902">#902</a>)</li>
+<li>Use Jackson by default in Quarkus if present. <a href="https://github.com/jobrunr/jobrunr/pull/913">PR #913</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/887">#887</a>)</li>
+<li>Fix Bug <code>JobServerFilter.onProcessingFailed</code> is not called when a job orphans (e.g. if background job server dies). <a href="https://github.com/jobrunr/jobrunr/pull/921">PR #921</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/920">#920</a>)</li>
+<li>Fix Bug <code>IllegalStateException</code>: Can not find variable 3 in stack. <a href="https://github.com/jobrunr/jobrunr/pull/941">PR #941</a>, <a href="https://github.com/jobrunr/jobrunr/pull/945">PR #945</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/942">#942</a>)</li>
+<li>Fix Bug where Micronaut integration fails if multiple servers are used. <a href="https://github.com/jobrunr/jobrunr/pull/852">PR #852</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/847">#847</a>)</li>
+<li>Fix Bug <code>CronExpression.validateSchedule()</code> does not correctly check for interval size. <a href="https://github.com/jobrunr/jobrunr/pull/859">PR #859</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/858">#858</a>)</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>Updated dependencies <a href="https://github.com/jobrunr/jobrunr/pull/851">PR #851</a>, <a href="https://github.com/jobrunr/jobrunr/pull/886">PR #886</a>, <a href="https://github.com/jobrunr/jobrunr/pull/889">PR #889</a>, <a href="https://github.com/jobrunr/jobrunr/pull/917">PR #917</a>, <a href="https://github.com/jobrunr/jobrunr/pull/943">PR #943</a>, <a href="https://github.com/jobrunr/jobrunr/pull/956">PR #956</a></li>
+<li>Refactoring and cleanup <a href="https://github.com/jobrunr/jobrunr/pull/893">PR #893</a>, <a href="https://github.com/jobrunr/jobrunr/pull/894">PR #894</a>, <a href="https://github.com/jobrunr/jobrunr/pull/895">PR #895</a>, <a href="https://github.com/jobrunr/jobrunr/pull/934">PR #934</a>, <a href="https://github.com/jobrunr/jobrunr/pull/937">PR #937</a>, <a href="https://github.com/jobrunr/jobrunr/pull/938">PR #938</a></li>
+<li>Improved logging and exception handling <a href="https://github.com/jobrunr/jobrunr/pull/860">PR #860</a>, <a href="https://github.com/jobrunr/jobrunr/pull/925">PR #925</a></li>
+</ul>
+<h3 id="breaking-changes-1">Breaking changes</h3>
+<ul>
+<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotation.Recurring</code> and uses enums instead of booleans. The attributes <code>paused</code> and <code>scheduleJobsSkippedDuringDowntime</code> now use an enum instead of a boolean. This allows us to keep the paused state of a Recurring job even if you redeploy (default) whereas in the past, on redeploy, the Job would be started automatically again. If <code>paused</code> is put to false in the <code>@Recurring</code>, the Recurring job will start on redeploy even if it was paused before via the dashboard</li>
+<li><code>JobScheduler.delete(String id)</code> has been renamed to <code>JobScheduler.deleteRecurringJob(String id)</code></li>
+<li>The <code>StorageProvider</code> has been updated and is not backwards compatible as is the <code>Page</code> and <code>PageRequest</code>.  A new class <code>org.jobrunr.storage.Paging</code> was added where all utility methods regarding Paging have been collected</li>
+<li>For SQL databases, JobRunr deletes all indexes and recreates them for better performance. If you have a lot of jobs in your database, the migration may take a while. Also, on some databases <strong>column types are changed</strong> for better performance making this release not backwards compatible.</li>
+<li>JobRunr and JobRunr Pro 7 requires MongoDB Driver 5.0.0 or higher (please be aware that Spring Boot 3.2 still depends on Mongo 4.x)</li>
+<li>We&rsquo;re also deprecating the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code>. JobRunr 7 will be the last to support it.</li>
+</ul>
+<h4 id="contributors">Contributors</h4>
+<p>We thank the following contributors for their help with JobRunr v7!</p>
+<ul>
+<li>@<a href="https://github.com/coschtl">coschtl</a></li>
+<li>@<a href="https://github.com/jobrunr/jobrunr/issues?q=is%3Apr+author%3Atms0">tms0</a> (edited)</li>
+</ul>
+<p>Try it out now and let us know your feedback! Your input is very important, so we can provide you smooth v7.0.0 JobRunr!</p>
+<p>Best,<br>
+Friends of developers<br>
+The JobRunr Team</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io/">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "gndsmglzod");
+</script>
+</body>
+</html>

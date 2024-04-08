@@ -51,8 +51,8 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.11a21a154ff799dabaeb9f7f91d876724cb80c2231ce99a51c907e081fe82038.css" integrity="sha256-EaIaFU/3mdq6659/kdh2cky4DCIxzpmlHJB&#43;CB/oIDg=" media="screen">
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
@@ -80,9 +80,11 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
                 
                 <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
                 
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
                 <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
                 
-                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                <li class="nav-home" role="menuitem"><a href="/en/guides/">guides</a></li>
                 
                 <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
                 
@@ -148,6 +150,8 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
             
         
             
+        
+            
                 
                     <li class="">
                         <a href="/en/documentation/5-minute-intro/">
@@ -195,6 +199,10 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
                         
                             <li class="">
                                 <a href="/en/documentation/configuration/quarkus/">Quarkus Extension</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/virtual-threads/">Virtual Threads</a>
                             </li>
                         
                     </ul>
@@ -298,6 +306,10 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/rate-limiters/">Rate Limiters</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/mutexes/">Mutexes</a>
                             </li>
                         
@@ -380,14 +392,22 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
             <section class="post-full-content">
                 <p>Bad things happen. Any method can throw different types of exceptions. These exceptions can be caused either by programming errors that require you to re-deploy the application, or transient errors, that can be fixed without additional deployment.</p>
 <p>JobRunr handles all exceptions that occur both in internal (belonging to JobRunr itself), and external methods (jobs, filters and so on), so it will not bring down the whole application. All internal exceptions are logged (so, don’t forget to enable logging) and in the worst case, background processing of a job will be stopped after 10 retry attempts with a smart exponential back-off policy.</p>
-<p>When JobRunr encounters external exception that occured during the execution of the job, it will automatically try to change the state of the <code>Job</code> to <code>Failed</code>, and you always can find this job in the Dashbord UI (it will not expire unless you delete it explicitly).</p>
+<p>On this page you will learn how to:</p>
+<ul>
+<li><a href="/en/documentation/background-methods/dealing-with-exceptions/#how-to-monitor-your-failed-jobs">how you can monitor your failed jobs</a></li>
+<li><a href="/en/documentation/background-methods/dealing-with-exceptions/#how-does-jobrunr-handle-exceptions">how JobRunr handles exceptions</a></li>
+<li><a href="/en/documentation/background-methods/dealing-with-exceptions/#how-to-configure-the-amount-of-retries">how to configure the amount of retries?</a></li>
+</ul>
+<h2 id="how-to-monitor-your-failed-jobs">How to monitor your failed jobs</h2>
+<p>When JobRunr encounters external exception that occured during the execution of the job, it will automatically change the state of the <code>Job</code> to <code>FAILED</code>, and you always can find this job in the Dashbord UI under the <code>FAILED</code> jobs sections (it will not expire unless you delete it explicitly).</p>
 <figure>
 <img src="/documentation/failed-job.webp" class="kg-image">
 <figcaption>Detailed information why a job failed</figcaption>
 </figure>
-<p>In the previous paragraph it is mentioned that JobRunr will <strong>try</strong> to change the state of the <code>Job</code> to failed, because state transition is one of places where job filters can intercept and change the state transition. The <code>RetryFilter</code> class is one of them, that reschedules the failed job to be automatically retried after increasing delay.</p>
-<p>This filter is applied globally to all methods and has 10 retry attempts by default. So, your methods will be retried in case of exception automatically, and you receive warning log messages on every failed attempt. If retry attempts exceeded their maximum, the job will stay in the Failed state (with an error log message), and you will be able to retry it manually.</p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="how-does-jobrunr-handle-exceptions">How does JobRunr handle exceptions?</h2>
+<p>In the previous paragraph it is mentioned that JobRunr will change the state of the <code>Job</code> to <code>FAILED</code> but thanks to <code>JobFilters</code> that are triggered by state transitions, we can intercept these state changes and update the job. The <code>RetryFilter</code> is one of them and it reschedules the failed job to be automatically retried after increasing delay.</p>
+<p>This filter is applied globally to all methods and has <strong>10 retry attempts</strong> by default. So, your methods will be retried in case of exception automatically, and you receive warning log messages in the dashboard on every failed attempt. If retry attempts exceeded their maximum, the job will stay in the <code>FAILED</code> state (with an error log message), and you will be able to retry it manually.</p>
+<h2 id="how-to-configure-the-amount-of-retries">How to configure the amount of retries?</h2>
 <p>You can of course configure how many retries JobRunr will do by default.</p>
 <ul>
 <li><a href="/en/documentation/background-methods/dealing-with-exceptions/#default-retry-policy-configuration">Default retry policy configuration</a></li>
@@ -398,6 +418,12 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
 <li><span class="label professional">
     <span>JobRunr Pro</span>
 </span> <a href="/en/documentation/background-methods/dealing-with-exceptions/#a-custom-retrypolicy-defined-per-job">Custom retry policy per job</a></li>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
+</span> <a href="/en/documentation/background-methods/dealing-with-exceptions/#a-custom-retrypolicy-defined-per-job">Custom retry policy per exception</a></li>
+<li><span class="label professional">
+    <span>JobRunr Pro</span>
+</span> <a href="/en/documentation/background-methods/dealing-with-exceptions/#a-donotretrypolicy-in-case-nothing-helps">Do Not Retry policy</a></li>
 </ul>
 <h4 id="default-retry-policy-configuration">Default retry policy configuration</h4>
 <figure>
@@ -424,17 +450,24 @@ JobRunr handles all exceptions that occur both in internal (belonging to JobRunr
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><figcaption>This is off course also possible on the run method of a JobRequestHandler.</figcaption>
 </figure>
-<h2 id="custom-retrypolicy-configuration">Custom <code>RetryPolicy</code> configuration</h2>
+<h3 id="custom-retrypolicy-configuration">Custom <code>RetryPolicy</code> configuration</h3>
 <span class="label professional">
     <span>JobRunr Pro</span>
 </span>
-<p>Sometimes you may need a custom retry policy as it does not make sense to have exponential back-off policy. Or, you need a different retry policy per job.</p>
+<p>Sometimes you may need a custom retry policy as it does not make sense to have exponential back-off policy. Or, you need a different retry policy per job or per Exception. Using the custom <code>RetryPolicy</code>, you can configure different rules based on the job and the exceptions you encounter. The first rule that matches, will be used.</p>
+<p>Using the <code>PerJobRetryPolicy</code>, you now can handle the most exotic business rules where you can define custom rules based on the <code>Exception</code> you are encountering, the <code>JobDetails</code>, Job labels, &hellip; .</p>
 <h4 id="a-custom-retrypolicy-for-all-your-jobs">A custom <code>RetryPolicy</code> for all your jobs</h4>
+<span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
 <p>If you want to have the same <code>RetryPolicy</code> for all jobs and you are using the <code>jobrunr-spring-boot-x-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>, you can easily configure this in via your application&rsquo;s properties.</p>
 <p>Here is the Spring Boot example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">org.jobrunr.jobs.custom-backoff-retry-policy</span><span style="color:#f92672">=</span><span style="color:#e6db74">5,5,60,120</span>
 </span></span></code></pre></div><p>In the example above, all your jobs will be retried at most 4 times and the retries will happen after 5 seconds, 5 seconds, 60 seconds and then 120 seconds &hellip;</p>
 <h4 id="a-custom-retrypolicy-defined-per-job">A custom <code>RetryPolicy</code> defined per job</h4>
+<span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
 <p>If one of your jobs need to connect to an external service that is often down for a longer period, it may make sense to have a custom <code>RetryPolicy</code> only for that job.
 With JobRunr Pro, this is now also possible:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
@@ -446,7 +479,36 @@ With JobRunr Pro, this is now also possible:</p>
 </span></span><span style="display:flex;"><span>        );
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>If you&rsquo;re using a framework integration (e.g. <code>jobrunr-spring-boot-x-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>), you just need to define a Bean of type <code>RetryPolicy</code> which will be automatically picked up by JobRunr Pro.</p>
-<p>Using the <code>PerJobRetryPolicy</code>, you now can handle the most exotic business rules where you can define custom rules based on the <code>JobDetails</code>, Job labels, &hellip; .</p>
+<br>
+<h4 id="a-custom-retrypolicy-defined-per-exception">A custom <code>RetryPolicy</code> defined per exception</h4>
+<span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
+<p>If you want to change the <code>RetryPolicy</code> based on the exception, this can also easily be done:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> RetryPolicy <span style="color:#a6e22e">myCustomRetryPolicy</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PerJobRetryPolicy(
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> ExponentialBackoffRetryPolicy(), <span style="color:#75715e">// default policy if no per job policy matches</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> CustomRetryPolicy(60, 60, 60, 180).<span style="color:#a6e22e">ifException</span>(e <span style="color:#f92672">-&gt;</span> e <span style="color:#66d9ef">instanceof</span> TimeoutException),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> CustomRetryPolicy(3600).<span style="color:#a6e22e">ifException</span>(e <span style="color:#f92672">-&gt;</span> e <span style="color:#66d9ef">instanceof</span> DatabaseException)
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>If you&rsquo;re using a framework integration (e.g. <code>jobrunr-spring-boot-x-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>), you just need to define a Bean of type <code>RetryPolicy</code> which will be automatically picked up by JobRunr Pro.</p>
+<br>
+<h4 id="a-donotretrypolicy-in-case-nothing-helps">A <code>DoNotRetryPolicy</code> in case nothing helps</h4>
+<span class="label professional">
+    <span>JobRunr Pro</span>
+</span>
+<p>If you do not want to retry failing jobs, this is also easily configurable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> RetryPolicy <span style="color:#a6e22e">myCustomRetryPolicy</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PerJobRetryPolicy(
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> ExponentialBackoffRetryPolicy(), <span style="color:#75715e">// default policy if no per job policy matches</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> DoNotRetryPolicy().<span style="color:#a6e22e">ifException</span>(e <span style="color:#f92672">-&gt;</span> e <span style="color:#66d9ef">instanceof</span> MyIllegalStateException),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> DoNotRetryPolicy().<span style="color:#a6e22e">ifJob</span>(job <span style="color:#f92672">-&gt;</span> job.<span style="color:#a6e22e">getName</span>().<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;Cache update&#34;</span>))
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>If you&rsquo;re using a framework integration (e.g. <code>jobrunr-spring-boot-x-starter</code>, the <code>jobrunr-micronaut-feature</code> or the <code>jobrunr-quarkus-extension</code>), you just need to define a Bean of type <code>RetryPolicy</code> which will be automatically picked up by JobRunr Pro.</p>
 <br>
 
 
@@ -480,6 +542,8 @@ With JobRunr Pro, this is now also possible:</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
 <script>
 window.addEventListener("load", (event) => {
   setTimeout(() => {
@@ -510,36 +574,6 @@ for (var i = 0; i < links.length; i++) {
 }
 </script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-  <div class="popup-container webinar">
-    <div class="popup">
-      <button id="close">&times;</button>
-      <a href="/en/webinar-v7">
-        <img src="/2024-03-22-jobrunr-webinar.webp" alt="Join our webinar on April 9!"  />
-      </a>
-    </div>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2024-04-31T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 5) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup-container").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            100);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup-container").style.display = "none";
-    });
-  </script>
 
 
 

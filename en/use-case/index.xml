@@ -6,8 +6,15 @@
     <description>Recent content in Use Cases on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Apr 2022 11:12:23 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 11:12:23 +0200</lastBuildDate>
     <atom:link href="https://www.jobrunr.io/en/use-case/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Global inventory at Scale - How Decathlon manages stock worldwide using JobRunr</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-decathlon/</link>
+      <pubDate>Sun, 10 Mar 2024 11:12:23 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-decathlon/</guid>
+      <description>In the dynamic retail sector, aligning physical and digital inventories is challenging, especially for Decathlon, which runs 1700 stores and handles millions of scans daily. Reliable, robust technology is crucial for managing this vast data. JobRunr stands out as the ideal tool, efficiently streamlining background task management.</description>
+    </item>
     <item>
       <title>How JobRunr Pro Empowers Brand Protection through Parallel Web Crawling and Sentiment Analysis</title>
       <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-web-crawling-and-sentiment-analysis/</link>

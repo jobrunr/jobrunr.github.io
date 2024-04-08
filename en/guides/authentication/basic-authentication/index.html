@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <link href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" rel="preload" as="script" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" rel="preload" as="script" />
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" rel="preload" as="script" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Secure your JobRunr Dashboard with Basic Authentication · JobRunr</title>
+
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="This guide will help you enhance the security of your JobRunr dashboard by setting up Basic Authentication. Control user access and authorization rules effectively.">
+    
+    
+    
+    <meta name="author" content="Ronald Dehuysser, ronald@dehuysser.be">
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
+    <meta name="twitter:title" content="Secure your JobRunr Dashboard with Basic Authentication" />
+    <meta name="twitter:description" content="This guide will help you enhance the security of your JobRunr dashboard by setting up Basic Authentication. Control user access and authorization rules effectively." />
+    <meta name="twitter:creator" content="@rdehuyss" />
+    <meta name="twitter:site" content="@jobrunr" />
+
+    <meta property="og:title" content="Secure your JobRunr Dashboard with Basic Authentication" />
+<meta property="og:description" content="This guide will help you enhance the security of your JobRunr dashboard by setting up Basic Authentication. Control user access and authorization rules effectively." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.jobrunr.io/en/guides/authentication/basic-authentication/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="guides" />
+
+
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"></noscript>
+</head>
+<body class=" post-template ">
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5H2KM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+      
+    <div class="site-wrapper">
+
+<header class="site-header" style="height: 64px;"><div class="outer site-nav-main">
+    <div class="inner">
+<nav id="site-nav" class="site-nav">
+    <div class="site-nav-left">
+        
+        <a class="site-nav-logo" href="https://www.jobrunr.io//en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        
+        <div class="site-nav-content">
+            <ul class="nav" role="menu">
+                
+                <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/guides/">guides</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
+                
+                <li class="nav-home" role="menuitem"><a href="/en/blog/">Blog</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div id="social-links" class="social-links">
+            <style>
+                div.social-links {
+                    position: relative;
+                }
+                #lang-selector {
+                    display: none;
+                    background-color: rgb(144, 162, 170);
+                    position: absolute;
+                    left: 10px;
+                    top: 56px;
+                    z-index: 50;
+                }
+                #lang-selector li {
+                    list-style-type: none;
+                }
+                #lang-selector li a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            </style>
+
+            
+            <a class="social-link social-link-tw" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobrunr.io&amp;screen_name=jobrunr&amp;tw_p=followbutton" title="Follow us on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg></a>
+            <a class="social-link social-link-gh" style="color: #fff" href="https://github.com/jobrunr/jobrunr" title="View code on Github" target="_blank" rel="noopener"><svg viewBox="-3 -3 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Source Code</a>
+            <script>
+                const langLink = document.getElementById("lang-link");
+                if(langLink) {
+                    const langSelector = document.getElementById("lang-selector");
+                    const hideLangSelector = () => {
+                        langSelector.style.display = 'none';
+                    };
+                    
+                    const showLangSelector = () => {
+                        langSelector.style.display = 'block';
+                        setTimeout(hideLangSelector, 3000);
+                    };
+                    langLink.addEventListener("mouseover", showLangSelector);
+                }
+            </script>
+        </div>
+    </div>
+</nav>
+
+</div>
+</div></header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post  no-image ">
+
+            <header class="post-full-header">
+
+                
+                    
+                    <section class="post-full-tags">
+                        <a href="/en/tags/auth">Auth</a>
+                    </section>
+                
+
+                <h1 class="post-full-title">Secure your JobRunr Dashboard with Basic Authentication</h1>
+
+                
+
+                
+                
+                <div class="post-full-byline">
+                    <section class="post-full-byline-content">
+
+                        
+
+                        <section class="post-full-byline-meta" style="width: 100%">
+                            
+                            <div class="byline-meta-content">
+                                 
+                                <span class="byline-reading-time">4 min read</span>
+
+                                
+                                    <div class="framework-container" style="float: right; position: -webkit-sticky; position: sticky; z-index: 1000;">
+                                        <div class="nav-tabs">
+                                            <li class="framework-button active" data-type="fluent-api">Fluent API</li>
+                                            <li class="framework-button" data-type="spring-boot">Spring Boot</li>
+                                            <li class="framework-button" data-type="quarkus">Quarkus</li>
+                                            <li class="framework-button" data-type="micronaut">Micronaut</li>
+                                        </div>
+                                    </div>
+                                 
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                
+            </header>
+
+            
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">Basic authentication</a> is an HTTP standard used for access control. Basic authentication is already available to both JobRunr OSS and JobRunr Pro. JobRunr Pro provides enhanced security by configuring the <code>BasicAuthenticationProvider</code>, allowing you to set up authorization rules for each user. In this guide, we&rsquo;ll show you how to leverage the <code>BasicAuthenticationProvider</code> to secure your dashboard with customized access control.</p>
+<blockquote>
+<p>Do not use <code>BasicAuthenticationProvider</code> on a dashboard that is publicly available on the internet as this authentication can be brute forced.</p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>JobRunr Pro 7.0.0 or later</li>
+<li>You already know how to configure JobRunr</li>
+</ul>
+<h2 id="what-is-a-basicauthenticationprovider">What is a <code>BasicAuthenticationProvider</code></h2>
+<p><code>BasicAuthenticationProvider</code> handles authentication requests using the basic authentication scheme. When configured, users will be prompted to provide their credentials, typically a <code>username</code> and <code>password</code>, before they can access the <a href="https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/" title="Dashboard documentation">JobRunr Pro Dashboard</a> and its underlying <code>REST API</code>. This <code>AuthenticationProvider</code> enables you to define multiple users and establish specific authorization rules for each of them.</p>
+<p>We may use this provider if we&rsquo;re in a multi-user setting where users have different privileges. It&rsquo;s also handy for logging user activities. However, we can only use this <code>AuthenticationProvider</code> if our dashboard can only be accessed within a secure environment (so not publicly available on the internet).</p>
+<h2 id="defining-users-and-their-authorizations">Defining users and their authorizations</h2>
+<p>As an example, we&rsquo;ll configure JobRunr to only allow &lsquo;User A&rsquo; and &lsquo;User B&rsquo; to access the dashboard. User A will have all access, essentially making him an administrator, while User B will be given <code>read only</code> access, and additionally <code>requeue</code> jobs. In this way, User B can monitor the system and requeue certain jobs when needed.</p>
+<p><div class="framework-content" data-type="fluent-api" aria-label="">
+    
+        <p>To make our JobRunr dashboard read-only, we need to modify our configuration as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRules;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRulesBuilder;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationProvider;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationUser;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BasicAuthenticationUser userA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User A&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRules.<span style="color:#a6e22e">allowAll</span>());
+</span></span><span style="display:flex;"><span>BasicAuthenticationUser userB <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User B&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRulesBuilder.<span style="color:#a6e22e">readOnly</span>().<span style="color:#a6e22e">canEnqueueJobs</span>(<span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>JobRunrPro
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">configure</span>()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">useDashboard</span>(usingStandardDashboardConfiguration()
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">andAuthentication</span>(<span style="color:#66d9ef">new</span> BasicAuthenticationProvider(userA, userB))
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ...</span>
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="spring-boot" aria-label="Spring">
+    
+        <p>In Spring Boot, we can just create an <code>BasicAuthenticationProvider</code> Bean that will be automatically used by the <code>jobrunr-spring-boot-3-starter</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRules;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRulesBuilder;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationProvider;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationUser;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> AuthenticationProvider <span style="color:#a6e22e">authenticationProvider</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BasicAuthenticationProvider(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User A&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRules.<span style="color:#a6e22e">allowAll</span>()),
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User B&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRulesBuilder.<span style="color:#a6e22e">readOnly</span>().<span style="color:#a6e22e">canEnqueueJobs</span>(<span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">build</span>())
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="quarkus" aria-label="Quarkus">
+    
+        <p>In Quarkus, we can just create a <code>BasicAuthenticationProvider</code> Bean that will be automatically used by the <code>quarkus-jobrunr</code> extension:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRules;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRulesBuilder;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationProvider;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationUser;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Produces</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Singleton</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> AuthenticationProvider <span style="color:#a6e22e">authenticationProvider</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BasicAuthenticationProvider(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User A&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRules.<span style="color:#a6e22e">allowAll</span>()),
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User B&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRulesBuilder.<span style="color:#a6e22e">readOnly</span>().<span style="color:#a6e22e">canEnqueueJobs</span>(<span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">build</span>())
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+<div class="framework-content" data-type="micronaut" aria-label="Micronaut">
+    
+        <p>In Micronaut, we can just create a <code>BasicAuthenticationProvider</code> Bean that will be automatically used by the <code>jobrunr-micronaut-feature</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRules;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.JobRunrUserAuthorizationRulesBuilder;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationProvider;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jobrunr.dashboard.server.security.basic.BasicAuthenticationUser;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Singleton</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> AuthenticationProvider <span style="color:#a6e22e">authenticationProvider</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BasicAuthenticationProvider(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User A&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRules.<span style="color:#a6e22e">allowAll</span>()),
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> BasicAuthenticationUser(<span style="color:#e6db74">&#34;User B&#34;</span>, <span style="color:#e6db74">&#34;**************&#34;</span>, JobRunrUserAuthorizationRulesBuilder.<span style="color:#a6e22e">readOnly</span>().<span style="color:#a6e22e">canEnqueueJobs</span>(<span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">build</span>())
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div></p>
+<p>In the code snippet above, we first import the necessary classes, including <code>BasicAuthenticationProvider</code>, <code>BasicAuthenticationUser</code>, <code>JobRunrUserAuthorizationRules</code>, and <code>JobRunrUserAuthorizationRulesBuilder</code>.</p>
+<ul>
+<li><code>BasicAuthenticationProvider</code>: See the above section about <em>What is a BasicAuthenticationProvider</em>.</li>
+<li><code>BasicAuthenticationUser</code>: The class for creating basic authentication users. Here, we use it to register User A and User B, each with a username, password, and authorization rules.</li>
+<li><code>JobRunrUserAuthorizationRules.allowAll()</code>: This method is used to grant User A all access rights.</li>
+<li><code>JobRunrUserAuthorizationRulesBuilder.canRead().canEnqueueJobs().build()</code>: This defines User B access rights, allowing him to read but also enqueue jobs.</li>
+</ul>
+<p>By configuring your <code>BasicAuthenticationProvider</code> in this way, you can control who can access the JobRunr dashboard and what actions they are permitted to take. For example, if User B attempts an unauthorized action, such as triggering a recurring job, it will result in an <code>HTTP Forbidden (403)</code> error.</p>
+<h2 id="limitations">Limitations</h2>
+<p>While configuring Basic Authentication with JobRunr Pro offers enhanced security for your dashboard, it&rsquo;s essential to be aware of its limitations and potential security risks. Here are a few important points to consider:</p>
+<ul>
+<li><strong>Restart required for user updates</strong>: Changes to to user credentials or privileges take effect after your JobRunr instance is restarted. This may lead to brief downtime or disruption in background job processing if not carefully planned.</li>
+<li><strong>Clear text passwords</strong>: In this configuration, passwords are provided and stored in clear text within your code. They can of course be passed as environment variables.</li>
+<li><strong>Vulnerable to brute force</strong>: Basic authentication allows an <em>unlimited number of attempts</em>. Attackers may attempt to brute force passwords, thus the importance to keep the dashboard confidential.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Using <code>BasicAuthenticationProvider</code> in JobRunr Pro offers a simple way to control access to your dashboard in a multi-user setting. This guide has equipped you with the knowledge needed to set up user access and authorization rules, enhancing the security of your dashboard.</p>
+<p>While Basic Authentication is a valuable security feature, it&rsquo;s important to be aware of certain limitations, such as the need to restart the JobRunr instance to update users, the storage of passwords in clear and the vulnerability to brute forcing. Those are important considerations to keep in mind.</p>
+
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright" style="align-self: start;">
+                  &copy; <a href="https://www.jobrunr.io/">JobRunr</a>
+                </section>
+                <section class="love" style="align-self: start; opacity: 0.7;">
+                  Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
+                </section>
+                <nav class="site-footer-nav">
+                  <div>
+                    <div><a href="/en/about/" rel="noopener" style="opacity: 0.5;">JobRunr by Rosoco BV (BE 0807596165)</a></div>
+                    <div><a href="/en/licensing/info/" rel="noopener" style="opacity: 0.5;">Terms of use</a></div>
+                    <div><a href="/en/privacy/" rel="noopener" style="opacity: 0.5;">Privacy</a></div>
+                  </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
+<script>
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "transparent",
+          "border": "#fff",
+          "text": "#fff"
+        }
+      },
+      "content": {
+        "link": "Learn more about cookies"
+      }
+    });
+  }, 5000);
+});
+
+var links = document.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].rel = 'noopener';
+  }
+}
+</script>
+
+
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','G-J3K00HKL9D');</script>
+
+
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "gndsmglzod");
+</script>
+</body>
+</html>

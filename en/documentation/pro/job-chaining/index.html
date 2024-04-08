@@ -34,14 +34,14 @@
     <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
     <meta name="twitter:title" content="Workflows using Job Chains" />
-    <meta name="twitter:description" content="JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
-Job chaining via continueWith @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .enqueue(() -&gt; archiveService.createArchive(folder)) .continueWith(() -&gt; notifyService.notifyViaSlack(&#34;ops-team&#34;, &#34;The following folder was archived: &#34; &#43; folder)) } The notification will only be send once the archive was created successfully (and thus the archiveService." />
+    <meta name="twitter:description" content="JobRunr&rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.
+Job chaining via continueWith and onFailure Running a job after another job succeeded @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob ." />
     <meta name="twitter:creator" content="@rdehuyss" />
     <meta name="twitter:site" content="@jobrunr" />
 
     <meta property="og:title" content="Workflows using Job Chains" />
-<meta property="og:description" content="JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.
-Job chaining via continueWith @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .enqueue(() -&gt; archiveService.createArchive(folder)) .continueWith(() -&gt; notifyService.notifyViaSlack(&#34;ops-team&#34;, &#34;The following folder was archived: &#34; &#43; folder)) } The notification will only be send once the archive was created successfully (and thus the archiveService." />
+<meta property="og:description" content="JobRunr&rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.
+Job chaining via continueWith and onFailure Running a job after another job succeeded @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.jobrunr.io/en/documentation/pro/job-chaining/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="documentation" />
 <meta property="article:published_time" content="2020-08-27T11:12:23+02:00" />
@@ -51,8 +51,8 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
     
     
     
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.11a21a154ff799dabaeb9f7f91d876724cb80c2231ce99a51c907e081fe82038.css" integrity="sha256-EaIaFU/3mdq6659/kdh2cky4DCIxzpmlHJB&#43;CB/oIDg=" media="screen">
-    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.de02f1ac13102b92f6b48b70f555c88c82299448bff3961357ba59dfd12919ad.css" integrity="sha256-3gLxrBMQK5L2tItw9VXIjIIplEi/85YTV7pZ39EpGa0=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
@@ -80,9 +80,11 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
                 
                 <li class="nav-home" role="menuitem"><a href="/en/">Home</a></li>
                 
+                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                
                 <li class="nav-home" role="menuitem"><a href="/en/documentation/">Documentation</a></li>
                 
-                <li class="nav-home" role="menuitem"><a href="/en/pricing/">JobRunr Pro</a></li>
+                <li class="nav-home" role="menuitem"><a href="/en/guides/">guides</a></li>
                 
                 <li class="nav-home" role="menuitem"><a href="/en/use-case/">Use Cases</a></li>
                 
@@ -148,6 +150,8 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
             
         
             
+        
+            
                 
                     <li class="">
                         <a href="/en/documentation/5-minute-intro/">
@@ -195,6 +199,10 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
                         
                             <li class="">
                                 <a href="/en/documentation/configuration/quarkus/">Quarkus Extension</a>
+                            </li>
+                        
+                            <li class="">
+                                <a href="/en/documentation/configuration/virtual-threads/">Virtual Threads</a>
                             </li>
                         
                     </ul>
@@ -298,6 +306,10 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
                             </li>
                         
                             <li class="">
+                                <a href="/en/documentation/pro/rate-limiters/">Rate Limiters</a>
+                            </li>
+                        
+                            <li class="">
                                 <a href="/en/documentation/pro/mutexes/">Mutexes</a>
                             </li>
                         
@@ -382,8 +394,9 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
             <section class="post-full-content">
                 
 
-<p>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.</p>
-<h3 id="job-chaining-via-continuewith">Job chaining via <code>continueWith</code></h3>
+<p>JobRunr&rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.</p>
+<h3 id="job-chaining-via-continuewith-and-onfailure">Job chaining via <code>continueWith</code> and <code>onFailure</code></h3>
+<h6 id="running-a-job-after-another-job-succeeded">Running a job after another job succeeded</h6>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> ArchiveService archiveService;
@@ -393,10 +406,45 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createArchiveAndNotify</span>(String folder) {
 </span></span><span style="display:flex;"><span>    BackgroundJob
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">enqueue</span>(() <span style="color:#f92672">-&gt;</span> archiveService.<span style="color:#a6e22e">createArchive</span>(folder))
-</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">continueWith</span>(() <span style="color:#f92672">-&gt;</span> notifyService.<span style="color:#a6e22e">notifyViaSlack</span>(<span style="color:#e6db74">&#34;ops-team&#34;</span>, <span style="color:#e6db74">&#34;The following folder was archived: &#34;</span> <span style="color:#f92672">+</span> folder))
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">continueWith</span>(() <span style="color:#f92672">-&gt;</span> notifyService.<span style="color:#a6e22e">notifyViaSlack</span>(<span style="color:#e6db74">&#34;ops-team&#34;</span>, <span style="color:#e6db74">&#34;The following folder was archived: &#34;</span> <span style="color:#f92672">+</span> folder));
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><figcaption>
 <p>The notification will only be send once the archive was created successfully (and thus the <code>archiveService.createArchive(String folder)</code> job succeeded</p>
+</figcaption>
+</figure>
+<h6 id="running-a-job-after-another-job-failed">Running a job after another job failed</h6>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> ArchiveService archiveService;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> NotifyService notifyService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createArchiveAndNotify</span>(String folder) {
+</span></span><span style="display:flex;"><span>    BackgroundJob
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">enqueue</span>(() <span style="color:#f92672">-&gt;</span> archiveService.<span style="color:#a6e22e">createArchive</span>(folder))
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">onFailure</span>(() <span style="color:#f92672">-&gt;</span> notifyService.<span style="color:#a6e22e">notifyViaSlack</span>(<span style="color:#e6db74">&#34;ops-team&#34;</span>, <span style="color:#e6db74">&#34;The following folder could NOT be archived: &#34;</span> <span style="color:#f92672">+</span> folder));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><figcaption>
+<p>The notification will only be send if the archive could not be created (and thus the <code>archiveService.createArchive(String folder)</code> job failed</p>
+</figcaption>
+</figure>
+<h6 id="running-a-job-after-another-job-succeeded-or-failed">Running a job after another job succeeded or failed</h6>
+<figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> ArchiveService archiveService;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Inject</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> NotifyService notifyService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createArchiveAndNotify</span>(String folder) {
+</span></span><span style="display:flex;"><span>    BackgroundJob
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">enqueue</span>(() <span style="color:#f92672">-&gt;</span> archiveService.<span style="color:#a6e22e">createArchive</span>(folder))
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">continueWith</span>(
+</span></span><span style="display:flex;"><span>            () <span style="color:#f92672">-&gt;</span> notifyService.<span style="color:#a6e22e">notifyViaSlack</span>(<span style="color:#e6db74">&#34;ops-team&#34;</span>, <span style="color:#e6db74">&#34;The following folder was archived: &#34;</span> <span style="color:#f92672">+</span> folder), <span style="color:#75715e">// on success</span>
+</span></span><span style="display:flex;"><span>            () <span style="color:#f92672">-&gt;</span> notifyService.<span style="color:#a6e22e">notifyViaSlack</span>(<span style="color:#e6db74">&#34;ops-team&#34;</span>, <span style="color:#e6db74">&#34;The following folder could NOT be archived: &#34;</span> <span style="color:#f92672">+</span> folder) <span style="color:#75715e">// on failure</span>
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><figcaption>
+<p>The notification will only be send if the archive could not be created (and thus the <code>archiveService.createArchive(String folder)</code> job failed</p>
 </figcaption>
 </figure>
 <h3 id="job-chaining-when-using-the--jobbuilder">Job chaining when using the  <code>JobBuilder</code></h3>
@@ -425,7 +473,7 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
 <ul>
 <li>the first job (<code>archiveService.createArchive(folder)</code>) is enqueued and will start processing as soon as some worker threads are available</li>
 <li>the second job (<code>notifyService.notifyViaSlack(String room, String message)</code>) will initially be saved using the <code>AWAITING</code> state.</li>
-<li>once the first job succeeds, the second job will be enqueued and processed.</li>
+<li>once the first job either succeeds or fails, JobRunr will look for the relevant job to enqueue and process.</li>
 </ul>
 <blockquote>
 <p>This comes in really handy when using <a href="https://www.jobrunr.io/en/documentation/pro/batches/">Batches</a> - start a new step in your business process when a whole bunch of related jobs have finished.</p>
@@ -463,6 +511,8 @@ Job chaining via continueWith @Inject private ArchiveService archiveService; @In
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
 <script>
 window.addEventListener("load", (event) => {
   setTimeout(() => {
@@ -493,36 +543,6 @@ for (var i = 0; i < links.length; i++) {
 }
 </script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-  <div class="popup-container webinar">
-    <div class="popup">
-      <button id="close">&times;</button>
-      <a href="/en/webinar-v7">
-        <img src="/2024-03-22-jobrunr-webinar.webp" alt="Join our webinar on April 9!"  />
-      </a>
-    </div>
-  </div>
-
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-        const webinarDate = new Date("2024-04-31T00:00:00.000Z");
-        const timesShown = parseInt(Cookies.get('jobrunr-webinar')) || 0;
-        const webinarShownToday = Cookies.get('jobrunr-webinar-shown-today') || false;
-        if(!webinarShownToday && timesShown <= 5) {
-          setTimeout(
-            function open(event){
-                document.querySelector(".popup-container").style.display = "block";
-                Cookies.set('jobrunr-webinar', (timesShown + 1), { expires: webinarDate })
-                Cookies.set('jobrunr-webinar-shown-today', true, { expires: 1 })
-            },
-            100);
-        }
-    });
-    document.querySelector("#close").addEventListener("click", () => {
-        document.querySelector(".popup-container").style.display = "none";
-    });
-  </script>
 
 
 

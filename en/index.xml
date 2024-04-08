@@ -6,7 +6,7 @@
     <description>Recent content in Distributed Java Background Job Scheduler on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Mar 2024 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2024 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://www.jobrunr.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
@@ -107,6 +107,13 @@
       <description>Create a bunch of background jobs atomically using a batch and then chain a new job which will run when the complete batch finishes.&#xA;BackgroundJob .startBatch(this::sendEmailToEachSubscriber) .continueWith(() -&amp;gt; reportService.createReport(...)) .continueWith(() -&amp;gt; notifyService.notify(&amp;#34;sales-team&amp;#34;, ...)); </description>
     </item>
     <item>
+      <title>Secure your JobRunr Dashboard with Anonymous Authentication</title>
+      <link>https://www.jobrunr.io/en/guides/authentication/anonymous-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/authentication/anonymous-authentication/</guid>
+      <description>JobRunr Pro allows to define a set of rules to restrict the access to the JobRunr Pro Dashboard and its underlying REST API. In this guide, you will learn how to utilize the AnonymousAuthenticationProvider to implement authorization rules without the need for user authentication.&#xA;Prerequisites JobRunr Pro 7.0.0 or later You already know how to configure JobRunr What is an AnonymousAuthenticationProvider The AnonymousAuthenticationProvider is a simple authentication provider that allows you to specify authorization rules that are checked whenever we visit the dashboard and for all access to the REST API endpoints.</description>
+    </item>
+    <item>
       <title>Extensible</title>
       <link>https://www.jobrunr.io/en/homepage/feature-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -142,6 +149,20 @@
       <description>JobRunr is open source software and is completely free for commercial use. It is licensed under LGPLv3 license.&#xA;Fork the project and make contributions on GitHub!</description>
     </item>
     <item>
+      <title>Secure your JobRunr Dashboard with Basic Authentication</title>
+      <link>https://www.jobrunr.io/en/guides/authentication/basic-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/authentication/basic-authentication/</guid>
+      <description>Basic authentication is an HTTP standard used for access control. Basic authentication is already available to both JobRunr OSS and JobRunr Pro. JobRunr Pro provides enhanced security by configuring the BasicAuthenticationProvider, allowing you to set up authorization rules for each user. In this guide, we&amp;rsquo;ll show you how to leverage the BasicAuthenticationProvider to secure your dashboard with customized access control.&#xA;Do not use BasicAuthenticationProvider on a dashboard that is publicly available on the internet as this authentication can be brute forced.</description>
+    </item>
+    <item>
+      <title>What is JobRunr, and why should you use it?</title>
+      <link>https://www.jobrunr.io/en/guides/intro/what-is-jobrunr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/intro/what-is-jobrunr/</guid>
+      <description>For Java developers struggling with asynchronous task execution—from sending emails in bulk to crunching numbers or processing large files, JobRunr offers a compelling solution. This developer-centric introduction dives into JobRunr, an open-source Java library that significantly simplifies background job processing. We&amp;rsquo;ll explore its core features, how it integrates into Java projects, and why it could be a game-changer for your development workflow.&#xA;Dive Into JobRunr JobRunr: An open-source marvel that eases background task execution in Java apps.</description>
+    </item>
+    <item>
       <title>JobRunr Pro Trial</title>
       <link>https://www.jobrunr.io/en/try-jobrunr-pro/</link>
       <pubDate>Tue, 15 Mar 2022 11:12:23 +0200</pubDate>
@@ -154,6 +175,34 @@
       <pubDate>Tue, 15 Mar 2022 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/get-jobrunr-pro/</guid>
       <description>Ready to get a JobRunr Pro Subscription? Fill in the form below and all the necessary information to get started will be sent to you!</description>
+    </item>
+    <item>
+      <title>Create and schedule jobs with JobRunr using only a Java lambda</title>
+      <link>https://www.jobrunr.io/en/guides/intro/java-lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/intro/java-lambda/</guid>
+      <description>In this guide, we will learn how to:&#xA;setup JobRunr learn how to enqueue and schedule a job in vanilla Java or your favorite web framework using only a Java 8 lambda monitor your jobs using the built-in dashboard What is JobRunr Introduction JobRunr is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface.</description>
+    </item>
+    <item>
+      <title>Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler</title>
+      <link>https://www.jobrunr.io/en/guides/intro/java-job-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/guides/intro/java-job-request/</guid>
+      <description>In this guide, we will learn how to:&#xA;setup JobRunr learn how to enqueue and schedule a job in vanilla Java or your favorite web framework using the JobRequest / JobRequestHandler pattern. monitor your jobs using the built-in dashboard What is JobRunr Introduction JobRunr is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface.</description>
+    </item>
+    <item>
+      <title>JobRunr and JobRunr Pro v7.0.0!</title>
+      <link>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</link>
+      <pubDate>Sat, 06 Apr 2024 09:00:00 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</guid>
+      <description>We&amp;rsquo;re proud to announce the latest release, JobRunr &amp;amp; JobRunr Pro v7.0.0</description>
+    </item>
+    <item>
+      <title>Getting Started with JobRunr Pro</title>
+      <link>https://www.jobrunr.io/en/getting-started-with-jobrunr-pro/</link>
+      <pubDate>Mon, 01 Apr 2024 10:00:00 +0000</pubDate>
+      <guid>https://www.jobrunr.io/en/getting-started-with-jobrunr-pro/</guid>
+      <description>Learn all about how to get started with JobRunr Pro!</description>
     </item>
     <item>
       <title>JobRunr featured in Spring Tips!</title>
@@ -182,6 +231,27 @@
       <pubDate>Fri, 15 Mar 2024 09:00:00 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</guid>
       <description>We&amp;rsquo;re proud to announce the first release candidate of JobRunr &amp;amp; JobRunr Pro v7.0.0</description>
+    </item>
+    <item>
+      <title>Global inventory at Scale - How Decathlon manages stock worldwide using JobRunr</title>
+      <link>https://www.jobrunr.io/en/use-case/jobrunr-pro-decathlon/</link>
+      <pubDate>Sun, 10 Mar 2024 11:12:23 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/use-case/jobrunr-pro-decathlon/</guid>
+      <description>In the dynamic retail sector, aligning physical and digital inventories is challenging, especially for Decathlon, which runs 1700 stores and handles millions of scans daily. Reliable, robust technology is crucial for managing this vast data. JobRunr stands out as the ideal tool, efficiently streamlining background task management.</description>
+    </item>
+    <item>
+      <title>Rate Limiters</title>
+      <link>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</link>
+      <pubDate>Mon, 05 Feb 2024 14:19:23 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</guid>
+      <description>A rate limiter allows to control the execution rate of Jobs to avoid overwhelming some resources like external APIs or databases. JobRunr provides mutexes as a mean to only allow a single execution from a set of Jobs at a time. Rate limiters gives more flexibility, the amount of concurrent jobs can be configured using the ConcurrentJobRateLimiter or the limit may be set over a time window using SlidingTimeWindowRateLimiter.</description>
+    </item>
+    <item>
+      <title>Virtual Threads</title>
+      <link>https://www.jobrunr.io/en/documentation/configuration/virtual-threads/</link>
+      <pubDate>Mon, 05 Feb 2024 14:19:23 +0200</pubDate>
+      <guid>https://www.jobrunr.io/en/documentation/configuration/virtual-threads/</guid>
+      <description>Virtual threads are lightweight threads finalized in JDK 21. The introduction of virtual threads allows programs to use a larger number of threads than the amount of threads made available by the underlying OS.&#xA;A virtual thread only consumes an OS thread while performing calculations on the CPU, the OS thread is freed when performing a blocking I/O operation. This allows for an increased throughput as other virtual threads can execute while some are waiting due to I/O operations.</description>
     </item>
     <item>
       <title>More than 15.000 trees 🌳 planted!</title>
@@ -573,7 +643,7 @@
       <link>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/</guid>
-      <description>As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:&#xA;JobId jobId = BackgroundJob.enqueue(() -&amp;gt; myService.doWork()); This enqueues a background job using an instance of MyService which is available during enqueueing. JobId jobId = BackgroundJob.&amp;lt;MyService&amp;gt;enqueue(x -&amp;gt; x.doWork()); This enqueues a background job without a reference to an instance of MyService. During execution of the background job, the IoC container will need to provide an instance of type MyService.</description>
+      <description>Creating a background job with JobRunr is really easy. On this page you will learn how to:&#xA;create a single job using a Java 8 lambda create a single job using a JobRequest create many jobs using a Java 8 lambda create many jobs using a JobRequest JobRunr Pro Prevent duplicate jobs by an identifier JobRunr Pro Replace existing jobs Enqueueing a single background job Enqueueing a job using a Java 8 lambda As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:</description>
     </item>
     <item>
       <title>Frequently Asked Questions</title>
@@ -741,14 +811,14 @@
       <link>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
-      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:&#xA;Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise Restrict access using OpenID Authentication JobRunr Pro Enterprise Embed the dashboard within Spring Server JobRunr Pro Enterprise GDPR compliant Dashboard Find any Job using the search functionality Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded?</description>
+      <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:&#xA;Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise Restrict access using Single Sign On authentication JobRunr Pro Enterprise Embed the dashboard within Spring Server JobRunr Pro Enterprise GDPR compliant Dashboard Find any Job using the search functionality Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded?</description>
     </item>
     <item>
       <title>Mutexes</title>
       <link>https://www.jobrunr.io/en/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
-      <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex is free.&#xA;Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use</description>
+      <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex.&#xA;Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use&#xA;@Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() { System.</description>
     </item>
     <item>
       <title>Observability</title>
@@ -818,7 +888,7 @@
       <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
       <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
-      <description>JobRunr Pro allows you to chain jobs using a fluent API style. This gives you an immediate overview of your business process.&#xA;Job chaining via continueWith @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .enqueue(() -&amp;gt; archiveService.createArchive(folder)) .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;The following folder was archived: &amp;#34; + folder)) } The notification will only be send once the archive was created successfully (and thus the archiveService.</description>
+      <description>JobRunr&amp;rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.&#xA;Job chaining via continueWith and onFailure Running a job after another job succeeded @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .</description>
     </item>
     <item>
       <title>JobRunr, Project Loom and Virtual Threads</title>
