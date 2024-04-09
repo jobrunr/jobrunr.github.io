@@ -66,19 +66,24 @@
     <priority>1</priority>
   </url>
   
-  
   <url>
     <loc>https://www.jobrunr.io/en/tags/blog/</loc>
-    <lastmod>2024-03-30T09:00:00+02:00</lastmod>
+    <lastmod>2024-04-09T09:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</loc>
-    <lastmod>2024-03-30T09:00:00+02:00</lastmod>
+    <loc>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</loc>
+    <lastmod>2024-04-09T09:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.jobrunr.io/en/tags/meta/</loc>
+    <lastmod>2024-04-09T09:00:00+02:00</lastmod>
+  </url>
+  
+  
+  <url>
+    <loc>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</loc>
     <lastmod>2024-03-30T09:00:00+02:00</lastmod>
   </url>
   
