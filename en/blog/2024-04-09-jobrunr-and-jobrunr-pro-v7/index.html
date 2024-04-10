@@ -214,10 +214,15 @@
 <style type="text/css">
     .post-full-content img {display: inline-block; margin: 0 auto}
 </style>
+<h1 id="-time-for-jobrunr-v700-">🎉 Time for JobRunr v7.0.0 🎉</h1>
 <h3 id="its-celebration-time-once-again-at-jobrunr">It&rsquo;s Celebration Time Once Again at JobRunr!</h3>
-<p>We are excited to announce the release of JobRunr v7.0.0 and JobRunr Pro v7.0.0. This major release is now available via Maven Central and directly for our Pro subscribers through the customer portal. Building on our promise to deliver robust job scheduling solutions, v7.0.0 brings a suite of powerful new features, substantial performance enhancements, and critical dashboard improvements. Let’s delve into what makes this release a game-changer for developers and enterprises alike for both <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#pro-version">JobRunr Pro</a> and <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#oss-version">JobRunr OSS</a>!.</p>
+<p>We are excited to announce the release of JobRunr v7.0.0 and JobRunr Pro v7.0.0. This major release is now available via Maven Central and directly for our Pro subscribers through the customer portal. Building on our promise to deliver robust job scheduling solutions, v7.0.0 brings a suite of powerful new features, substantial performance enhancements, and critical dashboard improvements. Let’s delve into what makes this release a game-changer for developers and enterprises alike for both <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#pro-version">JobRunr Pro</a> and <a href="/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/#oss-version">JobRunr OSS</a>!</p>
+<p>🙏 We&rsquo;d also like to thank all of the developers and companies who have beta tested JobRunr v7 beta&rsquo;s and release candidates.</p>
 <h1 id="what-is-new">What is new?</h1>
 <h2 id="pro-version">Pro Version:</h2>
+<blockquote>
+<p>Please note that we also added license verification as of JobRunr Pro v7.0.0. If you&rsquo;re a JobRunr Pro customer and ready to update to v7.0.0, please <a href="mailto:hello@jobrunr.io">reach out to us</a> and we will provide you with a valid license key.</p>
+</blockquote>
 <h3 id="new-features">New Features</h3>
 <ul>
 <li>JobRunr Pro now has builtin support for Virtual Threads! They are enabled by default for JDK 21 and higher. <a href="https://github.com/jobrunr/jobrunr/pull/906">PR #906</a></li>
@@ -275,14 +280,17 @@
 </ul>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
-<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotation.Recurring</code> and uses enums instead of booleans. The attributes <code>paused</code> and <code>scheduleJobsSkippedDuringDowntime</code> now use an enum instead of a boolean. This allows us to keep the paused state of a Recurring job even if you redeploy (default) whereas in the past, on redeploy, the Job would be started automatically again. If <code>paused</code> is put to false in the <code>@Recurring</code>, the Recurring job will start on redeploy even if it was paused before via the dashboard</li>
+<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotations.Recurring</code> and uses enums instead of booleans. The attributes <code>paused</code> and <code>scheduleJobsSkippedDuringDowntime</code> now use an enum instead of a boolean. This allows us to keep the paused state of a Recurring job even if you redeploy (default) whereas in the past, on redeploy, the Job would be started automatically again. If <code>paused</code> is put to false in the <code>@Recurring</code>, the Recurring job will start on redeploy even if it was paused before via the dashboard</li>
 <li><code>JobScheduler.delete(String id)</code> has been renamed to <code>JobScheduler.deleteRecurringJob(String id)</code></li>
 <li>The <code>StorageProvider</code> has been updated and is not backwards compatible as is the <code>Page</code> and <code>PageRequest</code>.  A new class <code>org.jobrunr.storage.Paging</code> was added where all utility methods regarding Paging have been collected</li>
 <li>For SQL databases, JobRunr deletes all indexes and recreates them for better performance. If you have a lot of jobs in your database, the migration may take a while. Also, on some databases <strong>column types are changed</strong> for better performance making this release not backwards compatible.</li>
 <li>JobRunr and JobRunr Pro 7 requires MongoDB Driver 5.0.0 or higher (please be aware that Spring Boot 3.2 still depends on Mongo 4.x)</li>
-<li><strong>We&rsquo;re also deprecating the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code></strong>. JobRunr 7 will be the last to support it.</li>
+<li><strong>We&rsquo;re also dropping the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code></strong> in JobRunr Pro. JobRunr 7 OSS will be the last to support it.</li>
+<li><code>JobContext.getSignature()</code> has been renamed to <code>JobContext.getJobSignature()</code></li>
+<li><code>JobDashboardProgressBar.setValue(...)</code> has been renamed to <code>JobDashboardProgressBar.setProgress(long succeededAmount)</code></li>
 <li>Overall <code>BatchJob</code>s logic has been rewritten, make sure <code>MigrateFromV6toV7Task</code> is run</li>
 </ul>
+<p>If as an JobRunr OSS user you are interested in JobRunr Pro, you can find all the pricing information <a href="https://www.jobrunr.io/en/pricing/">here</a>.</p>
 <h2 id="oss-version">OSS version:</h2>
 <h3 id="new-features-1">New features</h3>
 <ul>
@@ -306,7 +314,7 @@
 </ul>
 <h3 id="fixed-bugs-1">Fixed bugs</h3>
 <ul>
-<li>Make database migrations work on  WildFly. <a href="https://github.com/jobrunr/jobrunr/pull/883">PR #883</a></li>
+<li>Make database migrations work on WildFly. <a href="https://github.com/jobrunr/jobrunr/pull/883">PR #883</a></li>
 <li>Fix Bug <code>ApplyStateFilter</code> is called before save resulting in multiple calls to <code>onStateApplied</code>. <a href="https://github.com/jobrunr/jobrunr/pull/903">PR #903</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/902">#902</a>)</li>
 <li>Use Jackson by default in Quarkus if present. <a href="https://github.com/jobrunr/jobrunr/pull/913">PR #913</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/887">#887</a>)</li>
 <li>Fix Bug <code>JobServerFilter.onProcessingFailed</code> is not called when a job orphans (e.g. if background job server dies). <a href="https://github.com/jobrunr/jobrunr/pull/921">PR #921</a> (fixes <a href="https://github.com/jobrunr/jobrunr/issues/920">#920</a>)</li>
@@ -322,18 +330,20 @@
 </ul>
 <h3 id="breaking-changes-1">Breaking changes</h3>
 <ul>
-<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotations.Recurring</code> and uses enums instead of booleans. The attributes <code>paused</code> and <code>scheduleJobsSkippedDuringDowntime</code> now use an enum instead of a boolean. This allows us to keep the paused state of a Recurring job even if you redeploy (default) whereas in the past, on redeploy, the Job would be started automatically again. If <code>paused</code> is put to false in the <code>@Recurring</code>, the Recurring job will start on redeploy even if it was paused before via the dashboard</li>
+<li><code>@Recurring</code> has been moved to core <code>org.jobrunr.jobs.annotations.Recurring</code></li>
 <li><code>JobScheduler.delete(String id)</code> has been renamed to <code>JobScheduler.deleteRecurringJob(String id)</code></li>
 <li>The <code>StorageProvider</code> has been updated and is not backwards compatible as is the <code>Page</code> and <code>PageRequest</code>.  A new class <code>org.jobrunr.storage.Paging</code> was added where all utility methods regarding Paging have been collected</li>
-<li>For SQL databases, JobRunr deletes all indexes and recreates them for better performance. If you have a lot of jobs in your database, the migration may take a while. Also, on some databases <strong>column types are changed</strong> for better performance making this release not backwards compatible.</li>
+<li>For SQL databases, JobRunr deletes all indexes and recreates them for better performance. If you have a lot of jobs in your database, the migration may take a while.</li>
 <li>JobRunr and JobRunr Pro 7 requires MongoDB Driver 5.0.0 or higher (please be aware that Spring Boot 3.2 still depends on Mongo 4.x)</li>
-<li>We&rsquo;re also deprecating the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code>. JobRunr 7 will be the last to support it.</li>
+<li><strong>We&rsquo;re also deprecating the <code>RedisStorageProvider</code> and the <code>ElasticSearchStorageProvider</code></strong>. JobRunr 7 will be the last to support it.</li>
+<li><code>JobContext.getSignature()</code> has been renamed to <code>JobContext.getJobSignature()</code></li>
+<li><code>JobDashboardProgressBar.setValue(...)</code> has been renamed to <code>JobDashboardProgressBar.setProgress(long succeededAmount)</code></li>
 </ul>
 <h4 id="contributors">Contributors</h4>
 <p>We thank the following contributors for their help with JobRunr v7!</p>
 <ul>
 <li>@<a href="https://github.com/coschtl">coschtl</a></li>
-<li>@<a href="https://github.com/jobrunr/jobrunr/issues?q=is%3Apr+author%3Atms0">tms0</a> (edited)</li>
+<li>@<a href="https://github.com/jobrunr/jobrunr/issues?q=is%3Apr+author%3Atms0">tms0</a></li>
 </ul>
 <p>Try it out now and let us know your feedback! Your input is very important, so we can provide you smooth v7.0.0 JobRunr!</p>
 <p>Best,<br>
