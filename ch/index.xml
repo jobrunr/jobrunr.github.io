@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JobRunr</title>
-    <link>https://www.jobrunr.io/ch/</link>
+    <link>http://localhost:1313/ch/</link>
     <description>Recent content on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ch</language>
-    <atom:link href="https://www.jobrunr.io/ch/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ch/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

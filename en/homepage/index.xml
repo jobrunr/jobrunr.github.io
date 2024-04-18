@@ -2,142 +2,142 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepages on JobRunr</title>
-    <link>https://www.jobrunr.io/en/homepage/</link>
+    <link>http://localhost:1313/en/homepage/</link>
     <description>Recent content in Homepages on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://www.jobrunr.io/en/homepage/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/homepage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-01/</link>
+      <link>http://localhost:1313/en/homepage/quote-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/quote-01/</guid>
+      <guid>http://localhost:1313/en/homepage/quote-01/</guid>
       <description>Thanks for building JobRunr, I like it a lot! Before that I used similar libraries in Ruby and Golang and JobRunr so far is the most pleasant one to use. I especially like the dashboard, it’s awesome!</description>
     </item>
     <item>
       <title>Fire-and-forget jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-01/</link>
+      <link>http://localhost:1313/en/homepage/example-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-01/</guid>
+      <guid>http://localhost:1313/en/homepage/example-01/</guid>
       <description>Fire-and-forget jobs are executed only once and almost immediately after creation.&#xA;BackgroundJob.enqueue( () -&amp;gt; System.out.println(&amp;#34;Simple!&amp;#34;)); </description>
     </item>
     <item>
       <title>Simple</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-01/</link>
+      <link>http://localhost:1313/en/homepage/feature-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-01/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-01/</guid>
       <description>Easy to set up, easy to use. Add the jar from Maven Central and start scheduling jobs. An easy alternative for Spring Batch and Quartz Scheduler.&#xA;Background jobs are regular java methods with regular arguments – no super class or interface implementation required.</description>
     </item>
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-02/</link>
+      <link>http://localhost:1313/en/homepage/quote-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/quote-02/</guid>
+      <guid>http://localhost:1313/en/homepage/quote-02/</guid>
       <description>Just came across JobRunr on Github. Exactly what I have been looking for! Went through the source and completely inline with how software should be written. Simple, nicely architectured! Great job!</description>
     </item>
     <item>
       <title>Persistent</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-02/</link>
+      <link>http://localhost:1313/en/homepage/feature-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-02/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-02/</guid>
       <description>Background jobs are created in a persistent storage and supports RDBMS like MySql/MariaDB, PostgreSQL, Oracle, SQL Server, DB2 and also NoSQL databases like ElasticSearch, Redis and MongoDB.&#xA;You can safely restart your application and use JobRunr without worrying about losing jobs.</description>
     </item>
     <item>
       <title>Scheduled &amp; delayed jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-02/</link>
+      <link>http://localhost:1313/en/homepage/example-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-02/</guid>
+      <guid>http://localhost:1313/en/homepage/example-02/</guid>
       <description>Scheduled and delayed jobs are also executed only once but will run at the specified time.&#xA;BackgroundJob.schedule(now().plusHours(5), () -&amp;gt; System.out.println(&amp;#34;Reliable!&amp;#34;)); </description>
     </item>
     <item>
       <title>Recurring CRON jobs</title>
-      <link>https://www.jobrunr.io/en/homepage/example-03/</link>
+      <link>http://localhost:1313/en/homepage/example-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-03/</guid>
+      <guid>http://localhost:1313/en/homepage/example-03/</guid>
       <description>Recurring jobs fire each time on the specified CRON trigger.&#xA;BackgroundJob.scheduleRecurrently(Cron.daily(), () -&amp;gt; service.doWork()); </description>
     </item>
     <item>
       <title>Transparent</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-03/</link>
+      <link>http://localhost:1313/en/homepage/feature-03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-03/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-03/</guid>
       <description>Thanks to the built-in web interface, you have an overview of all your background jobs and observe the state of each job in detail.&#xA;Out of the box support for popular logging frameworks allows you to catch errors early with zero configuration.</description>
     </item>
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-04/</link>
+      <link>http://localhost:1313/en/homepage/quote-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/quote-04/</guid>
+      <guid>http://localhost:1313/en/homepage/quote-04/</guid>
       <description>Works perfectly, this framework is a lifesaver for me.</description>
     </item>
     <item>
       <title>Distributed</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-05/</link>
+      <link>http://localhost:1313/en/homepage/feature-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-05/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-05/</guid>
       <description>Background method calls and their arguments are serialized to JSON and can travel over JVM instances.&#xA;You can use JobRunr on different machines to get more processing power with no extra configuration – synchronization is performed automatically.</description>
     </item>
     <item>
       <title>Queues</title>
-      <link>https://www.jobrunr.io/en/homepage/example-04/</link>
+      <link>http://localhost:1313/en/homepage/example-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-04/</guid>
+      <guid>http://localhost:1313/en/homepage/example-04/</guid>
       <description>Specify a queue to bypass all jobs already enqueued so your critical business processes finish on-time.&#xA;@Job(queue = HighPrioQueue) public void doWork() { ... } </description>
     </item>
     <item>
       <title>Reliable</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-04/</link>
+      <link>http://localhost:1313/en/homepage/feature-04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-04/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-04/</guid>
       <description>Once a background job was created without any exception, JobRunr takes the responsibility to process it at least once.&#xA;You are free to throw unhandled exceptions or terminate your application – background jobs will be re-tried automatically.</description>
     </item>
     <item>
       <title></title>
-      <link>https://www.jobrunr.io/en/homepage/quote-05/</link>
+      <link>http://localhost:1313/en/homepage/quote-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/quote-05/</guid>
+      <guid>http://localhost:1313/en/homepage/quote-05/</guid>
       <description>Omg&amp;hellip;. This being released like a year ago, would be great (for us). Instead, we are hitting a lot of walls trying to use Quartz to replace an old in-house job scheduler</description>
     </item>
     <item>
       <title>Batches &amp; job chaining</title>
-      <link>https://www.jobrunr.io/en/homepage/example-05/</link>
+      <link>http://localhost:1313/en/homepage/example-05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-05/</guid>
+      <guid>http://localhost:1313/en/homepage/example-05/</guid>
       <description>Create a bunch of background jobs atomically using a batch and then chain a new job which will run when the complete batch finishes.&#xA;BackgroundJob .startBatch(this::sendEmailToEachSubscriber) .continueWith(() -&amp;gt; reportService.createReport(...)) .continueWith(() -&amp;gt; notifyService.notify(&amp;#34;sales-team&amp;#34;, ...)); </description>
     </item>
     <item>
       <title>Extensible</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-06/</link>
+      <link>http://localhost:1313/en/homepage/feature-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-06/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-06/</guid>
       <description>Job filters allow you to add custom features to the background processing in a way similar to servlet filters.&#xA;Job storage access is fully abstracted and you can implement support for your favorite storage.</description>
     </item>
     <item>
       <title>Job chaining</title>
-      <link>https://www.jobrunr.io/en/homepage/example-06/</link>
+      <link>http://localhost:1313/en/homepage/example-06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/example-06/</guid>
+      <guid>http://localhost:1313/en/homepage/example-06/</guid>
       <description>Specify a queue to bypass all jobs already enqueued so your critical business processes finish on-time.&#xA;BackgroundJob .enqueue(() -&amp;gt; archiveService.createArchive(folder)) .continueWith(() -&amp;gt; notifyService.notifyViaSlack(&amp;#34;ops-team&amp;#34;, &amp;#34;Folder archived: &amp;#34; + folder)) </description>
     </item>
     <item>
       <title>Efficient</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-07/</link>
+      <link>http://localhost:1313/en/homepage/feature-07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-07/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-07/</guid>
       <description>JobRunr takes just enough jobs into memory to process them efficiently and does not keep any locks on other jobs. This allows to distribute the jobs in the best possible manner.</description>
     </item>
     <item>
       <title>Self maintaining</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-08/</link>
+      <link>http://localhost:1313/en/homepage/feature-08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-08/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-08/</guid>
       <description>You don&amp;rsquo;t need to perform manual storage clean-up – JobRunr keeps it as clean as possible and removes succeeded jobs automatically.</description>
     </item>
     <item>
       <title>Open source</title>
-      <link>https://www.jobrunr.io/en/homepage/feature-09/</link>
+      <link>http://localhost:1313/en/homepage/feature-09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/homepage/feature-09/</guid>
+      <guid>http://localhost:1313/en/homepage/feature-09/</guid>
       <description>JobRunr is open source software and is completely free for commercial use. It is licensed under LGPLv3 license.&#xA;Fork the project and make contributions on GitHub!</description>
     </item>
   </channel>

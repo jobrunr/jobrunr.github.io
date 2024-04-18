@@ -2,157 +2,157 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JobRunr Pro on JobRunr</title>
-    <link>https://www.jobrunr.io/en/documentation/pro/</link>
+    <link>http://localhost:1313/en/documentation/pro/</link>
     <description>Recent content in JobRunr Pro on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 05 Feb 2024 14:19:23 +0200</lastBuildDate>
-    <atom:link href="https://www.jobrunr.io/en/documentation/pro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/documentation/pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rate Limiters</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</link>
+      <link>http://localhost:1313/en/documentation/pro/rate-limiters/</link>
       <pubDate>Mon, 05 Feb 2024 14:19:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/rate-limiters/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/rate-limiters/</guid>
       <description>A rate limiter allows to control the execution rate of Jobs to avoid overwhelming some resources like external APIs or databases. JobRunr provides mutexes as a mean to only allow a single execution from a set of Jobs at a time. Rate limiters gives more flexibility, the amount of concurrent jobs can be configured using the ConcurrentJobRateLimiter or the limit may be set over a time window using SlidingTimeWindowRateLimiter.</description>
     </item>
     <item>
       <title>Custom delete policy</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</link>
+      <link>http://localhost:1313/en/documentation/pro/custom-delete-policy/</link>
       <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/custom-delete-policy/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/custom-delete-policy/</guid>
       <description>Do you have a recurring job that triggers every 5 minutes and only does a small check to see whether something needs to be processed? 95% of the time there is probably nothing to do and the job succeeds immediately. But, all these recurring jobs fill up your JobRunr Dashboard (a huge amount of succeeded and deleted jobs) and also fill up your database.&#xA;JobRunr already allows you to configure the deletion policy for all jobs in the JobRunr configuration.</description>
     </item>
     <item>
       <title>Database Fault Tolerance</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/</link>
+      <link>http://localhost:1313/en/documentation/pro/database-fault-tolerance/</link>
       <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/database-fault-tolerance/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/database-fault-tolerance/</guid>
       <description>JobRunr by defaults stops completely if my SQL / NoSQL database goes down and there is a reason for this - JobRunr namely uses your database for a lot of things:&#xA;Master node election for the BackgroundJobServer Fetching the details of a Job and update the state when it&amp;rsquo;s done Monitoring whether there are no zombie jobs (jobs that were being processed on a BackgroundJobServer node that crashed) Optimistic locking so that a job will be only executed once &amp;hellip; The moment JobRunr loses it’s connection to the database (or the database goes down), there will be a lot of threads that will try to read and write updates to the database but all of these will of course fail.</description>
     </item>
     <item>
       <title>Database Migrations</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/database-migrations/</link>
+      <link>http://localhost:1313/en/documentation/pro/database-migrations/</link>
       <pubDate>Thu, 24 Jun 2021 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/database-migrations/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/database-migrations/</guid>
       <description>JobRunr will by default perform all database related migrations automatically for you.&#xA;If you are not allowed to have a user using DDL rights at runtime or if due to company policies, you cannot have JobRunr do the migrations for you, there are several options which we will discuss below. If you manually take control of your migrations, please note that we may introduce changes with a new to the database schema.</description>
     </item>
     <item>
       <title>Job Result</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/results/</link>
+      <link>http://localhost:1313/en/documentation/pro/results/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/results/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/results/</guid>
       <description>If your job returns a result, JobRunr serializes it and stores it via the StorageProvider in the database of your choice.&#xA;You can then fetch the result of that job using the id of the job.&#xA;void startWeatherPrediction(UUID cityId) { Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); } WeatherPrediction getWeatherPrediction(UUID cityId) { JobResultWithBackOffInfo jobResult = BackgroundJob.getJobResult(jobId); if(jobResult.isAvailable()) return jobResult.getResult(); throw new BackOffException(Instant.now().plus(jobResult.backoffPeriod())); } This fetches the result of the job if it is available.</description>
     </item>
     <item>
       <title>Replacing jobs</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</link>
+      <link>http://localhost:1313/en/documentation/pro/replace-jobs/</link>
       <pubDate>Wed, 16 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/replace-jobs/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/replace-jobs/</guid>
       <description>Do you need to replace an already enqueued job? Or a job that is already being processed? Thanks to the JobRunr Pro enqueueOrReplace and scheduleOrReplace you can update the existing job easily.&#xA;UUID cityId = city.getId(); Observation observation = observationService.getLatestObservation(cityId); // the original observation BackgroundJob.enqueue(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); Observation observation = observationService.getLatestObservation(cityId); // the updated observation after a storm BackgroundJob.enqueueOrReplace(myId, () -&amp;gt; weatherService.predictWeather(cityId, observation)); This replaces the existing background job as it uses the same uuid to create the job.</description>
     </item>
     <item>
       <title>Advanced CRON expressions</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/advanced-cron-expressions/</link>
+      <link>http://localhost:1313/en/documentation/pro/advanced-cron-expressions/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/advanced-cron-expressions/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/advanced-cron-expressions/</guid>
       <description>JobRunr Pro has support for more difficult CRON expressions.&#xA;See some examples below:&#xA;BackgroundJob.scheduleRecurrently(Cron.firstDayOfTheMonth(10, 30), () -&amp;gt; System.out.println(&amp;#34;First day of the month!&amp;#34;)); This will run at 10:30 am on the first day of the month. BackgroundJob.scheduleRecurrently(Cron.firstBusinessDayOfTheMonth(10, 30), () -&amp;gt; System.out.println(&amp;#34;First business day of the month!&amp;#34;)); This will run at 10:30 am on the first business day of the month, even if the first day of the month is a Saturday or a Sunday BackgroundJob.</description>
     </item>
     <item>
       <title>Batches</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/batches/</link>
+      <link>http://localhost:1313/en/documentation/pro/batches/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/batches/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/batches/</guid>
       <description>Batches allow you to create a bunch of background jobs atomically. This means that if there was an exception during the creation of background jobs, none of them will be processed. Consider you want to send 1000 emails to your clients, and they really want to receive these emails. Here is the old way:&#xA;public class NewsletterService { @Inject private UserRepository userRepository; public void sendEmailsToAllSubscribers() { List&amp;lt;User&amp;gt; users = userRepository.</description>
     </item>
     <item>
       <title>CI / CD &amp; Job Migrations</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/migrations/</link>
+      <link>http://localhost:1313/en/documentation/pro/migrations/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/migrations/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/migrations/</guid>
       <description>Prevent JobNotFoundExceptions thanks to the JobRegressionGuard Are you applying some of Uncle Bob&amp;rsquo;s tips and tricks from his great book Clean Code? It probably also means you&amp;rsquo;re sometimes refactoring&amp;hellip; but what about your existing jobs in production? Won&amp;rsquo;t they break? Will you know if they break?&#xA;JobRunr Pro has you covered thanks to the JobRegressionGuard:&#xA;@Test void validateExistingJobs() { JobRegressionGuard jobRegressionGuard = new JobRegressionGuard(); jobRegressionGuard.validateJobs(&amp;#34;&amp;lt;url to your staging/production dashboard&amp;gt;&amp;#34;); } This simple unit test will notify you if you did some refactorings that are not compatible with the jobs in production.</description>
     </item>
     <item>
       <title>Dynamic Queues</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</link>
+      <link>http://localhost:1313/en/documentation/pro/dynamic-queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/dynamic-queues/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/dynamic-queues/</guid>
       <description>Are you running a multi-tenant application? Or do you have diverse types of jobs where certain types of jobs could potentially trigger peak workloads? Use JobRunr&amp;rsquo;s built-in dynamic queues to make sure that there is some fair-use and all jobs get a fair amount of resources!&#xA;Note: JobRunr Pro supports unlimited dynamic queues and they can be used together with the priority queues.&#xA;Example Use Cases In a multi-tenant application where each tenant can initiate their own jobs, JobRunr ensures fair-use processing.</description>
     </item>
     <item>
       <title>Issue Tracking Integration</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/issuetracking-integration/</link>
+      <link>http://localhost:1313/en/documentation/pro/issuetracking-integration/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/issuetracking-integration/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/issuetracking-integration/</guid>
       <description>Some jobs may fail due to downtime of an external system, some unforeseen circumstances or perhaps due to a bug.&#xA;JobRunr Pro integrates with GitHub issues and Jira so you can easily create an issue in case of a job failure. It will prefill all fields so you can save time and do what you do best: create excelling software without bugs 😊.&#xA;Create an issue for failed jobs with 1 click in your issue tracking software.</description>
     </item>
     <item>
       <title>Job Filters</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-filters/</link>
+      <link>http://localhost:1313/en/documentation/pro/job-filters/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-filters/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/job-filters/</guid>
       <description>A Job Filter can be used to extend the functionality of JobRunr with extra business processes when a job succeeds or fails. They also exist in the free version but in the Pro version integration is a lot easier as any Spring / Micronaut / Quarkus Bean can become a Job Filter.&#xA;Usage To create a Job Filter, just implement a bean with the interface JobClientFilter or JobServerFilter. Other filters are also available like the ApplyStateFilter and the ElectStateFilter.</description>
     </item>
     <item>
       <title>Job time-outs</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-timeout/</link>
+      <link>http://localhost:1313/en/documentation/pro/job-timeout/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-timeout/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/job-timeout/</guid>
       <description>Do you have jobs that take forever due to some 3th party libraries that are unreliable? Or are your job executions sometimes stuck due to networking issues? With JobRunr Pro, you can have your jobs fail automatically if they take too long.&#xA;Usage via @Job annotation Using a job timeout is really easy, again thanks to the Job annotation. Just add the annotation to your service method and specify the job process timeout in ISO8601 Duration format:</description>
     </item>
     <item>
       <title>JobRunr Pro Dashboard</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</link>
+      <link>http://localhost:1313/en/documentation/pro/jobrunr-pro-dashboard/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/jobrunr-pro-dashboard/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/jobrunr-pro-dashboard/</guid>
       <description>The JobRunr Pro dashboard offers a lot of improvements that save your engineering teams a lot of time:&#xA;Find any Job using the search functionality Save time thanks to usability improvements JobRunr Pro Enterprise Restrict access using Single Sign On authentication JobRunr Pro Enterprise Embed the dashboard within Spring Server JobRunr Pro Enterprise GDPR compliant Dashboard Find any Job using the search functionality Are you processing millions of jobs? Do you need to find that one job and find out if it succeeded?</description>
     </item>
     <item>
       <title>Mutexes</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/mutexes/</link>
+      <link>http://localhost:1313/en/documentation/pro/mutexes/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/mutexes/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/mutexes/</guid>
       <description>A mutex is a mutually exclusive flag. It acts as a gate keeper to a resource allowing only one Job to use it and postpones all others jobs using the same mutex.&#xA;Usage via @Job annotation Using a mutex is as easy as using Queues and Server Tags, again thanks to the Job annotation. Just add it to your service method and specify the mutex to use&#xA;@Job(mutex = &amp;#34;virus-scanner&amp;#34;) public void onlyProcessOneJobAtTheSameTime() { System.</description>
     </item>
     <item>
       <title>Observability</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/observability/</link>
+      <link>http://localhost:1313/en/documentation/pro/observability/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/observability/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/observability/</guid>
       <description>Although the JobRunr Pro Dashboard gives instant insights how your jobs are doing, you may already have an observability platform like Jaeger, HoneyComb or New Relic running. JobRunr Pro out-of-the box integrates with many of these observability platforms so you can keep on top of things.&#xA;MicroMeter Job Timings JobRunr allows to export amount of jobs processed, average job duration, maximum job duration and other metrics like job failure count per job.</description>
     </item>
     <item>
       <title>Priority Queues</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/priority-queues/</link>
+      <link>http://localhost:1313/en/documentation/pro/priority-queues/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/priority-queues/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/priority-queues/</guid>
       <description>Are you processing millions of jobs? Do you have some high priority jobs that need to finish fast? Use JobRunr priority queues to make sure that critical jobs cut in front of already enqueued jobs.&#xA;Note: JobRunr Pro supports up to 5 different priority queues and they can be used together with the load-balancing feature.&#xA;Usage Using the Job Annotation Using queues could not have been easier thanks to the Job annotation.</description>
     </item>
     <item>
       <title>Real-time scheduling and enqueueing</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</link>
+      <link>http://localhost:1313/en/documentation/pro/real-time-scheduling/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/real-time-scheduling/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/real-time-scheduling/</guid>
       <description>Do your jobs need to run some jobs on an exact moment? JobRunr Pro will do realtime enqueueing out-of-the-box!&#xA;Some history For performance reasons, JobRunr fetches all the jobs that need to be executed during the whole next pollIntervalInSeconds. This allows JobRunr to query, update and save jobs in bulk and that&amp;rsquo;s the reason why scheduled and recurring jobs are sometimes performed a couple of seconds too early.&#xA;JobRunr Pro to the rescue!</description>
     </item>
     <item>
       <title>Server Tags</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/server-tags/</link>
+      <link>http://localhost:1313/en/documentation/pro/server-tags/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/server-tags/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/server-tags/</guid>
       <description>Do you have some jobs that can only be run on certain servers (e.g. jobs tied to a specific OS like Linux, Max and Windows)? Or do you want to run a job only on the server that created the job? JobRunr has you covered with Server Tags!&#xA;A BackgroundJobServer can have multiple server tags and a job can specify only one server tag via the Job annotation. If the server tag of the job matches any of the server tags of the server, the server is eligible to run the job.</description>
     </item>
     <item>
       <title>Transaction plugin</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/transactions/</link>
+      <link>http://localhost:1313/en/documentation/pro/transactions/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/transactions/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/transactions/</guid>
       <description>The JobRunr Spring Boot Starter and Micronaut integration come with an @Transactional plugin that makes sure your jobs join the transaction created by the framework.&#xA;@Inject private UserRepository userRepositoy; @Inject private JobScheduler jobScheduler; @Transactional public void createUserAndSendWelcomeEmail(User user) { userRepositoy.save(user); jobScheduler.&amp;lt;UserService&amp;gt;enqueue(x -&amp;gt; x.sendWelcomeEmail(user.id)); } Thanks to the @Transactional support, the whole method - including the job scheduling - is transactional.&#xA;How does it work? the JobRunr Spring Boot Starter and Micronaut Integration check whether they can participate in a transaction created by that framework.</description>
     </item>
     <item>
       <title>Workflows using Job Chains</title>
-      <link>https://www.jobrunr.io/en/documentation/pro/job-chaining/</link>
+      <link>http://localhost:1313/en/documentation/pro/job-chaining/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/pro/job-chaining/</guid>
+      <guid>http://localhost:1313/en/documentation/pro/job-chaining/</guid>
       <description>JobRunr&amp;rsquo;s job chaining and workflow capabilities enhance software development efficiency by enabling logical task sequencing and complex workflow management. This setup ensures tasks execute in order, maintaining data integrity and operational consistency, especially when subsequent processes depend on earlier outcomes. The Pro version offers advanced controls and insights, further optimizing performance and providing you with an instant overview of your business process.&#xA;Job chaining via continueWith and onFailure Running a job after another job succeeded @Inject private ArchiveService archiveService; @Inject private NotifyService notifyService; public void createArchiveAndNotify(String folder) { BackgroundJob .</description>
     </item>
   </channel>

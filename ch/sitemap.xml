@@ -3,26 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.jobrunr.io/ch/</loc>
+    <loc>http://localhost:1313/ch/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.jobrunr.io/en/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.jobrunr.io/es/"
+                href="http://localhost:1313/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.jobrunr.io/zh-cn/"
+                href="http://localhost:1313/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ch"
-                href="https://www.jobrunr.io/ch/"
+                href="http://localhost:1313/ch/"
                 />
   </url>
   

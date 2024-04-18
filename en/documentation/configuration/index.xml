@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration on JobRunr</title>
-    <link>https://www.jobrunr.io/en/documentation/configuration/</link>
+    <link>http://localhost:1313/en/documentation/configuration/</link>
     <description>Recent content in Configuration on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 05 Feb 2024 14:19:23 +0200</lastBuildDate>
-    <atom:link href="https://www.jobrunr.io/en/documentation/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/documentation/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Virtual Threads</title>
-      <link>https://www.jobrunr.io/en/documentation/configuration/virtual-threads/</link>
+      <link>http://localhost:1313/en/documentation/configuration/virtual-threads/</link>
       <pubDate>Mon, 05 Feb 2024 14:19:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/documentation/configuration/virtual-threads/</guid>
+      <guid>http://localhost:1313/en/documentation/configuration/virtual-threads/</guid>
       <description>Virtual threads are lightweight threads finalized in JDK 21. The introduction of virtual threads allows programs to use a larger number of threads than the amount of threads made available by the underlying OS.&#xA;A virtual thread only consumes an OS thread while performing calculations on the CPU, the OS thread is freed when performing a blocking I/O operation. This allows for an increased throughput as other virtual threads can execute while some are waiting due to I/O operations.</description>
     </item>
   </channel>

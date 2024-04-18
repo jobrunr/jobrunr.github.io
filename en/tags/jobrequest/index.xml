@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JobRequest on JobRunr</title>
-    <link>https://www.jobrunr.io/en/tags/jobrequest/</link>
+    <link>http://localhost:1313/en/tags/jobrequest/</link>
     <description>Recent content in JobRequest on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://www.jobrunr.io/en/tags/jobrequest/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/jobrequest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Create and schedule jobs with JobRunr using a JobRequest and JobRequestHandler</title>
-      <link>https://www.jobrunr.io/en/guides/intro/java-job-request/</link>
+      <link>http://localhost:1313/en/guides/intro/java-job-request/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.jobrunr.io/en/guides/intro/java-job-request/</guid>
+      <guid>http://localhost:1313/en/guides/intro/java-job-request/</guid>
       <description>In this guide, we will learn how to:&#xA;setup JobRunr learn how to enqueue and schedule a job in vanilla Java or your favorite web framework using the JobRequest / JobRequestHandler pattern. monitor your jobs using the built-in dashboard What is JobRunr Introduction JobRunr is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface.</description>
     </item>
   </channel>

@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Licensings on JobRunr</title>
-    <link>https://www.jobrunr.io/en/licensing/</link>
+    <link>http://localhost:1313/en/licensing/</link>
     <description>Recent content in Licensings on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 27 Aug 2020 11:12:23 +0200</lastBuildDate>
-    <atom:link href="https://www.jobrunr.io/en/licensing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/licensing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GNU Lesser General Public License</title>
-      <link>https://www.jobrunr.io/en/licensing/lgpl/</link>
+      <link>http://localhost:1313/en/licensing/lgpl/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/licensing/lgpl/</guid>
+      <guid>http://localhost:1313/en/licensing/lgpl/</guid>
       <description>Copyright © 2007 Free Software Foundation, Inc. &amp;lt;&lt;a href=&#34;https://fsf.org/&#34;&gt;https://fsf.org/&lt;/a&gt;&amp;gt;</description>
     </item>
     <item>
       <title>Royalty-free End-user License Agreement</title>
-      <link>https://www.jobrunr.io/en/licensing/royalty-free-eula/</link>
+      <link>http://localhost:1313/en/licensing/royalty-free-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/licensing/royalty-free-eula/</guid>
+      <guid>http://localhost:1313/en/licensing/royalty-free-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     <item>
       <title>Standard End-user License Agreement</title>
-      <link>https://www.jobrunr.io/en/licensing/standard-eula/</link>
+      <link>http://localhost:1313/en/licensing/standard-eula/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/licensing/standard-eula/</guid>
+      <guid>http://localhost:1313/en/licensing/standard-eula/</guid>
       <description>THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE AND ITS COMPONENTS.</description>
     </item>
     <item>
       <title>Terms of Use</title>
-      <link>https://www.jobrunr.io/en/licensing/info/</link>
+      <link>http://localhost:1313/en/licensing/info/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/licensing/info/</guid>
+      <guid>http://localhost:1313/en/licensing/info/</guid>
       <description>All the license information you need&amp;hellip;</description>
     </item>
     <item>
       <title>Third Party Software Notices</title>
-      <link>https://www.jobrunr.io/en/licensing/third-party/</link>
+      <link>http://localhost:1313/en/licensing/third-party/</link>
       <pubDate>Thu, 27 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/licensing/third-party/</guid>
+      <guid>http://localhost:1313/en/licensing/third-party/</guid>
       <description>JobRunr products use software provided by third parties, including open source software. The following copyright statements and licenses apply to various components that are distributed with various JobRunr products. The JobRunr product that includes this file does not necessarily use all of the third party software components referred to below.&#xA;Licensee must fully agree and comply with these license terms or must not use these components. The third party license terms apply only to the respective software to which the license pertains, and the third party license terms do not apply to the JobRunr software.</description>
     </item>
   </channel>
