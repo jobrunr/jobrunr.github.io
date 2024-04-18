@@ -2,199 +2,199 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meta on JobRunr</title>
-    <link>http://localhost:1313/en/tags/meta/</link>
+    <link>https://www.jobrunr.io/en/tags/meta/</link>
     <description>Recent content in Meta on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 09 Apr 2024 09:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.jobrunr.io/en/tags/meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JobRunr and JobRunr Pro v7.0.0!</title>
-      <link>http://localhost:1313/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</link>
+      <link>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</link>
       <pubDate>Tue, 09 Apr 2024 09:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2024-04-09-jobrunr-and-jobrunr-pro-v7/</guid>
       <description>We&amp;rsquo;re proud to announce the latest release, JobRunr &amp;amp; JobRunr Pro v7.0.0</description>
     </item>
     <item>
       <title>JobRunr featured in Spring Tips!</title>
-      <link>http://localhost:1313/en/blog/2024-03-27-jobrunr-in-spring-tips/</link>
+      <link>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</link>
       <pubDate>Sat, 30 Mar 2024 09:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2024-03-27-jobrunr-in-spring-tips/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2024-03-27-jobrunr-in-spring-tips/</guid>
       <description>The great Josh Long created an awesome introductionary video to JobRunr</description>
     </item>
     <item>
       <title>Introducing Carbon-Aware Jobs in JobRunr</title>
-      <link>http://localhost:1313/en/blog/2024-03-21-carbon-aware-job-scheduling/</link>
+      <link>https://www.jobrunr.io/en/blog/2024-03-21-carbon-aware-job-scheduling/</link>
       <pubDate>Thu, 21 Mar 2024 09:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2024-03-21-carbon-aware-job-scheduling/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2024-03-21-carbon-aware-job-scheduling/</guid>
       <description>A Leap Towards Sustainable Computing</description>
     </item>
     <item>
       <title>Time for JobRunr v7.0.0!</title>
-      <link>http://localhost:1313/en/blog/2024-03-15-jobrunr-v7-rc0/</link>
+      <link>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</link>
       <pubDate>Fri, 15 Mar 2024 09:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2024-03-15-jobrunr-v7-rc0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2024-03-15-jobrunr-v7-rc0/</guid>
       <description>We&amp;rsquo;re proud to announce the first release candidate of JobRunr &amp;amp; JobRunr Pro v7.0.0</description>
     </item>
     <item>
       <title>More than 15.000 trees 🌳 planted!</title>
-      <link>http://localhost:1313/en/blog/2024-01-18-trees-planted/</link>
+      <link>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</link>
       <pubDate>Thu, 18 Jan 2024 09:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2024-01-18-trees-planted/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2024-01-18-trees-planted/</guid>
       <description>Buy JobRunr Pro and plant trees!</description>
     </item>
     <item>
       <title>JobRunr at Devoxx 2023</title>
-      <link>http://localhost:1313/en/blog/2023-09-19-jobrunr-devoxx/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-09-19-jobrunr-devoxx/</link>
       <pubDate>Tue, 19 Sep 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-09-19-jobrunr-devoxx/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-09-19-jobrunr-devoxx/</guid>
       <description>🎉 I&amp;rsquo;ll be talking about JobRunr at Devoxx 2023 in Antwerp, Belgium 🎉</description>
     </item>
     <item>
       <title>JobRunr &amp; JobRunr Pro v6.3.0</title>
-      <link>http://localhost:1313/en/blog/2023-07-14-jobrunr-v6.3.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-07-14-jobrunr-v6.3.0/</link>
       <pubDate>Mon, 14 Aug 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-07-14-jobrunr-v6.3.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-07-14-jobrunr-v6.3.0/</guid>
       <description>Stability improvements, Dashboard improvements, Micronaut 4 support, Kotlin 1.9 support and Job Timeouts!</description>
     </item>
     <item>
       <title>More than 3500 trees 🌳 planted!</title>
-      <link>http://localhost:1313/en/blog/2023-06-17-jobrunr-loves-teamtrees/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-06-17-jobrunr-loves-teamtrees/</link>
       <pubDate>Sat, 17 Jun 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-06-17-jobrunr-loves-teamtrees/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-06-17-jobrunr-loves-teamtrees/</guid>
       <description>Part of the JobRunr revenue goes to #TeamTrees!</description>
     </item>
     <item>
       <title>JobRunr Pro Panic Button</title>
-      <link>http://localhost:1313/en/blog/2023-06-06-jobrunr-pro-panic-button/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-06-06-jobrunr-pro-panic-button/</link>
       <pubDate>Tue, 06 Jun 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-06-06-jobrunr-pro-panic-button/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-06-06-jobrunr-pro-panic-button/</guid>
       <description>Stay calm and press the Panic Button&amp;hellip;</description>
     </item>
     <item>
       <title>Meet the Geek!</title>
-      <link>http://localhost:1313/en/blog/2023-05-24-meet-the-geek/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-05-24-meet-the-geek/</link>
       <pubDate>Wed, 24 May 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-05-24-meet-the-geek/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-05-24-meet-the-geek/</guid>
       <description>Do you have questions about JobRunr? Are you struggling with a problem related to JobRunr? Then join a live coding session where I&amp;rsquo;ll try to answer all your questions!</description>
     </item>
     <item>
       <title>JobRunr &amp; JobRunr Pro v6.2.0</title>
-      <link>http://localhost:1313/en/blog/2023-05-11-jobrunr-v6.2.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-05-11-jobrunr-v6.2.0/</link>
       <pubDate>Thu, 11 May 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-05-11-jobrunr-v6.2.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-05-11-jobrunr-v6.2.0/</guid>
       <description>Performance improvements, Quarkus 3 support, an important bugfix and dynamic queues in JobRunr Pro!</description>
     </item>
     <item>
       <title>Java batch processing with JobRunr</title>
-      <link>http://localhost:1313/en/blog/2023-04-11-java-batch-processing/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-04-11-java-batch-processing/</link>
       <pubDate>Tue, 11 Apr 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-04-11-java-batch-processing/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-04-11-java-batch-processing/</guid>
       <description>Discover the power of Java batch processing with JobRunr — a modern, user-friendly solution for distributed job management.</description>
     </item>
     <item>
       <title>Taming the Bursts: Efficient Cloud-Native Processing with JobRunr</title>
-      <link>http://localhost:1313/en/blog/2023-03-30-cloud-native-processing/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-03-30-cloud-native-processing/</link>
       <pubDate>Thu, 30 Mar 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-03-30-cloud-native-processing/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-03-30-cloud-native-processing/</guid>
       <description>Discover how JobRunr helps manage high-demand tasks like pay-check calculations, retail promotions, and email campaigns by distributing load across multiple servers in any environment.</description>
     </item>
     <item>
       <title>JobRunr Has Processed more than 10 Billion Jobs Successfully in Less Than a Year</title>
-      <link>http://localhost:1313/en/blog/2023-03-16-10-billion-jobs/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-03-16-10-billion-jobs/</link>
       <pubDate>Thu, 16 Mar 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-03-16-10-billion-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-03-16-10-billion-jobs/</guid>
       <description>A Testament to Its Power and Flexibility</description>
     </item>
     <item>
       <title>JobRunr &amp; JobRunr Pro v6.1.0</title>
-      <link>http://localhost:1313/en/blog/2023-02-24-jobrunr-v6.1.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</link>
       <pubDate>Fri, 24 Feb 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-02-24-jobrunr-v6.1.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-02-24-jobrunr-v6.1.0/</guid>
       <description>An important bugfix and Job Filters improved a lot!</description>
     </item>
     <item>
       <title>How to move from Quartz to JobRunr</title>
-      <link>http://localhost:1313/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</link>
       <pubDate>Mon, 20 Feb 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-02-20-moving-from-quartz-scheduler-to-jobrunr/</guid>
       <description>An in-depth guide on how to switch from Quartz Scheduler to JobRunr</description>
     </item>
     <item>
       <title>JobRunr - the best Java Scheduler?</title>
-      <link>http://localhost:1313/en/blog/2023-02-13-java-scheduler/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-02-13-java-scheduler/</link>
       <pubDate>Mon, 13 Feb 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-02-13-java-scheduler/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-02-13-java-scheduler/</guid>
       <description>Easily schedule jobs in Java and monitor them using JobRunr</description>
     </item>
     <item>
       <title>JobRunr &amp; JobRunr Pro v6.0.0</title>
-      <link>http://localhost:1313/en/blog/2023-01-29-jobrunr-v6.0.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2023-01-29-jobrunr-v6.0.0/</link>
       <pubDate>Sun, 29 Jan 2023 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2023-01-29-jobrunr-v6.0.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2023-01-29-jobrunr-v6.0.0/</guid>
       <description>New API, Job labels and a bunch of dashboard improvements!</description>
     </item>
     <item>
       <title>JobRunr in the media</title>
-      <link>http://localhost:1313/en/blog/2022-12-06-jobrunr-in-the-news/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-12-06-jobrunr-in-the-news/</link>
       <pubDate>Tue, 06 Dec 2022 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-12-06-jobrunr-in-the-news/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-12-06-jobrunr-in-the-news/</guid>
       <description>Did you already know that JobRunr is featured on Thoughtworks technology radar?</description>
     </item>
     <item>
       <title>Oooh, the irony</title>
-      <link>http://localhost:1313/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</link>
       <pubDate>Sat, 05 Nov 2022 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-11-05-jobrunr-and-daylight-saving-time/</guid>
       <description>A crime scene investigation on what went wrong with JobRunr when Daylight Saving Time ended.</description>
     </item>
     <item>
       <title>JobRunr and Daylight Saving Time</title>
-      <link>http://localhost:1313/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</link>
       <pubDate>Wed, 05 Oct 2022 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-10-05-jobrunr-and-daylight-saving-time/</guid>
       <description>Let&amp;rsquo;s dig deeper on the impact of Daylight Saving Time and scheduled JobRunr Jobs</description>
     </item>
     <item>
       <title>JobRunr v5.3.0</title>
-      <link>http://localhost:1313/en/blog/2022-10-03-jobrunr-5.3.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-10-03-jobrunr-5.3.0/</link>
       <pubDate>Mon, 03 Oct 2022 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-10-03-jobrunr-5.3.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-10-03-jobrunr-5.3.0/</guid>
       <description>Support for Spring Boot 3.0.0 and Kotlin 1.7.20</description>
     </item>
     <item>
       <title>JobRunr v5.2.0</title>
-      <link>http://localhost:1313/en/blog/2022-09-23-jobrunr-5.2.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-09-23-jobrunr-5.2.0/</link>
       <pubDate>Fri, 23 Sep 2022 09:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-09-23-jobrunr-5.2.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-09-23-jobrunr-5.2.0/</guid>
       <description>An important bugfix and some performance improvements</description>
     </item>
     <item>
       <title>JobRunr Intro Video</title>
-      <link>http://localhost:1313/en/blog/2022-08-10-jobrunr-review-by-alex-gutjahr/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-08-10-jobrunr-review-by-alex-gutjahr/</link>
       <pubDate>Tue, 20 Sep 2022 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-08-10-jobrunr-review-by-alex-gutjahr/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-08-10-jobrunr-review-by-alex-gutjahr/</guid>
       <description>An intro to JobRunr by Alex Gutjahr</description>
     </item>
     <item>
       <title>JobRunr at Spring.io!</title>
-      <link>http://localhost:1313/en/blog/2022-06-13-jobrunr-at-springio/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-06-13-jobrunr-at-springio/</link>
       <pubDate>Mon, 13 Jun 2022 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-06-13-jobrunr-at-springio/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-06-13-jobrunr-at-springio/</guid>
       <description>Did you miss Spring.io? Watch the JobRunr talk I gave at Spring.io Barcelona!</description>
     </item>
     <item>
       <title>Launching a developer product - part 2</title>
-      <link>http://localhost:1313/en/blog/2022-06-10-my-own-product-part-2/</link>
+      <link>https://www.jobrunr.io/en/blog/2022-06-10-my-own-product-part-2/</link>
       <pubDate>Fri, 10 Jun 2022 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2022-06-10-my-own-product-part-2/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2022-06-10-my-own-product-part-2/</guid>
       <description>Jeeeejj! I have a 1000 stars in GitHub!</description>
     </item>
     <item>
       <title>Launching a developer product - how hard is it?</title>
-      <link>http://localhost:1313/en/blog/2020-09-04-my-own-product/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/</link>
       <pubDate>Fri, 04 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-09-04-my-own-product/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-09-04-my-own-product/</guid>
       <description>Is it worthwhile to start a freemium product for developers in the Java eco-system?</description>
     </item>
   </channel>

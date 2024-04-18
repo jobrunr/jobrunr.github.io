@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -31,7 +31,7 @@
 
     
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="http://localhost:1313/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
+    <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
     <meta name="twitter:title" content="Enqueueing jobs" />
     <meta name="twitter:description" content="Creating a background job with JobRunr is really easy. On this page you will learn how to:
@@ -43,7 +43,7 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
 <meta property="og:description" content="Creating a background job with JobRunr is really easy. On this page you will learn how to:
 create a single job using a Java 8 lambda create a single job using a JobRequest create many jobs using a Java 8 lambda create many jobs using a JobRequest JobRunr Pro Prevent duplicate jobs by an identifier JobRunr Pro Replace existing jobs Enqueueing a single background job Enqueueing a job using a Java 8 lambda As you already know from the 5 minute intro, you only need to pass a lambda with the corresponding method and its arguments to enqueue a background job:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/en/documentation/background-methods/enqueueing-jobs/" /><meta property="og:image" content="http://localhost:1313/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="documentation" />
+<meta property="og:url" content="https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="documentation" />
 <meta property="article:published_time" content="2020-09-16T11:12:23+02:00" />
 <meta property="article:modified_time" content="2020-09-16T11:12:23+02:00" />
 
@@ -52,8 +52,8 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
     
     
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
-    <link rel="stylesheet" href="http://localhost:1313/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/custom.min.bc530210025672c5275e73d223263a1b309dd66c3a929bc89143e11ae911ac39.css" integrity="sha256-vFMCEAJWcsUnXnPSIyY6GzCd1mw6kpvIkUPhGukRrDk=" media="screen">
+    <link rel="stylesheet" href="https://www.jobrunr.io/scss/screen.min.5cb3f5840ac2d788ddd0b4fdf55fe2bef4413a74dc36d13e4ecd8405c0c8bd7f.css" integrity="sha256-XLP1hArC14jd0LT99V/ivvRBOnTcNtE&#43;Ts2EBcDIvX8=" media="screen">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" as="style" onload="this.rel='stylesheet'">
@@ -74,7 +74,7 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
 <nav id="site-nav" class="site-nav">
     <div class="site-nav-left">
         
-        <a class="site-nav-logo" href="http://localhost:1313//en/"><img src="http://localhost:1313/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
+        <a class="site-nav-logo" href="https://www.jobrunr.io//en/"><img src="https://www.jobrunr.io/images/jobrunr-logo-white.webp" alt="JobRunr" height="21px" width="91px"/></a>
         
         <div class="site-nav-content">
             <ul class="nav" role="menu">
@@ -416,7 +416,7 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
 </span></span></code></pre></div><figcaption>This enqueues a background job without a reference to an instance of MyService. During execution of the background job, the IoC container will need to provide an instance of type MyService.</figcaption>
 </figure>
 <h3 id="enqueueing-a-job-using-a-jobrequest">Enqueueing a job using a JobRequest</h3>
-<p>JobRunr also offers the possibility to enqueue jobs using a <a href="http://localhost:1313/en/documentation/background-methods/#via-a-jobrequest">JobRequest and a JobRequestHandler</a>.</p>
+<p>JobRunr also offers the possibility to enqueue jobs using a <a href="https://www.jobrunr.io/en/documentation/background-methods/#via-a-jobrequest">JobRequest and a JobRequestHandler</a>.</p>
 <figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>JobId jobId <span style="color:#f92672">=</span> BackgroundJobRequest.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> MyJobRequest());
 </span></span></code></pre></div><figcaption>This enqueues a background job using an implementation of the JobRequest interface. The interface defines a handler that will be used to run the background job. During execution of the background job, the IoC container will need to provide an instance of that handler - in this case an instance of type MyJobRequestHandler.</figcaption>
@@ -557,8 +557,8 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
 </span></span><span style="display:flex;"><span>jobScheduler.<span style="color:#f92672">&lt;</span>MyService<span style="color:#f92672">&gt;</span>enqueueOrReplace(JobId.<span style="color:#a6e22e">fromIdentifier</span>(<span style="color:#e6db74">&#34;my identifier&#34;</span>), x <span style="color:#f92672">-&gt;</span> x.<span style="color:#a6e22e">doWork</span>());
 </span></span></code></pre></div><figcaption>Only the last job identified by 'my identifier' will be kept as previous jobs will be replaced.</figcaption>
 </figure>
-<p>You can learn more about replacing and updating jobs <a href="http://localhost:1313/en/documentation/pro/replace-jobs/">here</a>.</p>
-<p>Please also see the <a href="http://localhost:1313/en/documentation/background-methods/best-practices/">best practices</a> for more information.</p>
+<p>You can learn more about replacing and updating jobs <a href="https://www.jobrunr.io/en/documentation/pro/replace-jobs/">here</a>.</p>
+<p>Please also see the <a href="https://www.jobrunr.io/en/documentation/background-methods/best-practices/">best practices</a> for more information.</p>
 
             </section>
         </article>
@@ -571,7 +571,7 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright" style="align-self: start;">
-                  &copy; <a href="http://localhost:1313/">JobRunr</a>
+                  &copy; <a href="https://www.jobrunr.io/">JobRunr</a>
                 </section>
                 <section class="love" style="align-self: start; opacity: 0.7;">
                   Made with <strong style="color: red; font-size: large;">&hearts;</strong> in Belgium
@@ -590,8 +590,8 @@ create a single job using a Java 8 lambda create a single job using a JobRequest
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" defer></script>
-    <script src='http://localhost:1313/js/codetabs.js'></script>
-    <script src='http://localhost:1313/js/framework.js'></script>
+    <script src='https://www.jobrunr.io/js/codetabs.js'></script>
+    <script src='https://www.jobrunr.io/js/framework.js'></script>
 <script>
 window.addEventListener("load", (event) => {
   setTimeout(() => {

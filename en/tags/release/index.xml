@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Release on JobRunr</title>
-    <link>http://localhost:1313/en/tags/release/</link>
+    <link>https://www.jobrunr.io/en/tags/release/</link>
     <description>Recent content in Release on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 26 Apr 2021 21:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/release/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.jobrunr.io/en/tags/release/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>v2.0.0 - Kotlin support!</title>
-      <link>http://localhost:1313/en/blog/2021-04-26-v2.0.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</link>
       <pubDate>Mon, 26 Apr 2021 21:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2021-04-26-v2.0.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2021-04-26-v2.0.0/</guid>
       <description>Release v2.0.0 - now ready for Kotlin</description>
     </item>
     <item>
       <title>v1.3.0 - Small improvements</title>
-      <link>http://localhost:1313/en/blog/2021-02-07-v1.3/</link>
+      <link>https://www.jobrunr.io/en/blog/2021-02-07-v1.3/</link>
       <pubDate>Sun, 07 Feb 2021 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2021-02-07-v1.3/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2021-02-07-v1.3/</guid>
       <description>Release v1.3.0 - aka Made in Germany</description>
     </item>
     <item>
       <title>v1.2.0 - Amazon DocumentDB</title>
-      <link>http://localhost:1313/en/blog/2020-11-01-v1.2/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</link>
       <pubDate>Sun, 01 Nov 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-11-01-v1.2/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-11-01-v1.2/</guid>
       <description>Again support for a new datastore - this time for Amazon DocumentDB!</description>
     </item>
     <item>
       <title>v1.1.0 - Notifications</title>
-      <link>http://localhost:1313/en/blog/2020-10-21-v1.1/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</link>
       <pubDate>Wed, 21 Oct 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-10-21-v1.1/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-10-21-v1.1/</guid>
       <description>New improvements for Spring and notifications for jobs that don&amp;rsquo;t exist anymore</description>
     </item>
     <item>
       <title>Finally, v1.0.0</title>
-      <link>http://localhost:1313/en/blog/2020-09-24-jobrunr-v1.0/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-09-24-jobrunr-v1.0/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-09-24-jobrunr-v1.0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-09-24-jobrunr-v1.0/</guid>
       <description>We&amp;rsquo;re there, JobRunr v1.0.0 is released!</description>
     </item>
     <item>
       <title>v0.9.16 &amp; 0.9.17 - ElasticSearch support</title>
-      <link>http://localhost:1313/en/blog/2020-09-09-v09-17/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-09-09-v09-17/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-09-09-v09-17/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-09-09-v09-17/</guid>
       <description>ElasticSearch support, Redis and MongoDB improvements and almost at 1.0</description>
     </item>
     <item>
       <title>v0.9.16 &amp; 0.9.17 - ElasticSearch support</title>
-      <link>http://localhost:1313/en/blog/2020-08-13-v09-15/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-08-13-v09-15/</link>
       <pubDate>Thu, 03 Sep 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-08-13-v09-15/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-08-13-v09-15/</guid>
       <description>Redis and MongoDB improvements, ElasticSearch support and almost at 1.0</description>
     </item>
     <item>
       <title>v0.9.12 &amp; 0.9.13 - DB2 and GraalVM native</title>
-      <link>http://localhost:1313/en/blog/2020-07-23-v09-13/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-07-23-v09-13/</link>
       <pubDate>Thu, 23 Jul 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-07-23-v09-13/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-07-23-v09-13/</guid>
       <description>Run your background jobs at warp speed thanks to GraalVM native mode.</description>
     </item>
     <item>
       <title>v0.9.10 &amp; v0.9.11 - Quarkus &amp; MicroProfile support</title>
-      <link>http://localhost:1313/en/blog/2020-06-18-v09-11/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-06-18-v09-11/</link>
       <pubDate>Thu, 18 Jun 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-06-18-v09-11/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-06-18-v09-11/</guid>
       <description>JobRunr now supports MicroProfile and Quarkus using Json-B</description>
     </item>
     <item>
       <title>v0.9.9 - Usability and performance improvements</title>
-      <link>http://localhost:1313/en/blog/2020-06-13-v09-9/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-06-13-v09-9/</link>
       <pubDate>Sat, 13 Jun 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-06-13-v09-9/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-06-13-v09-9/</guid>
       <description>A 10 to 15% performance increase and live updates in the dashboard</description>
     </item>
     <item>
       <title>v0.9.7 &amp; v0.9.8 - Bugfixes, extra databases and JMX integration</title>
-      <link>http://localhost:1313/en/blog/2020-05-28-v09-8/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-05-28-v09-8/</link>
       <pubDate>Thu, 28 May 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-05-28-v09-8/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-05-28-v09-8/</guid>
       <description>An overview of the new features in these incremental releases</description>
     </item>
     <item>
       <title>v0.9.0 - Dashboard improvements and Redis support!</title>
-      <link>http://localhost:1313/en/blog/2020-04-20-v09-0/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-04-20-v09-0/</link>
       <pubDate>Mon, 20 Apr 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-04-20-v09-0/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-04-20-v09-0/</guid>
       <description>Time for a new release and we have some great new treats for you! A lot of time was spend improving the dashboard and we also have Redis support.</description>
     </item>
     <item>
       <title>Java batch processing made easy...</title>
-      <link>http://localhost:1313/en/blog/2020-04-08-jobrunr-release/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</link>
       <pubDate>Wed, 08 Apr 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-04-08-jobrunr-release/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-04-08-jobrunr-release/</guid>
       <description>The birth of JobRunr - easy process long-running jobs!</description>
     </item>
   </channel>

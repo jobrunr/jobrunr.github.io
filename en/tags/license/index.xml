@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>License on JobRunr</title>
-    <link>http://localhost:1313/en/tags/license/</link>
+    <link>https://www.jobrunr.io/en/tags/license/</link>
     <description>Recent content in License on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 03 Aug 2021 11:12:23 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/license/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.jobrunr.io/en/tags/license/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trees planted!</title>
-      <link>http://localhost:1313/en/blog/2021-08-03-license-sold/</link>
+      <link>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</link>
       <pubDate>Tue, 03 Aug 2021 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2021-08-03-license-sold/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2021-08-03-license-sold/</guid>
       <description>I&amp;rsquo;ve sold my second license and that resulted in trees being planted!</description>
     </item>
     <item>
       <title>Trees planted!</title>
-      <link>http://localhost:1313/en/blog/2020-11-18-license-sold/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-11-18-license-sold/</link>
       <pubDate>Wed, 18 Nov 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-11-18-license-sold/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-11-18-license-sold/</guid>
       <description>I&amp;rsquo;ve sold my first license and that resulted in trees being planted!</description>
     </item>
   </channel>

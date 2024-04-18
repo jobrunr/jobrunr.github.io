@@ -2,24 +2,24 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    <loc>https://www.jobrunr.io/en/sitemap.xml</loc>
     
       <lastmod>2120-10-22T11:12:23+02:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/ch/sitemap.xml</loc>
+    <loc>https://www.jobrunr.io/ch/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/es/sitemap.xml</loc>
+    <loc>https://www.jobrunr.io/es/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+    <loc>https://www.jobrunr.io/zh-cn/sitemap.xml</loc>
     
   </sitemap>
   

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorial on JobRunr</title>
-    <link>http://localhost:1313/en/tags/tutorial/</link>
+    <link>https://www.jobrunr.io/en/tags/tutorial/</link>
     <description>Recent content in Tutorial on JobRunr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 17 Aug 2020 11:12:23 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.jobrunr.io/en/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JobRunr, Project Loom and Virtual Threads</title>
-      <link>http://localhost:1313/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</link>
       <pubDate>Mon, 17 Aug 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-08-17-jobrunr-loom-virtual-threads/</guid>
       <description>After integrating the Virtual Threads of Project Loom, it&amp;rsquo;s time for a showdown between Java 11, Java 16 without Virtual Threads and Java 16 with Virtual Threads.</description>
     </item>
     <item>
       <title>Testing JobRunr against 12 different JVM&#39;s</title>
-      <link>http://localhost:1313/en/blog/2020-06-01-testing-against-12-jvms/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-06-01-testing-against-12-jvms/</link>
       <pubDate>Mon, 01 Jun 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-06-01-testing-against-12-jvms/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-06-01-testing-against-12-jvms/</guid>
       <description>A hands-on tutorial on how JobRunr is tested against 12 different JVM&amp;rsquo;s using TestContainers.</description>
     </item>
     <item>
       <title>JobRunr ♥ Kubernetes ♥ Terraform</title>
-      <link>http://localhost:1313/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</link>
       <pubDate>Wed, 06 May 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-05-06-jobrunr-kubrnetes-terraform/</guid>
       <description>Learn how to scale JobRunr to have a whopping 869% speed increase</description>
     </item>
     <item>
       <title>Easily process long-running jobs with JobRunr</title>
-      <link>http://localhost:1313/en/blog/2020-04-23-jobrunr-long-running-jobs/</link>
+      <link>https://www.jobrunr.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</link>
       <pubDate>Thu, 23 Apr 2020 11:12:23 +0200</pubDate>
-      <guid>http://localhost:1313/en/blog/2020-04-23-jobrunr-long-running-jobs/</guid>
+      <guid>https://www.jobrunr.io/en/blog/2020-04-23-jobrunr-long-running-jobs/</guid>
       <description>A tutorial on how to use JobRunr, Spring Data JPA and Docx-Stamper to generate the salary slips for all employees of Acme Corp</description>
     </item>
   </channel>
