@@ -290,6 +290,7 @@
 <li><code>JobContext.getSignature()</code> has been renamed to <code>JobContext.getJobSignature()</code></li>
 <li><code>JobDashboardProgressBar.setValue(...)</code> has been renamed to <code>JobDashboardProgressBar.setProgress(long succeededAmount)</code></li>
 <li>Overall <code>BatchJob</code>s logic has been rewritten, make sure <code>MigrateFromV6toV7Task</code> is run</li>
+<li>Dynamic queues configuration has been changed in Spring, Quarkus and Micronaut: <code>dynamic-queues.type</code> has been removed, instead the type is now part of the dynamic queues property keys, e.g., <code>org.jobrunr.jobs.dynamic-queue.round-robin.label-prefix</code> (please adapt to your framework)</li>
 </ul>
 <p>If you are a JobRunr OSS user and you are interested in JobRunr Pro, you can find all the pricing information <a href="https://www.jobrunr.io/en/pricing/">here</a>.</p>
 <h2 id="oss-version">OSS version:</h2>
