@@ -218,7 +218,7 @@
 </blockquote>
 <p>In this blog post, I want to go deeper and find out the root cause on why JobRunr stopped processing jobs when DST ended. Or how to save a java 8 <code>Instant</code> via JDBC to your SQL Database. Or how to save a <code>java.sql.Timestamp</code> in UTC format. Or how Intellij code completion saved my ass by chance by proposing a solution no-where to be found on the internet&hellip;</p>
 <p>And this blog post is also about me saying sorry 😢.</p>
-<img src="/blog/2022-11-05-irony.gif" />
+<img src="/blog/2022-11-05-irony.gif" alt="" class="" />
 <h2 id="when-you-write-a-blog-post-how-things-wont-go-wrong-but-do-go-wrong">When you write a blog post how things wont go wrong but do go wrong&hellip;</h2>
 <p>On Monday the 31th of October 2022, a Github issue was created: <a href="https://github.com/jobrunr/jobrunr/issues/598">Unrecoverable error on time change due to daylight saving timezone change</a> by <a href="https://github.com/raffig">@raffig</a>. Not possible, I thought&hellip; probably again somebody using MySQL?</p>
 <p>Personally, I did not notice the bug myself yet (and this week I found out why: because my containers restart automatically if the health check fails 😏).</p>
@@ -232,7 +232,7 @@
 <p>MySQL&rsquo;s date types are, frankly, broken and cannot store all times correctly unless your system is set to a constant offset timezone, like UTC or GMT-5. (I&rsquo;m using MySQL 5.0.45)</p>
 </blockquote>
 <p><strong>54 Upvotes!</strong> That is even more proof!! Alright, problem solved - it must be related to MySQL. On top of that, JobRunr only relies on <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instants</a> - the new date and time API that was added in Java 8. So, it must be really related to MySQL, no? Yes, I can safely <a href="https://github.com/jobrunr/jobrunr/issues/248#issuecomment-982072478">close the issue</a>.</p>
-<img src="/blog/2022-11-05-what-a-mistake.gif" />
+<img src="/blog/2022-11-05-what-a-mistake.gif" alt="" class="" />
 <h2 id="so-what-happened">So, what happened?</h2>
 <p>As this year more users had the same issue with different databases, it was time to do a crime scene investigation of what happened.</p>
 <h3 id="but-a-bit-of-background-first">But, a bit of background first!</h3>
@@ -290,7 +290,7 @@
 </figure>
 <p>That looks correct to me, no? Hmm, let&rsquo;s Google and Stackoverflow again!</p>
 <figure>
-  <img src="/blog/2022-11-05-no-stackoverflow-for-you.png">
+  <img src="/blog/2022-11-05-no-stackoverflow-for-you.png" alt="" class="" />
   <figcaption>This is going to be fun...</figcaption>
 </figure>
 <p>So, after resetting my pc&rsquo;s date and time correct again, I find the following <a href="https://stackoverflow.com/a/54564844/1005124">stackoverflow.com post</a> (yes, again the first link from google) with the following info:</p>
@@ -299,7 +299,7 @@
 </blockquote>
 <p>Just for fun, I open the <code>java.sql.Timestamp</code> class:</p>
 <figure>
-  <img src="/blog/2022-11-05-oooh-noooo.png">
+  <img src="/blog/2022-11-05-oooh-noooo.png" alt="" class="" />
   <figcaption>java.sql.Timestamp extends java.util.Data? This is really going to be fun...</figcaption>
 </figure>
 <p>Further down in the <a href="https://stackoverflow.com/a/54564844/1005124">stackoverflow.com post</a>, I read the following:</p>
@@ -310,7 +310,7 @@
 <h3 id="attempt-1---the-easy-fix">Attempt 1 - the easy fix!</h3>
 <p>Alright, this is going to be an easy fix! I just need to change the code snippet from above to <code>preparedStatement.setObject(i, instant);</code>, run the tests and call it a day!</p>
 <figure>
-  <img style="width:60%; margin: 0 auto;" src="/blog/2022-11-05-oooh-noooo-tests.png">
+  <img src="/blog/2022-11-05-oooh-noooo-tests.png" alt="" class="" />
   <figcaption>Perhaps the fix is not going to be so easy...</figcaption>
 </figure>
 <p>Luckily, Postgres helps me:</p>
@@ -330,12 +330,12 @@
 </figure>
 <p>The <a href="https://stackoverflow.com/a/54564844/1005124">stackoverflow.com post</a> also has a nice picture explaining everything, let&rsquo;s review it again:</p>
 <figure>
-  <img src="/blog/2022-11-05-jdbc-types.png">
+  <img src="/blog/2022-11-05-jdbc-types.png" alt="" class="" />
   <figcaption>java.sql.Timestamp extends java.util.Data? This is really going to be fun...</figcaption>
 </figure>
 <p>I read all the <a href="https://stackoverflow.com/a/22470650/1005124">different</a> <a href="https://stackoverflow.com/a/50668272/1005124">stackoverflow</a> posts but none if works. They say that either the above should work (🤥) by passing <code>java.time.*</code> Objects or using the <code>Timestamp.from(instant)</code>.</p>
 <figure>
-  <img src="/blog/2022-11-05-stackoverflow-has-no-answer.webp">
+  <img src="/blog/2022-11-05-stackoverflow-has-no-answer.webp" alt="" class="" />
   <figcaption>When Stackoverflow does not provide an answer...</figcaption>
 </figure>
 <p>Finally, on the third google page with only Stackoverflow results, I read the <a href="https://stackoverflow.com/questions/50986138/converting-java-sql-timestamp-to-instant-time#comment119913322_50987372">following comment</a>:</p>
@@ -378,7 +378,7 @@
 <p>Originally, when I created JobRunr I used <code>TIMESTAMP(6)</code> for the <code>lastHeartbeat</code> - my idea back then is that I wouldn&rsquo;t need a TimeZone as all the jobs were using UTC Timestamps. Now, I needed to revisit that choice and create an SQL script that migrates all these columns of type <code>TIMESTAMP(6)</code> to <code>TIMESTAMP(6) WITH TIME ZONE</code>. Just to make sure that this approach would work, I changed the original script to this <code>TIMESTAMP(6) WITH TIME ZONE</code>, saved the <code>java.time.Instant</code> as an <code>java.time.OffsetDateTime</code> and altered my computers date back to Sunday October 30th at 2:59 am using Postgres as my choice of weapon. Yes, it works! No <code>BackgroundJobServer</code> is removed!</p>
 <p>But - my gut feeling (Batman) did not like this approach my brain (Robin) proposed.</p>
 <figure>
-  <img src="/blog/2022-11-05-batman.jpeg">
+  <img src="/blog/2022-11-05-batman.jpeg" alt="" class="" />
   <figcaption>My gut feeling slapping my brain...</figcaption>
 </figure>
 <p>As the <code>TIMESTAMP(6)</code> is part of the DB index changing it to a <code>TIMESTAMP(6) WITH TIME ZONE</code>, all the indexes would also need to be recreated and a customer already got into contact with me that these automated migrations fail for them as the readiness probe takes too long to return true.
@@ -389,7 +389,7 @@ Time to go back to the drawing board&hellip;</p>
 <p>The code from above then become  <code>preparedStatement.setObject(i, LocalDateTime.ofInstant(instant, ZoneOffset.UTC));</code></p>
 <p>Jeeej! Only one failing test per database! And, if I go back in time to Sunday October 30th at 2:59 and test the original bug again all is well! The failing test is easily solved (I should then also fetch the <code>java.sql.Timestamp</code> as a <code>java.time.LocalDateTime</code> and transform it back to an <code>java.time.Instant</code>) and I start testing it for each database. There is light at the end of the tunnel!</p>
 <figure>
-  <img src="/blog/2022-11-05-db2.jpeg">
+  <img src="/blog/2022-11-05-db2.jpeg" alt="" class="" />
   <figcaption>Apparently, DB2 does not support JDBC 4.2</figcaption>
 </figure>
 <p>JobRunr also supports DB2 (it&rsquo;s not used a lot but it is used) and apparently the DB2 JDBC driver does <a href="https://dba.stackexchange.com/questions/252631/support-for-jdbc-4-2">not support</a> JDBC 4.2 - well, the standard was only made in 2014 (together with Java 8) and one cannot expect for all the drivers to be compliant after <span id="days-since-java8">3150</span> days, no?</p>
@@ -397,7 +397,7 @@ Time to go back to the drawing board&hellip;</p>
 <h3 id="a-solution-no-where-to-be-found-on-the-internet">A solution no-where to be found on the internet</h3>
 <p>Then, by sheer luck, I suddenly saw the following:</p>
 <figure>
-  <img src="/blog/2022-11-05-intellij-to-the-rescue.png">
+  <img src="/blog/2022-11-05-intellij-to-the-rescue.png" alt="" class="" />
   <figcaption>Wait - what is that Calendar I can pass as an extra option?</figcaption>
 </figure>
 <p>The Javadoc of the <code>java.sql.PreparedStatement</code> says the following:</p>

@@ -276,7 +276,7 @@
 <p>The installation for these tools is well explained and differs for each OS. Follow the installation guide for them and come back to the tutorial once you have done so.</p>
 <p>We also need an account for Google Cloud. Using your browser navigate to <a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a>  - when you first login to the Google Cloud Platform you get 300 € of free credit, more than enough for us. You can activate it on the top right.</p>
 <figure style="width: 100%; max-width: 100%">
-<img src="/blog/2020-05-06-kubernetes-gcp-01.webp" class="kg-image">
+<img src="/blog/2020-05-06-kubernetes-gcp-01.webp" alt="" class="kg-image" />
 <figcaption>The Google console dashboard with the free trial at the top</figcaption>
 </figure>
 <h3 id="create-the-gcp-project">Create the GCP Project</h3>
@@ -675,8 +675,8 @@ resource &#34;kubernetes_service&#34; &#34;jobrunr-tutorial&#34; {
 <p>Since the salary slip microservice is now available on the internet, we can test it. First, we will create 10.000 employees in our database. To do so, fire up your favorite browser and go to the url http://${public-ip-from-the-service}:8080/create-employees?amount=10000. This takes about 15 seconds.</p>
 <p>Now, visit the JobRunr dashboard - you can find it at http://${public-ip-from-the-service}:8000/dashboard. Navigate to the Recurring jobs tab and trigger the &lsquo;Generate and send salary slip to all employees&rsquo; job. After about 15 seconds, you should have 10.000 enqueued jobs.</p>
 <figure>
-<img src="/blog/2020-05-06-kubernetes-5-1.webp" class="kg-image">
-<figcaption>It takes _11.229 seconds_ or about 3 hours and 7 minutes to create all the salary slips.</figcaption>
+<img src="/blog/2020-05-06-kubernetes-5-1.webp" alt="" class="kg-image" />
+<figcaption>It takes <i>11.229 seconds</i> or about 3 hours and 7 minutes to create all the salary slips.</figcaption>
 </figure>
 <h3 id="scale-it-up">Scale it up!</h3>
 <p>Now, let&rsquo;s add 10 instances of our application to the cluster by changing the replica attribute in the <code>deployment.tf</code> file.</p>
@@ -700,8 +700,8 @@ resource &#34;kubernetes_deployment&#34; &#34;jobrunr-tutorial&#34; {
 <code>~/jobrunr/gcloud$ terraform apply</code></p>
 <p>If you run the command <code>~/jobrunr/gcloud$ kubectl get pods</code> you will now see 10 pods running our JobRunr application. Let&rsquo;s trigger the &lsquo;Generate and send salary slip to all employees&rsquo; recurring job again and wait for it to finish.</p>
 <figure>
-<img src="/blog/2020-05-06-kubernetes-6.webp" class="kg-image">
-<figcaption>It only took _1.292 seconds_ or 21 minutes and 30 seconds!</figcaption>
+<img src="/blog/2020-05-06-kubernetes-6.webp" alt="" class="kg-image" />
+<figcaption>It only took <i>1.292 seconds</i> or 21 minutes and 30 seconds!</figcaption>
 </figure>
 <blockquote>
 <p>To keep your free credit for GCP, do not forget to issue the command terraform destroy. It will stop all pods, remove the Kubernetes cluster and delete the Postgres Cloud Sql instance.</p>
