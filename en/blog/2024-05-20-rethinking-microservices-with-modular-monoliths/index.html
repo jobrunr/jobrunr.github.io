@@ -14,14 +14,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     
-    <title>JobRunr: An Alternative to Message Queueing · JobRunr</title>
+    <title>Do you really need Microservices? · JobRunr</title>
 
     
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <meta name="description" content="Do you really need a message queue?">
+    <meta name="description" content="Rethinking Microservices with Modular Monoliths">
     
     
     
@@ -31,15 +31,15 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" />
     <meta name="twitter:image:alt" content="JobRunr - get jobs done" />
-    <meta name="twitter:title" content="JobRunr: An Alternative to Message Queueing" />
-    <meta name="twitter:description" content="Do you really need a message queue?" />
+    <meta name="twitter:title" content="Do you really need Microservices?" />
+    <meta name="twitter:description" content="Rethinking Microservices with Modular Monoliths" />
     <meta name="twitter:creator" content="@rdehuyss" />
     <meta name="twitter:site" content="@jobrunr" />
 
-    <meta property="og:title" content="JobRunr: An Alternative to Message Queueing" />
-<meta property="og:description" content="Do you really need a message queue?" />
+    <meta property="og:title" content="Do you really need Microservices?" />
+<meta property="og:description" content="Rethinking Microservices with Modular Monoliths" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.jobrunr.io/en/blog/2024-05-20-jobrunr-as-message-queue/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://www.jobrunr.io/en/blog/2024-05-20-rethinking-microservices-with-modular-monoliths/" /><meta property="og:image" content="https://www.jobrunr.io/blog/2020-04-23-jobrunr-gets-jobs-done.webp" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2024-05-20T09:00:00+02:00" />
 <meta property="article:modified_time" content="2024-05-20T09:00:00+02:00" />
 
@@ -151,10 +151,10 @@
                     </section>
                 
 
-                <h1 class="post-full-title">JobRunr: An Alternative to Message Queueing</h1>
+                <h1 class="post-full-title">Do you really need Microservices?</h1>
 
                 
-                    <p class="post-full-custom-excerpt">Do you really need a message queue?</p>
+                    <p class="post-full-custom-excerpt">Rethinking Microservices with Modular Monoliths</p>
                 
 
                 
@@ -185,7 +185,7 @@
                                     <time class="byline-meta-date" datetime="2024-95-05">20 May 2024</time>
                                     <span class="bull">&bull;</span>
                                  
-                                <span class="byline-reading-time">4 min read</span>
+                                <span class="byline-reading-time">6 min read</span>
 
                                  
                             </div>
@@ -214,78 +214,74 @@
 <style type="text/css">
     .post-full-content img {display: inline-block; margin: 0 auto}
 </style>
-<p>In the world of software development, background job processing and message queueing are crucial components for building scalable and efficient systems. Traditionally, message queueing systems like <a href="https://www.rabbitmq.com/">RabbitMQ</a> and even <a href="https://kafka.apache.org/">Apache Kafka</a> have been the go-to solutions for managing background tasks, ensuring reliability, and maintaining system performance. However, as technology evolves, so do the alternatives. One such powerful alternative is JobRunr, a distributed background job processing framework for Java. In this blog post, we&rsquo;ll explore how JobRunr can serve as an effective alternative to traditional message queueing systems like RabbitMQ.</p>
-<h2 id="the-case-for-message-queueing">The Case for Message Queueing</h2>
-<p>Message queueing systems like RabbitMQ are widely used for their ability to handle asynchronous communication between services. They offer several advantages:</p>
-<p><strong>1. Decoupling Services</strong>: By using message queues, services can operate independently, communicating via messages rather than direct calls.</p>
-<p><strong>2. Reliability</strong>: Messages are stored in queues until they are processed, ensuring that no data is lost even if a service goes down temporarily.</p>
-<p><strong>3. Scalability</strong>: Message queues can distribute tasks across multiple consumers, balancing the load and improving performance.</p>
-<p>However, message queueing systems are not without their challenges. They often require additional infrastructure, complex setup, and can introduce latency due to the nature of message passing.</p>
-<h2 id="enter-jobrunr">Enter JobRunr</h2>
-<p>JobRunr provides a compelling alternative to traditional message queueing systems, particularly for Java developers. Here&rsquo;s why JobRunr stands out:</p>
-<p><strong>1. Simplicity and Integration</strong>: JobRunr is designed to integrate seamlessly into your existing Java applications. It doesn&rsquo;t require a separate message broker or additional infrastructure, making setup and maintenance straightforward. You can define jobs as plain Java methods and schedule them with minimal configuration.</p>
-<p><strong>2. Distributed Processing</strong>: Like RabbitMQ, JobRunr supports distributed processing, allowing you to run jobs across multiple nodes. This ensures high availability and fault tolerance, as jobs can be redistributed if a node fails.</p>
-<p><strong>3. Persistent Storage</strong>: JobRunr uses your existing database for job storage, which means you don&rsquo;t need to manage a separate message queue system. This approach simplifies architecture and reduces overhead. It also ensures that jobs are persisted and can be retried in case of failure.</p>
-<p><strong>4. Scheduling and Prioritization</strong>: JobRunr excels in scheduling and prioritizing jobs. You can define recurring jobs, delayed jobs, and prioritize tasks based on their importance. This level of control is often more intuitive and flexible than traditional message queueing systems.</p>
-<p><strong>5. Failure handling</strong>: JobRunr includes robust failure handling with a smart retry policy enabled by default. If a job fails due to an external service being down, JobRunr will automatically retry it using an exponential backoff strategy. This ensures that transient issues are handled gracefully, and only persistent failures will require your attention.</p>
-<p><strong>6. Monitoring and Analytics</strong>: JobRunr offers a dashboard out-of-the-box allowing you to monitor all your background jobs and quickly identifying any issues that may arise.</p>
-<h2 id="jobrunr-vs-rabbitmq-a-comparison">JobRunr vs. RabbitMQ: A Comparison</h2>
-<figure style="width: 100%">
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>RabbitMQ</th>
-<th>JobRunr</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Setup complexity</td>
-<td>Requires additional infrastructure</td>
-<td>Minimal setup, integrates with existing database</td>
-</tr>
-<tr>
-<td>Distributed Processing</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Job Persistence</td>
-<td>Messages stored in Queue</td>
-<td>Jobs stored in database</td>
-</tr>
-<tr>
-<td>Scheduling</td>
-<td>Basic scheduling capabilities (using plugin)</td>
-<td>Advanced scheduling capabilities</td>
-</tr>
-<tr>
-<td>Failure handling</td>
-<td>Manual retry / dead letter exchange</td>
-<td>Automatic retries (configurable)</td>
-</tr>
-<tr>
-<td>Monitoring</td>
-<td>Basic monitoring (using plugin)</td>
-<td>Advanced monitoring</td>
-</tr>
-</tbody>
-</table>
-</figure>
-<h2 id="when-to-choose-jobrunr">When to Choose JobRunr?</h2>
-<p>JobRunr is an excellent choice if:</p>
+<p>In the world of software development, microservices were once the de facto standard for building scalable and efficient systems. Traditionally, message queueing systems like <a href="https://www.rabbitmq.com/">RabbitMQ</a> and <a href="https://kafka.apache.org/">Apache Kafka</a> have been used to keep these different microservices in sync, ensuring reliability and maintaining system performance. However, these systems also introduce complexity and development overhead.</p>
+<p>Recently, the idea of monolithic, modular systems has regained popularity. As technology evolves, so do the alternatives for building scalable applications. One such powerful alternative is JobRunr, a distributed background job processing framework for Java. In this blog post, we&rsquo;ll explore how JobRunr can serve as an effective tool for scaling your application without the extra complexity.</p>
+<h3 id="the-microservices-challenge">The Microservices Challenge</h3>
+<p>Microservices architecture offers several benefits, including:</p>
+<ol>
+<li><strong>Scalability</strong>: Individual services can be scaled independently based on demand.</li>
+<li><strong>Flexibility</strong>: Teams can develop, deploy, and maintain services independently.</li>
+<li><strong>Resilience</strong>: Failure in one service doesn&rsquo;t necessarily impact the entire system.</li>
+</ol>
+<p>However, microservices also come with significant challenges:</p>
+<ol>
+<li><strong>Deployment Complexity</strong>: Managing and deploying multiple services requires sophisticated orchestration tools and strategies.</li>
+<li><strong>Duplicated Code</strong>: Common functionalities and entities are often duplicated across services, leading to maintenance challenges and slow development cycles.</li>
+<li><strong>Dependency Management</strong>: Keeping transitive dependencies in sync across multiple services can be complex and error-prone.</li>
+<li><strong>Inter-service Communication</strong>: Ensuring reliable and low-latency communication between services adds complexity and potential points of failure.</li>
+<li><strong>Operational Overhead</strong>: Monitoring, logging, and debugging across multiple services can be significantly more complex than in a monolithic application.</li>
+</ol>
+<h3 id="the-case-for-modular-monoliths">The Case for Modular Monoliths</h3>
+<p>A modular monolith architecture offers an alternative approach that mitigates some of these challenges. In a modular monolith, the application is designed in a modular way but deployed as a single unit. This approach provides several advantages:</p>
+<ol>
+<li><strong>Simpler Deployment</strong>: Deploying a single application reduces the complexity of deployment and orchestration.</li>
+<li><strong>Reduced Code Duplication</strong>: Common functionalities are centralized, reducing the amount of duplicated code across the application.</li>
+<li><strong>Easier Dependency Management</strong>: With a single application, managing dependencies becomes simpler and more straightforward.</li>
+<li><strong>Enhanced Performance</strong>: Internal function calls within a monolith are faster than inter-service communication in a microservices architecture.</li>
+<li><strong>Unified Monitoring and Logging</strong>: Monitoring and debugging a single application is simpler compared to managing multiple services.</li>
+</ol>
+<p>The modular monolith approach is gaining traction within the Java community, particularly promoted by the <a href="https://spring.io/">Spring team</a> at Broadcom through <a href="https://spring.io/projects/spring-modulith">Spring Modulith</a>. This initiative encourages building well-structured monolithic applications with modularity in mind.</p>
+<h3 id="when-to-use-microservices-vs-modular-monoliths">When to Use <del>Micro</del>services vs. Modular Monoliths</h3>
+<p>Choosing between microservices and a modular monolith depends on several factors, including team structure (who doesn&rsquo;t know <a href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway&rsquo;s law</a>), project requirements, and technological diversity.</p>
+<p><strong>When to Use <del>Micro</del>services:</strong></p>
+<ol>
+<li><strong>Multiple Teams</strong>: If your organization has multiple teams working on different parts of the application, microservices allow each team to develop, deploy, and maintain their service independently.</li>
+<li><strong>Different Technology Stacks</strong>: When different parts of your application require different technology stacks, microservices enable you to use the best tools for each specific task.</li>
+</ol>
+<p><strong>When to Use Modular Monoliths:</strong></p>
+<ol>
+<li><strong>Single or Small Teams</strong>: For projects maintained by a single team or small teams, a modular monolith simplifies development and deployment.</li>
+<li><strong>Consistency in Technology</strong>: When your application can be built using a single technology stack, a modular monolith reduces complexity and overhead.</li>
+<li><strong>Simplified Operations</strong>: A monolithic architecture simplifies monitoring, logging, and debugging, making operations more straightforward and less error-prone.</li>
+</ol>
+<p>A key principle is that one team should ideally maintain at most one microservice to avoid interdependencies and ensure clear ownership.</p>
+<h3 id="jobrunr-scaling-without-complexity">JobRunr: Scaling Without Complexity</h3>
+<p>JobRunr offers a powerful solution for background job processing that fits perfectly within a modular monolith architecture. Here&rsquo;s why JobRunr stands out:</p>
+<ol>
+<li><strong>Simplicity and Integration</strong>: JobRunr integrates seamlessly into your existing Java applications. It doesn&rsquo;t require a separate message broker or additional infrastructure, making setup and maintenance straightforward. You can define jobs as plain Java methods and schedule them with minimal configuration.</li>
+<li><strong>Distributed Processing</strong>: JobRunr supports distributed processing, allowing you to run jobs across multiple nodes. This ensures high availability and fault tolerance, as jobs can be redistributed if a node fails.</li>
+<li><strong>Persistent Storage</strong>: JobRunr uses your existing database for job storage, which means you don&rsquo;t need to manage a separate message queue system. This approach simplifies architecture and reduces overhead. It also ensures that jobs are persisted and can be retried in case of failure.</li>
+<li><strong>Scheduling and Prioritization</strong>: JobRunr excels in scheduling and prioritizing jobs. You can define recurring jobs, delayed jobs, and prioritize tasks based on their importance. This level of control is often more intuitive and flexible than traditional message queueing systems.</li>
+<li><strong>Failure Handling</strong>: JobRunr includes robust failure handling with a smart retry policy enabled by default. If a job fails due to an external service being down, JobRunr will automatically retry it using an exponential backoff strategy. This ensures that transient issues are handled gracefully, and only persistent failures will require your attention.</li>
+<li><strong>Monitoring and Analytics</strong>: JobRunr offers an out-of-the-box dashboard, allowing you to monitor all your background jobs and quickly identify any issues that may arise. This comprehensive view helps you maintain system reliability and optimize performance with ease.</li>
+<li><strong>Cloud-Native Solution</strong>: JobRunr is designed to be cloud-native, enabling seamless integration with cloud environments and leveraging cloud infrastructure for scalability and resilience.</li>
+</ol>
+<h3 id="scaling-with-jobrunr-on-kubernetes">Scaling with JobRunr on Kubernetes</h3>
+<p>With JobRunr on Kubernetes (k8s), you can still scale your application effectively by increasing the number of pods running your application. This allows you to handle increased load and improve fault tolerance without the complexity of managing multiple microservices. By scaling the number of pods, you ensure that your background jobs are processed efficiently, leveraging Kubernetes&rsquo; orchestration capabilities to maintain high availability and performance.</p>
+<h3 id="modular-monoliths-with-jobrunr-a-winning-combination">Modular Monoliths with JobRunr: A Winning Combination</h3>
+<p>Combining the simplicity of a modular monolith with the power of JobRunr provides a robust and scalable solution for modern Java applications. This approach allows you to:</p>
 <ul>
-<li>You prefer a solution that <strong>integrates seamlessly with your Java application</strong> without additional infrastructure.</li>
-<li>You want to <strong>leverage your existing database</strong> for job storage.</li>
-<li>You need <strong>advanced scheduling</strong> and prioritization features.</li>
-<li>You value built-in monitoring and analytics to keep track of your background job processing.</li>
+<li><strong>Streamline Deployment</strong>: With a single application to deploy, your deployment process becomes simpler and more reliable.</li>
+<li><strong>Optimize Performance</strong>: Reduce the latency associated with inter-service communication and leverage efficient background job processing.</li>
+<li><strong>Maintain Code Quality</strong>: Centralize common functionalities and reduce duplicated code, making your codebase easier to manage and maintain.</li>
+<li><strong>Simplify Operations</strong>: Benefit from unified monitoring and logging, making it easier to track and debug issues.</li>
+<li><strong>Scale Seamlessly</strong>: Utilize Kubernetes to scale your application by increasing the number of pods, ensuring efficient job processing, high availability and high throughput.</li>
 </ul>
-<p>However, if your application relies heavily on decoupling services or you need to support multiple languages and technologies, a traditional message queueing system like <a href="https://www.rabbitmq.com/">RabbitMQ</a> might still be the best fit.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>While RabbitMQ and other message queueing systems have their place in the software development ecosystem, JobRunr offers a powerful, flexible, and simpler alternative for Java developers which offers extra functionality and a dashboard out-of-the-box. By leveraging JobRunr, you can streamline your background job processing, reduce infrastructure complexity, and gain greater control over your job scheduling and monitoring.</p>
-<p>By considering JobRunr as an alternative to traditional message queueing systems, you can unlock new efficiencies and capabilities in your Java applications. Whether you&rsquo;re a seasoned developer or new to background job processing, JobRunr provides the tools and flexibility to take your projects to the next level.</p>
-<p>If you&rsquo;re looking to simplify your background job management and are curious about the benefits JobRunr Pro can bring to your projects, now is the perfect time to explore what JobRunr has to offer. Happy coding!</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>While microservices and message queueing systems like RabbitMQ and Apache Kafka have their place in the software development ecosystem, JobRunr offers a powerful and simpler alternative for Java developers. By leveraging JobRunr within a modular monolith architecture, you can achieve scalable and efficient background job processing without the added complexity of managing multiple services.</p>
+<p>If you&rsquo;re looking to simplify your architecture and are curious about the benefits JobRunr Pro can bring to your projects, now is the perfect time to explore what JobRunr has to offer. Happy coding!</p>
+<hr>
+<p>By considering JobRunr and a modular monolith approach, you can unlock new efficiencies and capabilities in your Java applications. Whether you&rsquo;re a seasoned developer or new to background job processing, JobRunr provides the tools and flexibility to take your projects to the next level.</p>
 
                 </div>
             </section>

@@ -191,11 +191,11 @@
       <description>In this guide, we will learn how to:&#xA;setup JobRunr learn how to enqueue and schedule a job in vanilla Java or your favorite web framework using the JobRequest / JobRequestHandler pattern. monitor your jobs using the built-in dashboard What is JobRunr Introduction JobRunr is a library that we can embed in our application and which allows us to schedule background jobs using a Java 8 lambda. We can use any existing method of our Spring services to create a job without the need to implement an interface.</description>
     </item>
     <item>
-      <title>JobRunr: An Alternative to Message Queueing</title>
-      <link>https://www.jobrunr.io/en/blog/2024-05-20-jobrunr-as-message-queue/</link>
+      <title>Do you really need Microservices?</title>
+      <link>https://www.jobrunr.io/en/blog/2024-05-20-rethinking-microservices-with-modular-monoliths/</link>
       <pubDate>Mon, 20 May 2024 09:00:00 +0200</pubDate>
-      <guid>https://www.jobrunr.io/en/blog/2024-05-20-jobrunr-as-message-queue/</guid>
-      <description>Do you really need a message queue?</description>
+      <guid>https://www.jobrunr.io/en/blog/2024-05-20-rethinking-microservices-with-modular-monoliths/</guid>
+      <description>Rethinking Microservices with Modular Monoliths</description>
     </item>
     <item>
       <title>We are on Spring Builders!</title>
