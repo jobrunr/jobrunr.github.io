@@ -434,7 +434,7 @@ If no such bean is defined, you will either need to define it or create a <code>
   background-job-server:
     enabled: false
     worker-count: #this value normally is defined by the amount of CPU&#39;s that are available
-    poll-interval: 15 #check for new work every 15 seconds
+    poll-interval-in-seconds: 15 #check for new work every 15 seconds
     delete-succeeded-jobs-after: 36
     permanently-delete-deleted-jobs-after: 72
     metrics:
